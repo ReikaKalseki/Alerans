@@ -1,0 +1,211 @@
+﻿DRGN1 = {
+	ship_names = {
+
+		generic = {
+			
+		}
+
+		corvette = {
+			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+		}
+		
+		destroyer = {
+			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+		}
+		
+		cruiser = {
+			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+		}
+		
+		battleship = {
+			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+		}
+		
+		titan = {
+			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+		}
+		
+		colossus = {
+			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+		}
+		
+		science = {
+			"Shining Light" "Deep Nebula" Explorer "Venture Star" Halo Aura Rama Nova Aether Horizon
+		}
+		
+		colonizer = {
+			Endurance Avalon Pandorum Elysia "Wave Lander" Wanderer
+		}
+		
+		constructor = {
+			Reliant Expander Baseline Spark Girder Circuit Assembler
+		}
+		
+		transport = {
+			Swift
+		}
+		
+		military_station_small = {
+		}
+		
+		ion_cannon = {
+		}
+	}
+
+	fleet_names = {
+		random_names = {
+			
+		}
+		sequential_name = "Space Defence Force %R%"
+	}
+	
+	army_names = {
+	
+		defense_army = {
+			sequential_name = "Surface Defence Force %R%"
+		}
+			
+		assault_army = {
+			sequential_name = "Assault Division %R%"
+		}
+		
+		slave_army = {
+			sequential_name = "Slave Faction 0%C%"
+		}
+		
+		clone_army = {
+			sequential_name = "Replica Legion %R%"
+		}
+		
+		robotic_army = {
+			sequential_name = "Assault Nexus %R%"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "Defense Nexus #0%C%"
+		}
+		
+		android_army = {
+			sequential_name = "Synthetic Warriors - Unit %C%"
+		}
+
+		android_defense_army = {
+			sequential_name = "Synthetic Guard - Unit %C%"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Thought Force"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% War Hive"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Warrior's Order"
+		}
+
+		occupation_army = {
+			sequential_name = "%O% Occupation Guard"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "Occupation Nexus - Unit %C%"
+		}
+
+		android_occupation_army = {
+			sequential_name = "Occupation Synths - Unit %C%"
+		}
+	}
+
+	planet_names = {
+
+		generic = {
+			names = {
+				Alera Kanza Wan
+			}
+		}
+		
+		pc_desert = {
+			names = {
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+			}
+		}
+		
+		pc_arid = {
+			names = {
+			}
+		}
+		
+		pc_continental = {
+			names = {
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names_male = {
+				
+			}
+
+			full_names_female = {
+				
+			}
+			
+			# Always combined with a second name
+			first_names_male = {
+				Avalix Tek Synari Remal Navo Sevo Kuli Kal Centra Ryu Sehn Zahn Tylon Avi Sektan Tabra Herro Malak Cyren Alik Rixa Kaz Kaelith Veo Athyn Xaphan Novo Reika Malik Alten Clerian Taros Aleik Alin Ixo Xan Kero
+			}
+			
+			# Always combined with a second name
+			first_names_female = {
+				Mizar Maya Navia Shandi Anoria Aza Ava Kara Kaz Saphira Zacara Avi Chlore Freya Luna Tala Rixa Naoru Cira Desa Aleira Azra Raela Kirina Rika Kailana Selia Kora Lexxa Erina Kaeva Aeri Kurri Amyth Mira Eva Tyri Zia Kalka Aurora Asella Vera Kola Xan
+			}
+			
+			# Always combined with a first name
+			second_names = {
+				Lanreya Alixiati Prexa Cotal Qan Kae Aseki Valerian Skal Shinami Fyr Xan Alka Chaymi Evra Lavna Pala Kale Ysara Sera Saeur Tyrael Soren Arith Kalseki Tzeri Ecly Nenli Tasla Izli Korben Hixei Eracel Emaya Kadath Cheru Hauyne Rakapila Nallen Kaveri Levias Ikeda Inari
+			}
+			
+			regnal_first_names = {
+				
+			}
+			
+			regnal_second_names = {
+				
+			}
+		}
+	}
+}

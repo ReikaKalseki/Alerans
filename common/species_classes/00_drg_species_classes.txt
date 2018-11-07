@@ -1,0 +1,29 @@
+# Number of entries controlls amount to choose from in designer  I.E.   "mol1" "mol2" "mol3" "mol4"
+# graphical_culture is connected to the looks used for ships and cities, see "common/graphical_culture/"
+# Portraits here are one you can choose from in the character creater. For prescripted races they are grabbed straight from the .gfx file. 
+# playable=(yes/no)/trigger, default is yes, if this species class can is playable
+# randomized=(yes/no)/trigger, default is yes, if this species class is randomized
+# custom_portraits
+#	randomized = trigger, default is no, to specify if portraits are randomized
+#	playable = trigger, default is yes, to specify if portraits are playable
+#	portraits, list portrait keys
+ 
+Dragon = {
+	archetype = BIOLOGICAL
+	playable = { always = yes }
+	randomized = yes
+	robotic = no
+	
+	portraits = {
+		"dragon"
+	}
+	
+	trait = "trait_dragonbody"
+	authority = "auth_dictatorial"
+	ethic = "ethic_authoritarian" ethic = "ethic_materialist" 
+	
+	graphical_culture = humanoid_01
+	city_graphical_culture = reptilian_01
+	move_pop_sound_effect = "dragon_pops_move_01"
+	name_list = "Dragon"
+}

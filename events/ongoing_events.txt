@@ -1,0 +1,83 @@
+namespace = dragon_ongoing
+
+country_event = {
+	id = dragon_ongoing.360
+	hide_window = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+		NOT = {has_country_flag = is_under_war}
+		any_war = {
+			any_defender = { is_same_value = this }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	immediate = {
+		set_country_flag = is_under_war
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.361
+	hide_window = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = is_under_war
+		NOT = {
+			any_war = {
+				any_defender = { is_same_value = this }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		remove_country_flag = is_under_war
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.362
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.362.name"
+	desc = "dragon_ongoing.362.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_construction_03
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_expansion}
+		has_valid_civic = civic_dragon_gov
+		num_starbases > 25
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	immediate = {
+		set_country_flag = aleran_expansion
+	}
+	
+	option = {
+		name = "dragon_ongoing.362.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_expansion
+				years = 1000
+			}
+		}
+		
+	}
+}

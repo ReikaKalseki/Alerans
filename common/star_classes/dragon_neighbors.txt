@@ -1,0 +1,83 @@
+sc_binary_fm = { # Binary System FM
+    class             = f_star
+    icon              = d_binary_star
+    planet            = {
+                        key = pc_f_star
+                        class = f_star
+                    }
+    planet            = {
+                        key = pc_m_star
+                        class = m_star
+                    }
+    spawn_odds         = 9
+    num_planets     = { min = 4 max = 10 }
+}
+
+sc_binary_gg = { # Binary System: Yellow 2
+    class             = g_star
+    icon              = d_binary_star
+    planet            = {
+                        key = pc_g_star
+                        class = g_star
+                    }
+    planet            = {
+                        key = pc_g_star
+                        class = g_star
+                    }
+    spawn_odds         = 10
+    num_planets     = { min = 7 max = 12 }
+}
+
+sc_trinary_nnm = { # Binary System
+    class             = m_star
+    icon              = e_binary_star
+    planet            = {
+                        key = pc_m_star
+                        class = m_star
+                    }
+    planet            = {
+                        key = pc_neutron_star
+                        class = neutron_star
+                    }
+    planet            = {
+                        key = pc_neutron_star
+                        class = neutron_star
+                    }
+    spawn_odds         = 1
+    num_planets     = { min = 1 max = 3 }
+
+    pc_desert       = { spawn_odds = 0 }
+    pc_tropical     = { spawn_odds = 0 }
+    pc_arid         = { spawn_odds = 0 }
+    pc_continental  = { spawn_odds = 0 }
+    pc_ocean        = { spawn_odds = 0 }
+    pc_tundra       = { spawn_odds = 2 }
+    pc_arctic       = { spawn_odds = 2 }
+    pc_gaia         = { spawn_odds = 0 }
+    pc_alpine       = { spawn_odds = 0 }
+    pc_savannah     = { spawn_odds = 0 }
+	
+	is_environmental_hazard = yes
+	modifier = {
+		ship_speed_reduction = 0.75 # Be careful about using this modifier outside of star classes, it can throw off the ETA for ships
+	}
+}
+
+sc_trinary_bfk = { # Trinary System
+    class             = b_star
+    icon              = a_trinary_star
+    planet            = {
+                        key = pc_b_star
+                        class = b_star
+                    }
+    planet            = {
+                        key = pc_f_star
+                        class = f_star
+                    }
+    planet            = {
+                        key = pc_k_star
+                        class = k_star
+                    }
+    spawn_odds         = 2
+    num_planets     = { min = 5 max = 8 }
+}

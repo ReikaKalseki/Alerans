@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_wg_dragon"
+		texturefile = "gfx/interface/icons/diplomacy/wargoal_dragon.dds"
+	}
+}

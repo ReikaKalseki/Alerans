@@ -1,0 +1,32 @@
+on_game_start_country = {
+	events = {
+		dragon_start.362
+		dragon_start.363
+		dragon_start.365
+	}
+}
+
+on_leader_spawned = {
+	events = {
+		
+	}
+}
+
+empire_init_add_technologies = {
+	events = {
+		dragon_start.360
+	}
+}
+
+empire_init_create_capital_pops = {
+	events = {
+		dragon_start.361
+	}
+}
+
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		#dragon_start.364
+	}
+}

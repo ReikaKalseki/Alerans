@@ -1,0 +1,587 @@
+greetings = {
+
+	### AI Personality Greetings
+	
+	DRGN_GREETING_THREAT_01 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			has_casus_belli = {target = from type = cb_dragon}
+		}
+	}
+	DRGN_GREETING_THREAT_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			has_casus_belli = {target = from type = cb_dragon} 
+		}
+	}
+	DRGN_GREETING_THREAT_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			has_casus_belli = {target = from type = cb_dragon} 
+		}
+	}
+	DRGN_GREETING_THREAT_04 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			has_casus_belli = {target = from type = cb_dragon} 
+		}
+	}
+
+	DRGN_GREETING_HOSTILE_01 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_unfriendly_to = FROM
+			}
+			NOT = { has_casus_belli = {target = from type = cb_dragon} }
+		}
+	}
+	DRGN_GREETING_HOSTILE_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_unfriendly_to = FROM
+			}
+			NOT = { has_casus_belli = {target = from type = cb_dragon} }
+		}
+	}
+	DRGN_GREETING_HOSTILE_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_unfriendly_to = FROM
+			}
+			NOT = { has_casus_belli = {target = from type = cb_dragon} }
+		}
+	}
+	DRGN_GREETING_HOSTILE_04 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_hostile_to = FROM
+				is_unfriendly_to = FROM
+			}
+			NOT = { has_casus_belli = {target = from type = cb_dragon} }
+		}
+	}
+	DRGN_GREETING_BASIC_01 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
+	DRGN_GREETING_BASIC_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
+	DRGN_GREETING_BASIC_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
+	DRGN_GREETING_BASIC_04 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
+	DRGN_GREETING_BASIC_05 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
+	DRGN_GREETING_BASIC_06 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+			FROM = { is_species_class = HUM }
+		}
+	}
+	DRGN_GREETING_BASIC_07 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
+	DRGN_GREETING_ALLIES_01 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	DRGN_GREETING_ALLIES_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_at_war = no
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	DRGN_GREETING_ALLIES_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			#is_at_war = yes
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+	DRGN_GREETING_OFFWAR_01 = {
+		weight = {
+			weight = 100000
+		}	
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_defender = { is_same_value = from }
+			}
+		}
+	}
+	DRGN_GREETING_OFFWAR_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_defender = { is_same_value = from }
+			}
+		}
+	}
+	DRGN_GREETING_OFFWAR_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_defender = { is_same_value = from }
+			}
+		}
+	}
+	DRGN_GREETING_DEFWAR_01 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			has_country_flag = is_under_war
+		}
+	}
+	DRGN_GREETING_DEFWAR_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			has_country_flag = is_under_war
+		}
+	}
+	DRGN_GREETING_DEFWAR_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			has_country_flag = is_under_war
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_01 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_02 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_03 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_04 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_05 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_06 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+	
+	DRGN_DOW_RECEIVE_07 = {
+		weight = {
+			weight = 100000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			is_at_war_with = FROM
+			any_war = {
+				any_attacker = { is_same_value = from }
+			}
+			NOT = {has_country_flag = is_under_war}
+		}
+	}
+}
+
+action_declare_war = {
+	propose = {
+		DRGN_DOW_SEND_01 = {
+			weight = { weight = 100000 }
+			trigger = { FROM = { has_ai_personality = dragons } }
+		}
+		DRGN_DOW_SEND_02 = {
+			weight = { weight = 100000 }
+			trigger = { FROM = { has_ai_personality = dragons } }
+		}
+		DRGN_DOW_SEND_03 = {
+			weight = { weight = 100000 }
+			trigger = { FROM = { has_ai_personality = dragons } }
+		}
+		DRGN_DOW_SEND_04 = {
+			weight = { weight = 100000 }
+			trigger = { FROM = { has_ai_personality = dragons } }
+		}
+	}
+}
+
+
+action_insult = {
+	propose = {
+		DRGN_INSULT_SEND_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				FROM = { has_ai_personality = dragons }
+				FROM = { NOT = { is_same_species = ROOT }
+					NOT = { is_subspecies = ROOT } }
+			}
+		}
+	}
+	propose = {
+		DRGN_INSULT_SEND_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				FROM = { has_ai_personality = dragons }
+				FROM = { NOT = { is_same_species = ROOT }
+					NOT = { is_subspecies = ROOT } }
+			}
+		}
+	}
+	propose = {
+		DRGN_INSULT_SEND_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				FROM = { has_ai_personality = dragons }
+				FROM = { NOT = { is_same_species = ROOT }
+					NOT = { is_subspecies = ROOT } }
+			}
+		}
+	}
+	accept = {
+		DRGN_INSULT_RECEIVE_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				ROOT = { has_ai_personality = dragons }
+			}
+		}
+		DRGN_INSULT_RECEIVE_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				ROOT = { has_ai_personality = dragons }
+			}
+		}
+		DRGN_INSULT_RECEIVE_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				ROOT = { has_ai_personality = dragons }
+			}
+		}
+	}
+}
+
+action_offer_peace = {
+	consider = {
+		DRGN_PEACE_CONSIDER_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				from = {
+					has_ai_personality = dragons
+				}
+			}
+		}
+		DRGN_PEACE_CONSIDER_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				from = {
+					has_ai_personality = dragons
+				}
+			}
+		}
+		DRGN_PEACE_CONSIDER_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				from = {
+					has_ai_personality = dragons
+				}
+			}
+		}
+	}
+	propose = {
+		DRGN_PEACE_PROPOSE_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				from = {
+					has_ai_personality = dragons
+					has_war_goal = yes
+				}
+			}
+		}
+		DRGN_PEACE_PROPOSE_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				from = {
+					has_ai_personality = dragons
+					has_war_goal = yes
+				}
+			}
+		}
+		DRGN_PEACE_PROPOSE_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				from = {
+					has_ai_personality = dragons
+					has_war_goal = yes
+				}
+			}
+		}
+	}
+	accept = {
+		DRGN_PEACE_ACCEPT_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+			}
+		}
+		DRGN_PEACE_ACCEPT_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+			}
+		}
+		DRGN_PEACE_ACCEPT_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+			}
+		}
+	}
+	refuse = {
+		DRGN_PEACE_REJECT_UNACCEPTABLE_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+				NOT = {has_casus_belli = {target = from type = cb_dragon}}
+			}
+		}
+		DRGN_PEACE_REJECT_UNACCEPTABLE_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+				NOT = {has_casus_belli = {target = from type = cb_dragon}}
+			}
+		}
+		DRGN_PEACE_REJECT_UNACCEPTABLE_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+				NOT = {has_casus_belli = {target = from type = cb_dragon}}
+			}
+		}
+		DRGN_PEACE_REJECT_NOPEACEEVER_01 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+				has_casus_belli = {target = from type = cb_dragon}
+			}
+		}
+		DRGN_PEACE_REJECT_NOPEACEEVER_02 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+				has_casus_belli = {target = from type = cb_dragon}
+			}
+		}
+		DRGN_PEACE_REJECT_NOPEACEEVER_03 = {
+			weight = { weight = 100000 }
+			trigger = {
+				has_ai_personality = dragons
+				has_casus_belli = {target = from type = cb_dragon}
+			}
+		}
+	}
+}

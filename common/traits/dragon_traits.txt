@@ -1,0 +1,25 @@
+trait_dragonbody = {
+	cost = 3
+	allowed_archetypes = { BIOLOGICAL }
+	modification = no
+	icon = "gfx/interface/icons/traits/trait_dragon2.dds" ## Links to this icon in the Stellaris graphical resources folder.
+	modifier = {
+		#tile_resource_minerals_mult = 0.20 #moved into the civic
+		army_damage_mult = 0.15
+		army_health = 0.3
+		leader_age = 120
+		pop_consumer_goods_mult = 0.25
+		#tile_resource_engineering_research_mult = 0.1
+		#tile_resource_physics_research_mult = 0.1
+		#tile_resource_society_research_mult = 0.075
+		#country_resource_influence_add = 2
+		pop_food_req_mult = 0.3
+		pop_environment_tolerance = 0.1
+		country_resource_unity_mult = -0.05
+		all_technology_research_speed = 0.15
+		modify_species_cost_mult = 0.25
+		ruler_skill_levels = 2
+	}
+	
+	opposites = { "trait_strong" "trait_weak" "trait_very_strong" "trait_enduring" "trait_fleeting" "trait_venerable" "trait_wasteful" "trait_conservational" "trait_resilient" "trait_robust" "trait_industrious" "trait_intelligent"}
+}

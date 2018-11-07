@@ -1,0 +1,13 @@
+sound =
+{
+	name = "dragon_pops_move_01"
+	file = "ui/dragon_pops_move_01.wav"
+	volume = 0.5
+}
+soundeffect = {
+	name = dragon_pops_move_01
+	sounds = {
+		sound = dragon_pops_move_01
+	}
+	volume = 0.5
+}

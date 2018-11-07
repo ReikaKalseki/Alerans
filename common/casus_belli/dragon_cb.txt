@@ -1,0 +1,94 @@
+#my_casus_belli = {
+#	potential = { ... }		# trigger to make some CBs invalid for certain types of countries; this = attacker (CB owner); default: { always = yes }
+#	is_valid = { ... }		# trigger, evaluated daily to check if CB should be created or destroyed automatically, does not affect CBs granted via script;
+#								# this = attacker (CB owner), from = defender (target country); default: { always = yes }
+#	destroy_if = { ... }	# trigger, evaluated daily to destroy CBs that have been granted via script ahead of expiration date;
+#								# this = attacker (CB owner), from = defender (target country); default: { always = no }
+#	show_notification = no/yes	# optional (default = yes), flag to control whether this CB will generate a notification (to avoid duplicate 
+# 								# notification when a claim CB is generated)
+#}
+
+cb_dragon = {
+	show_in_diplomacy = yes
+	show_notification = yes
+	potential = {
+		is_country_type = default	
+		has_country_flag = aleran
+	}
+	is_valid = {
+		NOT = { is_same_species = FROM }
+		OR = {
+			from = { has_ethic = ethic_fanatic_xenophobe }
+			AND = {
+				from = { has_ethic = ethic_fanatic_egalitarian }
+				OR = {
+					from = { has_ethic = ethic_spiritualist }
+					from = { has_ethic = ethic_xenophobe }
+					from = { has_ethic = ethic_militarist }
+				}
+			}
+			from = { has_ethic = ethic_fanatic_spiritualist }
+			from = { has_ethic = ethic_fanatic_militarist }
+			AND = {
+				from = { has_ethic = ethic_militarist }
+				OR = {
+					from = { has_ethic = ethic_spiritualist }
+					from = { has_ethic = ethic_xenophobe }
+				}
+			}
+			AND = {
+				from = { has_ethic = ethic_spiritualist }
+				from = { has_ethic = ethic_xenophobe }
+			}
+			AND = {
+				from = { has_ethic = ethic_fanatic_authoritarian }
+				OR = {
+					from = { has_ethic = ethic_spiritualist }
+					from = { has_ethic = ethic_militarist }
+				}
+			}
+			
+			#replaced with the block below
+			#from = { has_policy_flag = slavery_allowed }
+			#from = { has_policy_flag = purge_allowed }
+			from = {
+				any_owned_pop_species = {
+					OR = {
+						AND = {
+							has_citizenship_type = { country = from type = citizenship_purge }
+							OR = {
+								has_purge_type = { country = from type = purge_processing }		
+								has_purge_type = { country = from type = purge_matrix }		
+								has_purge_type = { country = from type = purge_normal }		
+								has_purge_type = { country = from type = purge_neutering }		
+								has_purge_type = { country = from type = purge_displacement }		
+								has_purge_type = { country = from type = purge_labor_camps }
+							}									
+						}
+						AND = {
+							has_citizenship_type = { country = from type = citizenship_slavery }
+							OR = {
+								has_slavery_type = { country = from type = slavery_livestock }
+								has_slavery_type = { country = from type = slavery_matrix }
+								has_slavery_type = { country = from type = slavery_domestic }
+								has_slavery_type = { country = from type = slavery_military }
+								has_slavery_type = { country = from type = slavery_normal }
+							}
+						}
+						OR = {
+							has_living_standard  = { country = from type = living_standard_poor }
+							has_living_standard  = { country = from type = living_standard_subsistence }
+							has_living_standard  = { country = from type = living_standard_servitude }
+							has_living_standard  = { country = from type = living_standard_none }
+						}
+					}				
+				}
+			}
+			
+			#from = { has_policy_flag = ai_outlawed }
+			from = { has_policy_flag = robots_outlawed }
+			from = { has_policy_flag = pre_sapients_purge }
+			from = { has_policy_flag = refugees_not_allowed }
+		}
+	}
+}

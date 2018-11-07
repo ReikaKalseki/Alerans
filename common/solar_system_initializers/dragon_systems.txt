@@ -1,0 +1,841 @@
+
+@distance = 50
+@base_moon_distance = 10
+
+dragon_system_initializer = {
+	name = "Aleris"
+	
+	class = "sc_a"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 34
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 158
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 193
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 365
+	}
+	
+	flags = { empire_home_system }
+	
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+    planet = {
+		name = "Aleris"
+        class = star
+        orbit_distance = 0
+        size = 20
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_immense_energy_deposit
+			}
+		}
+    }
+
+    planet = {
+		name = "Alo"
+        class = "pc_shattered"
+        orbit_distance = 24
+        orbit_angle = 246
+        has_ring = no
+        size = 12
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_rich_physics_deposit
+			}
+		}
+    }
+
+    planet = {
+		name = "Evek"
+        class = "pc_molten"
+        orbit_distance = 22
+        orbit_angle = 87
+        has_ring = no
+        size = 14
+		init_effect = {
+			add_modifier = { #only works if you add it twice
+				modifier = "tidal_locked"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "tidal_locked"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "asteroid_impacts"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "asteroid_impacts"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "chthonian_planet"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "chthonian_planet"
+				days = -1
+			}
+			orbital_deposit_tile = {
+				clear_deposits = yes
+			}
+		}
+    }
+
+    planet = {
+		name = "Kona"
+        class = "pc_gas_giant"
+        orbit_distance = 31
+        orbit_angle = 133
+        has_ring = yes
+        size = 22
+		init_effect = {
+			add_modifier = {
+				modifier = "wild_storms"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "wild_storms"
+				days = -1
+			}
+			orbital_deposit_tile = {
+				set_deposit = d_rich_energy_deposit
+			}
+		}
+    }
+	
+	planet = {
+		name = "Kalkea"
+		class = "pc_gas_giant"
+		orbit_distance = 39
+		orbit_angle = 212
+		size = 25
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_society_deposit
+			}
+		}
+	
+		moon = {
+			name = "Alera"
+			class = "pc_continental"
+			orbit_distance = 23
+			orbit_angle = 257
+			size = 20
+			starting_planet = yes
+			has_ring = no
+			tile_blockers = none
+			modifiers = none
+			flags = { planet_earth }
+			
+			init_effect = {
+				prevent_anomaly = yes
+				generate_start_buildings_and_blockers = yes
+				add_modifier = {
+					modifier = "lush_planet"
+					days = -1
+				}
+				add_modifier = {
+					modifier = "lush_planet"
+					days = -1
+				}
+				#add_modifier = {
+				#	modifier = "atmospheric_aphrodisiac"
+				#	days = -1
+				#}
+				#add_modifier = {
+				#	modifier = "atmospheric_aphrodisiac"
+				#	days = -1
+				#}
+			}
+			
+			moon = {
+				name = "Temi"
+				class = "pc_barren"
+				size = 4
+				orbit_distance = 4
+				orbit_angle = 40
+				has_ring = no
+				init_effect = {
+					add_modifier = {
+						modifier = "tidal_locked"
+						days = -1
+					}
+					orbital_deposit_tile = {
+						clear_deposits = yes
+					}
+				}
+			}
+			
+			moon = {
+				name = "Deso"
+				class = "pc_barren_cold"
+				size = 2
+				orbit_distance = 4
+				orbit_angle = 117
+				has_ring = no
+				init_effect = {
+					orbital_deposit_tile = {
+						clear_deposits = yes
+					}
+				}
+			}
+		}
+	}
+	
+	planet = {
+		name = "Seryl"
+		class = "pc_ice_asteroid"
+		orbit_distance = 43
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_rich_mineral_deposit
+			}
+		}
+	}
+	
+	planet = {
+		name = "Reti"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 35
+		size = 5
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				clear_deposits = yes
+			}
+		}
+	}
+	
+	planet = {
+		name = "Vekta"
+		class = "pc_ice_asteroid"
+		orbit_distance = 35
+		orbit_angle = 265
+		size = 5
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_mineral_deposit
+			}
+		}
+	}
+	
+	planet = {
+		name = "Petho"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 320
+		size = 5
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				clear_deposits = yes
+			}
+		}
+	}
+	
+	planet = {
+		name = "Mau"
+        class = "pc_gas_giant"
+        orbit_distance = 68
+        orbit_angle = 112
+        has_ring = no
+        size = 41
+
+		init_effect = {
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
+		
+		moon = {
+			name = "Tako"
+			class = "pc_molten"
+			size = 5
+			orbit_distance = 18
+			orbit_angle = 40
+			has_ring = no
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+			}
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+			}
+			init_effect = {
+				orbital_deposit_tile = {
+					set_deposit = d_physics_deposit
+				}
+			}
+		}
+		
+		moon = {
+			name = "Lepi"
+			class = "pc_barren_cold"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 117
+			has_ring = no
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+			}
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+			}
+			init_effect = {
+				orbital_deposit_tile = { clear_deposits = yes }
+			}
+		}
+		
+		moon = {
+			name = "Sifa"
+			class = "pc_barren_cold"
+			size = 6
+			orbit_distance = 2
+			orbit_angle = 13
+			has_ring = no
+			init_effect = {
+				orbital_deposit_tile = { clear_deposits = yes }
+			}
+		}
+		
+		moon = {
+			name = "Nenta"
+			class = "pc_barren_cold"
+			size = 4
+			orbit_distance = 8
+			orbit_angle = 117
+			has_ring = no
+			init_effect = {
+				orbital_deposit_tile = { clear_deposits = yes }
+			}
+		}
+    }
+
+    planet = {
+		name = "Zali"
+        class = "pc_barren_cold"
+        orbit_distance = 55
+        orbit_angle = 58
+        has_ring = yes
+
+		init_effect = {
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "ultra_rich"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "ultra_rich"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "weak_magnetic_field"
+				days = -1
+			}		
+			add_modifier = {
+				modifier = "weak_magnetic_field"
+				days = -1
+			}	
+		}
+        size = 16
+    }
+	
+	planet = {
+		name = "Nekla"
+		class = "pc_ice_asteroid"
+		orbit_distance = 49
+		orbit_angle = 46
+		size = 7
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_vast_mineral_deposit
+			}
+		}
+	}
+	
+	planet = {
+		name = "Zenthi"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 75
+		size = 6
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = {
+				set_deposit = d_rich_mineral_deposit
+			}
+		}
+	}
+	
+	planet = {
+		name = "Ristho"
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 112
+		size = 8
+		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
+	}
+
+    planet = {
+		name = "Surla"
+        class = "pc_t_star"
+        orbit_distance = 67
+        orbit_angle = 316
+        has_ring = yes
+        size = 40
+
+        init_effect = {
+            orbital_deposit_tile = { clear_deposits = yes }
+        }
+		
+		planet = {
+			name = "Ikta"
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 41
+			orbit_angle = 40
+			has_ring = no
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+				orbital_deposit_tile = { clear_deposits = yes }
+			}
+		}
+    }
+	
+	neighbor_system = {
+		distance = { min = 10 max = 50 }	
+		initializer = "aleris_neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 10 max = 40 }	
+		initializer = "aleris_neighbor_t1_first_colony"
+	}
+}
+
+# Aleris Neighbor Tier 1
+aleris_neighbor_t1 = {
+	name = "Lanka"
+	class = sc_g
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			#every_neighbor_system = {
+			#	set_star_flag = empire_cluster
+			#}
+		}
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 20
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 1 max = 2 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 3 max = 5 }
+		orbit_distance = 20
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "aleris_neighbor_t2_second_colony"
+	}
+}
+
+# Neighbor Tier 1 First Colony
+aleris_neighbor_t1_first_colony = {	
+	name = "Reylana"
+	class = sc_trinary_bfk
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			#every_neighbor_system = {
+			#	set_star_flag = empire_cluster
+			#}
+		}
+	}
+
+	planet = {
+		name = "Reylana A"
+		count = 1
+		class = pc_b_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 32
+		has_ring = no
+	}
+
+	planet = {
+		name = "Reylana B"
+		count = 1
+		class = pc_f_star
+		orbit_distance = 320
+		orbit_angle = 40
+		size = 27
+		has_ring = no
+
+		planet = {
+			name = "Reylana B I"
+			class = pc_molten
+			size = 18
+			orbit_distance = 65
+		}
+		planet = {
+			name = "Reylana B II"
+			class = pc_barren
+			size = 25
+			orbit_distance = 25
+
+		}
+		planet = {
+			name = "Reylana B III"
+			class = pc_gas_giant
+			size = 35
+			orbit_angle = 330
+			orbit_distance = 25
+		}
+	}
+
+	planet = {
+		name = "Reylana C"
+		count = 1
+		class = pc_k_star
+		orbit_distance = 35
+		orbit_angle = 130
+		size = 15
+		has_ring = no
+
+		planet = {
+			name = "Reylana C I"
+			class = pc_molten
+			size = 22
+			orbit_distance = 25
+		}
+
+		planet = {
+			name = "Reylana C II"
+			class = pc_gas_giant
+			size = 28
+			orbit_distance = 25
+		}
+	}
+	
+	change_orbit = -320
+
+	planet = {
+		count = 2
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 30
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 12 max = 18 }
+	}
+	
+	planet = {
+		count = 3
+		orbit_distance = 25
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {			
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = @distance }	
+		initializer = "aleris_neighbor_t2"
+	}
+	
+	neighbor_system = {
+		distance = { min = 14 max = 60 }	
+		initializer = "aleris_neighbor_science_outpost"
+	}
+}
+
+
+# Aleris Neighbor Tier 2
+aleris_neighbor_t2 = {
+	name = "Salthea"
+	class = sc_binary_fm
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 120
+	}
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			#every_neighbor_system = {
+			#	set_star_flag = empire_cluster
+			#}
+		}
+	}
+
+	planet = {
+		name = "Salthea A"
+		count = 1
+		class = pc_f_star
+		orbit_distance = 30
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	planet = {
+		name = "Salthea B"
+		count = 1
+		class = pc_m_star
+		orbit_distance = 0
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		count = 2
+		orbit_distance = 65
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = { min = 3 max = 7 }
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		class = pc_ocean
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {		
+			count = { min = 0 max = 1 }
+			orbit_distance = 5
+		}
+	}
+}
+
+# Aleris Neighbor Tier 2 Second Colony
+aleris_neighbor_t2_second_colony = {
+	name = "Freyskol"
+	class = sc_binary_gg
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			#every_neighbor_system = {
+			#	set_star_flag = empire_cluster
+			#}
+		}
+	}
+
+	planet = {
+		name = "Freyskol A"
+		count = 1
+		class = pc_g_star
+		orbit_distance = 30
+		orbit_angle = 1
+		size = 26
+		has_ring = no
+	}
+
+	planet = {
+		name = "Freyskol B"
+		count = 1
+		class = pc_g_star
+		orbit_distance = 0
+		orbit_angle = 305
+		size = 26
+		has_ring = no
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = 3
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 14 max = 24 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 1 max = 3 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+# Aleris Neighbor Science Outpost
+aleris_neighbor_science_outpost = {
+	name = "Meiza"
+	class = sc_trinary_nnm
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			#every_neighbor_system = {
+			#	set_star_flag = empire_cluster
+			#}
+		}
+	}
+
+	planet = {
+		name = "Meiza A"
+		count = 1
+		class = pc_neutron_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 20
+		has_ring = no
+	}
+
+	planet = {
+		name = "Meiza B"
+		count = 1
+		class = pc_neutron_star
+		orbit_distance = 40
+		orbit_angle = 48
+		size = 16
+		has_ring = no
+	}
+
+	planet = {
+		name = "Meiza C"
+		count = 1
+		class = pc_m_star
+		orbit_distance = 70
+		orbit_angle = 213
+		size = 27
+		has_ring = yes
+	}
+	
+	change_orbit = 45
+	
+	planet = {
+		count = 2
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+	}
+}

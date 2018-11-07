@@ -1,0 +1,443 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+
+#######
+##What others think of Alerans
+#######
+opinion_dragon_cold = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_egalitarian"
+		}
+	}
+	opinion = {
+		base = -10
+	}
+}
+
+opinion_dragon_ruthless = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_egalitarian"
+		}
+	}
+	opinion = {
+		base = -20
+	}
+}
+
+opinion_dragon_antitheist = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_spiritualist"
+		}
+	}
+	opinion = {
+		base = -20
+	}
+}
+
+opinion_dragon_infidel = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_spiritualist"
+		}
+	}
+	opinion = {
+		base = -50
+	}
+}
+
+opinion_dragon_meddler = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_xenophobe"
+		}
+		NOR = {
+			this = {
+				has_ethic = "ethic_materialist"
+			}
+			this = {
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+	opinion = {
+		base = -20
+	}
+}
+
+opinion_dragon_oppressor = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		NOR = {
+			this = {
+				has_ethic = "ethic_materialist"
+			}
+			this = {
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+	opinion = {
+		base = -60
+	}
+}
+
+opinion_dragon_meek = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_militarist"
+		}
+	}
+	opinion = {
+		base = -10
+	}
+}
+
+opinion_dragon_rightpath = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_materialist"
+		}
+		this = {
+			has_ethic = "ethic_authoritarian"
+		}
+	}
+	opinion = {
+		base = 15
+	}
+}
+
+opinion_dragon_moral = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_materialist"
+		}
+	}
+	opinion = {
+		base = 25
+	}
+}
+
+opinion_dragon_principled = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_materialist"
+		}
+		this = {
+			has_ethic = "ethic_authoritarian"
+		}
+	}
+	opinion = {
+		base = 20
+	}
+}
+
+opinion_dragon_seethelight = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_materialist"
+		}
+		this = {
+			has_ethic = "ethic_authoritarian"
+		}
+		this = {
+			has_ethic = "ethic_xenophile"
+		}
+	}
+	opinion = {
+		base = 40
+	}
+}
+
+
+
+#######
+##What Alerans think of others
+#######
+opinion_dragon_misguided = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_egalitarian"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -5
+	}
+}
+
+opinion_dragon_naive = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_egalitarian"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -15
+	}
+}
+
+opinion_dragon_barbarians = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_militarist"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -100
+	}
+}
+
+opinion_dragon_ignorant = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_spiritualist"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -20
+	}
+}
+
+opinion_dragon_zealot = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_spiritualist"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -60
+	}
+}
+
+opinion_dragon_jackass = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -30
+	}
+}
+
+opinion_dragon_tyrant = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_authoritarian"
+		}
+		NOR = {
+			FROM = {
+				has_ethic = "ethic_xenophile"
+			}
+			FROM = {
+				has_ethic = "ethic_materialist"
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -80
+	}
+}
+
+opinion_dragon_incompetent = {
+	trigger = {
+		OR = {
+			from = {
+				any_owned_pop_species = {
+					OR = {
+						has_living_standard  = { country = from type = living_standard_poor }
+						has_living_standard  = { country = from type = living_standard_subsistence }
+						has_living_standard  = { country = from type = living_standard_servitude }
+						has_living_standard  = { country = from type = living_standard_none }
+					}		
+				}
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -150
+	}
+}
+
+opinion_dragon_mustbestopped = {
+	trigger = {
+		OR = {
+			from = {
+				any_owned_pop_species = {
+					OR = {
+						has_citizenship_type = { country = from type = citizenship_purge }
+						has_citizenship_type = { country = from type = citizenship_slavery }
+					}				
+				}
+			}
+			from = { has_policy_flag = pre_sapients_purge }
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -500
+	}
+}
+
+opinion_dragon_ontheway = {
+	trigger = {
+		OR = {
+			FROM = {
+				has_ethic = "ethic_materialist"
+			}
+			FROM = {
+				has_ethic = "ethic_xenophile"
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = 20
+	}
+}
+
+opinion_dragon_close = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_materialist"
+		}
+		FROM = {
+			has_ethic = "ethic_xenophile"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = 50
+	}
+}
+
+opinion_dragon_allies = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_authoritarian"
+		}
+		FROM = {
+			has_ethic = "ethic_materialist"
+		}
+		FROM = {
+			has_ethic = "ethic_xenophile"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = 200
+	}
+}
+
+opinion_dragon_allieswar = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_authoritarian"
+		}
+		FROM = {
+			has_ethic = "ethic_materialist"
+		}
+		FROM = {
+			has_ethic = "ethic_xenophile"
+		}
+		from = {
+			any_war = {
+				any_defender = {
+					OR = {
+						has_ethic = "ethic_fanatic_xenophobe"
+						has_ethic = "ethic_spiritualist"
+						has_ethic = "ethic_fanatic_spiritualist"
+						has_ethic = "ethic_fanatic_militarist"
+						AND = {
+							has_ethic = "ethic_militarist"
+							has_ethic = "ethic_xenophobe"
+						}
+						AND = {
+							has_ethic = "ethic_fanatic_authoritarian"
+							OR = {
+								has_ethic = "ethic_xenophobe"
+								has_ethic = "ethic_militarist"
+							}
+						}
+					}
+				}
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = 200
+	}
+}

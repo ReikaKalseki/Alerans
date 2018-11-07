@@ -1,0 +1,193 @@
+#civic_example = {
+#	playable = {}								# AND trigger, no scope; use this to prevent the civic from being selectable by the player (UI)
+#	potential = {}								# requirements list, see ../readme_requirements.txt
+#	possible = {}								# requirements list, see ../readme_requirements.txt
+#	pickable_at_start = yes / no				# default: yes
+#	modification = yes / no						# default: yes, set to no to prevent adding or removing this after creation of the empire
+#
+#	random_weight = { base = 5 }				# scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
+#
+#	modifier = {}								# modifier added to the country if the civic is selected and valid
+#	can_build_ruler_ship = yes / no				# default: no
+#	traits = { trait = ... }					# default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
+#	has_secondary_species = {					# default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
+#		traits = { trait = ... }					# default: empty; trait set to enforce on the secondary species. They cannot be removed, but more can be added if points/picks permit
+#	}
+#}
+
+civic_dragon_gov = {
+	modification = no
+	potential = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	possible = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	random_weight = { base = 0 }
+	modifier = {
+		edict_cost = -0.1
+		country_leader_cap = 1
+		country_resource_influence_add = 2
+		country_core_sector_system_cap = 2
+		country_starbase_capacity_add = 3
+		#pop_ethic_materialist_attraction_mult = 0.1
+		pop_government_ethic_attraction = 0.4
+		country_naval_cap_mult = 0.2
+		country_war_exhaustion_mult = 0.6
+		subject_integration_influence_cost_mult = 0.8
+		#pop_other_species_owner_happiness = -0.3 #penalizes owning robots too
+		alliance_influence_cost = -0.8
+		country_claim_influence_cost_mult = 0.8
+		faction_influence_mult = -0.25
+		rivalry_influence_gain = -0.75
+	}
+
+	#description = "civic_tooltip_dragongov_effects"
+}
+
+civic_dragon_tech = {
+	modification = no
+	potential = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	possible = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	random_weight = { base = 0 }
+	modifier = {
+		country_resource_energy_mult = 0.1
+		country_resource_minerals_mult = 0.3
+		pop_robot_build_speed_mult = 0.25
+		#pop_robot_production_output = 0.1
+		planet_building_build_speed_mult = 0.25
+		terraform_speed_mult = 0.25
+		planet_colony_development_speed_mult = 0.25
+		planet_clear_blocker_time_mult = -0.25
+		#pop_robot_upkeep_mult = 0.2
+		country_ship_upgrade_cost_mult = 0.2
+		planet_building_cost_mult = 0.2
+		planet_building_upkeep_mult = 0.1
+		shipsize_colonizer_build_cost_mult = 0.3
+	}
+
+	#description = "civic_tooltip_dragontech_effects"
+}
+
+civic_dragon_research = {
+	modification = no
+	potential = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	possible = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	random_weight = { base = 0 }
+	modifier = {
+		science_ship_survey_speed = 0.25
+		ship_anomaly_research_speed_mult = 0.2
+		planet_army_build_speed_mult = -0.2
+		starbase_shipyard_build_speed_mult = -0.1
+		shipsize_science_build_speed_mult = 0.4
+		num_tech_alternatives_add = 1
+		category_statecraft_research_speed_mult = -0.15
+		category_psionics_research_speed_mult = -0.3
+		category_military_theory_research_speed_mult = -0.2
+		category_field_manipulation_research_speed_mult = 0.1
+		category_particles_research_speed_mult = 0.1
+		category_biology_research_speed_mult = 0.1
+		category_new_worlds_research_speed_mult = 0.05
+	}
+
+	#description = "civic_tooltip_dragonresearch_effects"
+}
+
+civic_dragon_init = {
+	modification = no
+	potential = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	possible = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	random_weight = { base = 0 }
+
+	description = "civic_tooltip_dragoninit_effects"
+}
+
+civic_dragon_takeover = {
+	modification = no
+	pickable_at_start = no
+	potential = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	possible = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	random_weight = { base = 0 }
+	modifier = {
+		pop_happiness = 0.1
+		country_resource_food_mult = 0.15
+		pop_government_ethic_attraction = 0.4
+		pop_ethics_shift_speed_mult = 0.2
+		pop_other_species_happiness = 1
+		planet_unrest_mult = -0.25
+		num_tech_alternatives_add = 1
+		planet_army_build_speed_mult = -0.5
+		country_naval_cap_mult = -0.5
+		starbase_shipyard_build_speed_mult = -0.5
+		country_war_exhaustion_mult = 2
+		pop_slave_resource_output = -1
+		technology_cost_num_colonies_mult = -0.5
+		technology_cost_num_systems_mult = -0.5
+	}
+}

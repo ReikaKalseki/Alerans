@@ -1,0 +1,53 @@
+#gov_example = {
+#	possible = {}							# Determines if a government name can be chosen. AND trigger, scope: country; valid triggers: has_ethic, has_authority, has_valid_civic; everything else is undefined behavior!
+#	weight = {								# scriptable value, scope: country; the (possible) government type with the biggest weight is assigned to the country
+#		base = 100
+#	}
+#
+#	ruler_title = RT_KING					# translation tag for male ruler's title
+#	ruler_title_female = RT_QUEEN			# translation tag for female ruler's title
+#	heir_title = HT_CROWN_PRINCE			# translation tag for male heir's title
+#	heir_title_female = HT_CROWN_PRINCESS	# translation tag for female heir's title
+#	use_regnal_names = yes / no				# default: no
+#	dynastic_last_names = yes / no			# default: no
+#	should_force_rename = yes / no			# default: no - if set to yes, empires changing to or from this government will be renamed even if authority type does not change
+#	
+#	election_candidates = {					# scriptable value to weight election candidates for oligarchic elections, scope: leader
+#		modifier = {
+#			add = 100
+#			leader_class = ruler
+#		}
+#	}
+#}
+
+gov_dragon = {
+	ruler_title = DRAGON_RULER_MALE
+	ruler_title_female = DRAGON_RULER_FEMALE
+	
+	leader_class = scientist 	# Initial ruler will become this if elected out of office
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = scientist
+		}
+	}
+	
+	should_force_rename = yes
+
+	possible = {
+		has_authority = auth_dragon
+		has_ethic = ethic_materialist
+		has_ethic = ethic_xenophile
+		has_ethic = ethic_authoritarian
+		has_valid_civic = civic_dragon_init
+	}
+
+	weight = {
+		base = 3600
+	}
+}

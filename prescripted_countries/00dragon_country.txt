@@ -1,0 +1,68 @@
+aleran
+={
+	ship_prefix="DRGN"
+	species={
+		class="Dragon"
+		portrait="dragon"
+		name="Aleran"
+		plural="Alerans"
+		adjective="Aleran"
+		name_list="DRGN1"
+		trait="trait_solitary"
+		trait="trait_dragonbody"
+		#trait="trait_fast_learner"
+		#trait="trait_decadent"
+	}
+	name="Aleran Commonwealth"
+	advisor_voice_type="dragon_advisor"
+	adjective="Aleran"
+	authority="auth_dragon"
+	government="gov_dragon"
+	planet_name="Alera"
+	planet_class="pc_continental"
+	system_name="Aleris"
+	initializer="dragon_system_initializer"
+	graphical_culture="plantoid_01"
+	city_graphical_culture="reptilian_01"
+	empire_flag={
+		icon={
+			category="blocky"
+			file="flag_blocky_12.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"black"
+			"purple"
+			"null"
+			"null"
+		}
+	}
+	ruler={
+		gender=female
+		name="Kaeva Alixiati"
+		portrait="dgnfemale13"
+		texture=0
+		hair=0
+		clothes=0
+		ruler_title_female="Empress"
+	}
+	spawn_as_fallen=no
+	ignore_portrait_duplication=no
+	room="machine_room"
+	#spawn_enabled=yes
+	spawn_enabled=always
+	ethic="ethic_materialist"
+	ethic="ethic_xenophile"
+	ethic="ethic_authoritarian"
+	civics={
+		#"civic_dragon_gov"
+		"civic_dragon_tech"
+		#"civic_dragon_research"
+		"civic_dragon_init"
+	}
+
+	flags = { aleran custom_start_screen }
+}

@@ -1,0 +1,7 @@
+aleran_expansion = {
+	country_starbase_influence_cost_mult = -0.2
+	mod_distance_to_capital_static_modifier_efficiency_mult = -1
+	tradition_cost_num_colonies_mult = -0.5
+	tradition_cost_num_systems_mult = -0.5
+	icon = "gfx/interface/icons/modifiers/aleran_expansion.dds"
+}
