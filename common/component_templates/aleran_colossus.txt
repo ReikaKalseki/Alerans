@@ -1,0 +1,55 @@
+# ####################
+#  Planet killer beam?
+# ####################
+
+#weapon_component_template = {
+#	key = "PLANET_DESTRUCTION_COMPONENT"
+#	size = planet_killer
+#	entity = "invisible_turret_entity"
+#	type = planet_killer
+#	static_rotation = yes
+#	use_ship_kill_target = no
+#
+#	icon = GFX_technology_unknown
+#	icon_frame = 1
+#
+#	component_set = "PLANET_KILLER_1"
+#
+#	planet_destruction_gfx = "neutron_planet_gfx"
+#}
+
+weapon_component_template = { #induces chemical bliss, and destroys the morale of armies
+	key = "PLANET_KILLER_STUPOR"
+	size = planet_killer
+	entity = "invisible_turret_entity"
+	type = planet_killer
+	static_rotation = yes
+	use_ship_kill_target = no
+
+	prerequisites = { "tech_pk_stupor" }
+
+	icon = GFX_ship_part_stupor_inducer
+	icon_frame = 1
+
+	component_set = "PLANET_KILLER_STUPOR"
+
+	planet_destruction_gfx = "god_ray_gfx"
+}
+
+weapon_component_template = { #hits a star, and triggers a massive solar event -> wipes out all hostile electronics -> destroys all enemy navy, starbase, shield domes
+	key = "PLANET_KILLER_STARRAY"
+	size = planet_killer
+	entity = "invisible_turret_entity"
+	type = planet_killer
+	static_rotation = yes
+	use_ship_kill_target = no
+
+	prerequisites = { "tech_pk_starray" }
+
+	icon = GFX_ship_part_starray
+	icon_frame = 1
+
+	component_set = "PLANET_KILLER_STARRAY"
+
+	planet_destruction_gfx = "neutron_planet_gfx"
+}

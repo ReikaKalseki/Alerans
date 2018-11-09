@@ -1,0 +1,15 @@
+pm_stupor_drugged = {
+	spawn_chance = {
+		
+	}
+	
+	modifier = "stupor_drugged"
+}
+
+pm_stupor_drug_withdrawal = {
+	spawn_chance = {
+		
+	}
+	
+	modifier = "stupor_drug_withdrawal"
+}

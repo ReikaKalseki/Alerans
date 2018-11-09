@@ -1,0 +1,15 @@
+# Icons set here are the ones shown in component editor list.
+
+component_set = {
+	key = "PLANET_KILLER_STUPOR"
+	
+	icon = "GFX_ship_part_stupor_inducer"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "PLANET_KILLER_STARRAY"
+	
+	icon = "GFX_ship_part_starray"
+	icon_frame = 1
+}

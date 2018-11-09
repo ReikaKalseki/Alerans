@@ -75,7 +75,57 @@ country_event = {
 		owner = {
 			add_modifier = {
 				modifier = aleran_expansion
-				years = 1000
+				days = -1
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.363
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.363.name"
+	desc = "dragon_ongoing.363.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_construction_03
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_expansion_2}
+		has_technology = "tech_aleran_expansion"
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	immediate = {
+		set_country_flag = aleran_expansion_2
+	}
+	
+	option = {
+		name = "dragon_ongoing.363.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			#add_modifier = {
+			#	modifier = aleran_expansion_2
+			#	days = -1
+			#}
+			every_owned_ship = {
+				limit = {
+					OR = {
+						is_ship_class = shipclass_colonizer
+						is_ship_class = shipclass_science
+						is_ship_class = shipclass_construction
+					}
+				}
+				add_modifier = {
+					modifier = aleran_expansion_2b
+					days = -1
+				}
 			}
 		}
 		

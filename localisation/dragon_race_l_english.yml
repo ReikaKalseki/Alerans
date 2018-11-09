@@ -48,12 +48,54 @@ civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
 
 
+tech_aleran_expansion:0 "Commonwealth Administration and Expansion"
+tech_aleran_expansion_desc:0 "Maintaining the wide borders of our nation, and laying the foundation for further growth."
+
+
 dragon_ongoing.362.name:0 "Unfettered Expansion"
 dragon_ongoing.362.desc:0 "The Aleran Commonwealth has been spreading among the stars, and has been made the better for it. This has made the process of acquiring new systems somewhat simpler to conduct."
 dragon_ongoing.362.click:0 "Excellent."
 
+dragon_ongoing.363.name:0 "Reaching for the Stars"
+dragon_ongoing.363.desc:0 "Expanding our borders has brought us unimaginable prosperity and opened entire new vistas of scientific discovery. We must make sure that we continue our ability to reach and maintain this."
+dragon_ongoing.363.click:0 "Excellent."
+
 aleran_expansion:0 "Unfettered Expansion"
 aleran_expansion_desc:0 "We have the ability and the motivation to reach for all the stars we can find."
+
+aleran_expansion_2:0 "??"
+aleran_expansion_2_desc:0 "??"
+
+aleran_expansion_2b:0 "Expansive Empire"
+aleran_expansion_2b_desc:0 "In order to adequately serve the Commonwealth, we need to be able to rapidly traverse it."
+
+
+stupor_drugged:0 "Drugged Stupor"
+stupor_drugged_desc:0 "The atmosphere of this planet has been laced with psychoactive compounds. The population is happy, but lethargic and utterly useless, not to mention suggestible."
+
+stupor_drug_withdrawal:0 "Drug Withdrawal"
+stupor_drug_withdrawal_desc:0 "The population of this planet is suffering severe withdrawal from stupor-inducing drugs. They are miserable and very much hostile to the current leadership."
+
+stupor_removal:0 "Stupor-Inducing Drug Cleanup"
+stupor_removal_DESC:0 "Cleaning the drugs from the atmosphere of the affected planet, so that the population can once again become productive."
+
+
+aleran_colossus.3.name:0 "Population in Withdrawal"
+aleran_colossus.3.desc:0 "The removal of the psychoactive drugs from the atmosphere of [Root.GetName] has had an unintended side effect. The entire population of the planet is now suffering from withdrawal symptoms, and is very unhappy as a result. Some factions there even want to return to their previous conditions. Time will ease these problems, but it will take years."
+aleran_colossus.3.wait:0 "Siiiiiiiiiiiiiiiiigh"
+aleran_colossus.3.kill:0 "We don't have years. They have outlived their utility."
+
+
+PLANET_KILLER_STUPOR:0 "Atmospheric Drug Lacing"
+PLANET_KILLER_STUPOR_DESC:0 "Spreads psychoactive compounds throughout a planet's atmosphere to make the population complacent and unproductive. Much more humane than neutron radition or planet cracking, and reversible."
+PLANET_KILLER_STARRAY:0 "Solar Event Triggering"
+PLANET_KILLER_STARRAY_DESC:0 "Sends vast quantities of energy into the central star of a system, destabilizing it. Most of the time, this causes a strong solar storm, destroying all unshielded electronics. More...violent reactions are possible in some cases."
+PLANET_KILLER_STUPOR_ACTION:0 "Spread Drugs"
+PLANET_KILLER_STARRAY_ACTION:0 "Trigger Solar Event"
+FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STUPOR:0 "Preparing to lace $PLANET|Y$'s atmosphere with stupor-inducing drugs"
+FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STARRAY:0 "Preparing to destabilize $PLANET|Y$"
+MESSAGE_DESC_FOR_PLANET_KILLER_STUPOR:0 "was laced with drugs by"
+MESSAGE_DESC_FOR_PLANET_KILLER_STARRAY:0 "was destabilized by"
 
 
 war_goal_wg_dragon:0 "Enlighten"

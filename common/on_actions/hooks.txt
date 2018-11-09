@@ -1,0 +1,18 @@
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		#aleran_colossus.2
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_STUPOR = {
+	events = {
+		aleran_colossus.100
+	}
+}
+
+on_destroy_planet_with_PLANET_KILLER_STARRAY = {
+	events = {
+		aleran_colossus.200
+	}
+}

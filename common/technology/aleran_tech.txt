@@ -1,0 +1,79 @@
+tech_aleran_expansion = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_colonial_centralization" }
+	is_reverse_engineerable = no
+	weight = @tier3weight3
+	
+	weight_modifier = {
+		factor = 4
+	}
+		
+	modifier = {
+		country_core_sector_system_cap = 100 #was 4
+		country_starbase_capacity_add = 5
+		terraform_speed_mult = 0.1
+		science_ship_survey_speed = 0.2
+	}
+	
+	potential = {
+		has_country_flag = aleran_expansion
+		num_starbases > 50
+	}
+}
+
+#Colossus
+tech_pk_starray = {
+	area = engineering
+	cost = @tier5cost3
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { voidcraft }
+	prerequisites = { "tech_colossus" }
+	ai_update_type = military
+	weight = @tier5weight3
+	
+	potential = {
+		host_has_dlc = "Apocalypse"
+		has_country_flag = colossus_project
+		has_valid_civic = civic_dragon_gov
+	}
+	
+	weight_modifier = {
+		factor = 1
+	}
+	
+	ai_weight = {
+		factor = 0.25
+	}
+}
+
+#Colossus
+tech_pk_stupor = {
+	area = engineering
+	cost = @tier5cost3
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { voidcraft }
+	prerequisites = { "tech_colossus" }
+	ai_update_type = military
+	weight = @tier5weight3
+	
+	potential = {
+		host_has_dlc = "Apocalypse"
+		has_country_flag = colossus_project
+		has_valid_civic = civic_dragon_gov
+	}
+	
+	weight_modifier = {
+		factor = 1
+	}
+	
+	ai_weight = {
+		factor = 0.25
+	}
+}
