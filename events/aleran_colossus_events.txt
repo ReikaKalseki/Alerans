@@ -107,15 +107,6 @@ planet_event = {
 		if = {
 			limit = {
 				exists = owner
-				owner = { NOT = { is_same_value = from.owner } }
-			}
-			from.owner = {
-				country_event = { id = aleran_colossus.101 }
-			}
-		}
-		if = {
-			limit = {
-				exists = owner
 				owner = {
 					NOT = { is_same_value = from.owner }
 					OR = {
@@ -235,32 +226,6 @@ planet_event = {
 	}
 }
 
-country_event = {
-	id = aleran_colossus.101
-	title = aleran_colossus.101.name
-	desc = aleran_colossus.101.desc
-	picture = GFX_evt_planet_beam
-	show_sound = event_mystic_reveal
-	location = from
-	
-	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_country_flag = fired_godray }
-	}
-
-	immediate = {
-		set_country_flag = fired_godray
-	}
-
-	option = {
-		name = OK
-		from = {
-			custom_tooltip = aleran_colossus.101.tooltip
-		}
-	}
-}
-
 planet_event = {
 	id = aleran_colossus.200
 	hide_window = yes
@@ -274,14 +239,10 @@ planet_event = {
 			}
 			random_list = {
 				20 = {
-					from = {
-						planet_event = { id = aleran_colossus.201 days = 2 random = 10 }
-					}
+					planet_event = { id = aleran_colossus.201 days = 2 random = 10 }
 				}
 				80 = {
-					from = {
-						planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
-					}
+					planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
 				}
 			}
 		}
@@ -291,14 +252,10 @@ planet_event = {
 			}
 			random_list = {
 				7 = {
-					from = {
-						planet_event = { id = aleran_colossus.201 days = 2 random = 10 }
-					}
+					planet_event = { id = aleran_colossus.201 days = 2 random = 10 }
 				}
 				93 = {
-					from = {
-						planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
-					}
+					planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
 				}
 			}
 		}
@@ -308,18 +265,14 @@ planet_event = {
 			}
 			random_list = {
 				1 = {
-					from = {
-						planet_event = { id = aleran_colossus.201 days = 2 random = 10 }
-					}
+					planet_event = { id = aleran_colossus.201 days = 2 random = 10 }
 				}
 				99 = {
-					from = {
-						planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
-					}
+					planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
 				}
 			}
 		}
-		else {
+		else = {
 			from = {
 				planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
 			}
@@ -334,7 +287,47 @@ planet_event = { #star goes nova, destroying everything
 	is_triggered_only = yes
 
 	immediate = {
-		
+		solar_system = { #system scope
+			every_system_megastructure = {
+				from = {remove_megastructure = this}
+			}
+			every_fleet_in_system = {
+				destroy_fleet = this
+			}
+			every_system_planet = {
+				if = {
+					limit = {
+						is_star = yes
+					}
+					change_pc = pc_black_hole
+				}
+				else_if = {
+					limit = {
+						OR = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_rock_asteroid
+							is_planet_class = pc_ice_asteroid
+						}
+					}
+					remove_planet = yes
+				}
+				else_if = {
+					limit = {
+						is_planet_class = pc_gas_giant
+					}
+					change_pc = pc_broken
+				}
+				else = {
+					change_pc = pc_shattered
+				}
+				clear_planet_modifiers = yes 
+				destroy_colony = yes
+				reroll_deposits = yes
+				#orbital_deposit_tile = {}
+				set_ring = no
+			}
+			asteroid_distance = 0
+		}
 	}
 }
 
