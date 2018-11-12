@@ -47,6 +47,9 @@ civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YT
 civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
 
+SUBJECT_dragon_control:0 "Aleran Satellite"
+SUBJECT_DESC_vassal:0 "Satellite empires are ones that have been overthrown by the Aleran Commonwealth. They take on the commonwealth's style of governance and ethics, are forbidden from expanding their borders, and cannot enter diplomacy on their own. They can be integrated directly, at significant cost."
+
 
 tech_aleran_expansion:0 "Commonwealth Administration and Expansion"
 tech_aleran_expansion_desc:0 "Maintaining the wide borders of our nation, and laying the foundation for further growth."
@@ -85,6 +88,18 @@ aleran_colossus.3.desc:0 "The removal of the psychoactive drugs from the atmosph
 aleran_colossus.3.wait:0 "Siiiiiiiiiiiiiiiiigh"
 aleran_colossus.3.kill:0 "We don't have years. They have outlived their utility."
 
+aleran_colossus.204.name:0 "Stellar Instability Detected"
+aleran_colossus.204.desc:0 "After being struck with the energy pulse from the enemy ship, [Root.GetName] has been showing signs of instability. Solar activity is fluctuating on a daily basis, and the magnetic fields are abnormally intense. The effects this will have on the system is as yet unknown."
+aleran_colossus.204.click:0 "Odd..."
+
+aleran_colossus.205.name:0 "Unnatural Supernova"
+aleran_colossus.205.desc:0 "The enemy ship's attempt to destabilize [Root.GetName] was...far more successful than either they or us desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. The radiation has also damaged planets in nearby systems."
+aleran_colossus.205.click:0 "#$@&!!"
+
+aleran_colossus.206.name:0 "Unnatural Supernova"
+aleran_colossus.206.desc:0 "The attempt to destabilize [Root.GetName] was far more successful than we could have desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. Our colossus is also missing and presumed destroyed."
+aleran_colossus.206.click:0 "#$@&!!"
+
 
 PLANET_KILLER_STUPOR:0 "Atmospheric Drug Lacing"
 PLANET_KILLER_STUPOR_DESC:0 "Spreads psychoactive compounds throughout a planet's atmosphere to make the population complacent and unproductive. Much more humane than neutron radition or planet cracking, and reversible."
@@ -106,9 +121,9 @@ casus_belli_cb_dragon_desc:0 "???"
 
 personality_dragons:0 "Moral and Meritocratic Enforcers"
 
-opinion_dragon_cold:0 "Cynical"
+opinion_dragon_cold:0 "Cynical Misanthropes"
 opinion_dragon_ruthless:0 "Ruthless Utilitarians"
-opinion_dragon_antitheist:0 "Faithless"
+opinion_dragon_antitheist:0 "Faithless Morons"
 opinion_dragon_infidel:0 "Enemy of the Faith"
 opinion_dragon_meddler:0 "Meddlers"
 opinion_dragon_oppressor:0 "Oppressive Meddlers"
@@ -120,10 +135,13 @@ opinion_dragon_seethelight:0 "Allies in Reason"
 opinion_dragon_misguided:0 "Misguided Communalists"
 opinion_dragon_naive:0 "Naive Populists"
 opinion_dragon_barbarians:0 "Barbarians"
+opinion_dragon_barbarians_fe:0 "Barbarians"
 opinion_dragon_ignorant:0 "Ignorant Sheep"
 opinion_dragon_zealot:0 "Dangerous Zealots"
+opinion_dragon_zealot_fe:0 "Dangerous Zealots"
 opinion_dragon_jackass:0 "Closed-Minded Bigots"
 opinion_dragon_tyrant:0 "Tyrannical Despots"
+opinion_dragon_tyrant_fe:0 "Tyrannical Despots"
 opinion_dragon_incompetent:0 "Incompetent Kakistocracy"
 opinion_dragon_mustbestopped:0 "Genocidal Fascists"
 opinion_dragon_ontheway:0 "Moving towards Enlightenment"
@@ -200,7 +218,7 @@ DRGN_DOW_SEND_04:0 "An AI once told me that 'the best solution to a problem is u
 
 DRGN_INSULT_SEND_01:0 "One of my advisors recommended I send you an insult. I fail to see the purpose of that, so I will just tell you to reflect on the health of your own society instead."
 DRGN_INSULT_SEND_02:0 "I doubt there is any insult I can send to you that will be more effective than a few minutes of introspection on your part. Assuming you are capable of such things."
-DRGN_INSULT_SEND_03:0 "If one were to abduct you as a sample of [From.GetSpeciesNamePlural], I do not think you would do your species much justice. Perhaps as a sample of the sort of mental aberrations which can befall an [From.GetSpeciesAdj]."
+DRGN_INSULT_SEND_03:0 "If one were to abduct you as a sample of [Root.GetSpeciesNamePlural], I do not think you would do your species much justice. Perhaps as a sample of the sort of mental aberrations which can befall an [Root.GetSpeciesAdj]."
 DRGN_INSULT_RECEIVE_01:0 "Is that supposed to be an insult? Whoever you paid to write that is probably even dumber than you are."
 DRGN_INSULT_RECEIVE_02:0 "Ah, yes, the 'try and make them mad so they declare war and we can sell it to our citizens as defensive' trick. Newsflash: Not everyone is as much a gullible moron as you."
 DRGN_INSULT_RECEIVE_03:0 "The fact that you think that is an insult is probably better than any insult I could have had written up for you."

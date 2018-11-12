@@ -139,6 +139,13 @@ wg_dragon = {
 			}
 		}
 		#form a NAP with the aleran commonwealth
+		from = {
+			set_subject_of = {
+				who = root
+				subject_type = dragon_control
+			} 
+		}
+		root = {add_influence = 250}
 	}
 
 }

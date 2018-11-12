@@ -150,14 +150,14 @@ planet_event = {
 					}
 				}
 				add_opinion_modifier = {
-					modifier = opinion_converted_a_world
+					modifier = opinion_drugged_a_world
 					who = from.owner
 				}
 			}
 			# modifiers for victim
 			owner = {
 				add_opinion_modifier = {
-					modifier = opinion_converted_my_world
+					modifier = opinion_drugged_my_world
 					who = from.owner
 				}
 				if = {
@@ -235,6 +235,38 @@ planet_event = {
 	immediate = {
 		if = {
 			limit = {
+				exists = owner
+				owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			# Generate threat
+			add_threat = { who = from.owner amount = 10 }
+			# Add war exhaustion to planet owner 
+			owner = {
+				add_static_war_exhaustion = {
+					attacker = from.fleet.owner
+					location = root
+					value_for_planet_destruction = 0.5
+				}
+			}
+			owner = {
+				if = {
+					limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+					add_modifier = {
+						modifier = colossus_victim
+						days = 3600 # 10 years
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
 				is_planet_class = pc_o_star
 			}
 			random_list = {
@@ -273,9 +305,7 @@ planet_event = {
 			}
 		}
 		else = {
-			from = {
-				planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
-			}
+			planet_event = { id = aleran_colossus.202 days = 2 random = 30 }
 		}
 	}
 }
@@ -287,6 +317,48 @@ planet_event = { #star goes nova, destroying everything
 	is_triggered_only = yes
 
 	immediate = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			every_country = {
+				add_opinion_modifier = {
+					modifier = opinion_caused_nova
+					who = from.owner
+				}
+			}
+			# modifiers for victim
+			owner = {
+				add_opinion_modifier = {
+					modifier = opinion_caused_nova_on_me
+					who = from.owner
+				}
+			}
+			# Add war exhaustion to planet owner 
+			owner = {
+				add_static_war_exhaustion = {
+					attacker = from.fleet.owner
+					location = root
+					value_for_planet_destruction = 10
+				}
+			}
+			owner = {
+				add_modifier = {
+					modifier = lost_a_system_to_nova
+					days = 18000 # 50 years
+				}
+			}
+		}
+	
+	
 		solar_system = { #system scope
 			every_system_megastructure = {
 				from = {remove_megastructure = this}
@@ -294,19 +366,50 @@ planet_event = { #star goes nova, destroying everything
 			every_fleet_in_system = {
 				destroy_fleet = this
 			}
+			#every_mining_station = {
+			#	destroy_fleet = this
+			#}
+			#every_research_station = {
+			#	destroy_fleet = this
+			#}
+			#starbase = {
+			#	destroy_fleet = this
+			#}
 			every_system_planet = {
 				if = {
 					limit = {
 						is_star = yes
 					}
-					change_pc = pc_black_hole
+					if = {
+						limit = {
+							OR = {
+								is_planet_class = pc_y_star
+								is_planet_class = pc_l_star
+								is_planet_class = pc_t_star
+								is_planet_class = pc_m_star
+								is_planet_class = pc_k_star
+							}
+						}
+						change_pc = pc_neutron_star
+					}
+					else = {
+						change_pc = pc_black_hole
+					}
+					set_planet_size = 12
 				}
 				else_if = {
 					limit = {
 						OR = {
 							is_planet_class = pc_asteroid
-							is_planet_class = pc_rock_asteroid
+							#is_planet_class = pc_rock_asteroid
 							is_planet_class = pc_ice_asteroid
+							is_planet_class = pc_habitat
+							is_planet_class = pc_ringworld_habitable
+							is_planet_class = pc_ringworld_habitable_damaged
+							is_planet_class = pc_ringworld_tech
+							is_planet_class = pc_ringworld_tech_damaged
+							is_planet_class = pc_ringworld_seam
+							is_planet_class = pc_ringworld_seam_damaged
 						}
 					}
 					remove_planet = yes
@@ -320,13 +423,27 @@ planet_event = { #star goes nova, destroying everything
 				else = {
 					change_pc = pc_shattered
 				}
-				clear_planet_modifiers = yes 
+				clear_planet_modifiers = yes
+				clear_planet_modifiers = yes
 				destroy_colony = yes
-				reroll_deposits = yes
-				#orbital_deposit_tile = {}
+				orbital_deposit_tile = {
+					clear_deposits = yes
+				}
 				set_ring = no
 			}
-			asteroid_distance = 0
+			asteroids_distance = 0 #no longer works
+			every_neighbor_system = {
+				#damage them with radiation
+			}
+			every_neighbor_system = {
+				remove_hyperlane = { from = prev to = this }
+				every_system_planet = {
+					add_modifier = {
+						modifier = nova_irradiated
+						days = 7200 #20y
+					}
+				}
+			}
 		}
 	}
 }
@@ -338,6 +455,131 @@ planet_event = { #solar storm
 	is_triggered_only = yes
 
 	immediate = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			every_country = {
+				add_opinion_modifier = {
+					modifier = opinion_triggered_solar_storm
+					who = from.owner
+				}
+			}
+			# modifiers for victim
+			owner = {
+				add_opinion_modifier = {
+					modifier = opinion_triggered_solar_storm_on_me
+					who = from.owner
+				}
+			}
+		}
 		
+		
+		planet_event = { id = aleran_colossus.203 days = 1 random = 0 }
+		planet_event = { id = aleran_colossus.203 days = 20 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 50 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 80 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 110 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 140 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 170 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 200 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 230 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 260 random = 10 }
+		planet_event = { id = aleran_colossus.203 days = 290 random = 10 }
+	}
+}
+
+planet_event = { #solar storm pulse
+	id = aleran_colossus.203
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		solar_system = { #system scope
+			every_fleet_in_system = {
+			
+			}
+			every_system_planet = {
+			
+			}
+		}
+	}
+}
+
+planet_event = { #destabilization notification
+	id = aleran_colossus.204
+	title = "aleran_colossus.204.name"
+	desc = "aleran_colossus.204.desc"
+	picture = GFX_evt_star_pulsar
+	show_sound = event_solar_fusion
+	location = ROOT
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_colossus.204.click"
+		ai_chance = {
+			factor = 150
+		}
+	}
+}
+
+planet_event = { #nova notification
+	id = aleran_colossus.205
+	title = "aleran_colossus.205.name"
+	desc = "aleran_colossus.205.desc"
+	picture = GFX_evt_exploding_planet
+	show_sound = event_super_explosion
+	location = ROOT
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_colossus.205.click"
+		ai_chance = {
+			factor = 150
+		}
+	}
+}
+
+planet_event = { #nova notification to attacker
+	id = aleran_colossus.206
+	title = "aleran_colossus.206.name"
+	desc = "aleran_colossus.206.desc"
+	picture = GFX_evt_exploding_planet
+	show_sound = event_super_explosion
+	location = ROOT
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_colossus.206.click"
+		ai_chance = {
+			factor = 150
+		}
 	}
 }

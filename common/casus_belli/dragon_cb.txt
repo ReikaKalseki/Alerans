@@ -10,7 +10,7 @@
 
 cb_dragon = {
 	show_in_diplomacy = yes
-	show_notification = yes
+	show_notification = no #yes
 	potential = {
 		is_country_type = default	
 		has_country_flag = aleran
@@ -90,5 +90,19 @@ cb_dragon = {
 			from = { has_policy_flag = pre_sapients_purge }
 			from = { has_policy_flag = refugees_not_allowed }
 		}
+	}
+}
+
+cb_dragon_internalize = {
+	show_in_diplomacy = yes
+	show_notification = no #yes
+	potential = {
+		is_country_type = default	
+		has_country_flag = aleran
+	}
+	is_valid = {
+		NOT = { is_same_species = FROM }
+		from = { is_subject_type = dragon_control }
+		is_overlord_to = from
 	}
 }

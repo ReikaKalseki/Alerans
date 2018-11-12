@@ -228,9 +228,31 @@ opinion_dragon_barbarians = {
 		this = {
 			has_country_flag = aleran
 		}
+		NOR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
+		}
 	}
 	opinion = {
 		base = -100
+	}
+}
+
+opinion_dragon_barbarians_fe = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_militarist"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+		OR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
+		}
+	}
+	opinion = {
+		base = -30
 	}
 }
 
@@ -256,9 +278,31 @@ opinion_dragon_zealot = {
 		this = {
 			has_country_flag = aleran
 		}
+		NOR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
+		}
 	}
 	opinion = {
 		base = -60
+	}
+}
+
+opinion_dragon_zealot_fe = {
+	trigger = {
+		FROM = {
+			has_ethic = "ethic_fanatic_spiritualist"
+		}
+		this = {
+			has_country_flag = aleran
+		}
+		OR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
+		}
+	}
+	opinion = {
+		base = -30
 	}
 }
 
@@ -289,6 +333,10 @@ opinion_dragon_tyrant = {
 				has_ethic = "ethic_materialist"
 			}
 		}
+		NOR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
+		}
 		this = {
 			has_country_flag = aleran
 		}
@@ -312,6 +360,10 @@ opinion_dragon_incompetent = {
 				}
 			}
 		}
+		NOR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
+		}
 		this = {
 			has_country_flag = aleran
 		}
@@ -333,6 +385,10 @@ opinion_dragon_mustbestopped = {
 				}
 			}
 			from = { has_policy_flag = pre_sapients_purge }
+		}
+		NOR = {
+			FROM = {is_country_type = fallen_empire}
+			FROM = {is_country_type = awakened_fallen_empire}
 		}
 		this = {
 			has_country_flag = aleran

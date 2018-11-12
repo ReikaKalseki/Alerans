@@ -9,6 +9,7 @@ aleran_expansion = {
 aleran_expansion_2 = {
 	country_core_sector_system_cap = 100 #was 4
 	country_starbase_capacity_add = 5
+	shipsize_starbase_outpost_build_speed_mult = 0.5
 	terraform_speed_mult = 0.1
 	science_ship_survey_speed = 0.2
 	icon = "gfx/interface/icons/modifiers/aleran_expansion_2.dds"
@@ -27,6 +28,7 @@ stupor_drugged = {
 	pop_government_ethic_attraction = -0.2
 	pop_food_req_mult = -0.3
 	army_morale = -1
+	pop_resettlement_cost_mult = 4
 	
 	icon = "gfx/interface/icons/planet_modifiers/pm_stupor_drugged.dds"
 	icon_frame = 2
@@ -36,7 +38,21 @@ stupor_drug_withdrawal = {
 	pop_happiness = -0.8
 	pop_government_ethic_attraction = -0.5
 	army_morale = -1
+	pop_resettlement_cost_mult = 1
 	
 	icon = "gfx/interface/icons/planet_modifiers/pm_stupor_drug_withdrawal.dds"
 	icon_frame = 2
+}
+
+nova_irradiated = {
+	pop_happiness = -0.3
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_nova_irradiated.dds"
+	icon_frame = 2
+}
+
+lost_a_system_to_nova = {
+	pop_happiness = -0.15
+	
+	icon = "gfx/interface/icons/modifiers/lost_to_nova.dds"
 }

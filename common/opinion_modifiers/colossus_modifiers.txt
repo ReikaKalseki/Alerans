@@ -1,0 +1,77 @@
+opinion_drugged_a_world = {
+	opinion = {
+		base = -25
+	}
+
+	accumulative = yes
+	
+	min = -100
+
+	decay = {
+		base = 5
+	}
+}
+
+opinion_drugged_my_world = {
+	opinion = -200
+
+	accumulative = yes
+	
+	min = -600
+
+	decay = {
+		base = 5
+	}
+}
+
+opinion_triggered_solar_storm = {
+	opinion = {
+		base = -5
+	}
+
+	accumulative = yes
+	
+	min = -25
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_triggered_solar_storm_on_me = {
+	opinion = -10
+
+	accumulative = yes
+	
+	min = -100
+
+	decay = {
+		base = 2
+	}
+}
+
+opinion_caused_nova = {
+	opinion = {
+		base = -400
+	}
+
+	accumulative = yes
+	
+	min = -10000
+
+	decay = {
+		base = 5
+	}
+}
+
+opinion_caused_nova_on_me = {
+	opinion = -1000
+
+	accumulative = yes
+	
+	min = -20000
+
+	decay = {
+		base = 1
+	}
+}
