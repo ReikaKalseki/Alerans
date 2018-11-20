@@ -20,6 +20,8 @@ empire_init_add_technologies = {
 
 empire_init_create_capital_pops = {
 	events = {
+		dragon_start.300
+		dragon_start.301
 		dragon_start.361
 	}
 }

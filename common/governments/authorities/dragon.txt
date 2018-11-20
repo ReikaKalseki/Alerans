@@ -45,12 +45,15 @@ auth_dragon = {
 		#	value = trait_dragonbody
 		#}
 		civics = {
-			value = civic_dragon_init
+			OR = {
+				value = civic_dragon_init
+				value = civic_dragon_takeover
+			}
 		}
 	}
-	traits = {
-		trait = trait_dragonbody
-	}
+	#traits = {
+	#	trait = trait_dragonbody
+	#}
 	
 	tags = {
 		AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE

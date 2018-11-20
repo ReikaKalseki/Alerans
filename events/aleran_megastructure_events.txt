@@ -1,0 +1,43 @@
+namespace = aleran_megastructures
+
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# FromFromFrom = Fleet
+country_event = {
+	id = aleran_megastructures.1
+	#hide_window = yes
+	is_triggered_only = yes
+	title = "aleran_megastructures.1.name"
+	desc = "aleran_megastructures.1.desc"
+	picture = GFX_evt_megastructure_construction
+	show_sound = event_construction
+	
+	location = FromFrom
+	trackable = yes
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_megastructures.1.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+
+		}
+		if = {
+			limit = {from = {is_megastructure_type = dyson_sphere_0}}
+			add_influence = 200
+		}
+		else_if = {
+			limit = {from = {is_megastructure_type = ring_world_1}}
+			add_influence = 100
+		}
+		else = {
+			add_influence = 150
+		}
+	}
+}

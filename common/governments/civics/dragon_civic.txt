@@ -51,6 +51,8 @@ civic_dragon_gov = {
 		country_claim_influence_cost_mult = 0.8
 		faction_influence_mult = -0.25
 		rivalry_influence_gain = -0.75
+		country_subject_integration_speed_add = 10
+		country_integration_cooldown_mult = -0.5
 	}
 
 	#description = "civic_tooltip_dragongov_effects"

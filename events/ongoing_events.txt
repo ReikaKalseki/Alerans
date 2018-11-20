@@ -51,16 +51,17 @@ country_event = {
 	title = "dragon_ongoing.362.name"
 	desc = "dragon_ongoing.362.desc"
 	picture = GFX_evt_unknown_ships
-	show_sound = event_construction_03
+	show_sound = event_construction
 	
 	trigger = {
 		NOT = {has_country_flag = aleran_expansion}
 		has_valid_civic = civic_dragon_gov
 		num_starbases > 25
+		num_owned_planets > 5
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 30
 	}
 	
 	immediate = {
@@ -89,7 +90,7 @@ country_event = {
 	title = "dragon_ongoing.363.name"
 	desc = "dragon_ongoing.363.desc"
 	picture = GFX_evt_unknown_ships
-	show_sound = event_construction_03
+	show_sound = event_construction
 	
 	trigger = {
 		NOT = {has_country_flag = aleran_expansion_2}
@@ -97,7 +98,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 10
+		days = 30
 	}
 	
 	immediate = {
@@ -129,5 +130,140 @@ country_event = {
 			}
 		}
 		
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.364
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.364.name"
+	desc = "dragon_ongoing.364.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_construction
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_expansion_3}
+		has_country_flag = aleran_expansion_2
+		num_starbases > 400
+		num_owned_planets > 20
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		set_country_flag = aleran_expansion_3
+	}
+	
+	option = {
+		name = "dragon_ongoing.363.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_expansion_3
+				days = -1
+			}
+			every_owned_ship = {
+				add_modifier = {
+					modifier = aleran_expansion_3b
+					days = -1
+				}
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = aleran_expansion_2
+			}
+			every_owned_ship = {
+				limit = {
+					OR = {
+						is_ship_class = shipclass_colonizer
+						is_ship_class = shipclass_science
+						is_ship_class = shipclass_construction
+					}
+				}
+				remove_modifier = aleran_expansion_2b
+				add_modifier = {
+					modifier = aleran_expansion_2b
+					days = -1
+				}
+			}			
+		}
+		if = {
+			limit = {
+				has_country_flag = aleran_expansion_3
+			}
+			every_owned_ship = {
+				remove_modifier = aleran_expansion_3b
+				add_modifier = {
+					modifier = aleran_expansion_3b
+					days = -1
+				}
+			}			
+		}
+	}
+}
+
+planet_event = {
+	id = dragon_ongoing.25
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { #tile
+			if = {
+				limit = {has_building = building_hydroponics_farm_1}
+				set_building = building_meat_lab_1
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = dragon_ongoing.50
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		switch = {
+			trigger = has_planet_flag
+			tb_animals_at@from = {
+				owner = {add_food = 40} #1/5 of basic stockpile limit
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1000
+	is_triggered_only = yes
+	title = "dragon_ongoing.1000.name"
+	desc = "dragon_ongoing.1000.desc"
+	picture = GFX_evt_arguing_senate
+	show_sound = event_factions
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1000.click"
+		ai_chance = {
+			factor = 150
+		}		
 	}
 }

@@ -21,7 +21,7 @@ tech_aleran_expansion = {
 	
 	potential = {
 		has_country_flag = aleran_expansion
-		num_starbases > 50
+		num_starbases > 80
 	}
 }
 

@@ -56,6 +56,7 @@ wg_dragon = {
 	
 	# Run when target surrenders after claims are ceded
 	on_accept = {
+		#from = { remove_country_flag = is_astroraptors }
 		from = { copy_ethos_and_authority = root }
 		from = {
 			change_government = {
@@ -64,6 +65,12 @@ wg_dragon = {
 					civic = civic_free_haven
 				}
 			} 
+		}
+		root = {
+			set_timed_country_flag = {flag = recently_enlightened_someone days = 900} #2.5y
+		}
+		from = {
+			set_timed_country_flag = {flag = recently_enlightened days = 180} #0.5y
 		}
 		from = { add_modifier = { modifier = recently_liberated days = 7300 } }		
 		add_opinion_modifier = { modifier = opinion_we_liberated who = from }	
@@ -95,8 +102,45 @@ wg_dragon = {
 		from = {
 			add_threat = {
 				who = root
-				amount = 0.5
+				amount = -1
 			}				
+		}
+		every_country = {
+			#log = "this in anycountry is [This.GetName]"
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = dormant_marauders
+					is_country_type = awakened_marauders
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						#log = "from is [from.GetName] for a this of [This.GetName]"
+						#log = "fromfrom is [fromfrom.GetName] for a this of [This.GetName]"
+						#log = "from3 is [fromfromfrom.GetName] for a this of [This.GetName]"
+						#log = "prev is [prev.GetName] for a this of [This.GetName]"
+						has_casus_belli = {target = prev type = cb_dragon}
+					}
+					NOT = {is_same_value = prev} #ie not the country this wargoal is being used on
+				}
+				add_threat = {
+					who = root
+					amount = 5
+				}
+				root = {
+					prev = { save_event_target_as = aleran_youre_next }
+					country_event = { id = dragon_ongoing.1000 days = 1 random = 30 }
+				}
+				#log = "Firing event about [prev.GetName]"
+			}
+			else = {
+				add_threat = {
+					who = root
+					amount = -0.5
+				}
+			}
 		}
 		from = {
 			leave_alliance = { override_requirements = yes }
@@ -138,12 +182,132 @@ wg_dragon = {
 			 	set_living_standard = { country = from type = living_standard_good cooldown = no }
 			}
 		}
-		#form a NAP with the aleran commonwealth
 		from = {
 			set_subject_of = {
 				who = root
 				subject_type = dragon_control
 			} 
+		}
+		from = {
+			every_owned_planet = {
+				every_tile = {
+					if = {
+						limit = {
+							OR = {
+								has_building = building_citadel_of_faith
+							}
+						}
+						set_ruined = yes
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_building = building_slave_processing
+								has_building = building_clone_vats
+								has_building = building_ministry_benevolence
+							}
+						}
+						remove_building = yes
+					}
+				}
+			}
+		}
+		from = {
+			every_owned_pop = {
+				if = {
+					limit = {pop_has_ethic = ethic_xenophobe}
+					if = {
+						limit = {
+							owner = {
+								has_ethic = ethic_fanatic_xenophobe
+							}
+						}
+						random_list = {50 = {kill_pop = yes} 50 = {}}
+					}
+					else = {
+						random_list = {10 = {kill_pop = yes} 90 = {}}
+					}
+				}
+				else_if = {
+					limit = {pop_has_ethic = ethic_spiritualist}
+					if = {
+						limit = {
+							owner = {
+								has_ethic = ethic_fanatic_spiritualist
+							}
+						}
+						random_list = {80 = {kill_pop = yes} 20 = {}}
+					}
+					else = {
+						random_list = {15 = {kill_pop = yes} 85 = {}}
+					}
+				}
+				else_if = {
+					limit = {pop_has_ethic = ethic_militarist}
+					if = {
+						limit = {
+							owner = {
+								has_ethic = ethic_fanatic_militarist
+							}
+						}
+						random_list = {60 = {kill_pop = yes} 40 = {}}
+					}
+					else = {
+						random_list = {20 = {kill_pop = yes} 80 = {}}
+					}
+				}
+				else_if = {
+					limit = {pop_has_ethic = ethic_egalitarian}
+					if = {
+						limit = {
+							owner = {
+								has_ethic = ethic_fanatic_egalitarian
+							}
+						}
+						random_list = {30 = {kill_pop = yes} 70 = {}}
+					}
+					else = {
+						random_list = {5 = {kill_pop = yes} 95 = {}}
+					}
+				}
+				else_if = {
+					limit = {
+						pop_has_ethic = ethic_pacifist
+						owner = {
+							has_ethic = ethic_fanatic_pacifist
+						}
+					}
+					random_list = {2 = {kill_pop = yes} 98 = {}}
+				}
+				else_if = {
+					limit = {
+						pop_has_ethic = ethic_authoritarian
+						owner = {
+							has_ethic = ethic_fanatic_authoritarian
+						}
+					}
+					random_list = {25 = {kill_pop = yes} 75 = {}}
+				}
+				else_if = {
+					limit = {
+						owner = {
+							OR = {
+								has_valid_civic = civic_barbaric_despoilers
+								has_valid_civic = civic_hive_devouring_swarm
+								has_valid_civic = civic_machine_terminator
+								has_valid_civic = civic_machine_assimilator
+							}
+						}
+					}
+					if = {
+						limit = {pop_has_ethic = ethic_gestalt_consciousness} #ie everyone is the same
+						kill_pop = yes
+					}
+					else = {
+						random_list = {75 = {kill_pop = yes} 25 = {}}
+					}
+				}
+			}
 		}
 		root = {add_influence = 250}
 	}

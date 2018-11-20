@@ -4,7 +4,7 @@ trait_dragonbody = {
 	modification = no
 	initial = no
 	randomized = no
-	icon = "gfx/interface/icons/traits/trait_dragon2.dds" ## Links to this icon in the Stellaris graphical resources folder.
+	icon = "gfx/interface/icons/traits/trait_dragon3.dds" ## Links to this icon in the Stellaris graphical resources folder.
 	modifier = {
 		#tile_resource_minerals_mult = 0.20 #moved into the civic
 		army_damage_mult = 0.15
@@ -20,7 +20,8 @@ trait_dragonbody = {
 		country_resource_unity_mult = -0.05
 		all_technology_research_speed = 0.15
 		modify_species_cost_mult = 0.25
-		ruler_skill_levels = 2
+		ruler_skill_levels = 3
+		leader_skill_levels = 3
 	}
 	
 	opposites = { "trait_strong" "trait_weak" "trait_very_strong" "trait_enduring" "trait_fleeting" "trait_venerable" "trait_wasteful" "trait_conservational" "trait_resilient" "trait_robust" "trait_industrious" "trait_intelligent"}

@@ -17,6 +17,52 @@ country_event = {
 	}
 }
 
+planet_event = { #replace slums
+	id = dragon_start.300
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { owner = { has_valid_civic = civic_dragon_init } }
+			while = {
+				count = 1
+				random_tile = {
+					limit = {
+						has_blocker = tb_failing_infrastructure
+					}
+					set_blocker = tb_meteor_crater
+				}
+			}
+			every_tile = {
+				limit = {
+					has_blocker = tb_decrepit_dwellings
+				}
+				prev = { 
+					set_planet_flag = tb_animals_at@prev
+				}	
+				set_blocker = tb_animal_yard
+			}
+		}
+	}
+}
+
+planet_event = { #replace farms
+	id = dragon_start.301
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { owner = { has_country_flag = aleran } }
+			every_tile = {
+				limit = {
+					has_building = building_hydroponics_farm_1
+				}
+				set_building = building_meat_lab_1
+			}
+		}
+	}
+}
+
 planet_event = {
 	id = dragon_start.361
 	hide_window = yes
@@ -47,6 +93,25 @@ planet_event = {
 					}
 					set_building = building_mining_network_1
 				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dragon_start.350
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { 
+			limit = { 
+				has_civic = civic_dragon_init
+				is_ai = yes
+			}
+			add_modifier = {
+				modifier = "aleran_ai_bonus"
+				days = -1
 			}
 		}
 	}

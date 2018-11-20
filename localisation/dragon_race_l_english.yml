@@ -12,8 +12,14 @@ AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE:0 "Holds an election upon rule
 DRAGON_RULER_MALE:0 "Consul"
 DRAGON_RULER_FEMALE:0 "Empress"
 
+DRAGON_SUBRULER_MALE:0 "Delegate"
+DRAGON_SUBRULER_FEMALE:0 "Delegate"
+
 gov_dragon:0 "Technocratic Meritocracy"
 gov_dragon_desc:0 "This government chooses a ruler based on their ability to lead the population both effectively and ethically.\n\nOnce elected, a ruler remains in power until they either die or are forced out due to their inability to lead according to those enshrined principles.\n\nScientists are held in especially high regard, both in government and everyday life."
+
+gov_dragon_takeover:0 "Aleran Satellite"
+gov_dragon_takeover_desc:0 "This civilization has been forcibly reformed by the Aleran Commonwealth, and has become a satellite nation. It no longer seeks to subjugate or eliminate its peers, or to unfairly exploit its own citizens, and is instead focused on prosperity and happiness for its own citizens and for its neighbors. It is no longer fully independent, is prevented from expanding or engaging in diplomacy, and generally is subservient to the Commonwealth proper."
 
 EMPIRE_DESIGN_aleran:0 "Aleran Commonwealth"
 EMPIRE_DESIGN_aleran_desc:1 "Some describe them as cold, unsympathetic, and even ruthless; Others call them amicable, caring, and generous. Alerans' reputation is as complex and varied as their history.\n\nThe commonwealth was founded on a very simple principle: Some things, no matter how unappealing, simply must be done to stave off an even worse outcome; blindly clinging to rigid ideals in the face of larger practical concerns is a recipe for at best ineffectuality and at worst catastrophe.\n\nFrom that, the Alerans built their entire society, focused on maximal collective tangible benefit - for oneself and others. They have a deeply ingrained deference to those best able to bring about that result, and a strong appreciation for science and technology to move society forwards.\n\nOther societies that still hold - to an Aleran, at least - impractical or outdated beliefs, such as the right of the masses to direct the course of societal progress, are likely to find this unsettling or even appalling, but to an Aleran mind this is the only realistic way for society to remain productive and enjoyable for all.\n\nWhere more conservative civilizations may refrain from pursuing certain technologies, fearful of the effects, Alerans will embrace them, seeing their potential. Where some societies place heavy emphasis on a leader who the population selects, the Alerans wholly seek one who can serve their princples most effectively. Where some may seek to use slaves to maximize productivity, the Alerans use robotic workers.\n\nAs a result of this mindset, Alerans rarely seek war for their own benefit, but this is of little comfort to those whose destruction they have deemed a necessary price for a larger goal, such as those empires built on fear, conflict, abuse, or trying to resist progress."
@@ -22,6 +28,156 @@ dragon_system_initializer_NAME:0 "Aleris System"
 dragon_system_initializer_DESC:0 "A complex system of gas giants and moons, upon one of which the Alerans evolved.\n\nSpawns some neighboring systems as well."
 
 dragon_advisor:0 "Aleran"
+
+
+pft_aleran_faction:0 "Ideological Faction"
+pft_aleran_faction_desc:1 "This faction is comprised of citizens that wish to maintain the current ideology and practices of the governing authorities. They want the government to live up to its founding principles of scientific progress and Aleran and xeno rights, and strongly dislike a government that acts incompetently, with self-interest, or immorally.\n\n§LMaterialist, Xenophile, Authoritarian Ethos§!"
+
+
+aleran_faction_authority:0 "Effective Government"
+aleran_faction_authority_unfilled:0 "Ineffective Government"
+aleran_faction_authority_desc:0 "Having a government that can actually carry out its plans, due to not being subject to unncessary populism-driven turnover, is very important to the [Root.GetName]."
+
+aleran_faction_authority_dictator:0 "Ethical Government"
+aleran_faction_authority_dictator_unfilled:0 "Tyrannical Government"
+aleran_faction_authority_dictator_desc:0 "Seizing power for its own sake, and refusing to abdicate it when a ruler can no longer serve effectively and ethically, makes the [Root.GetName] very angry."
+
+aleran_faction_authority_imperial:0 "Meritocratic Government"
+aleran_faction_authority_imperial_unfilled:0 "Nepotistical Government"
+aleran_faction_authority_imperial_desc:0 "A government where power passes along family or social lines, rather than based on qualifications and ethics, greatly displeases the [Root.GetName]."
+
+aleran_faction_ethics:0 "Principled Stance"
+aleran_faction_ethics_unfilled:0 "Morally Bankrupt"
+aleran_faction_ethics_desc:0 "If the government does not hold to its founding ethics of science, technology, morality, and rights, the [Root.GetName] will be very unhappy."
+
+aleran_faction_slaves:0 "Slavery Banned"
+aleran_faction_slaves_unfilled:0 "Slavery Permitted"
+aleran_faction_slaves_desc:0 "The enormous violation of rights that is slavery will enrage the [Root.GetName]."
+
+aleran_faction_purge:0 "Purges Banned"
+aleran_faction_purge_unfilled:0 "Purges Permitted"
+aleran_faction_purge_desc:0 "Engaging in atrocities like purges will cause the [Root.GetName] to seek immediate political upheaval."
+
+aleran_faction_caste:0 "No Caste System"
+aleran_faction_caste_unfilled:0 "Castes Exist"
+aleran_faction_caste_desc:0 "The inequality of a caste system is incompatible with moral governance, and will upset the [Root.GetName]."
+
+aleran_faction_repro:0 "Full Reproductive Rights"
+aleran_faction_repro_unfilled:0 "Restricted Reproductive Rights"
+aleran_faction_repro_desc:0 "Trying to control the reproduction of a member species will run afoul of the [Root.GetName]'s values of equality."
+
+aleran_faction_movement:0 "Free Movement"
+aleran_faction_movement_unfilled:0 "No Free Movement"
+aleran_faction_movement_desc:0 "Trapping a species to only a few systems is xenophobic and will upset the [Root.GetName]."
+
+aleran_faction_rights:0 "Full Xeno Rights"
+aleran_faction_rights_unfilled:0 "Limited Xeno Rights"
+aleran_faction_rights_desc:0 "The [Root.GetName] will not accept the treatment of some species as lesser than others."
+
+aleran_faction_colonies:0 "Many Colonies"
+aleran_faction_colonies_unfilled:0 "Few Colonies"
+aleran_faction_colonies_desc:0 "The [Root.GetName] wants to see many [Owner.GetSpeciesAdj] colonies in the galaxy."
+
+aleran_faction_science:0 "Scientific Focus"
+aleran_faction_science_unfilled:0 "Sciences Ignored"
+aleran_faction_science_desc:0 "A heavy focus on the sciences and technological progress is very important to the [Root.GetName]."
+
+aleran_faction_presapients:0 "Pre-Sapients Protected"
+aleran_faction_presapients_unfilled:0 "Pre-Sapients Mistreated"
+aleran_faction_presapients_desc:0 "Failing to safeguard the well-being of presapient races will greatly upset the [Root.GetName]."
+
+aleran_faction_primitives:0 "Primitives Protected"
+aleran_faction_primitives_unfilled:0 "Primitives Protected"
+aleran_faction_primitives_desc:0 "Invading a primitive civilization will cause the [Root.GetName] to be outraged."
+
+aleran_faction_uplifted:0 "Recent Uplift"
+aleran_faction_uplifted_unfilled:0 "No Recent Uplifts"
+aleran_faction_uplifted_desc:0 "Uplifting a species will please the [Root.GetName] for some time."
+
+aleran_faction_enlighten:0 "Recent Enlightenment"
+aleran_faction_enlighten_unfilled:0 "No Recent Enlightenment"
+aleran_faction_enlighten_desc:0 "Forcibly enlightening another backwards society will temporarily please the [Root.GetName]."
+
+aleran_faction_militarist:0 "Reasonable Military"
+aleran_faction_militarist_unfilled:0 "Excessive Military"
+aleran_faction_militarist_desc:0 "The [Root.GetName] will not approve of an excessive military force."
+
+aleran_faction_explorer:0 "Scientific Fleet"
+aleran_faction_explorer_unfilled:0 "Minimal Research"
+aleran_faction_explorer_desc:0 "Having a significant number of science ships researching or exploring will make the [Root.GetName] happy."
+
+aleran_faction_megastructures:0 "Megastructure Completion"
+aleran_faction_megastructures_unfilled:0 "No Megastructures"
+aleran_faction_megastructures_desc:0 "The [Root.GetName] will appreciate the construction of any megastructures."
+
+aleran_faction_food:0 "Food Surplus"
+aleran_faction_food_unfilled:0 "Food Scarce"
+aleran_faction_food_desc:0 "Having a large surplus and cache of food is important to national security and thus the [Root.GetName]."
+
+aleran_faction_ai:0 "AI Legal"
+aleran_faction_ai_unfilled:0 "AI Banned"
+aleran_faction_ai_desc:0 "The [Root.GetName] consider AI a required technology for the the future. Banning it will be seen as resisting progress."
+
+aleran_faction_ai_rights:0 "AI Rights"
+aleran_faction_ai_rights_unfilled:0 "AI Exploited"
+aleran_faction_ai_rights_desc:0 "Treating AI citizens as chattel due to their construction will be taken as no better than xenophobia by the [Root.GetName]."
+
+aleran_faction_pacify:0 "Spaceborne Life Coexistence"
+aleran_faction_pacify_unfilled:0 "Spaceborne Life Extermination"
+aleran_faction_pacify_desc:0 "Peacefully coexisting with spaceborne lifeforms is important to the [Root.GetName]."
+
+aleran_faction_refugees:0 "Refugees Welcome"
+aleran_faction_refugees_unfilled:0 "Refugees Unwanted"
+aleran_faction_refugees_desc:0 "Ignoring the ethical obligation to aid refugees will upset the [Root.GetName]."
+
+aleran_faction_energy:0 "Energy Surplus"
+aleran_faction_energy_unfilled:0 "Energy Deficit"
+aleran_faction_energy_desc:0 "Balancing the energy budget is important to the [Root.GetName]."
+
+aleran_faction_enclaves:0 "Enclaves Present"
+aleran_faction_enclaves_unfilled:0 "No Enclaves"
+aleran_faction_enclaves_desc:0 "The [Root.GetName] will quite like having one or more enclaves within the borders of the [PrevPrev.GetName]."
+
+aleran_faction_rivals:0 "No Rivalries"
+aleran_faction_rivals_unfilled:0 "Rivalries"
+aleran_faction_rivals_desc:0 "Declaring rivalries will be seen as petty and will irritate the [Root.GetName]."
+
+aleran_faction_contact:0 "Peaceful First Contact"
+aleran_faction_contact_unfilled:0 "Aggressive First Contact"
+aleran_faction_contact_desc:0 "Violent first-contact protocols will be seen as deeply immoral by the [Root.GetName]."
+
+aleran_faction_colossus:0 "No Planet Killers"
+aleran_faction_colossus_unfilled:0 "Planet Killers Owned or Used"
+aleran_faction_colossus_desc:0 "Owning or using any colossi with planet-killing weapons will be seen as an imminent massive atrocity and will cause the [Root.GetName] to be immediately hostile."
+
+aleran_faction_vassals:0 "No Vassals"
+aleran_faction_vassals_unfilled:0 "Has Vassals"
+aleran_faction_vassals_desc:0 "Taking other nations as vassals will upset the [Root.GetName]."
+
+aleran_faction_wars:0 "No Unjust Wars"
+aleran_faction_wars_unfilled:0 "Unjust Wars"
+aleran_faction_wars_desc:0 "The [Root.GetName] will not abide by wars of conquest or opportunity."
+
+
+tb_animal_yard:0 "£blocker  Abandoned Animal Farm"
+tb_animal_yard_desc:0 "Before the advent of cultured food, it was sourced by growing large, stupid animals which were then harvested. Long since made obsolete, the animals remain, as useless as ever."
+
+tb_meteor_crater:0 "£blocker  Meteorite Crater"
+tb_meteor_crater_desc:0 "Eons ago, a large body entered from space and slammed into this location, leaving a massive crater."
+
+
+building_basic_meat_lab:0 "Basic Meat Farm"
+building_basic_meat_lab_desc:1 "Meat farms - more accurately lab facilities - grow meatlike tissue on an industrial scale to feed carnivorous Pops."
+building_meat_lab_1:0 "Meat Farm I"
+building_meat_lab_1_desc:1 "$building_basic_meat_lab_desc$"
+building_meat_lab_2:0 "Meat Farm II"
+building_meat_lab_2_desc:1 "$building_basic_meat_lab_desc$"
+building_meat_lab_3:0 "Meat Farm III"
+building_meat_lab_3_desc:1 "$building_basic_meat_lab_desc$"
+building_meat_lab_4:0 "Meat Farm IV"
+building_meat_lab_4_desc:1 "$building_basic_meat_lab_desc$"
+building_meat_lab_5:0 "Meat Farm V"
+building_meat_lab_5_desc:1 "$building_basic_meat_lab_desc$"
 
 
 building_dragon_library:0 "Library of the Commonwealth"
@@ -48,11 +204,17 @@ civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
 
 SUBJECT_dragon_control:0 "Aleran Satellite"
-SUBJECT_DESC_vassal:0 "Satellite empires are ones that have been overthrown by the Aleran Commonwealth. They take on the commonwealth's style of governance and ethics, are forbidden from expanding their borders, and cannot enter diplomacy on their own. They can be integrated directly, at significant cost."
+SUBJECT_DESC_dragon_control:0 "Satellite empires are ones that have been overthrown by the Aleran Commonwealth. They take on the commonwealth's style of governance and ethics, are forbidden from expanding their borders, and cannot enter diplomacy on their own. They can be integrated directly, at significant cost."
 
 
 tech_aleran_expansion:0 "Commonwealth Administration and Expansion"
 tech_aleran_expansion_desc:0 "Maintaining the wide borders of our nation, and laying the foundation for further growth."
+
+tech_pk_starray:0 "Stellar Destabilization"
+tech_pk_starray_desc:0 "Depositing large quantities of energy into a star to cause it to grow temporarily more electromagnetically active."
+
+tech_pk_stupor:0 "Atmospheric Drug Lacing"
+tech_pk_stupor_desc:0 "Spreading stupor-inducing drugs throughout a planetary atmosphere to humanely pacify and economically nullify the colony."
 
 
 dragon_ongoing.362.name:0 "Unfettered Expansion"
@@ -62,6 +224,18 @@ dragon_ongoing.362.click:0 "Excellent."
 dragon_ongoing.363.name:0 "Reaching for the Stars"
 dragon_ongoing.363.desc:0 "Expanding our borders has brought us unimaginable prosperity and opened entire new vistas of scientific discovery. We must make sure that we continue our ability to reach and maintain this."
 dragon_ongoing.363.click:0 "Excellent."
+
+dragon_ongoing.364.name:0 "Galaxy-Spanning Empire"
+dragon_ongoing.364.desc:0 "The Commonwealth now spans the majority of the galaxy, and we must update our drive technology so as to be able to rapidly traverse it, and our communications technology to administrate it."
+dragon_ongoing.364.click:0 "Excellent."
+
+dragon_ongoing.1000.name:0 "Destructive Society Enlightened"
+dragon_ongoing.1000.desc:0 "We have completed our forced enlightenment process. The [event_target:aleran_youre_next.GetName] have reacted with some concern, as they know that we can and probably should do the same to them."
+dragon_ongoing.1000.click:0 "They are right to be concerned."
+
+aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
+aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
+aleran_megastructures.1.click:0 "Excellent."
 
 aleran_expansion:0 "Unfettered Expansion"
 aleran_expansion_desc:0 "We have the ability and the motivation to reach for all the stars we can find."
@@ -82,6 +256,12 @@ stupor_drug_withdrawal_desc:0 "The population of this planet is suffering severe
 stupor_removal:0 "Stupor-Inducing Drug Cleanup"
 stupor_removal_DESC:0 "Cleaning the drugs from the atmosphere of the affected planet, so that the population can once again become productive."
 
+nova_irradiated:0 "Nova Irradiated"
+nova_irradiated_desc:0 "A nova event in a nearby system has caused a serious environmental damage on this planet. Surface radiation levels are well above normal, which affects the health of both populations and crops."
+
+lost_a_system_to_nova:0 "Nova Loss"
+lost_a_system_to_nova_desc:0 "This empire has recently lost one of its star systems to a nova event, depressing morale."
+
 
 aleran_colossus.3.name:0 "Population in Withdrawal"
 aleran_colossus.3.desc:0 "The removal of the psychoactive drugs from the atmosphere of [Root.GetName] has had an unintended side effect. The entire population of the planet is now suffering from withdrawal symptoms, and is very unhappy as a result. Some factions there even want to return to their previous conditions. Time will ease these problems, but it will take years."
@@ -97,7 +277,7 @@ aleran_colossus.205.desc:0 "The enemy ship's attempt to destabilize [Root.GetNam
 aleran_colossus.205.click:0 "#$@&!!"
 
 aleran_colossus.206.name:0 "Unnatural Supernova"
-aleran_colossus.206.desc:0 "The attempt to destabilize [Root.GetName] was far more successful than we could have desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. Our colossus is also missing and presumed destroyed."
+aleran_colossus.206.desc:0 "The attempt to destabilize the primary of [Root.GetStarName] was far more successful than we could have desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. Our colossus is also missing and presumed destroyed."
 aleran_colossus.206.click:0 "#$@&!!"
 
 

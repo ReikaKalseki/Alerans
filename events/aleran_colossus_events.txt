@@ -317,11 +317,13 @@ planet_event = { #star goes nova, destroying everything
 	is_triggered_only = yes
 
 	immediate = {
+		planet_event = { id = aleran_colossus.205 }
+		fromfrom = {ship_event = { id = aleran_colossus.206 }}
 		if = {
 			limit = {
 				exists = owner
 				owner = {
-					NOT = { is_same_value = from.owner }
+					NOT = { is_same_value = fromfrom.owner }
 					OR = {
 						is_country_type = default
 						is_country_type = fallen_empire
@@ -332,20 +334,20 @@ planet_event = { #star goes nova, destroying everything
 			every_country = {
 				add_opinion_modifier = {
 					modifier = opinion_caused_nova
-					who = from.owner
+					who = fromfrom.owner
 				}
 			}
 			# modifiers for victim
 			owner = {
 				add_opinion_modifier = {
 					modifier = opinion_caused_nova_on_me
-					who = from.owner
+					who = fromfrom.owner
 				}
 			}
 			# Add war exhaustion to planet owner 
 			owner = {
 				add_static_war_exhaustion = {
-					attacker = from.fleet.owner
+					attacker = fromfrom.fleet.owner
 					location = root
 					value_for_planet_destruction = 10
 				}
@@ -361,7 +363,7 @@ planet_event = { #star goes nova, destroying everything
 	
 		solar_system = { #system scope
 			every_system_megastructure = {
-				from = {remove_megastructure = this}
+				 from = {remove_megastructure = this} #?
 			}
 			every_fleet_in_system = {
 				destroy_fleet = this
@@ -426,23 +428,22 @@ planet_event = { #star goes nova, destroying everything
 				clear_planet_modifiers = yes
 				clear_planet_modifiers = yes
 				destroy_colony = yes
-				orbital_deposit_tile = {
+				#orbital_deposit_tile = {
 					clear_deposits = yes
-				}
+				#}
 				set_ring = no
 			}
 			asteroids_distance = 0 #no longer works
 			every_neighbor_system = {
-				#damage them with radiation
-			}
-			every_neighbor_system = {
-				remove_hyperlane = { from = prev to = this }
 				every_system_planet = {
 					add_modifier = {
 						modifier = nova_irradiated
 						days = 7200 #20y
 					}
 				}
+			}
+			every_neighbor_system = {
+				remove_hyperlane = { from = prev to = this }
 			}
 		}
 	}
@@ -455,11 +456,12 @@ planet_event = { #solar storm
 	is_triggered_only = yes
 
 	immediate = {
+		planet_event = { id = aleran_colossus.204 }
 		if = {
 			limit = {
 				exists = owner
 				owner = {
-					NOT = { is_same_value = from.owner }
+					NOT = { is_same_value = fromfrom.owner }
 					OR = {
 						is_country_type = default
 						is_country_type = fallen_empire
@@ -470,14 +472,14 @@ planet_event = { #solar storm
 			every_country = {
 				add_opinion_modifier = {
 					modifier = opinion_triggered_solar_storm
-					who = from.owner
+					who = fromfrom.owner
 				}
 			}
 			# modifiers for victim
 			owner = {
 				add_opinion_modifier = {
 					modifier = opinion_triggered_solar_storm_on_me
-					who = from.owner
+					who = fromfrom.owner
 				}
 			}
 		}
@@ -506,10 +508,36 @@ planet_event = { #solar storm pulse
 	immediate = {
 		solar_system = { #system scope
 			every_fleet_in_system = {
-			
+				limit = {
+					owner = {
+					 	is_at_war_with = fromfrom.owner #?
+					}
+				}
+				destroy_fleet = this
 			}
 			every_system_planet = {
-			
+				every_tile = { #destroy: shields, energy grids/nexi, robot pops
+					if = {
+						limit = {
+							OR = {
+								has_building = building_power_hub_1
+								has_building = building_power_hub_2
+								has_building = building_planetary_shield_generator
+							}
+						}
+						set_ruined = yes
+					}
+					if = {
+						limit = {
+							has_pop = yes
+							OR = {
+								pop = {is_species_class = ROBOT}
+								pop = {is_species_class = MACHINE}
+							}
+						}
+						kill_pop = yes
+					}
+				}
 			}
 		}
 	}
@@ -561,13 +589,13 @@ planet_event = { #nova notification
 	}
 }
 
-planet_event = { #nova notification to attacker
+ship_event = { #nova notification to attacker
 	id = aleran_colossus.206
 	title = "aleran_colossus.206.name"
 	desc = "aleran_colossus.206.desc"
 	picture = GFX_evt_exploding_planet
 	show_sound = event_super_explosion
-	location = ROOT
+	location = ROOT.fleet.orbit
 	trackable = yes
 
 	is_triggered_only = yes

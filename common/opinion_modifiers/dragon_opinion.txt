@@ -468,25 +468,7 @@ opinion_dragon_allieswar = {
 		}
 		from = {
 			any_war = {
-				any_defender = {
-					OR = {
-						has_ethic = "ethic_fanatic_xenophobe"
-						has_ethic = "ethic_spiritualist"
-						has_ethic = "ethic_fanatic_spiritualist"
-						has_ethic = "ethic_fanatic_militarist"
-						AND = {
-							has_ethic = "ethic_militarist"
-							has_ethic = "ethic_xenophobe"
-						}
-						AND = {
-							has_ethic = "ethic_fanatic_authoritarian"
-							OR = {
-								has_ethic = "ethic_xenophobe"
-								has_ethic = "ethic_militarist"
-							}
-						}
-					}
-				}
+				using_war_goal = { type = wg_dragon owner = from }
 			}
 		}
 		this = {

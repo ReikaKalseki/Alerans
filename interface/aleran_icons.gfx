@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_wg_dragon"
+		texturefile = "gfx/interface/icons/diplomacy/wargoal_dragon.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_dragon_internalize"
+		texturefile = "gfx/interface/icons/diplomacy/wargoal_dragon_internalize.dds"
+	}
+	spriteType = {
+		name = "GFX_faction_header_blue"
+		texturefile = "gfx/interface/elections/faction_header_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_stupor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_stupor.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_starray"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_starray.dds"
+	}
+}

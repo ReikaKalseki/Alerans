@@ -1,0 +1,1103 @@
+##############################
+# Technologist Faction
+##############################
+
+aleran_faction = {
+	election_header = "GFX_faction_header_argon"
+	guiding_ethic = ethic_materialist
+	
+	unique = yes
+	support_multiplier = 1
+	
+	is_potential = {
+		has_country_flag = aleran
+	}
+	
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+	
+	can_join_faction = {
+		NOT = { has_trait = trait_nerve_stapled }
+		NOR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+			has_ethic = ethic_fanatic_militarist
+			has_ethic = ethic_fanatic_egalitarian
+		}
+	}
+	
+	attraction = {
+		base = 1500
+		
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+		
+		modifier = {
+			factor = 2.0
+			is_robot_pop = yes
+		}
+	}
+	
+	leader = {
+		base = 100
+		
+		modifier = {
+			factor = 0.0
+			is_event_leader = yes
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_authority"
+		unfulfilled_title = "aleran_faction_authority_unfilled"
+		desc = "aleran_faction_authority_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_authority = auth_dragon
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_authority_dictator"
+		unfulfilled_title = "aleran_faction_authority_dictator_unfilled"
+		desc = "aleran_faction_authority_dictator_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -15
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					has_authority = auth_dictatorial
+					has_authority = auth_imperial
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_authority_imperial"
+		unfulfilled_title = "aleran_faction_authority_imperial_unfilled"
+		desc = "aleran_faction_authority_imperial_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {has_authority = auth_imperial}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_ethics"
+		unfulfilled_title = "aleran_faction_ethics_unfilled"
+		desc = "aleran_faction_ethics_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				AND = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_authoritarian
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_slaves"
+		unfulfilled_title = "aleran_faction_slaves_unfilled"
+		desc = "aleran_faction_slaves_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -40
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = slavery_not_allowed
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_purge"
+		unfulfilled_title = "aleran_faction_purge_unfilled"
+		desc = "aleran_faction_slaves_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -50
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = purge_not_allowed
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_caste"
+		unfulfilled_title = "aleran_faction_caste_unfilled"
+		desc = "aleran_faction_caste_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -25
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_pop = {
+						OR = {
+							has_citizenship_type = {
+								type = citizenship_caste_system
+								country = prev
+							}
+							has_citizenship_type = {
+								type = citizenship_caste_system_limited
+								country = prev
+							}							
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_repro"
+		unfulfilled_title = "aleran_faction_repro_unfilled"
+		desc = "aleran_faction_repro_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -25
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_pop = {
+						has_population_control = yes
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_movement"
+		unfulfilled_title = "aleran_faction_movement_unfilled"
+		desc = "aleran_faction_movement_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					AND = {
+						has_encountered_other_species = yes
+						has_policy_flag = core_worlds_all
+					}
+					has_encountered_other_species = no
+				}
+				NOR = {
+					any_owned_pop = {
+						has_migration_control = yes
+						is_sapient = yes
+						is_enslaved = no
+						is_being_purged = no
+						is_shackled_robot = no
+					}
+					has_policy_flag = resettlement_allowed
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_rights"
+		unfulfilled_title = "aleran_faction_rights_unfilled"
+		desc = "aleran_faction_rights_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_pop = {
+						is_robot_pop = no
+						is_sapient = yes
+						NOT = {has_citizenship_type = { country = owner type = citizenship_full }}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_colonies"
+		unfulfilled_title = "aleran_faction_colonies_unfilled"
+		desc = "aleran_faction_colonies_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				num_owned_planets > 6
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_science"
+		unfulfilled_title = "aleran_faction_science_unfilled"
+		desc = "aleran_faction_science_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_monthly_income = { resource = physics_research value > 200 }
+				has_monthly_income = { resource = society_research value > 200 }
+				has_monthly_income = { resource = engineering_research value > 200 }
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_presapients"
+		unfulfilled_title = "aleran_faction_presapients_unfilled"
+		desc = "aleran_faction_presapients_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = pre_sapients_protect
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_primitives"
+		unfulfilled_title = "aleran_faction_primitives_unfilled"
+		desc = "aleran_faction_primitives_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = recent_primitive_invasion }
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_uplifted"
+		unfulfilled_title = "aleran_faction_uplifted_unfilled"
+		desc = "aleran_faction_uplifted_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = recent_uplift_timed
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_enlighten"
+		unfulfilled_title = "aleran_faction_enlighten_unfilled"
+		desc = "aleran_faction_enlighten_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_country_flag = recently_enlightened_someone
+					any_war = {
+						using_war_goal = { type = wg_dragon owner = prev }
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_militarist"
+		unfulfilled_title = "aleran_faction_militarist_unfilled"
+		desc = "aleran_faction_militarist_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					used_naval_capacity_percent > 1 #over naval cap
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_explorer"
+		unfulfilled_title = "aleran_faction_explorer_unfilled"
+		desc = "aleran_faction_explorer_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				count_owned_ships = {
+					limit = {
+						is_ship_size = science
+						exists = leader
+						leader = {
+							leader_class = scientist 
+						}
+					}
+					count > 4
+				} 
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_megastructures"
+		unfulfilled_title = "aleran_faction_megastructures_unfilled"
+		desc = "aleran_faction_megastructures_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = ring_world_3_intermediate
+						is_megastructure_type = ring_world_restored
+						is_megastructure_type = dyson_sphere_2 #first tier that produces energy
+						is_megastructure_type = dyson_sphere_3
+						is_megastructure_type = dyson_sphere_4
+						is_megastructure_type = dyson_sphere_5
+						is_megastructure_type = dyson_sphere_restored
+						is_megastructure_type = think_tank_4
+						is_megastructure_type = think_tank_restored
+						is_megastructure_type = spy_orb_4
+						is_megastructure_type = spy_orb_restored
+					}
+				} 
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_food"
+		unfulfilled_title = "aleran_faction_food_unfilled"
+		desc = "aleran_faction_food_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				food > 999
+				has_monthly_income = { resource = food value > 100 }
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_ai"
+		unfulfilled_title = "aleran_faction_ai_unfilled"
+		desc = "aleran_faction_ai_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = robots_allowed
+				NOT = {has_policy_flag = ai_outlawed}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_ai_rights"
+		unfulfilled_title = "aleran_faction_ai_rights_unfilled"
+		desc = "aleran_faction_ai_rights_desc"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = ai_full_rights
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_pacify"
+		unfulfilled_title = "aleran_faction_pacify_unfilled"
+		desc = "aleran_faction_pacify_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_modifier = pacified_amoebas
+				NOT = {has_modifier = cloud_hunting_buff}
+				has_modifier = pacified_crystals
+				#NOT = {has_modifier = drone_hunting_buff}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_refugees"
+		unfulfilled_title = "aleran_faction_refugees_unfilled"
+		desc = "aleran_faction_refugees_desc"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = refugees_allowed
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_energy"
+		unfulfilled_title = "aleran_faction_energy_unfilled"
+		desc = "aleran_faction_energy_desc"
+
+		fulfilled_effect = 2
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				running_balance > 0
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_enclaves"
+		unfulfilled_title = "aleran_faction_enclaves_unfilled"
+		desc = "aleran_faction_enclaves_desc"
+
+		fulfilled_effect = 3
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				any_system_within_border = {
+					any_ship_in_system = {
+						exists = owner
+						owner = { is_country_type = enclave }
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_rivals"
+		unfulfilled_title = "aleran_faction_rivals_unfilled"
+		desc = "aleran_faction_rivals_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			NOT = {
+				any_country = {
+					prev = {is_rival = owner}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_contact"
+		unfulfilled_title = "aleran_faction_contact_unfilled"
+		desc = "aleran_faction_enclaves_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -25
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = first_contact_attack_not_allowed
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_colossus"
+		unfulfilled_title = "aleran_faction_colossus_unfilled"
+		desc = "aleran_faction_colossus_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -80
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					has_country_flag = fired_cracker
+					has_country_flag = fired_neutron
+					has_country_flag = fired_godray
+					has_country_flag = fired_nanobots
+					any_owned_ship = {
+						 is_ship_size = colossus
+						 OR = {
+						  	has_component = PLANET_KILLER_CRACKER
+						  	has_component = PLANET_KILLER_NEUTRON
+						  	has_component = PLANET_KILLER_GODRAY
+						  	has_component = PLANET_KILLER_NANOBOTS
+						 }
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_vassals"
+		unfulfilled_title = "aleran_faction_vassals_unfilled"
+		desc = "aleran_faction_vassals_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -25
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_subject = {
+						 NOT = {is_subject_type = dragon_control}
+					}
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_wars"
+		unfulfilled_title = "aleran_faction_wars_unfilled"
+		desc = "aleran_faction_wars_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -40
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran			
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_war = {
+						any_attacker = {
+							is_same_value = owner
+						} 
+						any_defender = {
+							NOT = {
+								owner = {
+									has_casus_belli = {target = prev type = cb_dragon}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_create = {
+		pop_faction_event = { id = factions.1 }
+	}
+
+	on_destroy = {
+		if = {
+			limit = {
+				has_modifier = promoted_materialist
+			}
+			remove_modifier = promoted_materialist
+		}
+		if = {
+			limit = {
+				has_modifier = suppressed_materialist
+			}
+			remove_modifier = suppressed_materialist
+		}
+		if = {
+			limit = {
+				has_modifier = promoted_xenophile
+			}
+			remove_modifier = promoted_xenophile
+		}
+		if = {
+			limit = {
+				has_modifier = suppressed_xenophile
+			}
+			remove_modifier = suppressed_xenophile
+		}
+		if = {
+			limit = {
+				has_modifier = promoted_authoritarian
+			}
+			remove_modifier = promoted_authoritarian
+		}
+		if = {
+			limit = {
+				has_modifier = suppressed_authoritarian
+			}
+			remove_modifier = suppressed_authoritarian
+		}
+	}
+	
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+			
+			cost = {
+				influence = 500
+			}
+			
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { is_subject_type = dominion }
+					}
+				}
+			}
+			
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NAND = {
+						has_ethic = "ethic_materialist"
+						has_ethic = "ethic_xenophile"
+						has_ethic = "ethic_authoritarian"
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }			
+				parameter:empire = {
+					#shift_ethic = ethic_materialist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					parameter:empire = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default			
+								has_communications = prev
+							}
+							country_event = { id = factions.2000 }
+						}
+					}				
+				}				
+			}
+			
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						has_ethic = ethic_materialist
+						has_ethic = ethic_authoritarian
+						has_ethic = ethic_xenophile
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_valid_civic = civic_fanatic_purifiers }
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_factions = {
+							count < 4
+						}					
+					}
+				}				
+			}
+		}
+		promote_faction = {
+			title = "PROMOTE_FACTION"
+			description = "PROMOTE_FACTION_DESC"
+			
+			potential = {
+				exists = owner
+				parameter:empire = { 			
+					NOR = { 
+						has_modifier = suppressed_materialist
+						has_modifier = promoted_materialist 
+					}
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					add_modifier = { modifier = promoted_materialist days = -1 
+					add_modifier = { modifier = promoted_authoritarian days = -1 }
+					add_modifier = { modifier = promoted_xenophile days = -1 }
+				}
+			}
+			
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_promote_faction = {
+			title = "CANCEL_PROMOTE_FACTION"
+			description = "CANCEL_PROMOTE_FACTION_DESC"
+			
+			potential = {
+				exists = owner
+				parameter:empire = { 
+					has_modifier = promoted_materialist
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					remove_modifier = promoted_materialist
+					remove_modifier = promoted_authoritarian
+					remove_modifier = promoted_xenophile
+				}
+			}
+			
+			ai_weight = {
+				base = 0
+			}
+		}		
+		suppress_faction = {
+			title = "SUPPRESS_FACTION"
+			description = "SUPPRESS_FACTION_DESC"
+			
+			potential = {
+				exists = owner
+				parameter:empire = { 
+					NOR = { 
+						has_modifier = suppressed_materialist
+						has_modifier = promoted_materialist 
+					}
+				}
+				always = no #do not allow Aleran suppression of self
+			}
+
+			effect = {
+				add_modifier = { modifier = suppressed_faction days = -1 }
+				parameter:empire = {
+					add_modifier = { modifier = suppressed_materialist days = -1 }
+				}
+			}
+			
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_suppress_faction = {
+			title = "CANCEL_SUPPRESS_FACTION"
+			description = "CANCEL_SUPPRESS_FACTION_DESC"
+			
+			potential = {
+				exists = owner
+				parameter:empire = { 
+					has_modifier = suppressed_materialist
+				}
+				always = no
+			}
+
+			effect = {
+				remove_modifier = suppressed_faction
+				parameter:empire = {
+					remove_modifier = suppressed_materialist
+				}
+			}
+			
+			ai_weight = {
+				base = 0
+			}
+		}	
+	}
+}

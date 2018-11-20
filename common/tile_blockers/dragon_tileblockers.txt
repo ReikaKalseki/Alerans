@@ -1,0 +1,35 @@
+tb_animal_yard = {
+	#picture = tb_???
+	time = 50
+	cost = {
+		energy = 200
+	}
+
+	spawn_chance = {
+		modifier = {
+			add = 0
+		}
+	}
+}
+
+tb_meteor_crater = {
+	picture = tb_crater
+	time = 100
+	cost = {
+		energy = 200
+		minerals = 200
+	}
+
+	spawn_chance = {
+		modifier = {
+			add = 0
+		}
+	}
+
+	adjacency_bonus = {
+		tile_building_resource_minerals_add = 2
+		tile_building_resource_physics_research_add = 2
+		tile_building_resource_society_research_add = 1
+		tile_building_resource_engineering_research_add = 1
+	}
+}

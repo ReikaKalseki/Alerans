@@ -5,6 +5,12 @@ on_monthly_pulse = {
 	}
 }
 
+on_megastructure_built = {
+	events = {
+		aleran_megastructures.1
+	}
+}
+
 on_destroy_planet_with_PLANET_KILLER_STUPOR = {
 	events = {
 		aleran_colossus.100
@@ -14,5 +20,22 @@ on_destroy_planet_with_PLANET_KILLER_STUPOR = {
 on_destroy_planet_with_PLANET_KILLER_STARRAY = {
 	events = {
 		aleran_colossus.200
+	}
+}
+
+# A building construction has been queued.
+# This = Planet
+# From = Tile
+on_building_complete = {
+	events = {
+		dragon_ongoing.25
+	}
+}
+
+# From = Tile
+# This = Planet
+on_blocker_cleared = {
+	events = {
+		dragon_ongoing.50
 	}
 }

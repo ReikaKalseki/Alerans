@@ -51,3 +51,35 @@ gov_dragon = {
 		base = 3600
 	}
 }
+
+gov_dragon_takeover = {
+	ruler_title = DRAGON_SUBRULER_MALE
+	ruler_title_female = DRAGON_SUBRULER_FEMALE
+	
+	leader_class = scientist 	# Initial ruler will become this if elected out of office
+
+	election_candidates = {
+		modifier = {
+			add = 100
+			leader_class = ruler
+		}
+		modifier = {
+			add = 10
+			leader_class = scientist
+		}
+	}
+	
+	should_force_rename = yes
+
+	possible = {
+		has_authority = auth_dragon
+		has_ethic = ethic_materialist
+		has_ethic = ethic_xenophile
+		has_ethic = ethic_authoritarian
+		has_valid_civic = civic_dragon_takeover
+	}
+
+	weight = {
+		base = 2000000
+	}
+}
