@@ -1,5 +1,20 @@
 ﻿l_english:
 
+Dragon:0 "Dragon"
+Dragon_desc:0 "Dragons"
+Dragon_plural:0 "Dragons"
+Dragon_insult_01:0 "lizard"
+Dragon_insult_plural_01:0 "lizards"
+Dragon_compliment_01:0 "genius"
+Dragon_compliment_plural_01:0 "genius"
+Dragon_spawn:0 "hatchling"
+Dragon_spawn_plural:0 "hatchlings"
+Dragon_sound_01:0 "snarling"
+Dragon_sound_02:0 "growling"
+Dragon_sound_03:0 "purring"
+Dragon_organ:0 "heart"
+Dragon_mouth:0 "mouth"
+
 trait_dragonbody:0 "Dragon"
 trait_dragonbody_desc:0 "This species is imposing both physically and mentally - they are large, tough, and long-lived, while also being highly intelligent. They are, however, prone to avarice and to social conflict, and their food needs are greater than average."
 
@@ -30,8 +45,8 @@ dragon_system_initializer_DESC:0 "A complex system of gas giants and moons, upon
 dragon_advisor:0 "Aleran"
 
 
-pft_aleran_faction:0 "Ideological Faction"
-pft_aleran_faction_desc:1 "This faction is comprised of citizens that wish to maintain the current ideology and practices of the governing authorities. They want the government to live up to its founding principles of scientific progress and Aleran and xeno rights, and strongly dislike a government that acts incompetently, with self-interest, or immorally.\n\n§LMaterialist, Xenophile, Authoritarian Ethos§!"
+pft_aleran_faction:0 "Supervisory Faction"
+pft_aleran_faction_desc:1 "This faction is comprised of citizens that wish for the government to live up to its founding principles of scientific progress and rights for all species, and strongly dislike a government that acts incompetently, with self-interest, or immorally.\n\n§LMaterialist, Xenophile, Authoritarian Ethos§!"
 
 
 aleran_faction_authority:0 "Effective Government"
@@ -80,7 +95,7 @@ aleran_faction_colonies_desc:0 "The [Root.GetName] wants to see many [Owner.GetS
 
 aleran_faction_science:0 "Scientific Focus"
 aleran_faction_science_unfilled:0 "Sciences Ignored"
-aleran_faction_science_desc:0 "A heavy focus on the sciences and technological progress is very important to the [Root.GetName]."
+aleran_faction_science_desc:0 "A heavy focus on the sciences and technological progress is very important to the [Root.GetName], such as by maintaining a science production per pop ratio of at least two."
 
 aleran_faction_presapients:0 "Pre-Sapients Protected"
 aleran_faction_presapients_unfilled:0 "Pre-Sapients Mistreated"
@@ -299,7 +314,10 @@ war_goal_wg_dragon_desc:0 "War is waged to put an end to regimes built on ideolo
 casus_belli_cb_dragon:0 "Enlightenment By Force"
 casus_belli_cb_dragon_desc:0 "???"
 
+
 personality_dragons:0 "Moral and Meritocratic Enforcers"
+personality_dragons_desc:0 "This society places a very high importance on the rights and prosperity of all sentient beings, achieved by way of rapid technological progress and unwavering adherence to these goals. They will be benign and even friendly to empires that hold similar values, and very aggressive towards those that do not, particularly those they feel present a danger to their citizens or their neighbors."
+
 
 opinion_dragon_cold:0 "Cynical Misanthropes"
 opinion_dragon_ruthless:0 "Ruthless Utilitarians"
@@ -325,6 +343,7 @@ opinion_dragon_tyrant_fe:0 "Tyrannical Despots"
 opinion_dragon_incompetent:0 "Incompetent Kakistocracy"
 opinion_dragon_mustbestopped:0 "Genocidal Fascists"
 opinion_dragon_ontheway:0 "Moving towards Enlightenment"
+opinion_dragon_goodmachines:0 "Ethical Caretakers"
 opinion_dragon_close:0 "Almost There"
 opinion_dragon_allies:0 "Allies in Reason"
 opinion_dragon_allieswar:0 "Allies in Enlightened Enforcement"
@@ -359,12 +378,21 @@ DRGN_compliment_plural_01:0 "??s"
 
 START_SCREEN_DRAGONS:0 "In the depths of space lie two things.\n\nThe first is an endless expanse of resources and inhabitable worlds, the necessary foundations of the continued prosperity of our species.\n\nThe second is the probability of other intelligent life, which we can learn from, or, if need be, drag away from primitive mentalities and into the light of reason and true morality.\n\nWhether as simple colonizers or enforcers of morals and rationality, [Root.GetSpeciesNamePlural] will leave an enduring mark on this galaxy, with all intents towards the better."
 
+DRGN_GREETING_CONTACT:0 "Hello. I am [contact_empire.GetRulerTitle] [contact_empire.GetRulerName] and represent the [contact_empire.GetName]. We are founded on the principles of achieving the highest possible quality of life for all sentient beings, by way of the pursuit of rapid scientific progress and adherence to a strict moral code of the rights of all sapient species. I hope that you share similar values, so that our two societies can not only coexist but actively cooperate; we do not derive pleasure from imposing our values by force, but will do so if we deem it necessary."
+DRGN_GREETING_CONTACT_LIKE:0 "Hello. I am [contact_empire.GetRulerTitle] [contact_empire.GetRulerName] and represent the [contact_empire.GetName]. We are founded on the principles of achieving the highest possible quality of life for all sentient beings, by way of the pursuit of rapid scientific progress and adherence to a strict moral code of the rights of all sapient species. We can see that you share similar values, and as such cooperation and coexistence is a very likely outcome for our two societies."
+DRGN_GREETING_CONTACT_DISLIKE:0 "This is [contact_empire.GetRulerTitle] [contact_empire.GetRulerName] representing the [contact_empire.GetName]. Our founding principles is the achievement of the highest possible quality of life for all sentient beings, by way of the pursuit of rapid scientific progress and adherence to a strict moral code of the rights of all sapient species. Your society neither prioritizes nor adheres to these values, and be warned that if this does not change, we will find ourselves obligated to force that reformation ourselves."
+action.1.aleran:0 "§EWe hope that your values align with ours.§!"
+action.1.aleran_to_friends:0 "§EOur two civilizations shall be as allies.§!"
+action.1.aleran_to_idiots:0 "§EYour society is based on ignorance. That must change.§!"
+action.1.aleran_to_evil:0 "§EAnd thus begins your removal from power at our hands.§!"
+
 DRGN_GREETING_THREAT_01:0 "That you have made it to where you have is in spite of how you run your society, not because of it. Furthermore, continuing on that path may well see your luck run out. Hint hint hint."
 DRGN_GREETING_THREAT_02:0 "We may not frequently be willing to declare war, but, as you apparently DO need to be told, 'infrequently' is not 'never'. Barring prompt reformations, you are quite liable to become a case study of that fact."
 DRGN_GREETING_THREAT_03:0 "Certain species or civilizations will tell you that they do not trade lives, that under no circumstances is someone's destruction an acceptable price to pay to end some sort of harm. Take this as a warning that we are not among them."
 DRGN_GREETING_THREAT_04:0 "One of the foundational principles of the [Root.GetName] is that all sentient or presapient species deserve rights and protection as any other. Another such principle is that sometimes, force must be used to guarantee that. I will leave you to put those two together."
 DRGN_GREETING_HOSTILE_01:0 "It is a common fallacy to assume success is due to one's actions rather than from luck or trial and error. You provide a good example of this."
 DRGN_GREETING_HOSTILE_02:0 "The [Root.GetName] is not known for its patience with fools or bigots. [From.GetName] is full of both."
+DRGN_GREETING_HOSTILE_HIVEMIND_02:0 "The [Root.GetName] is not known for its patience with fools or bigots. You are both."
 DRGN_GREETING_HOSTILE_03:0 "Honestly, given what I think of you, the camera sending you the video feed is facing at the wrong end of me."
 DRGN_GREETING_HOSTILE_04:0 "I rather expect that our social researchers will be quite interested to watch the [From.GetName]'s inevitable downfall, and dissect ad nauseam the incompetence - yours - that caused it."
 DRGN_GREETING_BASIC_01:0 "We [Root.GetSpeciesNamePlural] have never really understood the purpose or methodology of 'small talk', so I do hope you understand if we forgo such things."
@@ -380,11 +408,12 @@ DRGN_GREETING_ALLIES_03:0 "I got that shipment of [From.GetSpeciesAdj] delicacie
 DRGN_GREETING_OFFWAR_01:0 "This can all still end without your total destruction. How? Reform your government, align your society with what is right, with what is a path to success."
 DRGN_GREETING_OFFWAR_02:0 "A society as dependent on incompetence and cruelty as yours would have destroyed itself given sufficient time. The fact that the [Root.GetName] is shortening that time window means little."
 DRGN_GREETING_OFFWAR_03:0 "One could make the argument that putting up as much a fight as you have, when we are coming not to conquer, but to improve the lives of your citizens, is just another data point indicating how unfit you are to govern sentient beings."
+DRGN_GREETING_OFFWAR_HIVEMIND_03:0 "One could make the argument that putting up as much a fight as you have, when we are coming not to conquer, but to ensure the well-being of all life in the galaxy, is just another data point indicating how unfit you are to run a nation."
 DRGN_GREETING_DEFWAR_01:0 "How is the war going for you? Is there a [From.GetSpeciesAdj] word for 'regret'? If not, might want to get working on that so you can use it while you still can."
 DRGN_GREETING_DEFWAR_02:0 "I guess you were just hoping we would roll over and die? To you?"
 DRGN_GREETING_DEFWAR_03:0 "While [Root.GetSpeciesNamePlural] may not be particularly unified in the minutiae of how they feel society should be run, they ARE in essentially total agreement that there is no way out of this that ends well for you."
-DRGN_DOW_RECEIVE_01:0 "Sometimes people have to learn the hard way. And 'people' evidently includes [From.GetSpeciesNamePlural]."
 
+DRGN_DOW_RECEIVE_01:0 "Sometimes people have to learn the hard way. And 'people' evidently includes [From.GetSpeciesNamePlural]."
 DRGN_DOW_RECEIVE_02:0 "We were actually debating whether you would be idiotic enough to declare war on someone who both knows your weaknesses and cares little for your posturing. Both sides were wrong; you managed to prove dumber than EITHER side imagined."
 DRGN_DOW_RECEIVE_03:0 "There is an old [Root.GetSpeciesAdj] saying that it is better to be thought an idiot than to speak and remove all doubt. Well, replace 'speak' with 'declare war', and add a few dozen more words for 'stupid', and that's you right now."
 DRGN_DOW_RECEIVE_04:0 "I feel kind of sorry for your population. Well, the ones that did not support the idiotic move you just made, anyways. It must really suck to be led by such a fool as you."

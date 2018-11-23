@@ -18,6 +18,10 @@ cb_dragon = {
 	is_valid = {
 		NOT = { is_same_species = FROM }
 		OR = {
+			from = { has_valid_civic = civic_machine_terminator }
+			from = { has_valid_civic = civic_machine_assimilator }
+			from = { has_valid_civic = civic_barbaric_despoilers }
+			from = { has_valid_civic = civic_hive_devouring_swarm }
 			from = { has_ethic = ethic_fanatic_xenophobe }
 			AND = {
 				from = { has_ethic = ethic_fanatic_egalitarian }

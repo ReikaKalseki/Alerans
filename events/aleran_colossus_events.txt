@@ -319,6 +319,29 @@ planet_event = { #star goes nova, destroying everything
 	immediate = {
 		planet_event = { id = aleran_colossus.205 }
 		fromfrom = {ship_event = { id = aleran_colossus.206 }}
+		
+		create_ambient_object = {
+			type = explosion_particle_object
+			location = this
+			use_3d_location = yes
+			duration = 300
+			scale = 120
+		}
+		create_ambient_object = {
+			location = this
+			type = habitat_cracker_object
+			duration = 5
+			
+			use_3d_location = yes
+			base_angle_towards = star
+			entity_face_object = star
+			
+			entity_offset = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 1
+		}
+		
 		if = {
 			limit = {
 				exists = owner
@@ -433,7 +456,7 @@ planet_event = { #star goes nova, destroying everything
 				#}
 				set_ring = no
 			}
-			asteroids_distance = 0 #no longer works
+			#asteroids_distance = 0 #no longer works
 			every_neighbor_system = {
 				every_system_planet = {
 					add_modifier = {
@@ -484,6 +507,7 @@ planet_event = { #solar storm
 			}
 		}
 		
+		set_timed_planet_flag = { flag = destablilized days = 300 } 
 		
 		planet_event = { id = aleran_colossus.203 days = 1 random = 0 }
 		planet_event = { id = aleran_colossus.203 days = 20 random = 10 }
@@ -506,6 +530,15 @@ planet_event = { #solar storm pulse
 	is_triggered_only = yes
 
 	immediate = {
+		
+		create_ambient_object = {
+			type = explosion_particle_object
+			location = this
+			use_3d_location = yes
+			duration = 90
+			scale = 50
+		}
+		
 		solar_system = { #system scope
 			every_fleet_in_system = {
 				limit = {

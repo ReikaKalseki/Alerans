@@ -19,4 +19,9 @@ spriteTypes = {
 		name = "GFX_ship_part_starray"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_starray.dds"
 	}
+	spriteType = {
+		name = "GFX_faction_icon_aleran_faction"
+		textureFile = "gfx/interface/icons/faction_icons/aleran_faction_icon.dds"
+		noOfFrames = 1
+	}
 }

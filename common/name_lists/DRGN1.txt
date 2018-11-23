@@ -4,29 +4,30 @@
 		generic = {
 			
 		}
-
+		
+		#for military ships: these are NOT the names for individual ships! these are "class" names!
 		corvette = {
-			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+			"Zentakka"
 		}
 		
 		destroyer = {
-			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+			"Dekleta"
 		}
 		
 		cruiser = {
-			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+			"Zlautol"
 		}
 		
 		battleship = {
-			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+			"Mikkta"
 		}
 		
 		titan = {
-			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+			"Kukir"
 		}
 		
 		colossus = {
-			"Hardened Shell" "Blinding Flash" "Laser Rake" "Shadow Fire" "Star Flare" "Shield Tank"
+			"Zenettat"
 		}
 		
 		science = {
@@ -121,8 +122,8 @@
 	planet_names = {
 
 		generic = {
-			names = {
-				Alera Kanza Wan
+			names = { #Alera is not on this list intentionally
+				Kanza Intek Hovek Kasek Maukiat Vei Saneita Kaldi Kalein Ineki Tilza Atket Vaset Tivet Vitaki Kenat Sivek Katdi Neviak Cancuak Sanden Axpiri Misivari Ivini Tirzi Arkit Siriaki Kavi Kalik Lakita Tirik Sali Ixpana
 			}
 		}
 		

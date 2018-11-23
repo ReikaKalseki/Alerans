@@ -22,7 +22,7 @@ aleran_expansion_2b = {
 }
 
 aleran_expansion_3 = {
-	country_starbase_capacity_add = 10
+	country_starbase_capacity_mult = 1
 	country_leader_cap = 4
 	icon = "gfx/interface/icons/modifiers/aleran_expansion_3.dds"
 }

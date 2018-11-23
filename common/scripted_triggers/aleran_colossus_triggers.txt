@@ -69,4 +69,5 @@ can_destroy_planet_with_PLANET_KILLER_STARRAY = {
 		is_planet_class = pc_t_star
 		#is_planet_class = pc_l_star
 	}
+	NOT = {has_planet_flag = destabilized}
 }

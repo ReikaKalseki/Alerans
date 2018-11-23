@@ -418,6 +418,22 @@ opinion_dragon_ontheway = {
 	}
 }
 
+opinion_dragon_goodmachines = {
+	trigger = {
+		OR = {
+			FROM = {
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = 60
+	}
+}
+
 opinion_dragon_close = {
 	trigger = {
 		FROM = {
