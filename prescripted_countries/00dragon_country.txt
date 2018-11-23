@@ -23,7 +23,7 @@ aleran
 	system_name="Aleris"
 	initializer="dragon_system_initializer"
 	graphical_culture="plantoid_01"
-	city_graphical_culture="reptilian_01"
+	city_graphical_culture="aleran_04" #was reptilian
 	empire_flag={
 		icon={
 			category="blocky"

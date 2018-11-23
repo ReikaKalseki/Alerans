@@ -386,7 +386,7 @@ planet_event = { #star goes nova, destroying everything
 	
 		solar_system = { #system scope
 			every_system_megastructure = {
-				 from = {remove_megastructure = this} #?
+				 prev = {remove_megastructure = prev} #?
 			}
 			every_fleet_in_system = {
 				destroy_fleet = this
