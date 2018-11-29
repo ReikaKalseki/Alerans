@@ -1,0 +1,6 @@
+ambient_object = {
+	name = "nova_explosion_object"
+	entity = "nova_explosion_entity"
+	selectable = no
+	show_name = no
+}

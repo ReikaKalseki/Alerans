@@ -47,9 +47,11 @@
 		}
 		
 		military_station_small = {
+			
 		}
 		
 		ion_cannon = {
+			
 		}
 	}
 
@@ -197,7 +199,7 @@
 			
 			# Always combined with a first name
 			second_names = {
-				Kasuli Lanreya Alixiati Prexa Cotal Qan Kae Aseki Valerian Skal Shinami Fyr Xan Alka Chaymi Evra Lavna Pala Kale Ysara Sera Saeur Tyrael Soren Arith Kalseki Tzeri Ecly Nenli Tasla Izli Korben Hixei Eracel Emaya Kadath Cheru Hauyne Rakapila Nallen Kaveri Levias Ikeda Inari
+				Kasuli Tetran Lanreya Alixiati Prexa Cotal Qan Kae Aseki Valerian Skal Shinami Fyr Xan Alka Chaymi Evra Lavna Pala Kale Ysara Sera Saeur Tyrael Soren Arith Kalseki Tzeri Ecly Nenli Tasla Izli Korben Hixei Eracel Emaya Kadath Cheru Hauyne Rakapila Nallen Kaveri Levias Ikeda Inari
 			}
 			
 			regnal_first_names = {

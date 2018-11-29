@@ -25,6 +25,10 @@ weapon_component_template = { #induces chemical bliss, and destroys the morale o
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no
+	
+    windup = { min = 10 max = 10 }
+    total_fire_time = 180
+	cooldown = 30
 
 	prerequisites = { "tech_pk_stupor" }
 
@@ -43,6 +47,10 @@ weapon_component_template = { #hits a star, and triggers a massive solar event -
 	type = planet_killer
 	static_rotation = yes
 	use_ship_kill_target = no
+	
+    windup = { min = 120 max = 120 }
+    total_fire_time = 20
+	cooldown = 10
 
 	prerequisites = { "tech_pk_starray" }
 

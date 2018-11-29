@@ -1,0 +1,9 @@
+objectTypes = {
+
+	pdxparticle = {
+		name = "nova_explosion_particle"
+		type = "nova_explosion_effect"
+		
+		scale = 1.0
+	}
+}

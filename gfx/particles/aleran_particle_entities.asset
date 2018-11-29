@@ -1,0 +1,22 @@
+entity = {
+	name = "nova_explosion_entity"
+	scale = 10
+
+	locator = {
+		name = "root"
+	}
+	
+	default_state = "idle"
+	state = {
+		name = "idle"
+		state_time = 1
+		event = {
+			time = 0
+			particle = "nova_explosion_particle"
+			trigger_once = yes
+			keep_particle = yes
+			sound = { soundeffect = "stellarites_star_expand" }
+		}
+	}
+	playback_rate = 0.25 #was 0.4
+}

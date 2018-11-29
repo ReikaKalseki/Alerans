@@ -342,6 +342,21 @@ planet_event = { #star goes nova, destroying everything
 			scale = 1
 		}
 		
+		create_ambient_object = {
+			type = nova_explosion_object
+			location = this
+			duration = 20
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = no
+			scale = 1
+		}
+		
 		if = {
 			limit = {
 				exists = owner
@@ -444,6 +459,7 @@ planet_event = { #star goes nova, destroying everything
 						is_planet_class = pc_gas_giant
 					}
 					change_pc = pc_broken
+					change_planet_size = -8
 				}
 				else = {
 					change_pc = pc_shattered
