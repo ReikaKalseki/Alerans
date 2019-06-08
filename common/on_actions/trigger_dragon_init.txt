@@ -3,6 +3,7 @@ on_game_start_country = {
 		dragon_start.362
 		dragon_start.363
 		dragon_start.365
+		dragon_start.366
 	}
 }
 

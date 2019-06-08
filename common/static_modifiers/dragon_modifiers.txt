@@ -40,10 +40,14 @@ aleran_expansion_3b = {
 }
 
 aleran_ai_bonus = {
-	ship_weapon_damage = 0.2
+	ship_weapon_damage = 0.15 #was 0.2
 	ship_shield_mult = 0.2
 	ship_upkeep_mult = -0.2
+	armies_upkeep_mult = -0.1
+	country_starbase_influence_cost_mult = -0.05
 	planet_building_build_speed_mult = 0.2
+	all_technology_research_speed = 0.08
+	pop_growth_speed = 0.05
 }
 
 stupor_drugged = {

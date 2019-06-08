@@ -106,7 +106,14 @@ country_event = {
 	immediate = {
 		if = { 
 			limit = { 
-				has_civic = civic_dragon_init
+				OR = {
+					has_civic = civic_dragon_init	
+					and = {
+						has_civic = civic_dragon_gov
+						has_civic = civic_dragon_tech
+						has_civic = civic_dragon_research
+					}
+				}
 				is_ai = yes
 			}
 			add_modifier = {
@@ -219,6 +226,68 @@ country_event = {
 			set_policy = { policy = resettlement option = resettlement_allowed cooldown = no }
 			set_policy = { policy = enlightenment option = enlightenment_allowed cooldown = no }
 			set_policy = { policy = orbital_bombardment option = orbital_bombardment_selective cooldown = no }
+		}
+	}
+}
+
+country_event = {
+	id = dragon_start.366
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { 
+			limit = { 
+				has_civic = civic_dragon_gov
+			}
+			
+			every_owned_ship = {
+				if = {
+					limit = {
+						is_ship_class = shipclass_corvette
+					}
+					delete_ship = this
+				}
+			}
+			
+			create_fleet = {
+				effect = {
+					set_owner = prev
+					
+					create_ship = {
+						name = random
+						random_existing_design = constructor
+					}
+					
+					set_fleet_stance = evasive
+					set_location = prev.capital_star
+				}
+			}
+			
+			create_fleet = {
+				effect = {
+					set_owner = prev
+
+					create_ship = {
+						name = random
+						random_existing_design = science
+					}
+
+					set_fleet_stance = evasive				
+					#set_location = prev.capital_star
+					set_location = prev.capital_scope.star
+					
+					owner = {
+						create_leader = {
+							type = scientist
+							sub_type = survey
+							name = random
+							species = owner_main_species
+						}
+					}
+					set_leader = last_created_leader
+				}			
+			}
 		}
 	}
 }

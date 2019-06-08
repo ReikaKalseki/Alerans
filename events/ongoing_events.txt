@@ -179,6 +179,84 @@ country_event = {
 }
 
 country_event = {
+	id = dragon_ongoing.365
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.365.name"
+	desc = "dragon_ongoing.365.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_construction
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_ai_bonus}
+		has_valid_civic = civic_dragon_gov
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = aleran_ai_bonus
+		
+		leader = {
+			change_leader_portrait = "dgnfemale13"
+		}
+		
+		set_city_graphical_culture = "aleran_04"
+		set_graphical_culture = "plantoid_01"
+		
+		add_minerals = 200
+		add_energy = 100
+		add_influence = 100
+		
+		give_technology = { tech = "tech_biolab_1" message = no }
+		give_technology = { tech = "tech_engineering_lab_1" message = no }
+		give_technology = { tech = "tech_physics_lab_1" message = no }
+		
+		create_fleet = {
+			effect = {
+				set_owner = prev
+
+				create_ship = {
+					name = random
+					random_existing_design = science
+				}
+
+				set_fleet_stance = evasive				
+				#set_location = prev.capital_star
+				set_location = prev.capital_scope.star
+				
+				owner = {
+					create_leader = {
+						type = scientist
+						sub_type = survey
+						name = random
+						species = owner_main_species
+					}
+				}
+				set_leader = last_created_leader
+			}			
+		}
+	}
+	
+	option = {
+		name = "dragon_ongoing.365.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_ai_bonus
+				days = -1
+			}
+		}
+		
+	}
+}
+
+country_event = {
 	id = dragon_ongoing.1
 	hide_window = yes
 	is_triggered_only = yes

@@ -49,10 +49,13 @@ civic_dragon_gov = {
 		#pop_other_species_owner_happiness = -0.3 #penalizes owning robots too
 		alliance_influence_cost = -0.8
 		country_claim_influence_cost_mult = 0.8
-		faction_influence_mult = -0.25
-		rivalry_influence_gain = -0.75
+		faction_influence_mult = -0.5 #was 0.25
+		rivalry_influence_gain = -0.9 #was 0.75
 		country_subject_integration_speed_add = 10
 		country_integration_cooldown_mult = -0.5
+		country_election_influence_cost_mult = -0.6
+		edict_length_mult = 0.2
+		country_leader_pool_size = 1
 	}
 
 	#description = "civic_tooltip_dragongov_effects"
@@ -123,7 +126,7 @@ civic_dragon_research = {
 		shipsize_science_build_speed_mult = 0.4
 		num_tech_alternatives_add = 1
 		category_statecraft_research_speed_mult = -0.15
-		category_psionics_research_speed_mult = -0.3
+		category_psionics_research_speed_mult = -0.5 #was 0.3
 		category_military_theory_research_speed_mult = -0.2
 		category_field_manipulation_research_speed_mult = 0.1
 		category_particles_research_speed_mult = 0.1
