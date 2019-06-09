@@ -1398,6 +1398,9 @@ country_event = {
 				}
 			}
 		}
+		event_target:contact_empire = {
+			add_opinion_modifier = { modifier = opinion_aleran_threatened who = from } 
+		}
 	}
 	option = {
 		name = action.1.aleran_to_idiots
@@ -1410,6 +1413,9 @@ country_event = {
 					has_ethic = ethic_xenophobe
 				}
 			}
+		}
+		event_target:contact_empire = {
+			add_opinion_modifier = { modifier = opinion_aleran_insulted who = from } 
 		}
 	}
 	option = {
@@ -1441,6 +1447,9 @@ country_event = {
 					has_ai_personality = hegemonic_imperialists
 				}
 			}
+		}
+		event_target:contact_empire = {
+			add_opinion_modifier = { modifier = opinion_aleran_allied who = from } 
 		}
 	}
 	

@@ -56,6 +56,7 @@ civic_dragon_gov = {
 		country_election_influence_cost_mult = -0.6
 		edict_length_mult = 0.2
 		country_leader_pool_size = 1
+		starbase_defensive_war_ship_build_speed_mult = 0.2
 	}
 
 	#description = "civic_tooltip_dragongov_effects"

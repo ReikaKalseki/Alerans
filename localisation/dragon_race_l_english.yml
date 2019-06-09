@@ -203,7 +203,7 @@ building_dragon_central_library_desc:0 "The central hub of the Aleran Commonweal
 
 
 civic_dragon_gov:0 "Ethical Dominance"
-civic_dragon_gov_desc:0 "Those with the power to spread reason and morality have the obligation to do so, whether that be simple expansion to the stars or the elimination of ideologies which do nothing but cause stagnation or suffering. However, those who resist progress will no doubt prove an enduring irritant, and conflict must never be sought for its own sake."
+civic_dragon_gov_desc:0 "Those with the power to spread reason and morality have the obligation to do so, whether that be simple expansion to the stars or the elimination of ideologies which do nothing but cause stagnation or suffering. However, those who resist progress will no doubt prove an enduring irritant, and conflict must never be sought for its own sake. Should these goals or survival itself be threatened, any feasible efforts must be made to address the threat."
 
 civic_dragon_tech:0 "High-Tech Infrastructure"
 civic_dragon_tech_desc:0 "This civilization uses advanced technology and heavy automation in their constructions, increasing productivity, at somewhat higher initial and operating cost."
@@ -248,6 +248,27 @@ dragon_ongoing.1000.name:0 "Destructive Society Enlightened"
 dragon_ongoing.1000.desc:0 "We have completed our forced enlightenment process. The [event_target:aleran_youre_next.GetName] have reacted with some concern, as they know that we can and probably should do the same to them."
 dragon_ongoing.1000.click:0 "They are right to be concerned."
 
+
+dragon_ongoing.400.name:0 "Potential Ally Civilization"
+dragon_ongoing.400.desc:0 "The Aleran Commonwealth is founded on very similar ideals as those of our own society, and they appear to consider us both enlightened and ethical. As a result, we have every reason to expect that our diplomatic relations with them will always be cordial, if not outright allied."
+dragon_ongoing.400.click:0 "We will extend the same to them."
+
+dragon_ongoing.401.name:0 "Potential Threat Encountered"
+dragon_ongoing.401.desc:0 "The ideas on which our society is based has made us a target of interest of the Aleran Commonwealth, which not only is hugely dissimilar to our own but actually considers us a threat or a cesspool of ignorance or evil. Given their adherence to their ideology of imposing both enlightenment and morality by force, we can expect hostile relations in the future. It may be wise to examine and maybe even embrace some of their ideology, if for no other reason than to make them look in another direction."
+dragon_ongoing.401.click.a:0 "This threat is not worth considering."
+dragon_ongoing.401.click.b:0 "This does not bode well for the future."
+dragon_ongoing.401.click.c:0 "That is probably a good idea."
+
+dragon_ongoing.403.name:0 "Potential Threat Encountered"
+dragon_ongoing.403.desc:0 "The ideas which our society considers so dear have made us a target of interest of the Aleran Commonwealth, which actually considers us a threat or a cesspool of ignorance or evil. Given their adherence to their ideology of imposing both enlightenment and morality by force, we can expect hostile or even violent relations in the future."
+dragon_ongoing.403.click:0 "Pathetic morons, the lot of them."
+
+dragon_ongoing.402.name:0 "Aleran Contact Established"
+dragon_ongoing.402.desc:0 "The Aleran Commonwealth is founded on very different ideology than we are accustomed to, but fortunately not in a way that makes them consider us a problem to be dealt with, merely a...neutral oddity."
+dragon_ongoing.402.click.a:0 "They are not a problem for us either."
+dragon_ongoing.402.click.b:0 "We shall prove them wrong in time."
+
+
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
 aleran_megastructures.1.click:0 "Excellent."
@@ -276,6 +297,9 @@ nova_irradiated_desc:0 "A nova event in a nearby system has caused a serious env
 
 lost_a_system_to_nova:0 "Nova Loss"
 lost_a_system_to_nova_desc:0 "This empire has recently lost one of its star systems to a nova event, depressing morale."
+
+considering_aleran_ideas:0 "Examining Aleran Ideology"
+considering_aleran_ideas_desc:0 "Upon examination, aspects of the ideology underlying the Aleran Commonwealth prove worth further evaluation and might possibly even have some appeal."
 
 
 aleran_colossus.3.name:0 "Population in Withdrawal"
@@ -335,6 +359,8 @@ opinion_dragon_naive:0 "Naive Populists"
 opinion_dragon_barbarians:0 "Barbarians"
 opinion_dragon_barbarians_fe:0 "Barbarians"
 opinion_dragon_ignorant:0 "Ignorant Sheep"
+opinion_dragon_dismissed:0 "Haughty Fools"
+opinion_dragon_planning:0 "Evil Schemers"
 opinion_dragon_zealot:0 "Dangerous Zealots"
 opinion_dragon_zealot_fe:0 "Dangerous Zealots"
 opinion_dragon_jackass:0 "Closed-Minded Bigots"
@@ -347,6 +373,10 @@ opinion_dragon_goodmachines:0 "Ethical Caretakers"
 opinion_dragon_close:0 "Almost There"
 opinion_dragon_allies:0 "Allies in Reason"
 opinion_dragon_allieswar:0 "Allies in Enlightened Enforcement"
+
+opinion_aleran_threatened:0 "First Contact Threat"
+opinion_aleran_insulted:0 "First Contact Insult"
+opinion_aleran_allied:0 "First Contact Alliance"
 
 
 DRGN_insult_evil_01:0 "??"

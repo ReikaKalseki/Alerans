@@ -257,6 +257,314 @@ country_event = {
 }
 
 country_event = {
+	id = dragon_ongoing.400
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.400.name"
+	desc = "dragon_ongoing.400.desc"
+	picture = GFX_evt_news_room
+	show_sound = event_default
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_contact}
+		NOT = {has_valid_civic = civic_dragon_gov}
+		is_ai = no
+		
+		any_country = {
+			has_valid_civic = civic_dragon_gov
+			 
+			has_established_contact = from
+				 
+			NOT = {has_casus_belli = {target = from type = cb_dragon}}
+			OR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	immediate = {
+		set_country_flag = aleran_contact
+	}
+	
+	option = {
+		name = "dragon_ongoing.400.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			
+		}
+		
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.401
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.401.name"
+	desc = "dragon_ongoing.401.desc"
+	picture = GFX_evt_news_room
+	show_sound = event_default
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_contact}
+		NOT = {has_valid_civic = civic_dragon_gov}
+		is_ai = no
+		
+		any_country = {
+			has_valid_civic = civic_dragon_gov
+			 
+			has_established_contact = from
+				 
+			has_casus_belli = {target = from type = cb_dragon}
+			NOR = {
+				from = {
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				from = {
+					has_ethic = ethic_fanatic_militarist
+				}
+				from = {
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	immediate = {
+		set_country_flag = aleran_contact
+	}
+	
+	option = {
+		name = "dragon_ongoing.401.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			set_country_flag = dismissed_aleran_threat
+		}
+	}
+	
+	option = {
+		name = "dragon_ongoing.401.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			
+		}
+	}
+	
+	option = {
+		name = "dragon_ongoing.401.click.c"
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+			set_country_flag = considering_aleran_ideas
+			add_modifier = {
+				modifier = considering_aleran_ideas
+				days = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.402
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.402.name"
+	desc = "dragon_ongoing.402.desc"
+	picture = GFX_evt_news_room
+	show_sound = event_default
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_contact}
+		NOT = {has_valid_civic = civic_dragon_gov}
+		is_ai = no
+		
+		any_country = {
+			has_valid_civic = civic_dragon_gov
+			 
+			has_established_contact = from
+			
+			NOT = {has_casus_belli = {target = from type = cb_dragon}}
+			NOR = {
+				is_friendly_to = FROM
+				is_cordial_to = FROM
+				is_protective_to = FROM
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	immediate = {
+		set_country_flag = aleran_contact
+	}
+	
+	option = {
+		name = "dragon_ongoing.402.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			
+		}
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.402.click.b"
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_spiritualist
+				}
+			}
+		}
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			set_country_flag = planning_aleran_attack
+		}
+		
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.403
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.403.name"
+	desc = "dragon_ongoing.403.desc"
+	picture = GFX_evt_news_room
+	show_sound = event_default
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_contact}
+		NOT = {has_valid_civic = civic_dragon_gov}
+		is_ai = no
+		
+		any_country = {
+			has_valid_civic = civic_dragon_gov
+			 
+			has_established_contact = from
+				 
+			has_casus_belli = {target = from type = cb_dragon}
+			OR = {
+				from = {
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				from = {
+					has_ethic = ethic_fanatic_militarist
+				}
+				from = {
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	immediate = {
+		set_country_flag = aleran_contact
+	}
+	
+	option = {
+		name = "dragon_ongoing.403.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			set_country_flag = dismissed_aleran_threat
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.800
+	hide_window = yes
+	#is_triggered_only = yes
+	title = "dragon_ongoing.800.name"
+	desc = "dragon_ongoing.800.desc"
+	picture = GFX_evt_news_room
+	show_sound = event_default
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_ai = yes
+		
+		NOT = {has_modifier = aleran_ai_catchup}
+		
+		any_country = {
+			NOT = {has_valid_civic = civic_dragon_gov}
+			 
+			has_established_contact = from
+			is_ai = no
+			
+			NOT = {is_country_type = fallen_empire}
+				 
+			from = {has_casus_belli = {target = prev type = cb_dragon}}
+			
+			OR = {
+				relative_power = {
+					who = from
+					category = fleet
+					value > inferior
+				}
+				relative_power = {
+					who = from
+					category = technology
+					value > inferior
+				}
+			}			
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.800.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_ai_catchup
+				days = 300
+			}
+		}
+	}
+}
+
+country_event = {
 	id = dragon_ongoing.1
 	hide_window = yes
 	is_triggered_only = yes

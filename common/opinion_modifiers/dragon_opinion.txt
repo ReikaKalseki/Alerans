@@ -5,6 +5,43 @@
 #######
 ##What others think of Alerans
 #######
+
+opinion_aleran_threatened = {
+	opinion = {
+		base = -100
+	}
+
+	accumulative = no
+
+	decay = {
+		base = 2
+	}
+}
+
+opinion_aleran_insulted = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = no
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_aleran_allied = {
+	opinion = {
+		base = 50
+	}
+
+	accumulative = no
+
+	decay = {
+		base = 1
+	}
+}
+
 opinion_dragon_cold = {
 	trigger = {
 		FROM = {
@@ -270,6 +307,36 @@ opinion_dragon_ignorant = {
 	}
 }
 
+#ie they dismissed the Alerans as a threat
+opinion_dragon_dismissed = {
+	trigger = {
+		FROM = {
+			has_country_flag = dismissed_aleran_threat
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -30
+	}
+}
+
+#ie they are planning something against the Alerans or what they consider sacred
+opinion_dragon_planning = {
+	trigger = {
+		FROM = {
+			has_country_flag = planning_aleran_attack
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -80
+	}
+}
+
 opinion_dragon_zealot = {
 	trigger = {
 		FROM = {
@@ -409,6 +476,29 @@ opinion_dragon_ontheway = {
 				has_ethic = "ethic_xenophile"
 			}
 		}
+		NOT = {
+			AND = {
+				FROM = {
+					has_ethic = "ethic_materialist"
+				}
+				FROM = {
+					has_ethic = "ethic_xenophile"
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				FROM = {
+					has_ethic = "ethic_materialist"
+				}
+				FROM = {
+					has_ethic = "ethic_xenophile"
+				}
+				FROM = {
+					has_ethic = "ethic_authoritarian"
+				}
+			}
+		}
 		this = {
 			has_country_flag = aleran
 		}
@@ -441,6 +531,19 @@ opinion_dragon_close = {
 		}
 		FROM = {
 			has_ethic = "ethic_xenophile"
+		}
+		NOT = {
+			AND = {
+				FROM = {
+					has_ethic = "ethic_materialist"
+				}
+				FROM = {
+					has_ethic = "ethic_xenophile"
+				}
+				FROM = {
+					has_ethic = "ethic_authoritarian"
+				}
+			}
 		}
 		this = {
 			has_country_flag = aleran

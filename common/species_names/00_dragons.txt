@@ -2,13 +2,10 @@
 
 Dragon = {
 	dragon = {
-		name = "Aleran"
-		plural = "Alerans"
-		home_planet = "Alera"
-		home_system = "Aleris"
+		name = "Dragon"
+		plural = "Dragons"
+		home_planet = ""
+		home_system = ""
 		name_list = "DRGN1"
-		
-		graphical_culture = human_01
-		city_graphical_culture = reptilian_01
 	}
 }
