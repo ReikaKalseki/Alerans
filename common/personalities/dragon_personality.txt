@@ -42,12 +42,12 @@
 # NOTE: Weight is additive!
 
 dragons = { 
-	aggressiveness = 0.75
+	aggressiveness = 0.88 #was 0.75
 	trade_willingness = 2.0
 	bravery = 2.0
 	combat_bravery = 1.25
 	military_spending = 1.0 #was 0.8
-	colony_spending = 1.2
+	colony_spending = 1.4 #was 1.2
 	threat_modifier = 3
 	friction_modifier = 0.5
 	claims_modifier = 5.0
@@ -62,7 +62,7 @@ dragons = {
 	migration_pact_acceptance = 0
 	defensive_pact_acceptance = 20
 	
-	advanced_start_chance = 50
+	advanced_start_chance = 80 #was 50
 
 	behaviour = {
 		conqueror = yes

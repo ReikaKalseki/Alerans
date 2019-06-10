@@ -57,6 +57,7 @@ civic_dragon_gov = {
 		edict_length_mult = 0.2
 		country_leader_pool_size = 1
 		starbase_defensive_war_ship_build_speed_mult = 0.2
+		diplomacy_influence_cost = -1
 	}
 
 	#description = "civic_tooltip_dragongov_effects"
@@ -86,6 +87,7 @@ civic_dragon_tech = {
 		country_resource_minerals_mult = 0.3
 		pop_robot_build_speed_mult = 0.25
 		#pop_robot_production_output = 0.1
+		pop_robot_production_output = 0.4 #energy only?
 		planet_building_build_speed_mult = 0.25
 		terraform_speed_mult = 0.25
 		planet_colony_development_speed_mult = 0.25
@@ -196,5 +198,38 @@ civic_dragon_takeover = {
 		pop_slave_resource_output = -1
 		technology_cost_num_colonies_mult = -0.5
 		technology_cost_num_systems_mult = -0.5
+	}
+}
+
+civic_dragon_listened = {
+	modification = no
+	pickable_at_start = no
+	potential = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	possible = {
+		ethics = {
+			value = ethic_authoritarian
+			value = ethic_materialist
+			value = ethic_xenophile
+		}
+		authority = { value = auth_dragon }
+	}
+	random_weight = { base = 0 }
+	modifier = {
+		pop_happiness = 0.05
+		pop_government_ethic_attraction = 0.2
+		pop_ethics_shift_speed_mult = 0.15
+		pop_other_species_happiness = 1
+		planet_unrest_mult = -0.1
+		country_war_exhaustion_mult = 1
+		pop_slave_resource_output = -1
+		technology_cost_num_colonies_mult = -0.15
+		technology_cost_num_systems_mult = -0.15
 	}
 }

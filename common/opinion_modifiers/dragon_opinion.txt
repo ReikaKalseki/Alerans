@@ -307,36 +307,6 @@ opinion_dragon_ignorant = {
 	}
 }
 
-#ie they dismissed the Alerans as a threat
-opinion_dragon_dismissed = {
-	trigger = {
-		FROM = {
-			has_country_flag = dismissed_aleran_threat
-		}
-		this = {
-			has_country_flag = aleran
-		}
-	}
-	opinion = {
-		base = -30
-	}
-}
-
-#ie they are planning something against the Alerans or what they consider sacred
-opinion_dragon_planning = {
-	trigger = {
-		FROM = {
-			has_country_flag = planning_aleran_attack
-		}
-		this = {
-			has_country_flag = aleran
-		}
-	}
-	opinion = {
-		base = -80
-	}
-}
-
 opinion_dragon_zealot = {
 	trigger = {
 		FROM = {
@@ -596,5 +566,88 @@ opinion_dragon_allieswar = {
 	}
 	opinion = {
 		base = 200
+	}
+}
+
+
+
+#ie they dismissed the Alerans as a threat
+opinion_dragon_dismissed = {
+	trigger = {
+		FROM = {
+			has_country_flag = dismissed_aleran_threat
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -30
+	}
+}
+
+#ie they are planning something against the Alerans or what they consider sacred
+opinion_dragon_planning = {
+	trigger = {
+		FROM = {
+			has_country_flag = planning_aleran_attack
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -80
+	}
+}
+
+
+#rejected demands to improve
+opinion_dragon_warning_rejected_1 = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran_cb_warning_rejected_l1
+			NOR = {
+				has_country_flag = aleran_cb_warning_rejected_l2
+				has_country_flag = aleran_cb_warning_rejected_l3
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -60
+	}
+}
+
+opinion_dragon_warning_rejected_2 = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran_cb_warning_rejected_l2
+			NOT = {
+				has_country_flag = aleran_cb_warning_rejected_l3
+			}
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -120
+	}
+}
+
+opinion_dragon_warning_rejected_3 = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran_cb_warning_rejected_l3
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -300
 	}
 }

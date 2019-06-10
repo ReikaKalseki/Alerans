@@ -218,6 +218,9 @@ civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YT
 civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
 
+civic_dragon_listened:0 "Aleran Ideological Acceptance"
+civic_dragon_listened_desc:0 "This civilization has been persuaded to align more closely with the values set out by the Aleran Commonwealth. In particular, it has abandoned self-serving but unethical practices and is focused more on rational science and mutual benefit than conquest or superstition."
+
 SUBJECT_dragon_control:0 "Aleran Satellite"
 SUBJECT_DESC_dragon_control:0 "Satellite empires are ones that have been overthrown by the Aleran Commonwealth. They take on the commonwealth's style of governance and ethics, are forbidden from expanding their borders, and cannot enter diplomacy on their own. They can be integrated directly, at significant cost."
 
@@ -267,6 +270,31 @@ dragon_ongoing.402.name:0 "Aleran Contact Established"
 dragon_ongoing.402.desc:0 "The Aleran Commonwealth is founded on very different ideology than we are accustomed to, but fortunately not in a way that makes them consider us a problem to be dealt with, merely a...neutral oddity."
 dragon_ongoing.402.click.a:0 "They are not a problem for us either."
 dragon_ongoing.402.click.b:0 "We shall prove them wrong in time."
+
+
+dragon_ongoing.901.name:0 "Communication from §H[From.GetName]§!"
+dragon_ongoing.901.desc:0 "Hello from the [From.GetName]; our sociological and moral experts have finished our examination of the [Root.GetName]. Several serious lapses have been identified, and this message is to request you address them as soon as is feasible. Assuming you do, this matter need not escalate further."
+dragon_ongoing.901.click.a:0 "We shall investigate these issues and hopefully resolve them."
+dragon_ongoing.901.click.b:0 "I assure you that there is no mistake in our ideology."
+dragon_ongoing.901.click.c:0 "Why should we care what a worthless [From.GetSpeciesName] thinks?"
+dragon_ongoing.901.a.tooltip:0 "Our policies and ideology will be §Hchanged§! to match their demands, including the outlawing of things like slavery, the abandonment of xenophobic tendencies, and a focus on materialist science. §RThis will fundamentally change our government, policies, and behavior in a way that is difficult to reverse.§!"
+dragon_ongoing.901.c.tooltip:0 "Blatantly and aggressively rejecting their demands and insulting their own will not endear us to them."
+
+dragon_ongoing.902.name:0 "Warning from §H[From.GetName]§!"
+dragon_ongoing.902.desc:0 "We have warned you and the [Root.GetName] once already: Your society engages in multiple unacceptable practices and fosters multiple ideas that are actively opposed to productive, ethical conduct of sentient beings in a supposedly advanced society. This will not be allowed to exist unchallenged, and let me issue a reminder that nothing is immutable or invincible."
+dragon_ongoing.902.click.a:0 "Your conviction is grounds for considering your message."
+dragon_ongoing.902.click.b:0 "Like we said last time, it is the [From.GetName] who are backwards."
+dragon_ongoing.902.click.c:0 "Oh sure, THAT's going to change my mind. Idiot."
+dragon_ongoing.902.a.tooltip:0 "Our policies and ideology will be §Hchanged§! to match their demands, including the outlawing of things like slavery, the abandonment of xenophobic tendencies, and a focus on materialist science. §RThis will fundamentally change our government, policies, and behavior in a way that is difficult to reverse.§!"
+dragon_ongoing.902.c.tooltip:0 "Already greatly upset, open contempt will escalate their aggression."
+
+dragon_ongoing.903.name:0 "Threat from §H[From.GetName]§!"
+dragon_ongoing.903.desc:0 "Seeing as you appear to be either too dogmatic or too stupid to get the message the first two times, let me state it plainly: If you do not abandon the elements of your ideology or policy that make you a pariah and a blight on all of sentient life, we will force you to do so, and that is rarely an enviable experience. Consider this the final warning; Our fourth communication on this topic will come in a rather more destructive and unpleasant package than this one did, and one which you will not so easily dismiss."
+dragon_ongoing.903.click.a:0 "We will - begrudgingly - concede the matter."
+dragon_ongoing.903.click.b:0 "You clearly do not realize what you are asking. NO."
+dragon_ongoing.903.click.c:0 "Force us with what? The threat of seeing more of that stupid face of yours?"
+dragon_ongoing.903.a.tooltip:0 "Our policies and ideology will be §Hchanged§! to match their demands, including the outlawing of things like slavery, the abandonment of xenophobic tendencies, and a focus on materialist science. §RThis will fundamentally change our government, policies, and behavior in a way that is difficult to reverse.§!"
+dragon_ongoing.903.c.tooltip:0 "Continuing blatant hostility on this matter is likely to invite conflict."
 
 
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
@@ -377,6 +405,10 @@ opinion_dragon_allieswar:0 "Allies in Enlightened Enforcement"
 opinion_aleran_threatened:0 "First Contact Threat"
 opinion_aleran_insulted:0 "First Contact Insult"
 opinion_aleran_allied:0 "First Contact Alliance"
+
+opinion_dragon_warning_rejected_1:0 "Ideological Requests Ignored"
+opinion_dragon_warning_rejected_2:0 "Ideological Requests Refused"
+opinion_dragon_warning_rejected_3:0 "Ideological Requests Refused"
 
 
 DRGN_insult_evil_01:0 "??"

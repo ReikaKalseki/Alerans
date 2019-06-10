@@ -40,6 +40,9 @@ aleran_expansion_3b = {
 }
 
 aleran_ai_bonus = {
+	country_core_sector_system_cap = 5
+	country_starbase_capacity_add = 5
+	max_influence = 2500
 	ship_weapon_damage = 0.15 #was 0.2
 	ship_shield_mult = 0.2
 	ship_upkeep_mult = -0.2
@@ -50,6 +53,9 @@ aleran_ai_bonus = {
 	pop_growth_speed = 0.05
 	science_ship_survey_speed = 0.2
 	ship_anomaly_research_speed_mult = 0.1
+	ship_speed_mult = 0.25
+	ship_interstellar_speed_mult = 0.25
+	ship_windup_mult = -0.2
 }
 
 aleran_ai_catchup = {

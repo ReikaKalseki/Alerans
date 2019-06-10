@@ -34,6 +34,7 @@ dragon_system_initializer = {
 				set_star_flag = empire_cluster
 			}
 		}
+		set_star_flag = aleran_home
 	}
 	
     planet = {
@@ -472,6 +473,7 @@ aleris_neighbor_t1 = {
 			#	set_star_flag = empire_cluster
 			#}
 		}
+		set_star_flag = aleran_nearby
 	}
 
 	planet = {
@@ -519,6 +521,7 @@ aleris_neighbor_t1_first_colony = {
 			#	set_star_flag = empire_cluster
 			#}
 		}
+		set_star_flag = aleran_nearby
 	}
 
 	planet = {
@@ -648,6 +651,7 @@ aleris_neighbor_t2 = {
 			#	set_star_flag = empire_cluster
 			#}
 		}
+		set_star_flag = aleran_nearby
 	}
 
 	planet = {
@@ -710,6 +714,7 @@ aleris_neighbor_t2_second_colony = {
 			#	set_star_flag = empire_cluster
 			#}
 		}
+		set_star_flag = aleran_nearby
 	}
 
 	planet = {
@@ -791,6 +796,7 @@ aleris_neighbor_science_outpost = {
 			#	set_star_flag = empire_cluster
 			#}
 		}
+		set_star_flag = aleran_nearby
 	}
 
 	planet = {
