@@ -215,6 +215,9 @@ country_event = {
 		give_technology = { tech = "tech_engineering_lab_1" message = no }
 		give_technology = { tech = "tech_physics_lab_1" message = no }
 		
+		give_technology = { tech = tech_wormhole_stabilization message = no } 
+		give_technology = { tech = tech_jump_drive_1 message = no } 
+		
 		create_fleet = {
 			effect = {
 				set_owner = prev
@@ -798,6 +801,7 @@ country_event = {
 	}
 	
 	immediate = {
+		save_event_target_as = alerans
 		random_playable_country = {
 			limit = {
 				is_country_type = default
@@ -842,6 +846,14 @@ country_event = {
 					has_country_flag = aleran_cb_warning_issued_l2
 					NOT = {
 						has_country_flag = aleran_cb_warning_issued_l3
+					}
+					#shares border
+					any_system_within_border = {
+						event_target:alerans = {
+							any_system_within_border = {
+								has_hyperlane_to = prevprev
+							}
+						}
 					}
 				}
 				country_event = { id = dragon_ongoing.903 }
@@ -994,6 +1006,7 @@ country_event = {
 	
 	immediate = {
 		set_country_flag = aleran_cb_warning_issued_l3
+		set_timed_country_flag = { flag = aleran_cb_war_timeout days = 60 } 
 	}
 	
 	option = {
@@ -1088,5 +1101,480 @@ country_event = {
 			 	set_living_standard = { country = event_target:us type = living_standard_good cooldown = no }
 			}
 		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.905
+	hide_window = yes
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	immediate = {
+		save_event_target_as = alerans
+		random_playable_country = {
+			limit = {
+				is_country_type = default
+				has_communications = root
+				root = {
+					has_casus_belli = {
+						target = prev type = cb_dragon
+					}
+				}
+				NOR = {
+					has_country_flag = aleran_cb_warning_accepted
+					has_country_flag = aleran_cb_war_timeout
+				}
+				#NOT = { is_at_war_with = event_target:alerans }
+				has_country_flag = aleran_cb_warning_issued_l3
+				relative_power = {
+					who = prev
+					category = fleet
+					value <= superior
+				}
+			}
+			random = {
+				chance = 5
+				event_target:alerans = {
+					declare_war = {
+						target = prev
+						#name = <optional war name>
+						attacker_war_goal = wg_dragon
+					}
+				}
+				random_list = {
+					10 = { country_event = { id = dragon_ongoing.1201 } }
+					10 = { country_event = { id = dragon_ongoing.1202 } }
+					10 = { country_event = { id = dragon_ongoing.1203 } }
+					10 = { country_event = { id = dragon_ongoing.1204 } }
+					10 = { country_event = { id = dragon_ongoing.1205 } }
+				} 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.908
+	hide_window = yes
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		save_event_target_as = alerans
+		capital_scope = {
+			solar_system = {
+				save_event_target_as = aleris
+			}
+		}
+		random_playable_country = {
+			limit = {
+				is_country_type = default
+				is_ai = no
+				has_communications = event_target:alerans
+				NOT = {is_at_war_with = event_target:alerans}
+				any_owned_pop = {
+					OR = {
+						is_enslaved = yes
+						is_being_purged = yes
+					}
+				}
+			}
+			event_target:alerans = {
+				declare_war = {
+					target = prev
+					#name = <optional war name>
+					attacker_war_goal = wg_dragon
+				}
+			}
+			every_owned_pop = {
+				limit = {
+					OR = {
+						is_enslaved = yes
+						is_being_purged = yes
+					}
+				}
+				planet = {
+					if = {
+						limit = {
+							NOT = {has_planet_flag = aleran_intervention}
+						}
+						set_timed_planet_flag = {flag = aleran_intervention, days = 400}
+						
+						create_fleet = {
+							effect = {
+								set_owner = event_target:alerans
+								
+								while = {
+									count = 24
+									create_ship = {
+										name = random
+										random_existing_design = corvette
+									}
+								}
+								
+								while = {
+									count = 12
+									create_ship = {
+										name = random
+										random_existing_design = destroyer
+									}
+								}
+								
+								while = {
+									count = 6
+									create_ship = {
+										name = random
+										random_existing_design = cruiser
+									}
+								}
+								
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										random_existing_design = battleship
+									}
+								}
+								
+								while = {
+									count = 1
+									create_ship = {
+										name = random
+										random_existing_design = titan
+									}
+								}
+								
+								set_location = event_target:aleris
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 100
+								queue_actions = {
+									repeat = {
+										move_to = prev
+									}
+								}
+							}
+						}
+						
+					}
+				}
+			}
+			country_event = { id = dragon_ongoing.1206 }
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.907
+	hide_window = yes
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		save_event_target_as = alerans
+		capital_scope = {
+			solar_system = {
+				save_event_target_as = aleris
+			}
+		}
+		random_playable_country = {
+			limit = {
+				is_country_type = default
+				is_ai = no
+				has_communications = event_target:alerans
+				NOT = {is_at_war_with = event_target:alerans}
+				any_owned_pop = {
+					OR = {
+						is_enslaved = yes
+						is_being_purged = yes
+					}
+				}
+				relative_power = {
+					who = prev
+					category = fleet
+					value < overwhelming
+				}
+			}
+			event_target:alerans = {
+				declare_war = {
+					target = prev
+					#name = <optional war name>
+					attacker_war_goal = wg_dragon
+				}
+			}
+			country_event = { id = dragon_ongoing.1206 }
+		}
+	}
+}
+
+# This = Pop scope
+# From = Planet
+pop_event = {
+	id = dragon_ongoing.906
+	hide_window = yes
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	has_valid_civic = civic_dragon_gov
+	#	is_at_war = no
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 30
+	#}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = purger
+			random_country = {
+				limit = {
+					is_country_type = default
+					is_ai = yes
+					has_communications = purger
+					has_valid_civic = civic_dragon_gov
+					#is_at_war = no
+				}
+				save_event_target_as = alerans
+				event_target:alerans = {
+					declare_war = {
+						target = purger
+						#name = <optional war name>
+						attacker_war_goal = wg_dragon
+					}
+				}
+				random_list = {
+					10 = { country_event = { id = dragon_ongoing.1201 } }
+					10 = { country_event = { id = dragon_ongoing.1202 } }
+					10 = { country_event = { id = dragon_ongoing.1203 } }
+					10 = { country_event = { id = dragon_ongoing.1204 } }
+					10 = { country_event = { id = dragon_ongoing.1205 } }
+				} 
+			}
+		}
+	}
+}
+
+# Root = Country
+# From = War
+country_event = {
+	id = dragon_ongoing.1200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log	= "running event 1200 with root [Root.GetName]"
+		if = {
+			limit = {
+				root = {
+					has_valid_civic = civic_dragon_gov
+				}
+				from = {
+					using_war_goal = { type = wg_dragon owner = root } 
+					any_attacker = { is_same_value = root } 
+				}
+			}
+			log	= "passing if"
+			root = {save_event_target_as = alerans}
+			from = {
+				every_defender = {
+					log	= "messaging [This.GetName]"
+					enemy = event_target:alerans
+					limit = { NOT = {is_same_value = root} }
+					random_list = {
+						10 = { country_event = { id = dragon_ongoing.1201 } }
+						10 = { country_event = { id = dragon_ongoing.1202 } }
+						10 = { country_event = { id = dragon_ongoing.1203 } }
+						10 = { country_event = { id = dragon_ongoing.1204 } }
+						10 = { country_event = { id = dragon_ongoing.1205 } }
+					} 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1201
+	title = "dragon_ongoing.1201.name"
+	desc = "dragon_ongoing.1201.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = root
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1201.click.a"
+	}
+	
+	option = {
+		name = "dragon_ongoing.1201.click.b"
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1202
+	title = "dragon_ongoing.1202.name"
+	desc = "dragon_ongoing.1202.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:alerans
+		planet_background = event_target:alerans
+		graphical_culture = event_target:alerans
+		city_level = event_target:alerans
+		room = event_target:alerans.ruler
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1201.click.a"
+	}
+	
+	option = {
+		name = "dragon_ongoing.1201.click.b"
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1203
+	title = "dragon_ongoing.1203.name"
+	desc = "dragon_ongoing.1203.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:alerans
+		planet_background = event_target:alerans
+		graphical_culture = event_target:alerans
+		city_level = event_target:alerans
+		room = event_target:alerans.ruler
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1203.click.a"
+	}
+	
+	option = {
+		name = "dragon_ongoing.1203.click.b"
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1204
+	title = "dragon_ongoing.1204.name"
+	desc = "dragon_ongoing.1204.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:alerans
+		planet_background = event_target:alerans
+		graphical_culture = event_target:alerans
+		city_level = event_target:alerans
+		room = event_target:alerans.ruler
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1204.click.a"
+	}
+	
+	option = {
+		name = "dragon_ongoing.1204.click.b"
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1205
+	title = "dragon_ongoing.1205.name"
+	desc = "dragon_ongoing.1205.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:alerans
+		planet_background = event_target:alerans
+		graphical_culture = event_target:alerans
+		city_level = event_target:alerans
+		room = event_target:alerans.ruler
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1205.click.a"
+	}
+	
+	option = {
+		name = "dragon_ongoing.1205.click.b"
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1206
+	title = "dragon_ongoing.1206.name"
+	desc = "dragon_ongoing.1206.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:alerans
+		planet_background = event_target:alerans
+		graphical_culture = event_target:alerans
+		city_level = event_target:alerans
+		room = event_target:alerans.ruler
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_ongoing.1206.click"
 	}
 }

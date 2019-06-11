@@ -297,6 +297,32 @@ dragon_ongoing.903.a.tooltip:0 "Our policies and ideology will be §Hchanged§! 
 dragon_ongoing.903.c.tooltip:0 "Continuing blatant hostility on this matter is likely to invite conflict."
 
 
+dragon_ongoing.1201.name:0 "Declaration of War"
+dragon_ongoing.1202.name:0 "Declaration of War"
+dragon_ongoing.1203.name:0 "Declaration of War"
+dragon_ongoing.1204.name:0 "Declaration of War"
+dragon_ongoing.1205.name:0 "Declaration of War"
+dragon_ongoing.1201.desc:0 "The [From.GetName] gave you ample warning that if you did not cease your warpath against morality and rationality, we would stop it for you. You are either deaf or stupid, and I will allow you to select which when you end up in front of a court."
+dragon_ongoing.1202.desc:0 "How it is that you thought we would sit and ignore your atrocities is a mystery to me."
+dragon_ongoing.1203.desc:0 "Once this is all over - and it WILL be over - you can take solace that we will treat your people better than you do. Note that I said 'your people', and not 'you'. You...likely will not be around to see that. Maybe if you show some uncharacteristic intelligence and stand down early."
+dragon_ongoing.1204.desc:0 "An AI once told me that 'the best solution to a problem is usually the easiest one'. Well, today, that solution does not include you. Existing. The problem sure does, though."
+dragon_ongoing.1205.desc:0 "If I have two dozen ships, and then, I add two dozen more ships, what do I have?\n...\nThe <unintelligible> creatures of <unintelligible> have mastered this, what about you?\nNo? The gift of intelligence was just something that happened to other people, wasn't it?\nNo matter, you will find out firsthand soon enough. Maybe once it's all over, you can write a stupid poem about the sound of our weapons or something."
+dragon_ongoing.1201.click.a:0 "You have made a serious mistake."
+dragon_ongoing.1201.click.b:0 "Oh $%&#."
+dragon_ongoing.1202.click.a:0 "You have made a serious mistake."
+dragon_ongoing.1202.click.b:0 "Oh $%&#."
+dragon_ongoing.1203.click.a:0 "You have made a serious mistake."
+dragon_ongoing.1203.click.b:0 "Oh $%&#."
+dragon_ongoing.1204.click.a:0 "You have made a serious mistake."
+dragon_ongoing.1204.click.b:0 "Oh $%&#."
+dragon_ongoing.1205.click.a:0 "You have made a serious mistake."
+dragon_ongoing.1205.click.b:0 "Oh $%&#."
+dragon_ongoing.1206.name:0 "Declaration of War"
+dragon_ongoing.1206.desc:0 "We know of the atrocities you are currently committing against members of your empire. Clearly you are of vastly insufficient moral standing to be allowed to rule; Allow us to rectify that situation, starting with removing your power over those you choose to harm."
+dragon_ongoing.1206.click:0 "Try and stop us."
+
+
+
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
 aleran_megastructures.1.click:0 "Excellent."
@@ -482,10 +508,6 @@ DRGN_DOW_RECEIVE_04:0 "I feel kind of sorry for your population. Well, the ones 
 DRGN_DOW_RECEIVE_05:0 "Given that no rational individual would have chosen to declare war at this moment, I think it is probably my obligation to give you a chance to explain that this is a case of accidentally choosing the wrong diplomatic signal."
 DRGN_DOW_RECEIVE_06:0 "Well, saves us the effort of selling the war to our citizens, I suppose..."
 DRGN_DOW_RECEIVE_07:0 "One should not take humor in the suffering of others. That which is about to befall you, however, is probably worthy of an exception."
-DRGN_DOW_SEND_01:0 "The [Root.GetName] gave you ample warning that if you did not cease your warpath against morality and rationality, we would stop it for you. You are either deaf or stupid, and I will allow you to select which when you end up in front of a court."
-DRGN_DOW_SEND_02:0 "How it is that you thought we would sit and ignore your atrocities is a mystery to me."
-DRGN_DOW_SEND_03:0 "Once this is all over - and it WILL be over - you can take solace that we will treat your people better than you do. Note that I said 'your people', and not 'you'. You...likely will not be around to see that. Maybe if you show some uncharacteristic intelligence and stand down early."
-DRGN_DOW_SEND_04:0 "An AI once told me that 'the best solution to a problem is usually the easiest one'. Well, today, that solution does not include you. Existing. The problem sure does, though."
 
 DRGN_INSULT_SEND_01:0 "One of my advisors recommended I send you an insult. I fail to see the purpose of that, so I will just tell you to reflect on the health of your own society instead."
 DRGN_INSULT_SEND_02:0 "I doubt there is any insult I can send to you that will be more effective than a few minutes of introspection on your part. Assuming you are capable of such things."

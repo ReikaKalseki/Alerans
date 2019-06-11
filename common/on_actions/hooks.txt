@@ -39,3 +39,31 @@ on_blocker_cleared = {
 		dragon_ongoing.50
 	}
 }
+
+# A war is beginning, executed for every country in the war.
+# Root = Country
+# From = War
+on_war_beginning = {
+	events = {
+		#dragon_ongoing.1200
+	}
+}
+
+# This = Pop scope
+# From = Planet
+on_purge_begun = {
+	events = {
+		#dragon_ongoing.906 #immediate war
+	}
+}
+
+# Pop is enslaved
+# This = Pop scope
+# owner_species = { (species)
+# owner = { owner_species = { (empire main species)
+# owner = { (empire)
+on_pop_enslaved = {
+	events = {
+		#dragon_ongoing.906 #immediate war
+	}
+}
