@@ -343,6 +343,12 @@ dragon_ongoing.1501.click.a:0 "You have my word that no such atrocities will tak
 dragon_ongoing.1501.click.b:0 "This war is our business. Why should I listen to you?"
 
 
+dragon_ongoing.1501.name:0 "Offer from the [From.GetName]"
+dragon_ongoing.1501.desc:0 "You are losing this war, and for what? Retaining the ability to oppress and mistreat your subjects? Being able to conquer independent nations as if you have some sort of inherent superiority? You already know how this ends, if you stay on this path.\n\nHowever, I will make you an offer: Abandon these practices, and recognize all sentients as equals, and not only will we cease our current military campaign against you, but will also not take more dramatic measures against you to prevent future problems from you. Actions that WILL be taken should you refuse this offer and choose to continue to approach complete defeat."
+dragon_ongoing.1501.click.a:0 "This is a welcome escape; We accept your offer."
+dragon_ongoing.1501.click.b:0 "We have no interest in that; we shall yet win this war."
+
+
 
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."

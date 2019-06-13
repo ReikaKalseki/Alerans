@@ -1,4 +1,4 @@
-wg_dragon = {
+wg_moralize = {
 	# Required, the actor must have a Casus Belli against the target
 	casus_belli = cb_dragon
 
@@ -6,7 +6,7 @@ wg_dragon = {
 	# If not set, defender gets to pick their own wargoal
 	#set_defender_wargoal = wg_example
 	
-	icon = "gfx/interface/icons/diplomacy/wargoal_dragon.dds" ## Links to this icon in the Stellaris graphical resources folder.
+	icon = "gfx/interface/icons/diplomacy/wargoal_moralize.dds" ## Links to this icon in the Stellaris graphical resources folder.
 
 	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to
 	# be defender default, the first one scripted in the file is chosen.
@@ -19,10 +19,10 @@ wg_dragon = {
 	hide_if_no_cb = yes	# Default no
 
 	# Cede claims on peace?
-	cede_claims = occupied_only #yes/occupied_only/no
+	cede_claims = no #yes/occupied_only/no
 
 	# This affects how likely the AI is to surrender to this wargoal, generally less willing on more severe wargoals (negative numbers = less willing)
-	surrender_acceptance = -250 # Default 0
+	surrender_acceptance = -125 # Default 0
 
 	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
 	war_exhaustion = 0.2 # Default 1.0
@@ -56,55 +56,10 @@ wg_dragon = {
 	
 	# Run when target surrenders after claims are ceded
 	on_accept = {
-		#from = { remove_country_flag = is_astroraptors }
-		from = { copy_ethos_and_authority = root }
-		from = {
-			change_government = {
-				civics = {
-					civic = civic_dragon_takeover
-					civic = civic_free_haven
-				}
-			} 
-		}
-		root = {
-			set_timed_country_flag = {flag = recently_enlightened_someone days = 900} #2.5y
-		}
-		from = {
-			set_timed_country_flag = {flag = recently_enlightened days = 180} #0.5y
-		}
-		from = { add_modifier = { modifier = recently_liberated days = 7300 } }		
 		add_opinion_modifier = { modifier = opinion_we_liberated who = from }	
 		from = { add_opinion_modifier = { modifier = opinion_liberated_us who = root } }
 		end_rivalry = from
 		from = { end_rivalry = root }	
-		every_country = {
-			limit = { 	
-				OR = {
-					is_in_federation_with = root 
-					AND = {
-						is_subject = yes
-						exists = overlord
-						overlord = { is_same_value = root }
-					}
-				}
-			}
-			end_rivalry = from
-			from = { end_rivalry = prev }	
-			add_opinion_modifier = { modifier = opinion_we_liberated who = from }
-			from = { add_opinion_modifier = { modifier = opinion_liberated_us who = prev } }
-			every_system_within_border = {
-				limit = {
-					from = { has_claim = prev }
-				}
-				remove_claims = { who = from }
-			}
-		}
-		from = {
-			add_threat = {
-				who = root
-				amount = -1
-			}				
-		}
 		every_country = {
 			#log = "this in anycountry is [This.GetName]"
 			limit = {
@@ -141,9 +96,6 @@ wg_dragon = {
 					amount = -0.5
 				}
 			}
-		}
-		from = {
-			leave_alliance = { override_requirements = yes }
 		}
 		from = {
 			kill_leader = {
@@ -183,12 +135,6 @@ wg_dragon = {
 			}
 		}
 		from = {
-			set_subject_of = {
-				who = root
-				subject_type = dragon_control
-			} 
-		}
-		from = {
 			every_owned_planet = {
 				every_tile = {
 					if = {
@@ -212,104 +158,7 @@ wg_dragon = {
 				}
 			}
 		}
-		from = {
-			every_owned_pop = {
-				if = {
-					limit = {pop_has_ethic = ethic_xenophobe}
-					if = {
-						limit = {
-							owner = {
-								has_ethic = ethic_fanatic_xenophobe
-							}
-						}
-						random_list = {50 = {kill_pop = yes} 50 = {}}
-					}
-					else = {
-						random_list = {10 = {kill_pop = yes} 90 = {}}
-					}
-				}
-				else_if = {
-					limit = {pop_has_ethic = ethic_spiritualist}
-					if = {
-						limit = {
-							owner = {
-								has_ethic = ethic_fanatic_spiritualist
-							}
-						}
-						random_list = {80 = {kill_pop = yes} 20 = {}}
-					}
-					else = {
-						random_list = {15 = {kill_pop = yes} 85 = {}}
-					}
-				}
-				else_if = {
-					limit = {pop_has_ethic = ethic_militarist}
-					if = {
-						limit = {
-							owner = {
-								has_ethic = ethic_fanatic_militarist
-							}
-						}
-						random_list = {60 = {kill_pop = yes} 40 = {}}
-					}
-					else = {
-						random_list = {20 = {kill_pop = yes} 80 = {}}
-					}
-				}
-				else_if = {
-					limit = {pop_has_ethic = ethic_egalitarian}
-					if = {
-						limit = {
-							owner = {
-								has_ethic = ethic_fanatic_egalitarian
-							}
-						}
-						random_list = {30 = {kill_pop = yes} 70 = {}}
-					}
-					else = {
-						random_list = {5 = {kill_pop = yes} 95 = {}}
-					}
-				}
-				else_if = {
-					limit = {
-						pop_has_ethic = ethic_pacifist
-						owner = {
-							has_ethic = ethic_fanatic_pacifist
-						}
-					}
-					random_list = {2 = {kill_pop = yes} 98 = {}}
-				}
-				else_if = {
-					limit = {
-						pop_has_ethic = ethic_authoritarian
-						owner = {
-							has_ethic = ethic_fanatic_authoritarian
-						}
-					}
-					random_list = {25 = {kill_pop = yes} 75 = {}}
-				}
-				else_if = {
-					limit = {
-						owner = {
-							OR = {
-								has_valid_civic = civic_barbaric_despoilers
-								has_valid_civic = civic_hive_devouring_swarm
-								has_valid_civic = civic_machine_terminator
-								has_valid_civic = civic_machine_assimilator
-							}
-						}
-					}
-					if = {
-						limit = {pop_has_ethic = ethic_gestalt_consciousness} #ie everyone is the same
-						kill_pop = yes
-					}
-					else = {
-						random_list = {75 = {kill_pop = yes} 25 = {}}
-					}
-				}
-			}
-		}
-		root = {add_influence = 250}
+		root = {add_influence = 120}
 	}
 
 }

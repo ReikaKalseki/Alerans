@@ -58,6 +58,7 @@ aleran_ai_bonus = {
 	ship_speed_mult = 0.25
 	ship_interstellar_speed_mult = 0.25
 	ship_windup_mult = -0.2
+	pop_happiness = 0.35
 }
 
 aleran_war_anticocky = {

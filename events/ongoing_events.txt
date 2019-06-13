@@ -1468,6 +1468,27 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = dragon_ongoing.912
+	title = "dragon_ongoing.912.name"
+	desc = "dragon_ongoing.912.desc"
+	#hide_window = yes
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
+		room = from.ruler
+	}
+	
+	option = {
+		name = "dragon_ongoing.912.click"
+	}
+}
+
 # This = Pop scope
 # From = Planet
 pop_event = {
@@ -1862,6 +1883,93 @@ country_event = {
 			}
 			set_war_goal = { type = wg_humiliate target = event_target:defender enemy = event_target:alerans } 
 			#remove_claims = { who = <country> num_of_claims = x } 
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1610
+	hide_window = yes
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_at_war = yes
+		is_ai = yes
+		always = no #to disable this event
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+	
+	immediate = {
+		log = "Running 1610"
+		save_event_target_as = alerans
+		random_playable_country = {
+			limit = {
+				is_ai = no
+				is_at_war_with = event_target:alerans
+				NOR = {
+					has_valid_civic = civic_machine_terminator
+					has_valid_civic = civic_machine_assimilator
+					has_valid_civic = civic_barbaric_despoilers
+					has_valid_civic = civic_hive_devouring_swarm
+					has_valid_civic = civic_fanatic_purifiers
+				}
+				relative_power = {
+					who = prev
+					category = fleet
+					value < equivalent
+				}
+				def_war_exhaustion_sum > 0.4
+				count_system_within_border = {
+					count >= 3
+					any_system_planet = {
+					 	is_occupied_flag = yes
+					}
+				}
+			}
+			country_event = { id = dragon_ongoing.1611 }
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1611
+	title = "dragon_ongoing.1611.name"
+	desc = "dragon_ongoing.1611.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
+		room = from.ruler
+	}
+	
+	option = {
+		name = "dragon_ongoing.1611.click.a"
+		owner = {
+			every_system_within_border = {
+				remove_claims = { who = event_target:alerans num_of_claims = 100 } 
+			}
+			event_target:alerans = {
+				set_war_goal = { type = wg_moralize target = prev enemy = event_target:alerans } 			
+			}
+		}
+	}
+	
+	option = {
+		name = "dragon_ongoing.1611.click.b"
+		event_target:alerans = {
+			hidden_effect = { 
+				add_modifier = {
+					modifier = aleran_war_anticocky
+					days = 900
+				}
+			}	
 		}
 	}
 }
