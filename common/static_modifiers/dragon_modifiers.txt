@@ -45,17 +45,24 @@ aleran_ai_bonus = {
 	max_influence = 2500
 	ship_weapon_damage = 0.15 #was 0.2
 	ship_shield_mult = 0.2
-	ship_upkeep_mult = -0.2
+	ship_upkeep_mult = -0.4 #was 0.2
+	planet_building_upkeep_mult = -0.2 #was 0.2
+	country_naval_cap_mult = 0.35
 	armies_upkeep_mult = -0.1
 	country_starbase_influence_cost_mult = -0.05
 	planet_building_build_speed_mult = 0.2
-	all_technology_research_speed = 0.08
+	all_technology_research_speed = 0.2 #was 0.08
 	pop_growth_speed = 0.05
 	science_ship_survey_speed = 0.2
 	ship_anomaly_research_speed_mult = 0.1
 	ship_speed_mult = 0.25
 	ship_interstellar_speed_mult = 0.25
 	ship_windup_mult = -0.2
+}
+
+aleran_war_anticocky = {
+	ship_weapon_damage = 0.3
+	ship_shield_mult = 0.4
 }
 
 aleran_ai_catchup = {

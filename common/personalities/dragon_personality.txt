@@ -59,7 +59,7 @@ dragons = {
 
 	federation_acceptance = 2
 	nap_acceptance = 5
-	migration_pact_acceptance = 0
+	migration_pact_acceptance = -10
 	defensive_pact_acceptance = 20
 	
 	advanced_start_chance = 80 #was 50

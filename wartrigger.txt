@@ -1,0 +1,40 @@
+
+
+# Root = Country
+# From = War
+country_event = {
+	id = dragon_ongoing.1200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log	= running event 1200 with root [Root.GetName]
+		if = {
+			limit = {
+				root = {
+					has_valid_civic = civic_dragon_gov
+				}
+				from = {
+					using_war_goal = { type = wg_dragon owner = root } 
+					any_attacker = { is_same_value = root } 
+				}
+			}
+			log	= passing if
+			root = {save_event_target_as = alerans}
+			from = {
+				every_defender = {
+					log	= messaging [This.GetName]
+					enemy = event_targetalerans
+					limit = { NOT = {is_same_value = root} }
+					random_list = {
+						10 = { country_event = { id = dragon_ongoing.1201 } }
+						10 = { country_event = { id = dragon_ongoing.1202 } }
+						10 = { country_event = { id = dragon_ongoing.1203 } }
+						10 = { country_event = { id = dragon_ongoing.1204 } }
+						10 = { country_event = { id = dragon_ongoing.1205 } }
+					} 
+				}
+			}
+		}
+	}
+}

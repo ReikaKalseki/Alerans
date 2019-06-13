@@ -296,6 +296,18 @@ dragon_ongoing.903.click.c:0 "Force us with what? The threat of seeing more of t
 dragon_ongoing.903.a.tooltip:0 "Our policies and ideology will be §Hchanged§! to match their demands, including the outlawing of things like slavery, the abandonment of xenophobic tendencies, and a focus on materialist science. §RThis will fundamentally change our government, policies, and behavior in a way that is difficult to reverse.§!"
 dragon_ongoing.903.c.tooltip:0 "Continuing blatant hostility on this matter is likely to invite conflict."
 
+dragon_ongoing.910.name:0 "Warning from the [From.GetName]"
+dragon_ongoing.910.desc:0 "The very foundations of your society are antithetical to moral or sensible conduct. While I do not exactly have great hopes for a reformation on your part, I will nonetheless offer this one - and only - warning: If you continue to present a threat to all other life in the galaxy, we will see to it that you lose the ability to do so."
+dragon_ongoing.910.click:0 "The only offer I seek is one to destroy you."
+
+dragon_ongoing.911.name:0 "Declaration of War"
+dragon_ongoing.911.desc:0 "It is not often that I can honestly say that an entire society is beyond redemption, and that there is absolutely zero hope for improvement. Clearly, the [evil.GetName] actually is. As a result, the only defensible solution is its complete destruction, a goal which the [From.GetName] shall now pursue with its full attention. Some of your citizens may survive, should they not be as far gone as you are, but when this is over the [evil.GetName] will be nothing more than an unpleasant memory, with such an associated stigma that its very idea will be regarded with nothing but horror or disgust."
+dragon_ongoing.911.click:0 "We eagerly await YOUR destruction."
+
+dragon_ongoing.912.name:0 "Declaration of War"
+dragon_ongoing.912.desc:0 "It is not often that I can honestly say that an entire society is beyond redemption, and that there is absolutely zero hope for improvement. Clearly, [evil.GetName] actually is. As a result, the only defensible solution is its complete destruction, a goal which the [From.GetName] shall now pursue with its full attention. When this is over, the name '[evil.GetName]' will be nothing more than an unpleasant memory, with such an associated stigma that its very idea will be regarded with nothing but horror or disgust."
+dragon_ongoing.912.click:0 "We eagerly await YOUR destruction."
+
 
 dragon_ongoing.1201.name:0 "Declaration of War"
 dragon_ongoing.1202.name:0 "Declaration of War"
@@ -318,8 +330,17 @@ dragon_ongoing.1204.click.b:0 "Oh $%&#."
 dragon_ongoing.1205.click.a:0 "You have made a serious mistake."
 dragon_ongoing.1205.click.b:0 "Oh $%&#."
 dragon_ongoing.1206.name:0 "Declaration of War"
-dragon_ongoing.1206.desc:0 "We know of the atrocities you are currently committing against members of your empire. Clearly you are of vastly insufficient moral standing to be allowed to rule; Allow us to rectify that situation, starting with removing your power over those you choose to harm."
+dragon_ongoing.1206.desc:0 "We know of the atrocities you are currently committing against the [sufferer.GetSpeciesName] unlucky enough to be under your rule. Clearly you are of vastly insufficient moral standing to be allowed to rule; Allow us to rectify that situation, starting with removing your power over those you choose to harm, and in all likelihood ending with removing §Ryou§!."
 dragon_ongoing.1206.click:0 "Try and stop us."
+dragon_ongoing.1207.name:0 "Declaration of War"
+dragon_ongoing.1207.desc:0 "You expressly swore that you would refrain from committing atrocities against those you wage war with. Should we have known at the time that you had as much integrity as you appear to have intellect, we could have skipped this whole charade and going straight to the us-destroying-you part. Well, at least we are there now."
+dragon_ongoing.1207.click:0 "Your words mean nothing to me."
+
+
+dragon_ongoing.1501.name:0 "Warning from the [From.GetName]"
+dragon_ongoing.1501.desc:0 "I am watching your conduct in your little conflict with the [defender.GetName] closely. Merely taking territory for resources, or seeking to establish some sort of political appearances, in its own right, is undesirable but not intolerable. However, let me be clear on one thing: Should you commit any sort of gross violation on the inhabitants of the lands you claim, whatever suffering you inflict on them will be visited upon you tenfold. I swear to that, and, should you be skeptical, need I remind you that I have the fleets and power of the [From.GetName] to make it happen."
+dragon_ongoing.1501.click.a:0 "You have my word that no such atrocities will take place."
+dragon_ongoing.1501.click.b:0 "This war is our business. Why should I listen to you?"
 
 
 

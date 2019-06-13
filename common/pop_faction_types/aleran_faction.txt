@@ -796,7 +796,7 @@ aleran_faction = {
 		trigger = {
 			NOT = {
 				any_country = {
-					prev = {is_rival = owner}
+					is_rival = owner
 				}
 			}
 		}
