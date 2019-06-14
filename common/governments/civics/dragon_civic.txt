@@ -42,6 +42,7 @@ civic_dragon_gov = {
 		country_starbase_capacity_add = 3
 		#pop_ethic_materialist_attraction_mult = 0.1
 		pop_government_ethic_attraction = 0.4
+		country_piracy_risk_mult = -0.1
 		country_naval_cap_mult = 0.2
 		country_war_exhaustion_mult = 0.6
 		#subject_integration_influence_cost_mult = 0.8

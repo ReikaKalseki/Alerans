@@ -343,10 +343,20 @@ dragon_ongoing.1501.click.a:0 "You have my word that no such atrocities will tak
 dragon_ongoing.1501.click.b:0 "This war is our business. Why should I listen to you?"
 
 
-dragon_ongoing.1501.name:0 "Offer from the [From.GetName]"
-dragon_ongoing.1501.desc:0 "You are losing this war, and for what? Retaining the ability to oppress and mistreat your subjects? Being able to conquer independent nations as if you have some sort of inherent superiority? You already know how this ends, if you stay on this path.\n\nHowever, I will make you an offer: Abandon these practices, and recognize all sentients as equals, and not only will we cease our current military campaign against you, but will also not take more dramatic measures against you to prevent future problems from you. Actions that WILL be taken should you refuse this offer and choose to continue to approach complete defeat."
-dragon_ongoing.1501.click.a:0 "This is a welcome escape; We accept your offer."
-dragon_ongoing.1501.click.b:0 "We have no interest in that; we shall yet win this war."
+dragon_ongoing.1611.name:0 "Offer from the [From.GetName]"
+dragon_ongoing.1611.desc:0 "You are losing this war, and for what? Retaining the ability to oppress and mistreat your subjects? Being able to conquer independent nations as if you have some sort of inherent superiority? You already know how this ends, if you stay on this path.\n\nHowever, I will make you an offer: Abandon these practices, and recognize all sentients as equals, and not only will we cease our current military campaign against you, but will also not take more dramatic measures against you to prevent future problems from you. Actions that WILL be taken should you refuse this offer and choose to continue to approach complete defeat."
+dragon_ongoing.1611.click.a:0 "This is a welcome escape; We accept your offer."
+dragon_ongoing.1611.click.b:0 "We have no interest in that; we shall yet win this war."
+dragon_ongoing.1611.a.tooltip:0 "This will not fundamentally change our style of government, but it will change many of our policies, particularly those which govern species rights and acts of war.\n\nThey will withdraw their armies in response."
+dragon_ongoing.1611.b.tooltip:0 "The war will continue and we will experience far more severe penalties if we lose."
+
+
+dragon_ongoing.1621.name:0 "Offer from the [From.GetName]"
+dragon_ongoing.1621.desc:0 "Believe it or not, a much larger threat to galactic peace and stability than you has arisen, and I wish to direct our focus to them. Are you interested in a ceasefire so that this problem does not go unaddressed?"
+dragon_ongoing.1621.click.a:0 "This is a welcome escape; We accept your offer."
+dragon_ongoing.1621.click.b:0 "We have no interest in that; we shall yet win this war."
+dragon_ongoing.1621.a.tooltip:0 "They will redirect their military forces to fight the other threats, instead of fighting us, but we will not technically yet be at peace."
+dragon_ongoing.1621.b.tooltip:0 "The war will continue as normal."
 
 
 

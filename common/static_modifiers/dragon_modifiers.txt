@@ -23,6 +23,14 @@ aleran_expansion_2b = {
 	icon = "gfx/interface/icons/modifiers/aleran_expansion_2b.dds"
 }
 
+aleran_dangerfight = {
+	ship_speed_mult = 0.2 #was 0.1
+	ship_interstellar_speed_mult = 0.2 #was 0.1
+	ship_windup_mult = -0.1
+	ship_weapon_damage = 3 #was 0.3, then 0.5
+	ship_shield_mult = 4 #was 0.5, then 0.8
+}
+
 aleran_expansion_3 = {
 	country_core_sector_system_cap = 200 #is new
 	country_starbase_capacity_mult = 1

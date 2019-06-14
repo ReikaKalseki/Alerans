@@ -34,18 +34,24 @@ wg_dragon = {
 	# THIS = The acting country
 	potential = {
 		this = {
-			has_country_flag = aleran
+			has_valid_civic = civic_dragon_gov
 		}
 		from = {
-			NOT = {has_country_flag = aleran}
+			NOR = {
+				has_country_flag = aleran
+				has_valid_civic = civic_dragon_gov
+			}
 		}
 	}
 	possible = {
 		this = {
-			has_country_flag = aleran
+			has_valid_civic = civic_dragon_gov
 		}
 		from = {
-			NOT = {has_country_flag = aleran}
+			NOR = {
+				has_country_flag = aleran
+				has_valid_civic = civic_dragon_gov
+			}
 		}
 	}
 	
