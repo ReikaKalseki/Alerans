@@ -225,6 +225,8 @@ aleran_faction = {
 			owner = {
 				NOT = {
 					any_owned_pop = {
+						is_robot_pop = no
+						is_sapient = yes
 						OR = {
 							has_citizenship_type = {
 								type = citizenship_caste_system
@@ -261,6 +263,8 @@ aleran_faction = {
 				NOT = {
 					any_owned_pop = {
 						has_population_control = yes
+						is_robot_pop = no
+						is_sapient = yes
 					}
 				}
 			}
@@ -622,7 +626,7 @@ aleran_faction = {
 		trigger = {
 			owner = {
 				food > 999
-				has_monthly_income = { resource = food value > 100 }
+				has_monthly_income = { resource = food value > 50 }
 			}
 		}
 	}
@@ -904,6 +908,9 @@ aleran_faction = {
 
 		trigger = {
 			owner = {
+				OR = {
+					is_at_war = no
+				}
 				NOT = {
 					any_war = {
 						any_attacker = {

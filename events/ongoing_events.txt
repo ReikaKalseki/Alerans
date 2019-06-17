@@ -804,6 +804,20 @@ country_event = {
 		has_valid_civic = civic_dragon_gov
 		years_passed >= 40
 		NOT = {has_country_flag = following_peace_offer}
+		NOT = {
+			any_country = {
+				num_fleets > 1
+				OR = {
+					is_country_type = awakened_marauders
+					is_country_type = shroud
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = feral_prethoryn
+				}
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -1173,6 +1187,20 @@ country_event = {
 		has_valid_civic = civic_dragon_gov
 		is_at_war = no
 		NOT = {has_country_flag = following_peace_offer}
+		NOT = {
+			any_country = {
+				num_fleets > 1
+				OR = {
+					is_country_type = awakened_marauders
+					is_country_type = shroud
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = feral_prethoryn
+				}
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -1194,6 +1222,10 @@ country_event = {
 					has_country_flag = aleran_cb_warning_accepted
 					has_country_flag = aleran_cb_war_timeout
 				}
+				NOR = {
+					has_country_flag = aleran_war_offer_taken
+					has_country_flag = aleran_war_khan_offer_taken
+				}
 				#NOT = { is_at_war_with = event_target:alerans }
 				has_country_flag = aleran_cb_warning_issued_l3
 				relative_power = {
@@ -1203,7 +1235,7 @@ country_event = {
 				}
 			}
 			random = {
-				chance = 5
+				chance = 2
 				event_target:alerans = {
 					declare_war = {
 						target = prev
@@ -1974,7 +2006,7 @@ country_event = {
 				every_system_within_border = {
 					remove_claims = { who = event_target:alerans } 
 				}
-				set_timed_country_flag = { flag = aleran_war_offer_taken days = 3000 } 
+				set_timed_country_flag = { flag = aleran_war_offer_taken days = 15000 #50y } 
 				every_country = {
 					limit = { 	
 						OR = {
@@ -2034,6 +2066,12 @@ country_event = {
 	}
 	
 	immediate = {
+		capital_scope = {
+			save_event_target_as = alera
+			solar_system = {
+				save_event_target_as = aleris
+			}
+		}
 		country_event = { id = dragon_ongoing.1612 }
 	}
 }
@@ -2081,8 +2119,8 @@ country_event = {
 			}
 		}
 		every_owned_army = {
-			order_forced_return = yes
-			auto_move_to_planet = { target = event_target:alera clear_auto_move_on_arrival = yes } 
+			#order_forced_return = yes
+			#auto_move_to_planet = { target = event_target:alera clear_auto_move_on_arrival = yes } 
 		}
 		add_static_war_exhaustion = {
 			attacker = event_target:alerans
@@ -2106,6 +2144,7 @@ country_event = {
 		is_at_war = yes
 		is_ai = yes
 		any_country = {
+		 	num_fleets > 1
 			OR = {
 				is_country_type = awakened_marauders
 				is_country_type = shroud
@@ -2124,6 +2163,21 @@ country_event = {
 	}
 	
 	immediate = {
+		every_country = {
+			limit = {
+				num_fleets > 1
+				OR = {
+					is_country_type = awakened_marauders
+					is_country_type = shroud
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = feral_prethoryn
+				}
+			}
+			log = "Matching [this.GetName]"
+		}
 		#log = "Running 1620"
 		save_event_target_as = alerans
 		capital_scope = {
@@ -2281,8 +2335,8 @@ country_event = {
 			}
 		}
 		every_owned_army = {
-			order_forced_return = yes
-			auto_move_to_planet = { target = event_target:alera clear_auto_move_on_arrival = yes } 
+			#order_forced_return = yes
+			#auto_move_to_planet = { target = event_target:alera clear_auto_move_on_arrival = yes } 
 		}
 		add_static_war_exhaustion = {
 			attacker = event_target:alerans
