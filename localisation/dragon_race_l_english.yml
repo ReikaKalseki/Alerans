@@ -359,6 +359,10 @@ dragon_ongoing.1621.a.tooltip:0 "They will redirect their military forces to fig
 dragon_ongoing.1621.b.tooltip:0 "The war will continue as normal."
 
 
+dragon_ongoing.1631.name:0 "Message from the [From.GetName]"
+dragon_ongoing.1631.desc:0 "Believe it or not, a much larger threat to galactic peace and stability than you has arisen. Therefore, you can take some assurance in that we will not engage in military action against you while this threat persists, unless you make yourself worse than them."
+dragon_ongoing.1631.click:0 "Understood."
+
 
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
@@ -527,6 +531,7 @@ DRGN_GREETING_BASIC_04:0 "If I look somewhat...offput, I apologize. There is som
 DRGN_GREETING_BASIC_05:0 "For some reason, the video signal is not working properly, but I can still hear you. Unless you communicate by way of dance, we can still conduct these negotiations."
 DRGN_GREETING_BASIC_06:0 "It appears the frequency band in which you speak is not within my range of hearing. I can compensate for that, but it's going to lead to some weird pauses, so bear with me."
 DRGN_GREETING_BASIC_07:0 "I hope this is not a statement considered offensive, but you bear quite a resemblance to something from a work of fiction I saw recently. I hope for both of our sake that that is where the similarities end."
+DRGN_GREETING_BASIC_08:0 "Do not take our stance or actions as if we think we are somehow better than anyone else; we simply know what principles upon which society should be built to ensure maximum quality of life, and are not afraid to work for that outcome."
 DRGN_GREETING_ALLIES_01:0 "Given the alternative possibilities, it is pleasing to have relationships with a society that does not have an irrational fear of progress."
 DRGN_GREETING_ALLIES_02:0 "I think it is quite a good indicator of our relative standing that the most annoying thing I can come up with about these communications is that the transmitter's power draw interferes with my cooking appliances."
 DRGN_GREETING_ALLIES_03:0 "I got that shipment of [From.GetSpeciesAdj] delicacies you sent me. I'm afraid that while I'm sure it is quite enjoyable to you, what having evolved on the same planet and all, to us [Root.GetSpeciesNamePlural], it is...better left unsaid."

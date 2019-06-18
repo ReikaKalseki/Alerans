@@ -186,6 +186,16 @@ greetings = {
 			is_neutral_to = FROM
 		}
 	}
+	DRGN_GREETING_BASIC_08 = {
+		weight = {
+			weight = 2000000
+		}
+		trigger = {
+			has_ai_personality = dragons
+			NOT = { is_at_war_with = FROM }
+			is_neutral_to = FROM
+		}
+	}
 	DRGN_GREETING_ALLIES_01 = {
 		weight = {
 			weight = 2000000

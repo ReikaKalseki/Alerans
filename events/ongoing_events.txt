@@ -803,7 +803,10 @@ country_event = {
 	trigger = {
 		has_valid_civic = civic_dragon_gov
 		years_passed >= 40
-		NOT = {has_country_flag = following_peace_offer}
+		NOR = {
+			has_country_flag = following_peace_offer
+			has_country_flag = busy_with_khan
+		}
 		NOT = {
 			any_country = {
 				num_fleets > 1
@@ -835,14 +838,15 @@ country_event = {
 				#	has_country_flag = aleran_cb_warning_rejected_l2
 				#	has_country_flag = aleran_cb_warning_rejected_l3
 				#}
-				NOT = {has_country_flag = aleran_war_offer_taken}
+				NOR = {
+					has_country_flag = aleran_cb_warning_accepted
+					has_country_flag = aleran_war_offer_taken
+					has_country_flag = busy_with_khan
+				}
 				root = {
 					has_casus_belli = {
 						target = prev type = cb_dragon
 					}
-				}
-				NOT = {
-					has_country_flag = aleran_cb_warning_accepted
 				}
 			}
 			if = {
@@ -1186,7 +1190,10 @@ country_event = {
 	trigger = {
 		has_valid_civic = civic_dragon_gov
 		is_at_war = no
-		NOT = {has_country_flag = following_peace_offer}
+		NOR = {
+			has_country_flag = following_peace_offer
+			has_country_flag = busy_with_khan
+		}
 		NOT = {
 			any_country = {
 				num_fleets > 1
@@ -1263,6 +1270,7 @@ country_event = {
 		has_valid_civic = civic_dragon_gov
 		is_at_war = no
 		#NOT = {has_country_flag = following_peace_offer}
+		NOT = {has_country_flag = busy_with_khan}
 	}
 
 	mean_time_to_happen = {
@@ -1387,6 +1395,7 @@ country_event = {
 	trigger = {
 		has_valid_civic = civic_dragon_gov
 		is_at_war = no
+		NOT = {has_country_flag = busy_with_khan}
 	}
 
 	mean_time_to_happen = {
@@ -2163,21 +2172,6 @@ country_event = {
 	}
 	
 	immediate = {
-		every_country = {
-			limit = {
-				num_fleets > 1
-				OR = {
-					is_country_type = awakened_marauders
-					is_country_type = shroud
-					is_country_type = swarm
-					is_country_type = extradimensional
-					is_country_type = extradimensional_2
-					is_country_type = extradimensional_3
-					is_country_type = feral_prethoryn
-				}
-			}
-			log = "Matching [this.GetName]"
-		}
 		#log = "Running 1620"
 		save_event_target_as = alerans
 		capital_scope = {
@@ -2365,5 +2359,89 @@ country_event = {
 	
 	immediate = {
 		country_event = { id = dragon_ongoing.1622 }
+	}
+}
+
+
+
+country_event = {
+	id = dragon_ongoing.1630
+	hide_window = yes
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_at_war = no
+		is_ai = yes
+		any_country = {
+		 	num_fleets > 1
+			OR = {
+				is_country_type = awakened_marauders
+				is_country_type = shroud
+				is_country_type = swarm
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+				is_country_type = extradimensional_3
+				is_country_type = feral_prethoryn
+			}
+		}
+		NOT = {
+			has_country_flag = busy_with_khan
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+	
+	immediate = {
+		#log = "Running 1630"
+		save_event_target_as = alerans
+		capital_scope = {
+			save_event_target_as = alera
+			solar_system = {
+				save_event_target_as = aleris
+			}
+		}
+		set_timed_country_flag = { flag = busy_with_khan days = 3000 } 
+		every_country = {
+			limit = {
+				is_country_type = default
+				is_ai = no
+				NOR = {
+					has_valid_civic = civic_machine_terminator
+					has_valid_civic = civic_machine_assimilator
+					has_valid_civic = civic_barbaric_despoilers
+					has_valid_civic = civic_hive_devouring_swarm
+					has_valid_civic = civic_fanatic_purifiers
+				}
+				NOR = {
+					has_country_flag = aleran_war_khan_offer_taken
+					has_country_flag = busy_with_khan
+				}
+			}
+			#log = "Running 1631 on [this.GetName]"
+			set_timed_country_flag = { flag = busy_with_khan days = 3000 } 
+			country_event = { id = dragon_ongoing.1631 }
+		}
+	}
+}
+
+country_event = {
+	id = dragon_ongoing.1631
+	title = "dragon_ongoing.1631.name"
+	desc = "dragon_ongoing.1631.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = from
+		planet_background = from
+		graphical_culture = from
+		city_level = from
+		room = from.ruler
+	}
+	
+	option = {
+		name = "dragon_ongoing.1631.click"
 	}
 }
