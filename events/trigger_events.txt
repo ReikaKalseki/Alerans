@@ -1,0 +1,48 @@
+namespace = dragon_trigger
+
+# This = Pop scope
+# From = Planet
+pop_event = {
+	id = dragon_trigger.906
+	hide_window = yes
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	has_valid_civic = civic_dragon_gov
+	#	is_at_war = no
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 30
+	#}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = purger
+			random_country = {
+				limit = {
+					is_country_type = default
+					is_ai = yes
+					has_communications = purger
+					has_valid_civic = civic_dragon_gov
+					#is_at_war = no
+				}
+				save_event_target_as = alerans
+				event_target:alerans = {
+					declare_war = {
+						target = purger
+						#name = <optional war name>
+						attacker_war_goal = wg_dragon
+					}
+				}
+				random_list = {
+					10 = { country_event = { id = dragon_diplomacy.1100 } }
+					10 = { country_event = { id = dragon_diplomacy.1101 } }
+					10 = { country_event = { id = dragon_diplomacy.1102 } }
+					10 = { country_event = { id = dragon_diplomacy.1103 } }
+					10 = { country_event = { id = dragon_diplomacy.1104 } }
+				} 
+			}
+		}
+	}
+}
