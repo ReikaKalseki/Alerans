@@ -158,7 +158,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "dragon_ongoing.363.click"
+		name = "dragon_ongoing.364.click"
 		ai_chance = {
 			factor = 150
 		}
@@ -638,14 +638,6 @@ country_event = {
 	}
 	
 	immediate = {
-		
-	}
-	
-	option = {
-		name = "dragon_ongoing.800.click"
-		ai_chance = {
-			factor = 150
-		}
 		owner = {
 			add_modifier = {
 				modifier = aleran_ai_catchup
@@ -793,13 +785,6 @@ country_event = {
 	
 	mean_time_to_happen = {
 		days = 10
-	}
-	
-	option = {
-		name = "dragon_ongoing.1000.click"
-		ai_chance = {
-			factor = 150
-		}		
 	}
 }
 
@@ -974,7 +959,7 @@ country_event = {
 		name = "dragon_ongoing.901.click.a"
 		custom_tooltip = dragon_ongoing.901.a.tooltip
 		ai_chance = {
-			factor = 150
+			factor = 15
 		}
 		owner = {
 			#add_modifier = {
@@ -1039,7 +1024,7 @@ country_event = {
 		name = "dragon_ongoing.902.click.a"
 		custom_tooltip = dragon_ongoing.902.a.tooltip
 		ai_chance = {
-			factor = 150
+			factor = 15
 		}
 		owner = {
 			country_event = { id = dragon_ongoing.904 }
@@ -1101,7 +1086,7 @@ country_event = {
 		name = "dragon_ongoing.903.click.a"
 		custom_tooltip = dragon_ongoing.903.a.tooltip
 		ai_chance = {
-			factor = 150
+			factor = 15
 		}
 		owner = {
 			country_event = { id = dragon_ongoing.904 }
@@ -1150,13 +1135,7 @@ country_event = {
 	immediate = {
 		set_country_flag = aleran_cb_warning_accepted
 		remove_country_flag = dismissed_aleran_threat
-	}
-	
-	option = {
-		name = "dragon_ongoing.904.click"
-		ai_chance = {
-			factor = 150
-		}		
+		
 		owner = {
 		
 			save_event_target_as = us
@@ -1331,7 +1310,7 @@ country_event = {
 						limit = {
 							NOT = {has_planet_flag = aleran_intervention}
 						}
-						set_timed_planet_flag = {flag = aleran_intervention, days = 400}
+						set_timed_planet_flag = {flag = aleran_intervention days = 400}
 						
 						create_fleet = {
 							effect = {
@@ -1543,9 +1522,7 @@ country_event = {
 	}
 }
 
-# This = Pop scope
-# From = Planet
-pop_event = {
+pop_event = { #This = Pop scope, From = Planet
 	id = dragon_ongoing.906
 	hide_window = yes
 	is_triggered_only = yes
