@@ -2001,7 +2001,7 @@ country_event = {
 				every_system_within_border = {
 					remove_claims = { who = event_target:alerans } 
 				}
-				set_timed_country_flag = { flag = aleran_war_offer_taken days = 15000 #50y } 
+				set_timed_country_flag = { flag = aleran_war_offer_taken days = 15000 }  #50y
 				every_country = {
 					limit = { 	
 						OR = {
