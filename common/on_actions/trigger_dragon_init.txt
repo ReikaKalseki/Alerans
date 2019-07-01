@@ -1,9 +1,9 @@
 on_game_start_country = {
 	events = {
-		aleran_init.6
-		aleran_init.7
-		aleran_init.9
-		aleran_init.10
+		aleran_init.300
+		aleran_init.301
+		aleran_init.302
+		aleran_init.500
 		#aleran_init.367 #no longer exists
 	}
 }
@@ -16,21 +16,22 @@ on_leader_spawned = {
 
 empire_init_add_technologies = {
 	events = {
-		aleran_init.1
+		aleran_init.100
 	}
 }
 
 empire_init_create_capital_pops = {
 	events = {
-		aleran_init.2
-		aleran_init.3
-		aleran_init.4
+		aleran_init.200
+		aleran_init.201
+		aleran_init.202
+		aleran_init.203
 	}
 }
 
 # Triggers when the game starts
 on_game_start = {
 	events = {
-		#aleran_init.8
+		#aleran_init.400
 	}
 }

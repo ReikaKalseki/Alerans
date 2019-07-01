@@ -137,7 +137,7 @@ wg_dragon = {
 				}
 				root = {
 					prev = { save_event_target_as = aleran_youre_next }
-					country_event = { id = dragon_ongoing.1000 days = 1 random = 30 }
+					country_event = { id = aleran_diplomacy.2000 days = 1 random = 30 }
 				}
 				#log = "Firing event about [prev.GetName]"
 			}
