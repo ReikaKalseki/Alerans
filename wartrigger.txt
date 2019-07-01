@@ -3,7 +3,7 @@
 # Root = Country
 # From = War
 country_event = {
-	id = aleran_diplomacy.1200
+	id = aleran_diplomacy.1000
 	hide_window = yes
 	is_triggered_only = yes
 	

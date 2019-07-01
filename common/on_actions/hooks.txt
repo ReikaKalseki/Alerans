@@ -36,7 +36,7 @@ on_building_complete = {
 # This = Planet
 on_blocker_cleared = {
 	events = {
-		dragon_misc.50
+		dragon_misc.26
 	}
 }
 
@@ -45,7 +45,7 @@ on_blocker_cleared = {
 # From = War
 on_war_beginning = {
 	events = {
-		#aleran_diplomacy.1200
+		#aleran_diplomacy.1000
 	}
 }
 
@@ -53,7 +53,7 @@ on_war_beginning = {
 # From = Planet
 on_purge_begun = {
 	events = {
-		#aleran_diplomacy.906 #immediate war
+		#aleran_diplomacy.400 #immediate war
 	}
 }
 
@@ -64,6 +64,6 @@ on_purge_begun = {
 # owner = { (empire)
 on_pop_enslaved = {
 	events = {
-		#aleran_diplomacy.906 #immediate war
+		#aleran_diplomacy.400 #immediate war
 	}
 }
