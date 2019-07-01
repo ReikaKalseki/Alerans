@@ -3,12 +3,12 @@
 # Root = Country
 # From = War
 country_event = {
-	id = dragon_ongoing.1200
+	id = aleran_diplomacy.1200
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
-		log	= running event 1200 with root [Root.GetName]
+		log	= "running event 1200 with root [Root.GetName]"
 		if = {
 			limit = {
 				root = {
@@ -27,11 +27,11 @@ country_event = {
 					enemy = event_targetalerans
 					limit = { NOT = {is_same_value = root} }
 					random_list = {
-						10 = { country_event = { id = dragon_ongoing.1201 } }
-						10 = { country_event = { id = dragon_ongoing.1202 } }
-						10 = { country_event = { id = dragon_ongoing.1203 } }
-						10 = { country_event = { id = dragon_ongoing.1204 } }
-						10 = { country_event = { id = dragon_ongoing.1205 } }
+						10 = { country_event = { id = aleran_diplomacy.1201 } }
+						10 = { country_event = { id = aleran_diplomacy.1202 } }
+						10 = { country_event = { id = aleran_diplomacy.1203 } }
+						10 = { country_event = { id = aleran_diplomacy.1204 } }
+						10 = { country_event = { id = aleran_diplomacy.1205 } }
 					} 
 				}
 			}

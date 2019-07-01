@@ -1,0 +1,82 @@
+namespace = dragon_misc
+
+country_event = {
+	id = dragon_misc.360
+	hide_window = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+		NOT = {has_country_flag = is_under_war}
+		any_war = {
+			any_defender = { is_same_value = this }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	immediate = {
+		set_country_flag = is_under_war
+	}
+}
+
+country_event = {
+	id = dragon_misc.361
+	hide_window = yes
+	#is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = is_under_war
+		NOT = {
+			any_war = {
+				any_defender = { is_same_value = this }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		remove_country_flag = is_under_war
+	}
+}
+
+planet_event = {
+	id = dragon_misc.25
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { #tile
+			if = {
+				limit = {
+					has_building = building_hydroponics_farm_1
+					planet = {
+						owner = {
+							has_country_flag = aleran
+						}
+					}
+				}
+				set_building = building_meat_lab_1
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = dragon_misc.50
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		switch = {
+			trigger = has_planet_flag
+			tb_animals_at@from = {
+				owner = {add_food = 40} #1/5 of basic stockpile limit
+			}
+		}
+	}
+}

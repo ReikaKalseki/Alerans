@@ -1,8 +1,8 @@
-namespace = dragon_start
+namespace = aleran_init
 
 ### Empire init - add technologies and resources
 country_event = {
-	id = dragon_start.360
+	id = aleran_init.360
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -18,7 +18,7 @@ country_event = {
 }
 
 planet_event = { #replace slums
-	id = dragon_start.300
+	id = aleran_init.300
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -47,7 +47,7 @@ planet_event = { #replace slums
 }
 
 planet_event = { #replace farms
-	id = dragon_start.301
+	id = aleran_init.301
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -64,7 +64,7 @@ planet_event = { #replace farms
 }
 
 planet_event = {
-	id = dragon_start.361
+	id = aleran_init.361
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -99,7 +99,7 @@ planet_event = {
 }
 
 country_event = {
-	id = dragon_start.350
+	id = aleran_init.350
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -125,7 +125,7 @@ country_event = {
 }
 
 country_event = {
-	id = dragon_start.362
+	id = aleran_init.362
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -148,7 +148,7 @@ country_event = {
 }
 
 country_event = {
-	id = dragon_start.363
+	id = aleran_init.363
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -181,7 +181,7 @@ country_event = {
 }
 
 event = {
-	id = dragon_start.364
+	id = aleran_init.364
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -209,7 +209,7 @@ event = {
 }
 
 country_event = {
-	id = dragon_start.365
+	id = aleran_init.365
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -231,7 +231,7 @@ country_event = {
 }
 
 country_event = {
-	id = dragon_start.366
+	id = aleran_init.366
 	hide_window = yes
 	is_triggered_only = yes
 
