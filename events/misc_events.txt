@@ -1,7 +1,7 @@
 namespace = dragon_misc
 
 country_event = {
-	id = dragon_misc.360
+	id = dragon_misc.1
 	hide_window = yes
 	#is_triggered_only = yes
 	
@@ -22,7 +22,7 @@ country_event = {
 }
 
 country_event = {
-	id = dragon_misc.361
+	id = dragon_misc.2
 	hide_window = yes
 	#is_triggered_only = yes
 	
@@ -67,7 +67,7 @@ planet_event = {
 }
 
 planet_event = {
-	id = dragon_misc.50
+	id = dragon_misc.26
 	hide_window = yes
 	is_triggered_only = yes
 	

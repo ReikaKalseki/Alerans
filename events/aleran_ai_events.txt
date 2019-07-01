@@ -1,92 +1,11 @@
 namespace = aleran_ai
 
 country_event = {
-	id = aleran_ai.365
-	#hide_window = yes
-	#is_triggered_only = yes
-	title = "aleran_ai.365.name"
-	desc = "aleran_ai.365.desc"
-	picture = GFX_evt_unknown_ships
-	show_sound = event_construction
-	
-	trigger = {
-		NOT = {has_country_flag = aleran_ai_bonus}
-		has_valid_civic = civic_dragon_gov
-		is_ai = yes
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	immediate = {
-		set_country_flag = aleran_ai_bonus
-		
-		leader = {
-			change_leader_portrait = "dgnfemale13"
-		}
-		
-		set_city_graphical_culture = "aleran_04"
-		set_graphical_culture = "plantoid_01"
-		
-		add_minerals = 200
-		add_energy = 100
-		add_influence = 100
-		
-		give_technology = { tech = "tech_biolab_1" message = no }
-		give_technology = { tech = "tech_engineering_lab_1" message = no }
-		give_technology = { tech = "tech_physics_lab_1" message = no }
-		
-		give_technology = { tech = tech_wormhole_stabilization message = no } 
-		give_technology = { tech = tech_jump_drive_1 message = no } 
-		
-		create_fleet = {
-			effect = {
-				set_owner = prev
-
-				create_ship = {
-					name = random
-					random_existing_design = science
-				}
-
-				set_fleet_stance = evasive				
-				#set_location = prev.capital_star
-				set_location = prev.capital_scope.star
-				
-				owner = {
-					create_leader = {
-						type = scientist
-						sub_type = survey
-						name = random
-						species = owner_main_species
-					}
-				}
-				set_leader = last_created_leader
-			}			
-		}
-	}
-	
-	option = {
-		name = "aleran_ai.365.click"
-		ai_chance = {
-			factor = 150
-		}
-		owner = {
-			add_modifier = {
-				modifier = aleran_ai_bonus
-				days = -1
-			}
-		}
-		
-	}
-}
-
-country_event = {
-	id = aleran_ai.366
+	id = aleran_ai.1
 	hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_ai.366.name"
-	desc = "aleran_ai.366.desc"
+	title = "aleran_ai.1.name"
+	desc = "aleran_ai.1.desc"
 	picture = GFX_evt_unknown_ships
 	show_sound = event_construction
 	
@@ -154,11 +73,115 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_ai.800
+	id = aleran_ai.2
+	hide_window = yes
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_ai = yes
+		
+		NOT = {has_country_flag = aleran_ai_spacealiens}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	immediate = {
+		set_country_flag = aleran_ai_spacealiens
+		
+		country_event = { id = story.207 } #crystal pacification
+		country_event = { id = story.107 } #amoeba
+	}
+}
+
+country_event = {
+	id = aleran_ai.50
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "aleran_ai.50.name"
+	desc = "aleran_ai.50.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_construction
+	
+	trigger = {
+		NOT = {has_country_flag = aleran_ai_bonus}
+		has_valid_civic = civic_dragon_gov
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = aleran_ai_bonus
+		
+		leader = {
+			change_leader_portrait = "dgnfemale13"
+		}
+		
+		set_city_graphical_culture = "aleran_04"
+		set_graphical_culture = "plantoid_01"
+		
+		add_minerals = 200
+		add_energy = 100
+		add_influence = 100
+		
+		give_technology = { tech = "tech_biolab_1" message = no }
+		give_technology = { tech = "tech_engineering_lab_1" message = no }
+		give_technology = { tech = "tech_physics_lab_1" message = no }
+		
+		give_technology = { tech = tech_wormhole_stabilization message = no } 
+		give_technology = { tech = tech_jump_drive_1 message = no } 
+		
+		create_fleet = {
+			effect = {
+				set_owner = prev
+
+				create_ship = {
+					name = random
+					random_existing_design = science
+				}
+
+				set_fleet_stance = evasive				
+				#set_location = prev.capital_star
+				set_location = prev.capital_scope.star
+				
+				owner = {
+					create_leader = {
+						type = scientist
+						sub_type = survey
+						name = random
+						species = owner_main_species
+					}
+				}
+				set_leader = last_created_leader
+			}			
+		}
+	}
+	
+	option = {
+		name = "aleran_ai.50.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_ai_bonus
+				days = -1
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = aleran_ai.100
 	hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_ai.800.name"
-	desc = "aleran_ai.800.desc"
+	title = "aleran_ai.100.name"
+	desc = "aleran_ai.100.desc"
 	picture = GFX_evt_news_room
 	show_sound = event_default
 	
@@ -208,34 +231,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_ai.801
-	hide_window = yes
-	
-	trigger = {
-		has_valid_civic = civic_dragon_gov
-		is_ai = yes
-		
-		NOT = {has_country_flag = aleran_ai_spacealiens}
-	}
-
-	mean_time_to_happen = {
-		days = 20
-	}
-	
-	immediate = {
-		set_country_flag = aleran_ai_spacealiens
-		
-		country_event = { id = story.207 } #crystal pacification
-		country_event = { id = story.107 } #amoeba
-	}
-}
-
-country_event = {
-	id = aleran_ai.1000
+	id = aleran_ai.500
 	hide_window = yes
 	#is_triggered_only = yes
-	#title = "aleran_ai.1000.name"
-	#desc = "aleran_ai.1000.desc"
+	#title = "aleran_ai.500.name"
+	#desc = "aleran_ai.500.desc"
 	#picture = GFX_evt_arguing_senate
 	#show_sound = event_factions
 	

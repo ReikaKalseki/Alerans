@@ -1,11 +1,11 @@
 namespace = aleran_diplomacy
 
 country_event = {
-	id = aleran_diplomacy.400
+	id = aleran_diplomacy.1
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_diplomacy.400.name"
-	desc = "aleran_diplomacy.400.desc"
+	title = "aleran_diplomacy.1.name"
+	desc = "aleran_diplomacy.1.desc"
 	picture = GFX_evt_news_room
 	show_sound = event_default
 	
@@ -44,7 +44,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.400.click"
+		name = "aleran_diplomacy.1.click"
 		ai_chance = {
 			factor = 150
 		}
@@ -56,11 +56,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.401
+	id = aleran_diplomacy.2
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_diplomacy.401.name"
-	desc = "aleran_diplomacy.401.desc"
+	title = "aleran_diplomacy.2.name"
+	desc = "aleran_diplomacy.2.desc"
 	picture = GFX_evt_news_room
 	show_sound = event_default
 	
@@ -98,7 +98,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.401.click.a"
+		name = "aleran_diplomacy.2.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -108,7 +108,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.401.click.b"
+		name = "aleran_diplomacy.2.click.b"
 		ai_chance = {
 			factor = 150
 		}
@@ -118,7 +118,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.401.click.c"
+		name = "aleran_diplomacy.2.click.c"
 		trigger = {
 			NOR = {
 				has_valid_civic = civic_machine_terminator
@@ -142,11 +142,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.402
+	id = aleran_diplomacy.3
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_diplomacy.402.name"
-	desc = "aleran_diplomacy.402.desc"
+	title = "aleran_diplomacy.3.name"
+	desc = "aleran_diplomacy.3.desc"
 	picture = GFX_evt_news_room
 	show_sound = event_default
 	
@@ -178,7 +178,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.402.click.a"
+		name = "aleran_diplomacy.3.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -189,7 +189,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.402.click.b"
+		name = "aleran_diplomacy.3.click.b"
 		trigger = {
 			owner = {
 				OR = {
@@ -210,11 +210,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.403
+	id = aleran_diplomacy.4
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_diplomacy.403.name"
-	desc = "aleran_diplomacy.403.desc"
+	title = "aleran_diplomacy.4.name"
+	desc = "aleran_diplomacy.4.desc"
 	picture = GFX_evt_news_room
 	show_sound = event_default
 	
@@ -252,7 +252,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.403.click"
+		name = "aleran_diplomacy.4.click"
 		ai_chance = {
 			factor = 150
 		}
@@ -263,7 +263,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.900
+	id = aleran_diplomacy.100
 	hide_window = yes
 	
 	trigger = {
@@ -350,10 +350,10 @@ country_event = {
 							limit = {
 								has_ethic = ethic_gestalt_consciousness
 							}
-							country_event = { id = aleran_diplomacy.912 }
+							country_event = { id = aleran_diplomacy.202 }
 						}
 						else = {
-							country_event = { id = aleran_ongoing.911 }
+							country_event = { id = aleran_diplomacy.201 }
 						}
 					}
 					else_if = {
@@ -361,7 +361,7 @@ country_event = {
 							NOT = {has_country_flag = aleran_cb_warning_issued_evil}
 						}
 						set_country_flag = aleran_cb_warning_issued_evil
-						country_event = { id = aleran_diplomacy.910 }
+						country_event = { id = aleran_diplomacy.200 }
 					}
 				}
 			}
@@ -373,7 +373,7 @@ country_event = {
 						has_country_flag = aleran_cb_warning_issued_l3
 					}
 				}
-				country_event = { id = aleran_diplomacy.901 }
+				country_event = { id = aleran_diplomacy.101 }
 			}
 			else_if = {
 				limit = {
@@ -383,7 +383,7 @@ country_event = {
 						has_country_flag = aleran_cb_warning_issued_l3
 					}
 				}
-				country_event = { id = aleran_diplomacy.902 }
+				country_event = { id = aleran_diplomacy.102 }
 			}
 			else_if = {
 				limit = {
@@ -401,16 +401,16 @@ country_event = {
 						}
 					}
 				}
-				country_event = { id = aleran_diplomacy.903 }
+				country_event = { id = aleran_diplomacy.103 }
 			}
 		}
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.901
-	title = "aleran_diplomacy.901.name"
-	desc = "aleran_diplomacy.901.desc"
+	id = aleran_diplomacy.101
+	title = "aleran_diplomacy.101.name"
+	desc = "aleran_diplomacy.101.desc"
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -428,8 +428,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.901.click.a"
-		custom_tooltip = aleran_diplomacy.901.a.tooltip
+		name = "aleran_diplomacy.101.click.a"
+		custom_tooltip = aleran_diplomacy.101.a.tooltip
 		ai_chance = {
 			factor = 15
 		}
@@ -438,12 +438,12 @@ country_event = {
 			#	modifier = considering_aleran_ideas
 			#	days = -1
 			#}
-			country_event = { id = aleran_diplomacy.904 }
+			country_event = { id = aleran_diplomacy.104 }
 		}
 	}
 	
 	option = {
-		name = "aleran_diplomacy.901.click.b"
+		name = "aleran_diplomacy.101.click.b"
 		ai_chance = {
 			factor = 150
 		}
@@ -453,8 +453,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.901.click.c"
-		custom_tooltip = aleran_diplomacy.901.c.tooltip
+		name = "aleran_diplomacy.101.click.c"
+		custom_tooltip = aleran_diplomacy.101.c.tooltip
 		ai_chance = {
 			factor = 150
 		}
@@ -473,9 +473,9 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.902
-	title = "aleran_diplomacy.902.name"
-	desc = "aleran_diplomacy.902.desc"
+	id = aleran_diplomacy.102
+	title = "aleran_diplomacy.102.name"
+	desc = "aleran_diplomacy.102.desc"
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -493,18 +493,18 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.902.click.a"
-		custom_tooltip = aleran_diplomacy.902.a.tooltip
+		name = "aleran_diplomacy.102.click.a"
+		custom_tooltip = aleran_diplomacy.102.a.tooltip
 		ai_chance = {
 			factor = 15
 		}
 		owner = {
-			country_event = { id = aleran_diplomacy.904 }
+			country_event = { id = aleran_diplomacy.104 }
 		}
 	}
 	
 	option = {
-		name = "aleran_diplomacy.902.click.b"
+		name = "aleran_diplomacy.102.click.b"
 		ai_chance = {
 			factor = 150
 		}
@@ -514,8 +514,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.902.click.c"
-		custom_tooltip = aleran_diplomacy.902.c.tooltip
+		name = "aleran_diplomacy.102.click.c"
+		custom_tooltip = aleran_diplomacy.102.c.tooltip
 		ai_chance = {
 			factor = 150
 		}
@@ -534,9 +534,9 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.903
-	title = "aleran_diplomacy.903.name"
-	desc = "aleran_diplomacy.903.desc"
+	id = aleran_diplomacy.103
+	title = "aleran_diplomacy.103.name"
+	desc = "aleran_diplomacy.103.desc"
 	
 	is_triggered_only = yes
 	diplomatic = yes
@@ -555,18 +555,18 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.903.click.a"
-		custom_tooltip = aleran_diplomacy.903.a.tooltip
+		name = "aleran_diplomacy.103.click.a"
+		custom_tooltip = aleran_diplomacy.103.a.tooltip
 		ai_chance = {
 			factor = 15
 		}
 		owner = {
-			country_event = { id = aleran_diplomacy.904 }
+			country_event = { id = aleran_diplomacy.104 }
 		}
 	}
 	
 	option = {
-		name = "aleran_diplomacy.903.click.b"
+		name = "aleran_diplomacy.103.click.b"
 		ai_chance = {
 			factor = 150
 		}
@@ -576,8 +576,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.903.click.c"
-		custom_tooltip = aleran_diplomacy.903.c.tooltip
+		name = "aleran_diplomacy.103.click.c"
+		custom_tooltip = aleran_diplomacy.103.c.tooltip
 		ai_chance = {
 			factor = 150
 		}
@@ -596,10 +596,10 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.904
+	id = aleran_diplomacy.104
 	is_triggered_only = yes
-	#title = "aleran_diplomacy.904.name"
-	#desc = "aleran_diplomacy.904.desc"
+	#title = "aleran_diplomacy.104.name"
+	#desc = "aleran_diplomacy.104.desc"
 	#picture = GFX_evt_arguing_senate
 	#show_sound = event_factions
 	hide_window = yes
@@ -644,7 +644,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.905
+	id = aleran_diplomacy.105
 	hide_window = yes
 	
 	trigger = {
@@ -711,11 +711,11 @@ country_event = {
 					}
 				}
 				random_list = {
-					10 = { country_event = { id = aleran_diplomacy.1201 } }
-					10 = { country_event = { id = aleran_diplomacy.1202 } }
-					10 = { country_event = { id = aleran_diplomacy.1203 } }
-					10 = { country_event = { id = aleran_diplomacy.1204 } }
-					10 = { country_event = { id = aleran_diplomacy.1205 } }
+					10 = { country_event = { id = aleran_diplomacy.1001 } }
+					10 = { country_event = { id = aleran_diplomacy.1002 } }
+					10 = { country_event = { id = aleran_diplomacy.1003 } }
+					10 = { country_event = { id = aleran_diplomacy.1004 } }
+					10 = { country_event = { id = aleran_diplomacy.1005 } }
 				} 
 			}
 		}
@@ -723,7 +723,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.908
+	id = aleran_diplomacy.108
 	hide_window = yes
 	
 	trigger = {
@@ -843,13 +843,13 @@ country_event = {
 					}
 				}
 			}
-			country_event = { id = aleran_diplomacy.1206 }
+			country_event = { id = aleran_diplomacy.500 }
 		}
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.907
+	id = aleran_diplomacy.107
 	hide_window = yes
 	
 	trigger = {
@@ -919,22 +919,22 @@ country_event = {
 						limit = {
 							has_country_flag = aleran_promised_no_war_crimes
 						}
-						country_event = { id = aleran_diplomacy.1207 }
+						country_event = { id = aleran_diplomacy.501 }
 					}
 					else = {
-						country_event = { id = aleran_diplomacy.1206 }
+						country_event = { id = aleran_diplomacy.500 }
 					}
 				}
 			}
-			#country_event = { id = aleran_diplomacy.1206 }
+			#country_event = { id = aleran_diplomacy.500 }
 		}
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.910
-	title = "aleran_diplomacy.910.name"
-	desc = "aleran_diplomacy.910.desc"
+	id = aleran_diplomacy.200
+	title = "aleran_diplomacy.200.name"
+	desc = "aleran_diplomacy.200.desc"
 	#hide_window = yes
 	is_triggered_only = yes
 	diplomatic = yes
@@ -948,14 +948,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.910.click"
+		name = "aleran_diplomacy.200.click"
 	}
 }
 
 country_event = {
-	id = aleran_ongoing.911
-	title = "aleran_ongoing.911.name"
-	desc = "aleran_ongoing.911.desc"
+	id = aleran_diplomacy.201
+	title = "aleran_diplomacy.201.name"
+	desc = "aleran_diplomacy.201.desc"
 	#hide_window = yes
 	is_triggered_only = yes
 	diplomatic = yes
@@ -969,14 +969,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_ongoing.911.click"
+		name = "aleran_diplomacy.201.click"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.912
-	title = "aleran_diplomacy.912.name"
-	desc = "aleran_diplomacy.912.desc"
+	id = aleran_diplomacy.202
+	title = "aleran_diplomacy.202.name"
+	desc = "aleran_diplomacy.202.desc"
 	#hide_window = yes
 	is_triggered_only = yes
 	diplomatic = yes
@@ -990,12 +990,12 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.912.click"
+		name = "aleran_diplomacy.202.click"
 	}
 }
 
 pop_event = { #This = Pop scope, From = Planet
-	id = aleran_diplomacy.906
+	id = aleran_diplomacy.400
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -1028,11 +1028,11 @@ pop_event = { #This = Pop scope, From = Planet
 					}
 				}
 				random_list = {
-					10 = { country_event = { id = aleran_diplomacy.1201 } }
-					10 = { country_event = { id = aleran_diplomacy.1202 } }
-					10 = { country_event = { id = aleran_diplomacy.1203 } }
-					10 = { country_event = { id = aleran_diplomacy.1204 } }
-					10 = { country_event = { id = aleran_diplomacy.1205 } }
+					10 = { country_event = { id = aleran_diplomacy.1001 } }
+					10 = { country_event = { id = aleran_diplomacy.1002 } }
+					10 = { country_event = { id = aleran_diplomacy.1003 } }
+					10 = { country_event = { id = aleran_diplomacy.1004 } }
+					10 = { country_event = { id = aleran_diplomacy.1005 } }
 				} 
 			}
 		}
@@ -1040,9 +1040,9 @@ pop_event = { #This = Pop scope, From = Planet
 }
 
 country_event = {
-	id = aleran_diplomacy.1201
-	title = "aleran_diplomacy.1201.name"
-	desc = "aleran_diplomacy.1201.desc"
+	id = aleran_diplomacy.1001
+	title = "aleran_diplomacy.1001.name"
+	desc = "aleran_diplomacy.1001.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1059,7 +1059,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1201.click.a"
+		name = "aleran_diplomacy.1001.click.a"
 
 		event_target:alerans = {
 			hidden_effect = { 
@@ -1072,14 +1072,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1201.click.b"
+		name = "aleran_diplomacy.1001.click.b"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1202
-	title = "aleran_diplomacy.1202.name"
-	desc = "aleran_diplomacy.1202.desc"
+	id = aleran_diplomacy.1002
+	title = "aleran_diplomacy.1002.name"
+	desc = "aleran_diplomacy.1002.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1096,7 +1096,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1202.click.a"
+		name = "aleran_diplomacy.1002.click.a"
 
 		event_target:alerans = {
 			hidden_effect = { 
@@ -1109,14 +1109,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1202.click.b"
+		name = "aleran_diplomacy.1002.click.b"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1203
-	title = "aleran_diplomacy.1203.name"
-	desc = "aleran_diplomacy.1203.desc"
+	id = aleran_diplomacy.1003
+	title = "aleran_diplomacy.1003.name"
+	desc = "aleran_diplomacy.1003.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1133,7 +1133,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1203.click.a"
+		name = "aleran_diplomacy.1003.click.a"
 
 		event_target:alerans = {
 			hidden_effect = { 
@@ -1146,14 +1146,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1203.click.b"
+		name = "aleran_diplomacy.1003.click.b"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1204
-	title = "aleran_diplomacy.1204.name"
-	desc = "aleran_diplomacy.1204.desc"
+	id = aleran_diplomacy.1004
+	title = "aleran_diplomacy.1004.name"
+	desc = "aleran_diplomacy.1004.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1170,7 +1170,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1204.click.a"
+		name = "aleran_diplomacy.1004.click.a"
 
 		event_target:alerans = {
 			hidden_effect = { 
@@ -1183,14 +1183,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1204.click.b"
+		name = "aleran_diplomacy.1004.click.b"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1205
-	title = "aleran_diplomacy.1205.name"
-	desc = "aleran_diplomacy.1205.desc"
+	id = aleran_diplomacy.1005
+	title = "aleran_diplomacy.1005.name"
+	desc = "aleran_diplomacy.1005.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1207,7 +1207,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1205.click.a"
+		name = "aleran_diplomacy.1005.click.a"
 
 		event_target:alerans = {
 			hidden_effect = { 
@@ -1220,14 +1220,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1205.click.b"
+		name = "aleran_diplomacy.1005.click.b"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1206
-	title = "aleran_diplomacy.1206.name"
-	desc = "aleran_diplomacy.1206.desc"
+	id = aleran_diplomacy.500
+	title = "aleran_diplomacy.500.name"
+	desc = "aleran_diplomacy.500.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1251,14 +1251,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1206.click"
+		name = "aleran_diplomacy.500.click"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1207
-	title = "aleran_diplomacy.1207.name"
-	desc = "aleran_diplomacy.1207.desc"
+	id = aleran_diplomacy.501
+	title = "aleran_diplomacy.501.name"
+	desc = "aleran_diplomacy.501.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1282,12 +1282,12 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1207.click"
+		name = "aleran_diplomacy.501.click"
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1500
+	id = aleran_diplomacy.800
 	hide_window = yes
 	
 	trigger = {
@@ -1323,7 +1323,7 @@ country_event = {
 				
 				prev = {
 					set_timed_country_flag = { flag = aleran_war_behavior_warned days = 1200 } 
-					country_event = { id = aleran_diplomacy.1501 }	
+					country_event = { id = aleran_diplomacy.801 }	
 				}
 			}		
 		}
@@ -1331,9 +1331,9 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1501
-	title = "aleran_diplomacy.1501.name"
-	desc = "aleran_diplomacy.1501.desc"
+	id = aleran_diplomacy.801
+	title = "aleran_diplomacy.801.name"
+	desc = "aleran_diplomacy.801.desc"
 	#hide_window = yes
 	is_triggered_only = yes
 	diplomatic = yes
@@ -1347,14 +1347,14 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1501.click.a"
+		name = "aleran_diplomacy.801.click.a"
 		owner = {
 			set_timed_country_flag = { flag = aleran_promised_no_war_crimes days = 1200 } 
 		}
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1501.click.b"
+		name = "aleran_diplomacy.801.click.b"
 		owner = {
 			set_timed_country_flag = { flag = aleran_may_war_crimes days = 1200 }
 		}
@@ -1362,7 +1362,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1600
+	id = aleran_diplomacy.1200
 	hide_window = yes
 	
 	trigger = {
@@ -1391,7 +1391,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1610
+	id = aleran_diplomacy.1210
 	hide_window = yes
 	
 	trigger = {
@@ -1445,15 +1445,15 @@ country_event = {
 			}
 			#log = "Running 1611 on [this.GetName]"
 			set_timed_country_flag = { flag = aleran_war_easy_offer days = 600 } 
-			country_event = { id = aleran_diplomacy.1611 }
+			country_event = { id = aleran_diplomacy.1211 }
 		}
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1611
-	title = "aleran_diplomacy.1611.name"
-	desc = "aleran_diplomacy.1611.desc"
+	id = aleran_diplomacy.1211
+	title = "aleran_diplomacy.1211.name"
+	desc = "aleran_diplomacy.1211.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1466,8 +1466,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1611.click.a"
-		custom_tooltip = aleran_diplomacy.1611.a.tooltip
+		name = "aleran_diplomacy.1211.click.a"
+		custom_tooltip = aleran_diplomacy.1211.a.tooltip
 		hidden_effect = { 
 			owner = {
 				every_system_within_border = {
@@ -1486,7 +1486,7 @@ country_event = {
 							}
 						}
 					}
-					country_event = { id = aleran_diplomacy.1612 }
+					country_event = { id = aleran_diplomacy.1212 }
 					set_timed_country_flag = { flag = following_peace_offer days = 3000 } 
 				}
 				set_policy = { policy = slavery option = slavery_not_allowed cooldown = no }
@@ -1507,8 +1507,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1611.click.b"
-		custom_tooltip = aleran_diplomacy.1611.b.tooltip
+		name = "aleran_diplomacy.1211.click.b"
+		custom_tooltip = aleran_diplomacy.1211.b.tooltip
 		event_target:alerans = {
 			hidden_effect = { 
 				add_modifier = {
@@ -1521,7 +1521,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1613
+	id = aleran_diplomacy.1213
 	hide_window = yes
 	
 	trigger = {
@@ -1539,12 +1539,12 @@ country_event = {
 				save_event_target_as = aleris
 			}
 		}
-		country_event = { id = aleran_diplomacy.1612 }
+		country_event = { id = aleran_diplomacy.1212 }
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1612
+	id = aleran_diplomacy.1212
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -1603,7 +1603,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1620
+	id = aleran_diplomacy.1220
 	hide_window = yes
 	
 	trigger = {
@@ -1656,15 +1656,15 @@ country_event = {
 			}
 			#log = "Running 1621 on [this.GetName]"
 			set_timed_country_flag = { flag = aleran_war_khan_offer days = 1200 } 
-			country_event = { id = aleran_diplomacy.1621 }
+			country_event = { id = aleran_diplomacy.1221 }
 		}
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1621
-	title = "aleran_diplomacy.1621.name"
-	desc = "aleran_diplomacy.1621.desc"
+	id = aleran_diplomacy.1221
+	title = "aleran_diplomacy.1221.name"
+	desc = "aleran_diplomacy.1221.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1677,8 +1677,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1621.click.a"
-		custom_tooltip = aleran_diplomacy.1621.a.tooltip
+		name = "aleran_diplomacy.1221.click.a"
+		custom_tooltip = aleran_diplomacy.1221.a.tooltip
 		hidden_effect = { 
 			owner = {
 				every_system_within_border = {
@@ -1697,7 +1697,7 @@ country_event = {
 							}
 						}
 					}
-					country_event = { id = aleran_diplomacy.1622 }
+					country_event = { id = aleran_diplomacy.1222 }
 					set_timed_country_flag = { flag = following_khan_offer days = 3000 } 
 			
 					add_modifier = {
@@ -1710,8 +1710,8 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1621.click.b"
-		custom_tooltip = aleran_diplomacy.1621.b.tooltip
+		name = "aleran_diplomacy.1221.click.b"
+		custom_tooltip = aleran_diplomacy.1221.b.tooltip
 		event_target:alerans = {
 			hidden_effect = { 
 				add_modifier = {
@@ -1724,7 +1724,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1622
+	id = aleran_diplomacy.1222
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -1804,7 +1804,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_diplomacy.1623
+	id = aleran_diplomacy.1223
 	hide_window = yes
 	
 	trigger = {
@@ -1816,14 +1816,14 @@ country_event = {
 	}
 	
 	immediate = {
-		country_event = { id = aleran_diplomacy.1622 }
+		country_event = { id = aleran_diplomacy.1222 }
 	}
 }
 
 
 
 country_event = {
-	id = aleran_diplomacy.1630
+	id = aleran_diplomacy.1230
 	hide_window = yes
 	
 	trigger = {
@@ -1879,15 +1879,15 @@ country_event = {
 			}
 			#log = "Running 1631 on [this.GetName]"
 			set_timed_country_flag = { flag = busy_with_khan days = 3000 } 
-			country_event = { id = aleran_diplomacy.1631 }
+			country_event = { id = aleran_diplomacy.1231 }
 		}
 	}
 }
 
 country_event = {
-	id = aleran_diplomacy.1631
-	title = "aleran_diplomacy.1631.name"
-	desc = "aleran_diplomacy.1631.desc"
+	id = aleran_diplomacy.1231
+	title = "aleran_diplomacy.1231.name"
+	desc = "aleran_diplomacy.1231.desc"
 	is_triggered_only = yes
 	diplomatic = yes
 	
@@ -1900,6 +1900,6 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_diplomacy.1631.click"
+		name = "aleran_diplomacy.1231.click"
 	}
 }

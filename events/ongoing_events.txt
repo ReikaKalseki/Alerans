@@ -1,11 +1,11 @@
 namespace = aleran_ongoing
 
 country_event = {
-	id = aleran_ongoing.362
+	id = aleran_ongoing.1
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_ongoing.362.name"
-	desc = "aleran_ongoing.362.desc"
+	title = "aleran_ongoing.1.name"
+	desc = "aleran_ongoing.1.desc"
 	picture = GFX_evt_unknown_ships
 	show_sound = event_construction
 	
@@ -25,7 +25,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_ongoing.362.click"
+		name = "aleran_ongoing.1.click"
 		ai_chance = {
 			factor = 150
 		}
@@ -40,11 +40,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_ongoing.363
+	id = aleran_ongoing.2
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_ongoing.363.name"
-	desc = "aleran_ongoing.363.desc"
+	title = "aleran_ongoing.2.name"
+	desc = "aleran_ongoing.2.desc"
 	picture = GFX_evt_unknown_ships
 	show_sound = event_construction
 	
@@ -62,7 +62,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_ongoing.363.click"
+		name = "aleran_ongoing.2.click"
 		ai_chance = {
 			factor = 150
 		}
@@ -90,11 +90,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_ongoing.364
+	id = aleran_ongoing.3
 	#hide_window = yes
 	#is_triggered_only = yes
-	title = "aleran_ongoing.364.name"
-	desc = "aleran_ongoing.364.desc"
+	title = "aleran_ongoing.3.name"
+	desc = "aleran_ongoing.3.desc"
 	picture = GFX_evt_unknown_ships
 	show_sound = event_construction
 	
@@ -114,7 +114,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_ongoing.364.click"
+		name = "aleran_ongoing.3.click"
 		ai_chance = {
 			factor = 150
 		}
@@ -135,7 +135,7 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_ongoing.1
+	id = aleran_ongoing.4
 	hide_window = yes
 	is_triggered_only = yes
 	
