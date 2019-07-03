@@ -1,0 +1,8 @@
+d_aleran_unity_deposit = {
+	resources = { unity = 1 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0		
+	}
+}

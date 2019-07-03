@@ -25,7 +25,8 @@ empire_init_create_capital_pops = {
 		aleran_init.200
 		aleran_init.201
 		aleran_init.202
-		aleran_init.203
+		#aleran_init.203 #broken
+		aleran_init.204 #better version of 203
 	}
 }
 

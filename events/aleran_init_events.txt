@@ -87,11 +87,13 @@ planet_event = { #Add a random robot and a mining network for it to use
 								has_building = no
 								has_blocker = no
 								has_resource = { type = minerals amount > 0 } 
-								has_resource = { type = energy amount < 1 } 
-								has_resource = { type = food amount < 1 } 
-								has_resource = { type = physics_research amount < 1 } 
-								has_resource = { type = society_research amount < 1 } 
-								has_resource = { type = engineering_research amount < 1 } 
+								NOR = {
+									has_resource = { type = energy amount > 0 } 
+									has_resource = { type = food amount > 0 } 
+									has_resource = { type = physics_research amount > 0 } 
+									has_resource = { type = society_research amount > 0 } 
+									has_resource = { type = engineering_research amount > 0 } 
+								}
 							}
 						}
 						has_pop = no
@@ -106,50 +108,107 @@ planet_event = { #Add a random robot and a mining network for it to use
 	}
 }
 
+##DOES NOT WORK
 planet_event = { #Make one "blank" tile, good for a unity building, if one is not already present, by moving its resources elsewhere
 	id = aleran_init.203
 	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
-		log = "Running event"
+		while = {
+			count = 1
+			random_tile = {
+				limit = { #one mineral and nothing else
+					has_resource = { type = minerals amount > 0 } 
+					has_resource = { type = minerals amount < 2 } 
+					NOR = {
+						has_resource = { type = energy amount > 0 } 
+						has_resource = { type = food amount > 0 } 
+						has_resource = { type = physics_research amount > 0 } 
+						has_resource = { type = society_research amount > 0 } 
+						has_resource = { type = engineering_research amount > 0 } 
+					}
+				}
+				log = "Emptying tile [This.GetName]"
+				set_deposit = d_null_mineral_deposit
+				prev = {set_planet_flag = "cleared_one_tile"}
+			}
+		}
+		
 		if = {
 			limit = {
-				owner = { has_valid_civic = civic_dragon_init }
-				NOT = {
-					any_tile = {
-						AND = {
-							has_building = no
-							has_resource = no
-						}
-					}
-				}
+				NOT = {has_planet_flag = "cleared_one_tile"}
 			}
-			
 			while = {
 				count = 1
 				random_tile = {
-					limit = {
-						AND = {
-							has_building = no
-							has_resource = { type = physics_research amount < 1 } 
-							has_resource = { type = society_research amount < 1 } 
-							has_resource = { type = engineering_research amount < 1 } 
-						}
-					}
-					set_deposit = d_null_deposit
-				}
-			}
-			
-			while = {
-				count = 1
-				random_tile = {
-					limit = {
+					limit = { #two mineral and nothing else
 						has_resource = { type = minerals amount > 0 } 
 						has_resource = { type = minerals amount < 3 } 
+						NOR = {
+							has_resource = { type = energy amount > 0 } 
+							has_resource = { type = food amount > 0 } 
+							has_resource = { type = physics_research amount > 0 } 
+							has_resource = { type = society_research amount > 0 } 
+							has_resource = { type = engineering_research amount > 0 } 
+						}
 					}
-					set_deposit = d_immense_mineral_deposit
+					log = "Emptying tile [This.GetName]"
+					set_deposit = d_null_mineral_deposit
+					prev = {set_planet_flag = "cleared_one_tile"}
 				}
+			}
+		}
+		
+		while = {
+			count = 1
+			random_tile = {
+				limit = {
+					has_resource = { type = minerals amount > 0 } 
+					has_resource = { type = minerals amount < 3 } 
+				}
+				log = "Enriching tile [This.GetName]"
+				set_deposit = d_immense_mineral_deposit
+			}
+		}
+	}
+}
+
+planet_event = { #Replace one single-unit of some basic resource with unity
+	id = aleran_init.204
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				owner = { has_country_flag = aleran }
+			}
+			random_tile = {
+				limit = {
+					has_building = no
+					OR = {
+						AND = {
+							has_resource = { type = energy amount > 0 } 
+							has_resource = { type = energy amount < 2 } 
+						}
+						AND = {
+							has_resource = { type = minerals amount > 0 } 
+							has_resource = { type = minerals amount < 2 } 
+						}
+						AND = {
+							has_resource = { type = food amount > 0 } 
+							has_resource = { type = food amount < 2 } 
+						}
+					}
+					NOR = {
+						has_resource = { type = physics_research amount > 0 } 
+						has_resource = { type = society_research amount > 0 } 
+						has_resource = { type = engineering_research amount > 0 } #do not need to check strategics, since they never spawn on starter planets
+					}
+				}
+				log = "Emptying tile [This.GetName]"
+				set_deposit = d_aleran_unity_deposit
 			}
 		}
 	}
