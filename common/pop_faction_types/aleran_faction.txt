@@ -910,16 +910,17 @@ aleran_faction = {
 			owner = {
 				OR = {
 					is_at_war = no
-				}
-				NOT = {
-					any_war = {
-						any_attacker = {
-							is_same_value = owner
-						} 
-						any_defender = {
+					NOT = {
+						any_war = {
+							any_attacker = {
+								is_same_value = owner
+							}
 							NOT = {
-								owner = {
-									has_casus_belli = {target = prev type = cb_dragon}
+								using_war_goal = { type = wg_dragon owner = prev }
+							}
+							NOT = {
+								any_defender = {
+									is_same_value = owner
 								}
 							}
 						}

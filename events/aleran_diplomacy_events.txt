@@ -1292,6 +1292,7 @@ country_event = {
 	
 	trigger = {
 		has_valid_civic = civic_dragon_gov
+		is_ai = yes
 	}
 
 	mean_time_to_happen = {
@@ -1304,6 +1305,7 @@ country_event = {
 			limit = {
 				NOT = {is_at_war_with = event_target:alerans}
 				is_at_war = yes
+				is_ai = no
 				NOT = {has_country_flag = aleran_war_behavior_warned}
 			}
 			random_country = {
