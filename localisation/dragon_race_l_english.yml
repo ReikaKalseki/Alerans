@@ -21,8 +21,8 @@ trait_dragonbody_desc:0 "This species is imposing both physically and mentally -
 name_list_DRGN1: "Dragon"
 
 auth_dragon:0 "Conditional Autocracy"
-auth_dragon_desc:0 "In this goverment structure, one ruler, together with their advisors, wield full control so long as they remain true to the goverment's founding principles.\n\nLarge or prolonged deviations from what best serves the nation result in a swift removal from power."
-AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE:0 "Holds an election upon ruler death to select a new ruler, but can call interim elections to remove a ruler that is ineffective or unethical."
+auth_dragon_desc:0 "In this goverment structure, one ruler, together with their advisors, wield full control so long as they remain true to the goverment's founding principles.\n\nLarge or prolonged deviations from what best serves the nation or its ethics result in a swift removal from power."
+AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE:0 "Holds an election upon ruler death to select a new ruler, but can call interim elections - or resort to force - to remove a ruler that is ineffective or unethical."
 
 DRAGON_RULER_MALE:0 "Consul"
 DRAGON_RULER_FEMALE:0 "Empress"
@@ -89,6 +89,10 @@ aleran_faction_rights:0 "Full Xeno Rights"
 aleran_faction_rights_unfilled:0 "Limited Xeno Rights"
 aleran_faction_rights_desc:0 "The [Root.GetName] will not accept the treatment of some species as lesser than others."
 
+aleran_faction_standards:0 "Good Living Standards"
+aleran_faction_standards_unfilled:0 "Poor Living Standards"
+aleran_faction_standards_desc:0 "Forcing citizens to endure subpar living conditions will convince the [Root.GetName] of the illegitimacy of the current leadership."
+
 aleran_faction_colonies:0 "Many Colonies"
 aleran_faction_colonies_unfilled:0 "Few Colonies"
 aleran_faction_colonies_desc:0 "The [Root.GetName] wants to see many [Owner.GetSpeciesAdj] colonies in the galaxy."
@@ -153,6 +157,10 @@ aleran_faction_enclaves:0 "Enclaves Present"
 aleran_faction_enclaves_unfilled:0 "No Enclaves"
 aleran_faction_enclaves_desc:0 "The [Root.GetName] will quite like having one or more enclaves within the borders of the [PrevPrev.GetName]."
 
+aleran_faction_killed_enclaves:0 "Enclave Respect"
+aleran_faction_killed_enclaves_unfilled:0 "Attacked an Enclave"
+aleran_faction_killed_enclaves_desc:0 "Attacking an enclave is considered an irredeemable act by [Root.GetName], and will never be forgiven."
+
 aleran_faction_rivals:0 "No Rivalries"
 aleran_faction_rivals_unfilled:0 "Rivalries"
 aleran_faction_rivals_desc:0 "Declaring rivalries will be seen as petty and will irritate the [Root.GetName]."
@@ -163,7 +171,7 @@ aleran_faction_contact_desc:0 "Violent first-contact protocols will be seen as d
 
 aleran_faction_colossus:0 "No Planet Killers"
 aleran_faction_colossus_unfilled:0 "Planet Killers Owned or Used"
-aleran_faction_colossus_desc:0 "Owning or using any colossi with planet-killing weapons will be seen as an imminent massive atrocity and will cause the [Root.GetName] to be immediately hostile."
+aleran_faction_colossus_desc:0 "Owning or using any colossi with planet-killing weapons will be seen as an (possibly imminent) massive atrocity and will cause the [Root.GetName] to be immediately hostile. The sole exception to this is in times of crisis threatening the entire galaxy."
 
 aleran_faction_vassals:0 "No Vassals"
 aleran_faction_vassals_unfilled:0 "Has Vassals"
@@ -201,6 +209,9 @@ building_dragon_library_desc:0 "A branch of the libraries of the Aleran commonwe
 building_dragon_central_library:0 "Central Library of the Commonwealth"
 building_dragon_central_library_desc:0 "The central hub of the Aleran Commonwealth's library systems. Contains massive amounts of knowledge of Aleran science and society, and the founding documents of the Commonwealth itself, available to any researcher seeking insight or any citizen who wishes to remind themselves of society's guiding principles."
 
+building_art_display:0 "Art Display"
+building_art_display_desc:1 "A sculpture commissioned from a respected Aleran artist."
+
 
 civic_dragon_gov:0 "Ethical Dominance"
 civic_dragon_gov_desc:0 "Those with the power to spread reason and morality have the obligation to do so, whether that be simple expansion to the stars or the elimination of ideologies which do nothing but cause stagnation or suffering. However, those who resist progress will no doubt prove an enduring irritant, and conflict must never be sought for its own sake. Should these goals or survival itself be threatened, any feasible efforts must be made to address the threat."
@@ -213,7 +224,7 @@ civic_dragon_research_desc:0 "Study of the sciences is the path to the future, a
 
 civic_dragon_init:0 "Aleran Mentality"
 civic_dragon_init_desc:0 "Science, reason, and morality that is grounded in tangible proofs must remain king. Anything else is to turn one's back on progress, ethicality, or even survival. Holding true to these often requires sacrifice and willingness to ignore how one is perceived."
-civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YTechnology Focus§! civics upon map start\n\nLocks civics on map start\n\n§RReduced§! §YOpinion§! from dissimilarly-minded empires, §GIncreased§! opinion from similar ones\n\nHas access to the §Y'Enlightenment By Force'§! casus belli and wargoal against empires they see as sufficiently harmful\n\nAllows for the construction of Commonwealth Libraries to boost science and influence production\n\nWill get gradually better at building starbases over time to make up for decreased ability to take systems by conquest"
+civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YTechnology Focus§! civics upon map start\n\nLocks civics on map start\n\n§RReduced§! §YOpinion§! from dissimilarly-minded empires, §GIncreased§! opinion from similar ones\n\nHas access to the §Y'Enlightenment By Force'§! casus belli and wargoal against empires they see as sufficiently harmful\n\nAllows for the construction of Commonwealth Libraries to boost science and influence production\n\nWill get gradually better at building starbases over time to make up for decreased ability to take systems by conquest\n\nWill always remain leader of a Federation if they are the most powerful member"
 
 civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
@@ -227,6 +238,9 @@ SUBJECT_DESC_dragon_control:0 "Satellite empires are ones that have been overthr
 
 tech_aleran_expansion:0 "Commonwealth Administration and Expansion"
 tech_aleran_expansion_desc:0 "Maintaining the wide borders of our nation, and laying the foundation for further growth."
+
+tech_aleran_art:0 "Promotion of the Arts"
+tech_aleran_art_desc:0 "Despite what some would claim, art has a valid place as part of the focus of society, and we must learn to embrace and encourage it."
 
 tech_pk_starray:0 "Stellar Destabilization"
 tech_pk_starray_desc:0 "Depositing large quantities of energy into a star to cause it to grow temporarily more electromagnetically active."
@@ -246,6 +260,11 @@ aleran_ongoing.2.click:0 "Excellent."
 aleran_ongoing.3.name:0 "Galaxy-Spanning Empire"
 aleran_ongoing.3.desc:0 "The Commonwealth now spans the majority of the galaxy, and we must update our drive technology so as to be able to rapidly traverse it, and our communications technology to administrate it."
 aleran_ongoing.3.click:0 "Excellent."
+
+
+dragon_misc.32.name:0 "Leviathan Destroyed"
+dragon_misc.32.desc:0 "We have successfully destroyed the [This.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminatign the threat, we can count on this increasing our standing."
+dragon_misc.32.click:0 "No more shall it harass us or our citizens."
 
 aleran_ai.500.name:0 "Destructive Society Enlightened"
 aleran_ai.500.desc:0 "We have completed our forced enlightenment process. The [event_target:aleran_youre_next.GetName] have reacted with some concern, as they know that we can and probably should do the same to them."
@@ -368,6 +387,28 @@ aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
 aleran_megastructures.1.click:0 "Excellent."
 
+
+aleran_megastructures.101.name:0 "Gateway Update"
+aleran_megastructures.101.desc:0 "The recently opened gateway in the [FromFromFrom.GetName] system has just released a massive flare of energy, nearly overwhelming all the control systems and destroying the structure, and all the other nearby fleets. Fortunately, it was able to be contained, and a small amount was able to be harnessed. Repairs, however, will be costly."
+aleran_megastructures.101.click:0 "We need to find a way to stabilize these."
+
+aleran_megastructures.102.name:0 "Gateway Update"
+aleran_megastructures.102.desc:0 "Using what we learned from the last time, the new gateway in [FromFromFrom.GetName] has been constructed in a slightly more robust and stable manner, and it appears that we are on the right track; the energy surge - and resultant damage - was less than half the size of last time."
+aleran_megastructures.102.click:0 "Keep working on it."
+
+aleran_megastructures.103.name:0 "Gateway Update"
+aleran_megastructures.103.desc:0 "Progress continues to be made on stabilizing our new gateway network. We have halved again the strength of the pulse released when the gate is activated. Damage is now comparatively minor, as are the yields from harvesting what we can."
+aleran_megastructures.103.click:0 "A few more 'halves' to go."
+
+aleran_megastructures.104.name:0 "Gateway Update"
+aleran_megastructures.104.desc:0 "This time we can boast a major reduction in the surge from a gateway's activation, a tenfold reduction from last time."
+aleran_megastructures.104.click:0 "Almost there."
+
+aleran_megastructures.105.name:0 "Gateway Update"
+aleran_megastructures.105.desc:0 "The gateway in [FromFromFrom.GetName] emitted barely a burp as it was activated. A couple final tweaks are necessary, but we can probably consider these surges a thing of the past."
+aleran_megastructures.105.click:0 "Finally."
+
+
 aleran_expansion:0 "Unfettered Expansion"
 aleran_expansion_desc:0 "We have the ability and the motivation to reach for all the stars we can find."
 
@@ -429,6 +470,7 @@ MESSAGE_DESC_FOR_PLANET_KILLER_STARRAY:0 "was destabilized by"
 
 war_goal_wg_dragon:0 "Enlighten"
 war_goal_wg_dragon_desc:0 "War is waged to put an end to regimes built on ideologies that harm their citizens or the galactic community at large, or to put a definitive end to evils done against citizens, a civilization, a species, or reason itself."
+wg_enlighten_accept:0 "Policy changes are imposed in line with Aleran ideology\n\Unreformable pops are killed\n\n250 influence gained"
 
 casus_belli_cb_dragon:0 "Enlightenment By Force"
 casus_belli_cb_dragon_desc:0 "???"
@@ -449,6 +491,7 @@ opinion_dragon_moral:0 "Sound Morals"
 opinion_dragon_rightpath:0 "On Track"
 opinion_dragon_principled:0 "Principled"
 opinion_dragon_seethelight:0 "Allies in Reason"
+opinion_dragon_killed_enclave:0 "Destroyers of Knowledge"
 opinion_dragon_misguided:0 "Misguided Communalists"
 opinion_dragon_naive:0 "Naive Populists"
 opinion_dragon_barbarians:0 "Barbarians"
@@ -468,6 +511,8 @@ opinion_dragon_goodmachines:0 "Ethical Caretakers"
 opinion_dragon_close:0 "Almost There"
 opinion_dragon_allies:0 "Allies in Reason"
 opinion_dragon_allieswar:0 "Allies in Enlightened Enforcement"
+opinion_dragon_alvothari_to:0 "Moral Enforcers"
+opinion_dragon_alvothari_from:0 "Moral Adherents"
 
 opinion_aleran_threatened:0 "First Contact Threat"
 opinion_aleran_insulted:0 "First Contact Insult"

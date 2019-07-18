@@ -255,6 +255,7 @@ country_event = {
 			set_country_flag = already_fe_demanded
 		}
 		remove_modifier = humiliated
+		add_influence = 10
 		#if = {
 		#	limit = {
 		#		has_country_flag = already_fe_demanded

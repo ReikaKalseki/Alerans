@@ -5,9 +5,23 @@ on_monthly_pulse = {
 	}
 }
 
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# FromFromFrom = Fleet
 on_megastructure_built = {
 	events = {
 		aleran_megastructures.1
+	}
+}
+
+# A Megastructure has been upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+on_megastructure_upgraded = {
+	events = {
+		aleran_megastructures.2
 	}
 }
 
@@ -65,5 +79,16 @@ on_purge_begun = {
 on_pop_enslaved = {
 	events = {
 		#aleran_diplomacy.400 #immediate war
+	}
+}
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+		dragon_misc.30
+		dragon_misc.31
 	}
 }

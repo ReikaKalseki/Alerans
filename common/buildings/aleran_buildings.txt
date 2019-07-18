@@ -80,7 +80,7 @@ building_dragon_library = {
 	produced_resources = {
 		unity = 3
 		influence = 0.5
-		society_research = 1
+		society_research = 2
 		physics_research = 1
 		engineering_research = 1
 	}
@@ -659,4 +659,88 @@ building_meat_lab_5 = {
 	prerequisites = {
 		"tech_nano_vitality_crops"
 	}
+}
+
+building_art_display = {
+	base_buildtime = 100
+	planet_unique = no
+	
+	cost = {
+		minerals = 1800
+		influence = 25
+	}
+	
+	show_tech_unlock_if = { 
+		has_country_flag = aleran
+	}
+
+	potential = {
+		owner = {
+			has_country_flag = aleran
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+
+	destroy_if = {
+		always = no
+	}
+	
+	produced_resources = {
+		unity = 1
+		society_research = 2
+	}
+	
+	required_resources = {
+		energy = 2
+	}
+	
+	prerequisites = {
+		"tech_aleran_art"
+		"tech_colonization_1"
+	}
+	
+	ai_allow = {
+		NOR = {
+			has_resource = {
+				type = sr_betharian
+				amount > 0
+			}	
+			has_resource = {
+				type = sr_alien_pets
+				amount > 0
+			}
+		}
+		has_resource = {
+			type = unity
+			amount > 1
+		}
+	}
+
+	ai_weight = {
+		factor = 100
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+	
+	planet_modifier = {
+		
+	}	
 }

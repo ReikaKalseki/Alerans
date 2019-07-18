@@ -26,6 +26,28 @@ tech_aleran_expansion = {
 	}
 }
 
+tech_aleran_art = {
+	cost = @tier2cost1
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_heritage_site" }
+	is_reverse_engineerable = no
+	weight = @tier2weight1
+	
+	weight_modifier = {
+		factor = 2
+	}
+		
+	modifier = {
+		
+	}
+	
+	potential = {
+		has_country_flag = aleran
+	}
+}
+
 #Colossus
 tech_pk_starray = {
 	area = engineering

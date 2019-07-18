@@ -2,10 +2,6 @@
 # OPINION MODIFIERS
 ##########################################################################
 
-#######
-##What others think of Alerans
-#######
-
 opinion_aleran_threatened = {
 	opinion = {
 		base = -100
@@ -42,6 +38,10 @@ opinion_aleran_allied = {
 	}
 }
 
+
+#######
+##What others think of Alerans
+#######
 opinion_dragon_cold = {
 	trigger = {
 		FROM = {
@@ -49,6 +49,7 @@ opinion_dragon_cold = {
 		}
 		this = {
 			has_ethic = "ethic_egalitarian"
+			is_country_type = default
 		}
 	}
 	opinion = {
@@ -63,6 +64,7 @@ opinion_dragon_ruthless = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_egalitarian"
+			is_country_type = default
 		}
 	}
 	opinion = {
@@ -77,6 +79,7 @@ opinion_dragon_antitheist = {
 		}
 		this = {
 			has_ethic = "ethic_spiritualist"
+			is_country_type = default
 		}
 	}
 	opinion = {
@@ -91,6 +94,7 @@ opinion_dragon_infidel = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_spiritualist"
+			is_country_type = default
 		}
 	}
 	opinion = {
@@ -105,12 +109,9 @@ opinion_dragon_meddler = {
 		}
 		this = {
 			has_ethic = "ethic_xenophobe"
-		}
-		NOR = {
-			this = {
+			is_country_type = default
+			NOR = {
 				has_ethic = "ethic_materialist"
-			}
-			this = {
 				has_ethic = "ethic_fanatic_materialist"
 			}
 		}
@@ -127,12 +128,9 @@ opinion_dragon_oppressor = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_xenophobe"
-		}
-		NOR = {
-			this = {
+			is_country_type = default
+			NOR = {
 				has_ethic = "ethic_materialist"
-			}
-			this = {
 				has_ethic = "ethic_fanatic_materialist"
 			}
 		}
@@ -149,6 +147,7 @@ opinion_dragon_meek = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_militarist"
+			is_country_type = default
 		}
 	}
 	opinion = {
@@ -163,8 +162,7 @@ opinion_dragon_rightpath = {
 		}
 		this = {
 			has_ethic = "ethic_materialist"
-		}
-		this = {
+			is_country_type = default
 			has_ethic = "ethic_authoritarian"
 		}
 	}
@@ -180,6 +178,7 @@ opinion_dragon_moral = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_materialist"
+			#is_country_type = default
 		}
 	}
 	opinion = {
@@ -194,8 +193,7 @@ opinion_dragon_principled = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_materialist"
-		}
-		this = {
+			is_country_type = default
 			has_ethic = "ethic_authoritarian"
 		}
 	}
@@ -211,11 +209,8 @@ opinion_dragon_seethelight = {
 		}
 		this = {
 			has_ethic = "ethic_materialist"
-		}
-		this = {
+			is_country_type = default
 			has_ethic = "ethic_authoritarian"
-		}
-		this = {
 			has_ethic = "ethic_xenophile"
 		}
 	}
@@ -229,6 +224,20 @@ opinion_dragon_seethelight = {
 #######
 ##What Alerans think of others
 #######
+opinion_dragon_killed_enclave = {
+	trigger = {
+		FROM = {
+			has_country_flag = attacked_enclave
+		}
+		this = {
+			has_country_flag = aleran
+		}
+	}
+	opinion = {
+		base = -400
+	}
+}
+
 opinion_dragon_misguided = {
 	trigger = {
 		FROM = {

@@ -143,3 +143,24 @@ lost_a_system_to_nova = {
 	
 	icon = "gfx/interface/icons/modifiers/lost_to_nova.dds"
 }
+
+disloyal_fleet = {
+	army_morale = -0.5
+	ship_weapon_damage = -0.4
+	ship_fire_rate_mult = -0.5
+	ship_accuracy_mult = -0.5
+	ship_speed_mult = -0.25
+	ship_disengage_chance_mult = 4
+	ship_disengage_chance_reduction = -20
+	
+	icon = "gfx/interface/icons/modifiers/disloyal_fleet.dds"
+}
+
+disloyal_pops = {
+	army_morale = -0.5
+	pop_resource_output = -0.6
+	pop_government_ethic_attraction = -1
+	pop_migration_speed = 1
+	
+	icon = "gfx/interface/icons/modifiers/disloyal_pops.dds"
+}

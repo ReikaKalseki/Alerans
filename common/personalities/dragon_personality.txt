@@ -75,8 +75,8 @@ dragons = {
 		purger = no
 		dominator = no
 		infiltrator = yes
-		robot_exploiter = yes
-		robot_liberator = no
+		robot_exploiter = no
+		robot_liberator = yes
 		propagator = yes
 		multispecies = yes
 	}

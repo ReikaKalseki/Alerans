@@ -169,7 +169,25 @@ country_event = {
 					modifier = aleran_expansion_3b
 					days = -1
 				}
-			}			
+			}
 		}
+	}
+}
+
+country_event = {
+	id = aleran_ongoing.10
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = aleran
+		has_federation = yes	
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	immediate = {
+		set_federation_leader = this
 	}
 }

@@ -59,6 +59,11 @@ civic_dragon_gov = {
 		country_leader_pool_size = 1
 		starbase_defensive_war_ship_build_speed_mult = 0.2
 		diplomacy_influence_cost = -1
+		defensive_war_influence_gain_add = 4 #was 2.5
+		damage_vs_country_type_pirate_mult = 0.2
+		damage_vs_country_type_dormant_marauders_mult = 0.3
+		damage_vs_country_type_awakened_marauders_mult = 0.4
+		damage_vs_country_type_ruined_marauders_mult = 0.2
 	}
 
 	#description = "civic_tooltip_dragongov_effects"
