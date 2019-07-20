@@ -191,3 +191,76 @@ country_event = {
 		set_federation_leader = this
 	}
 }
+
+country_event = {
+	id = aleran_ongoing.100
+	title = "aleran_ongoing.100.name"
+	desc = "aleran_ongoing.100.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert
+	
+	trigger = {
+		has_country_flag = aleran
+		NOR = {
+			has_country_flag = genocide_bioweapon
+			has_country_flag = genocide_bioweapon_ended
+		}
+		research_leader = {
+			area = society
+			exists = this
+			has_level > 2
+		}
+		has_lots_of_xenos = yes
+	}
+
+	mean_time_to_happen = {
+		days = 3#600
+	}
+	
+	immediate = {
+		set_country_flag = genocide_bioweapon
+		begin_event_chain = { event_chain = genocide_bioweapon target = owner }
+	}
+	
+	option = {
+		name = "aleran_ongoing.100.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			set_country_flag = genocide_bioweapon_fighting
+		}		
+	}
+	
+	option = {
+		name = "aleran_ongoing.100.click.b"
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+			set_country_flag = genocide_bioweapon_ignoring
+		}		
+	}
+}
+
+country_event = {
+	id = aleran_ongoing.101
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = genocide_bioweapon
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	immediate = {
+		random_owned_pop = {
+			limit = {
+				NOT = {is_same_species = owner}
+			}
+			genocide_pop = yes
+		}
+	}
+}

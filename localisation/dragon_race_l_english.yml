@@ -261,9 +261,23 @@ aleran_ongoing.3.name:0 "Galaxy-Spanning Empire"
 aleran_ongoing.3.desc:0 "The Commonwealth now spans the majority of the galaxy, and we must update our drive technology so as to be able to rapidly traverse it, and our communications technology to administrate it."
 aleran_ongoing.3.click:0 "Excellent."
 
+aleran_ongoing.100.name:0 ""
+aleran_ongoing.100.desc:0 ""
+aleran_ongoing.100.click.a:0 ""
+aleran_ongoing.100.click.b:0 ""
+
+aleran_ongoing.102.name:0 ""
+aleran_ongoing.102.desc:0 ""
+aleran_ongoing.102.click.a:0 ""
+aleran_ongoing.102.click.b:0 ""
+
+aleran_ongoing.103.name:0 ""
+aleran_ongoing.103.desc:0 ""
+aleran_ongoing.103.click.a:0 ""
+aleran_ongoing.103.click.b:0 ""
 
 dragon_misc.32.name:0 "Leviathan Destroyed"
-dragon_misc.32.desc:0 "We have successfully destroyed the [This.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminatign the threat, we can count on this increasing our standing."
+dragon_misc.32.desc:0 "We have successfully destroyed the [This.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
 dragon_misc.32.click:0 "No more shall it harass us or our citizens."
 
 aleran_ai.500.name:0 "Destructive Society Enlightened"

@@ -1,0 +1,210 @@
+has_lots_of_xenos = {
+	num_species > 2
+	count_owned_pops = {
+		limit = {
+			NOT = {is_same_species = owner}
+		}
+		count > 100
+	}
+}
+
+is_very_not_ugly = {
+		OR = {
+			has_country_flag = aleran
+			has_country_flag = miidari
+			has_country_flag = alvothari
+			has_country_flag = reshethi
+			has_country_flag = ruphaari
+
+			species_portrait = mam3
+			
+			species_portrait = rep2
+			species_portrait = rep1
+			species_portrait = rep4
+			species_portrait = rep15
+
+			species_portrait = avi1
+			species_portrait = avi5
+			species_portrait = avi2
+			species_portrait = avi18
+			species_portrait = avi11
+
+			species_portrait = art18
+
+			species_portrait = mol1
+			species_portrait = mol3
+		}
+}
+
+is_somwwhat_not_ugly = {
+		OR = {
+			has_country_flag = raxycodium
+			
+			species_portrait = human_female_01
+			species_portrait = human_female_02
+			species_portrait = human_female_03
+			species_portrait = human_female_04
+			species_portrait = human_female_05
+
+			species_portrait = human_male_01
+			species_portrait = human_male_02
+			species_portrait = human_male_03
+			species_portrait = human_male_04
+			species_portrait = human_male_05
+
+			species_portrait = humanoid_04_female_01
+			species_portrait = humanoid_05_female_01
+
+			species_portrait = humanoid_04_male_01
+			species_portrait = humanoid_05_male_01
+
+			species_portrait = humanoid_hp_06_female
+			species_portrait = humanoid_hp_07_female
+
+			species_portrait = humanoid_hp_06
+			species_portrait = humanoid_hp_07
+
+			species_portrait = mam14
+			species_portrait = mam11
+			species_portrait = mam6
+			species_portrait = mam7
+			species_portrait = mam17
+			species_portrait = mam5
+			species_portrait = mam10
+			
+			species_portrait = rep14
+			species_portrait = rep9
+			species_portrait = rep6
+			species_portrait = rep8
+			species_portrait = rep5
+
+			species_portrait = avi10
+			species_portrait = avi7_m
+			species_portrait = avi7_f
+			species_portrait = avi6_f
+			species_portrait = avi6_m
+			species_portrait = avi3
+			species_portrait = avi16
+			species_portrait = avi15
+
+			species_portrait = art7
+			species_portrait = art6
+			species_portrait = art17
+			species_portrait = art11
+
+			species_portrait = mol13
+			species_portrait = mol8
+			species_portrait = mol12
+			species_portrait = mol15
+			species_portrait = mol16
+			species_portrait = mol17
+			species_portrait = mol18
+
+			species_portrait = fun7
+			species_portrait = fun13
+			species_portrait = fun15
+			species_portrait = fun9
+			species_portrait = fun11
+
+			species_portrait = pla1
+			species_portrait = pla2
+			species_portrait = pla14
+			species_portrait = pla7
+		}
+}
+
+is_somewhat_ugly = {
+		OR = {
+			species_portrait = humanoid_02_female_01
+			species_portrait = humanoid_03_female_01
+
+			species_portrait = humanoid_02_male_01
+			species_portrait = humanoid_03_male_01
+
+			species_portrait = humanoid_hp_10_female
+			species_portrait = humanoid_hp_12_female
+
+			species_portrait = humanoid_hp_10
+			species_portrait = humanoid_hp_12
+
+			species_portrait = mam13
+			species_portrait = mam2
+			species_portrait = mam16
+			
+			species_portrait = rep3
+			species_portrait = rep12
+			species_portrait = rep11
+
+			species_portrait = avi9
+			species_portrait = avi12
+			species_portrait = avi14
+
+			species_portrait = art14
+			species_portrait = art8
+			#species_portrait = art5
+			#species_portrait = art9
+			species_portrait = art10
+
+			species_portrait = mol7
+			species_portrait = mol4
+			species_portrait = mol2
+			species_portrait = mol11
+
+			species_portrait = fun12
+			species_portrait = fun1
+			species_portrait = fun3
+			species_portrait = fun17
+
+			species_portrait = pla11
+			species_portrait = pla13
+			species_portrait = pla15
+			species_portrait = pla12
+		}
+}
+
+is_very_ugly = {
+		OR = {
+			species_portrait = humanoid_hp_13_female
+			species_portrait = humanoid_hp_13
+
+			species_portrait = mam9
+			species_portrait = mam12
+			species_portrait = mam15
+			species_portrait = mam8
+			species_portrait = mam_ratling
+			
+			species_portrait = rep10
+			species_portrait = rep13
+
+			species_portrait = avi8
+			species_portrait = avi13
+			species_portrait = avi4
+			species_portrait = avi17
+
+			species_portrait = art12
+			species_portrait = art1
+			species_portrait = art13
+			species_portrait = art3
+			species_portrait = art15
+			species_portrait = art16
+			species_portrait = art20
+			species_portrait = art19
+
+			species_portrait = mol14
+			species_portrait = mol5
+			species_portrait = mol6
+
+			species_portrait = fun2
+			species_portrait = fun4
+			species_portrait = fun6
+			species_portrait = fun8
+			species_portrait = fun14
+			species_portrait = fun10
+			species_portrait = fun16
+
+			species_portrait = pla5
+			species_portrait = pla9
+			species_portrait = pla8
+			species_portrait = pla4
+		}
+}
