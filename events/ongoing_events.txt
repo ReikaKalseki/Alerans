@@ -200,6 +200,7 @@ country_event = { #start the genocide
 	show_sound = event_yellow_alert
 	
 	trigger = {
+		is_ai = no
 		has_country_flag = aleran
 		NOR = {
 			has_country_flag = genocide_bioweapon

@@ -301,8 +301,8 @@ aleran_ongoing.106.click:0 "Whoever they are, they are an enemy of the [This.Get
 
 aleran_ongoing.107.name:0 "Genocide Culprit Found"
 aleran_ongoing.107.desc:0 "The creator of the virus has been identified, and to our abject horror, it is one of our own, and worse, one of our most respected researchers! During the examination of virus samples, we found what amounts to blueprints for the virus on the computer databases of one of our research scientists, a [murderer.GetName]. They have already been captured, and while they have admitted no motive, they are almost certainly in some way upset by the mosaic of species that the [This.GetName] contains."
-aleran_ongoing.107.click.a:0 "They are too valuable to our research efforts to remove from their position."
-aleran_ongoing.107.click.b:0 "They have committed crimes beyond imagining, and clearly cannot exist in our society."
+aleran_ongoing.107.click.a:0 "They are too valuable to our research efforts."
+aleran_ongoing.107.click.b:0 "They have committed crimes beyond imagining."
 aleran_ongoing.107.a.tooltip:0 "The scientist is forgiven and returns to their research duties"
 
 aleran_ongoing.108.name:0 "Genocide Part Two"
