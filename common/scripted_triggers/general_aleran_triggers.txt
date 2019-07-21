@@ -36,7 +36,7 @@ is_very_not_ugly = {
 		}
 }
 
-is_somwwhat_not_ugly = {
+is_not_ugly = {
 		OR = {
 			has_country_flag = raxycodium
 			
@@ -113,7 +113,7 @@ is_somwwhat_not_ugly = {
 		}
 }
 
-is_somewhat_ugly = {
+is_ugly = {
 		OR = {
 			species_portrait = humanoid_02_female_01
 			species_portrait = humanoid_03_female_01

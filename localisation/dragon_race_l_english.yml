@@ -181,6 +181,10 @@ aleran_faction_wars:0 "No Unjust Wars"
 aleran_faction_wars_unfilled:0 "Unjust Wars"
 aleran_faction_wars_desc:0 "The [Root.GetName] will not abide by wars of conquest or opportunity."
 
+aleran_faction_genocide:0 "Genocide Opposed"
+aleran_faction_genocide_unfilled:0 "Genocide Ignored"
+aleran_faction_genocide_desc:0 "Failing to try to stop an ongoing genocide will be extremely disliked by the [Root.GetName]."
+
 
 tb_animal_yard:0 "£blocker  Abandoned Animal Farm"
 tb_animal_yard_desc:0 "Before the advent of cultured food, it was sourced by growing large, stupid animals which were then harvested. Long since made obsolete, the animals remain, as useless as ever."
@@ -249,6 +253,10 @@ tech_pk_stupor:0 "Atmospheric Drug Lacing"
 tech_pk_stupor_desc:0 "Spreading stupor-inducing drugs throughout a planetary atmosphere to humanely pacify and economically nullify the colony."
 
 
+genocide_bioweapon_chain_title:0 "Mystery Virus"
+genocide_bioweapon_chain_desc:0 "A virus is ravaging our citizens. We need to stop this as soon as possible."
+
+
 aleran_ongoing.1.name:0 "Unfettered Expansion"
 aleran_ongoing.1.desc:0 "The Aleran Commonwealth has been spreading among the stars, and has been made the better for it. This has made the process of acquiring new systems somewhat simpler to conduct."
 aleran_ongoing.1.click:0 "Excellent."
@@ -295,6 +303,7 @@ aleran_ongoing.107.name:0 "Genocide Culprit Found"
 aleran_ongoing.107.desc:0 "The creator of the virus has been identified, and to our abject horror, it is one of our own, and worse, one of our most respected researchers! During the examination of virus samples, we found what amounts to blueprints for the virus on the computer databases of one of our research scientists, a [murderer.GetName]. They have already been captured, and while they have admitted no motive, they are almost certainly in some way upset by the mosaic of species that the [This.GetName] contains."
 aleran_ongoing.107.click.a:0 "They are too valuable to our research efforts to remove from their position."
 aleran_ongoing.107.click.b:0 "They have committed crimes beyond imagining, and clearly cannot exist in our society."
+aleran_ongoing.107.a.tooltip:0 "The scientist is forgiven and returns to their research duties"
 
 aleran_ongoing.108.name:0 "Genocide Part Two"
 aleran_ongoing.108.desc:0 "It was clearly a mistake to allow [murderer.GetName] to continue their work; they have secretly been developing a second, even more lethal strain of their virus. While we have managed to stop it by refining our previous cure, countless more of our citizens are dead."
@@ -466,6 +475,15 @@ stupor_drug_withdrawal_desc:0 "The population of this planet is suffering severe
 stupor_removal:0 "Stupor-Inducing Drug Cleanup"
 stupor_removal_DESC:0 "Cleaning the drugs from the atmosphere of the affected planet, so that the population can once again become productive."
 
+identify_genocide_bioweapon:0 "Virus Identification"
+identify_genocide_bioweapon_DESC:0 "We need to obtain samples of this virus and analyze them, so that we can find a cure and have some lead to a source."
+
+stop_genocide_bioweapon:0 "Bioweapon Neutralization"
+stop_genocide_bioweapon_DESC:0 "Now that we have identified this virus as a bioweapon, it must be thoroughly researched to find weaknesses and a cure."
+
+stop_genocide_bioweapon_late:0 "Bioweapon Neutralization - Late Start"
+stop_genocide_bioweapon_late_DESC:0 "Now that we have identified this virus as a bioweapon, it must be thoroughly researched to find weaknesses and a cure. We really should have started this sooner."
+
 nova_irradiated:0 "Nova Irradiated"
 nova_irradiated_desc:0 "A nova event in a nearby system has caused a serious environmental damage on this planet. Surface radiation levels are well above normal, which affects the health of both populations and crops."
 
@@ -474,6 +492,12 @@ lost_a_system_to_nova_desc:0 "This empire has recently lost one of its star syst
 
 considering_aleran_ideas:0 "Examining Aleran Ideology"
 considering_aleran_ideas_desc:0 "Upon examination, aspects of the ideology underlying the Aleran Commonwealth prove worth further evaluation and might possibly even have some appeal."
+
+bioweapon_death:0 "Recent Bioweapon Deaths"
+bioweapon_death_desc:0 "Someone recently died here from the virus, depressing morale."
+
+bioweapon_not_stopped:0 "Bioweapon Cure Unsuccessful"
+bioweapon_not_stopped_desc:0 "The failure to cure the bioweapon in time has greatly upset the populace."
 
 
 aleran_colossus.3.name:0 "Population in Withdrawal"

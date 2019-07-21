@@ -1,42 +1,43 @@
 genocide_pop = {
+	log = "Genociding pop"
 	if = {
 		limit = {
-			is_very_ugly = yes
+			owner = {is_very_ugly = yes}
 		}
-		random = {
+		random_list = {
 			90 = {kill_pop = yes}
 			10 = {}
 		}
 	}
 	else_if = {
 		limit = {
-			is_ugly = yes
+			owner = {is_ugly = yes}
 		}
-		random = {
+		random_list = {
 			70 = {kill_pop = yes}
 			30 = {}
 		}
 	}
 	else_if = {
 		limit = {
-			is_not_ugly = yes
+			owner = {is_not_ugly = yes}
 		}
-		random = {
+		random_list = {
 			30 = {kill_pop = yes}
 			70 = {}
 		}
 	}
 	else_if = {
 		limit = {
-			is_very_not_ugly = yes
+			owner = {is_very_not_ugly = yes}
 		}
-		random = {
+		random_list = {
 			10 = {kill_pop = yes}
 			90 = {}
 		}
 	}
 	else = {
-		random = {
+		random_list = {
 			50 = {kill_pop = yes}
 			50 = {}
 		}

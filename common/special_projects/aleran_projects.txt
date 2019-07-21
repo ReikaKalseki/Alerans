@@ -15,7 +15,7 @@ special_project = {
 }
 special_project = {
 	key = "identify_genocide_bioweapon"
-	event_chain = "genocide_bioweapon"
+	event_chain = "genocide_bioweapon_chain"
 	#cost = 5000
 	timelimit = 30
 	days_to_research = 90
@@ -24,15 +24,15 @@ special_project = {
 	picture = GFX_evt_GFX_evt_microscopic_life
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	
-	event_scope = country_event
+	event_scope = planet_event
 	
 	on_success = {
-		country_event = {id = aleran_ongoing.102 }
+		owner = {country_event = {id = aleran_ongoing.102 }}
 	}	
 }
 special_project = {
 	key = "stop_genocide_bioweapon"
-	event_chain = "genocide_bioweapon"
+	event_chain = "genocide_bioweapon_chain"
 	#cost = 5000
 	timelimit = 30
 	days_to_research = 900
@@ -41,15 +41,15 @@ special_project = {
 	picture = GFX_evt_GFX_evt_microscopic_life
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	
-	event_scope = country_event
+	event_scope = planet_event
 	
 	on_success = {
-		country_event = {id = aleran_ongoing.105 }
+		owner = {country_event = {id = aleran_ongoing.105 }}
 	}	
 }
 special_project = {
 	key = "stop_genocide_bioweapon_late"
-	event_chain = "genocide_bioweapon"
+	event_chain = "genocide_bioweapon_chain"
 	#cost = 5000
 	timelimit = 30
 	days_to_research = 3600
@@ -58,9 +58,9 @@ special_project = {
 	picture = GFX_evt_GFX_evt_microscopic_life
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	
-	event_scope = country_event
+	event_scope = planet_event
 	
 	on_success = {
-		country_event = {id = aleran_ongoing.105 }
+		owner = {country_event = {id = aleran_ongoing.105 }}
 	}	
 }
