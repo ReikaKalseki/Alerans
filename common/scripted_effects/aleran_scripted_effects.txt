@@ -5,8 +5,8 @@ genocide_pop = {
 			owner = {is_very_ugly = yes}
 		}
 		random_list = {
-			90 = {kill_pop = yes}
-			10 = {}
+			95 = {kill_pop = yes}
+			5 = {}
 		}
 	}
 	else_if = {
@@ -14,8 +14,8 @@ genocide_pop = {
 			owner = {is_ugly = yes}
 		}
 		random_list = {
-			70 = {kill_pop = yes}
-			30 = {}
+			85 = {kill_pop = yes}
+			15 = {}
 		}
 	}
 	else_if = {
@@ -23,8 +23,8 @@ genocide_pop = {
 			owner = {is_not_ugly = yes}
 		}
 		random_list = {
-			30 = {kill_pop = yes}
-			70 = {}
+			50 = {kill_pop = yes}
+			50 = {}
 		}
 	}
 	else_if = {
@@ -32,14 +32,14 @@ genocide_pop = {
 			owner = {is_very_not_ugly = yes}
 		}
 		random_list = {
-			10 = {kill_pop = yes}
-			90 = {}
+			20 = {kill_pop = yes}
+			80 = {}
 		}
 	}
 	else = {
 		random_list = {
-			50 = {kill_pop = yes}
-			50 = {}
+			75 = {kill_pop = yes}
+			25 = {}
 		}
 	}
 }

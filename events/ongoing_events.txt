@@ -214,7 +214,7 @@ country_event = { #start the genocide
 	}
 
 	mean_time_to_happen = {
-		days = 3#600
+		days = 3600
 	}
 	
 	immediate = {
@@ -257,7 +257,7 @@ country_event = { #kill a random pop and check for burnout
 	}
 
 	mean_time_to_happen = {
-		days = 3 #was 10, then 8
+		days = 1 #was 10, then 8, then 3
 	}
 	
 	immediate = {
