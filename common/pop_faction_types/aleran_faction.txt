@@ -1036,6 +1036,33 @@ aleran_faction = {
 		}
 	}
 
+	demand = {
+		title = "aleran_faction_genocide"
+		unfulfilled_title = "aleran_faction_genocide_unfilled"
+		desc = "aleran_faction_genocide_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -80
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran
+				OR = {
+					has_country_flag = genocide_bioweapon
+					has_country_flag = genocide_bioweapon_ended
+				}
+				has_country_flag = identified_genocide
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {has_country_flag = genocide_bioweapon_ignored}
+			}
+		}
+	}
+
 	on_create = {
 		pop_faction_event = { id = factions.1 }
 	}

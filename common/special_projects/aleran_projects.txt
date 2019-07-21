@@ -1,6 +1,7 @@
 special_project = {
 	key = "stupor_removal"
-	cost = 2500
+	cost = 40000 #was 2500, then 7500
+	#days_to_research = 1800 #5y
 	tech_department = engineering_technology
 	picture = GFX_evt_ship_in_orbit
 	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
@@ -10,5 +11,56 @@ special_project = {
 	on_success = {
 		remove_modifier = "stupor_drugged"
 		planet_event = { id = aleran_colossus.1 }
+	}	
+}
+special_project = {
+	key = "identify_genocide_bioweapon"
+	event_chain = "genocide_bioweapon"
+	#cost = 5000
+	timelimit = 30
+	days_to_research = 90
+	location = no
+	tech_department = society_technology
+	picture = GFX_evt_GFX_evt_microscopic_life
+	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
+	
+	event_scope = country_event
+	
+	on_success = {
+		country_event = {id = aleran_ongoing.102 }
+	}	
+}
+special_project = {
+	key = "stop_genocide_bioweapon"
+	event_chain = "genocide_bioweapon"
+	#cost = 5000
+	timelimit = 30
+	days_to_research = 900
+	location = no
+	tech_department = society_technology
+	picture = GFX_evt_GFX_evt_microscopic_life
+	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
+	
+	event_scope = country_event
+	
+	on_success = {
+		country_event = {id = aleran_ongoing.105 }
+	}	
+}
+special_project = {
+	key = "stop_genocide_bioweapon_late"
+	event_chain = "genocide_bioweapon"
+	#cost = 5000
+	timelimit = 30
+	days_to_research = 3600
+	location = no
+	tech_department = society_technology
+	picture = GFX_evt_GFX_evt_microscopic_life
+	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
+	
+	event_scope = country_event
+	
+	on_success = {
+		country_event = {id = aleran_ongoing.105 }
 	}	
 }
