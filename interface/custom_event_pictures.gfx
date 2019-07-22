@@ -1,0 +1,10 @@
+spriteTypes = {	
+
+
+	spriteType = {
+		name = "GFX_evt_solar_flare"
+		texturefile = "gfx/event_pictures/solar_flare.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+}

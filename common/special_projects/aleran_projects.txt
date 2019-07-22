@@ -21,7 +21,7 @@ special_project = {
 	days_to_research = 90
 	location = no
 	tech_department = society_technology
-	picture = GFX_evt_GFX_evt_microscopic_life
+	picture = GFX_evt_microscopic_life
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	
 	event_scope = planet_event
@@ -38,7 +38,7 @@ special_project = {
 	days_to_research = 900
 	location = no
 	tech_department = society_technology
-	picture = GFX_evt_GFX_evt_microscopic_life
+	picture = GFX_evt_microscopic_life
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	
 	event_scope = planet_event
@@ -55,12 +55,46 @@ special_project = {
 	days_to_research = 3600
 	location = no
 	tech_department = society_technology
-	picture = GFX_evt_GFX_evt_microscopic_life
+	picture = GFX_evt_microscopic_life
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	
 	event_scope = planet_event
 	
 	on_success = {
 		owner = {country_event = {id = aleran_ongoing.105 }}
+	}	
+}
+special_project = {
+	key = "investigate_solar_storm"
+	event_chain = "solar_storm_chain"
+	cost = 1000
+	timelimit = 360
+	#days_to_research = 720
+	location = yes
+	tech_department = physics_technology
+	picture = GFX_evt_solar_flare
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		owner = {country_event = {id = aleran_ongoing.201 }}
+	}	
+}
+special_project = {
+	key = "build_solar_shield"
+	event_chain = "solar_storm_chain"
+	#cost = 5000
+	timelimit = 1800
+	days_to_research = 720
+	location = yes
+	tech_department = engineering_technology
+	picture = GFX_evt_solar_flare
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		owner = {country_event = {id = aleran_ongoing.202 }}
 	}	
 }

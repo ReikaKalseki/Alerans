@@ -41,9 +41,6 @@ auth_dragon = {
 			value = ethic_xenophile
 			value = ethic_authoritarian
 		}
-		#traits = {
-		#	value = trait_dragonbody
-		#}
 		civics = {
 			OR = {
 				value = civic_dragon_init
@@ -51,9 +48,6 @@ auth_dragon = {
 			}
 		}
 	}
-	#traits = {
-	#	trait = trait_dragonbody
-	#}
 	
 	tags = {
 		AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE
