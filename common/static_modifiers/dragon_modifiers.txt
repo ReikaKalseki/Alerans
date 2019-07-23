@@ -206,10 +206,37 @@ shielded_storm = {
 	icon_frame = 2
 }
 
+early_storm = {
+	pop_environment_tolerance = -0.2
+	pop_happiness = -0.2
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_shielded_storm.dds"
+	icon_frame = 2
+}
+
 building_shield = {
 	static_resource_minerals_add = -500
-	country_resource_physics_research_mult = -0.5
-	country_resource_engineering_research_mult = -1
+	country_physics_tech_research_speed = -0.5
+	country_engineering_tech_research_speed = -0.8
 	
 	icon = "gfx/interface/icons/modifiers/building_solar_shield.dds"
+}
+
+analysing_shield = { #lasts 5x as long as the building, so must give 1/5th the monthly minerals
+	static_resource_minerals_add = 100
+	static_resource_physics_research_add = 600
+	static_resource_engineering_research_add = 600
+	
+	icon = "gfx/interface/icons/modifiers/analysing_solar_shield.dds"
+}
+
+determined_stop_genocide = {
+	army_morale = 0.25
+	ship_weapon_range_mult = 0.2
+	ship_fire_rate_mult = 0.1
+	ship_accuracy_mult = 0.2
+	ship_tracking_mult = 0.2
+	ship_speed_mult = 0.1
+	
+	icon = "gfx/interface/icons/modifiers/determined_stop_genocide.dds"
 }

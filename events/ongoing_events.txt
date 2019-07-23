@@ -596,6 +596,9 @@ country_event = { #the star does something funny
 	trigger = {
 		is_ai = no
 		has_country_flag = aleran
+		has_monthly_income = { resource = minerals value > 600 }
+		has_monthly_income = { resource = engineering_research value > 100 }
+		has_monthly_income = { resource = physics_research value > 100 }
 		NOT = {exists = event_target:solar_storm_planet}
 		NOR = {
 			has_country_flag = solar_storm
@@ -625,17 +628,28 @@ country_event = { #the star does something funny
 					is_primitive = yes
 				}
 			}
+			owner = {
+				save_global_event_target_as = solar_storm_primitives
+			}
 			save_global_event_target_as = solar_storm_planet
+			solar_system = {
+				random_system_planet = {
+					limit = {
+						is_primary_star = yes
+					}
+					save_global_event_target_as = solar_storm_star
+				}
+			}
 		
-			planet_event = {id = aleran_ongoing.204 days = 20 random = 5} #queue some "preshocks"
-			planet_event = {id = aleran_ongoing.204 days = 30 random = 5}
-			planet_event = {id = aleran_ongoing.204 days = 40 random = 15}
-			planet_event = {id = aleran_ongoing.204 days = 60 random = 15}
-			planet_event = {id = aleran_ongoing.204 days = 80 random = 15}
-			planet_event = {id = aleran_ongoing.205 days = 100 random = 15} #some bigger events
-			planet_event = {id = aleran_ongoing.205 days = 120 random = 20}
-			planet_event = {id = aleran_ongoing.205 days = 150 random = 20}
-			planet_event = {id = aleran_ongoing.206 days = 180 random = 30} #queue the storm
+			planet_event = {id = aleran_ongoing.204 days = 200 random = 50} #queue some "preshocks"
+			planet_event = {id = aleran_ongoing.204 days = 300 random = 50}
+			planet_event = {id = aleran_ongoing.204 days = 400 random = 150}
+			planet_event = {id = aleran_ongoing.204 days = 600 random = 150}
+			planet_event = {id = aleran_ongoing.204 days = 800 random = 150}
+			planet_event = {id = aleran_ongoing.205 days = 1000 random = 150} #some bigger events
+			planet_event = {id = aleran_ongoing.205 days = 1200 random = 200}
+			planet_event = {id = aleran_ongoing.205 days = 1500 random = 200}
+			planet_event = {id = aleran_ongoing.206 days = 1800 random = 300} #queue the storm
 		}
 	}
 	
@@ -660,7 +674,7 @@ country_event = { #the star does something funny
 			factor = 50
 		}
 		owner = {
-			
+			add_influence = 50
 		}
 	}
 }
@@ -702,6 +716,7 @@ country_event = { #realize upcoming solar event
 			factor = 50
 		}
 		owner = {
+			add_influence = 40
 			set_country_flag = solar_storm_ignored #for unhappy faction
 		}		
 	}
@@ -726,7 +741,7 @@ country_event = { #finish the shield so that the storm is harmless
 		}
 		owner = {
 			remove_modifier = building_shield
-		}		
+		}
 	}
 }
 
@@ -739,7 +754,39 @@ planet_event = { #preshocks 1
 	is_triggered_only = yes
 
 	immediate = {
-		
+		random_system_planet = {
+			add_modifier = {
+				modifier = early_storm
+				days = -1
+			}
+			if = {
+				limit = {
+					is_planet_class = pc_toxic
+				}
+				random_list = {
+					40 = {change_pc = pc_barren}
+					60 = {}
+				}
+			}
+			else_if = {
+				limit = {
+					is_planet_class = pc_barren
+				}
+				random_list = {
+					25 = {change_pc = pc_molten}
+					75 = {}
+				}
+			}
+			else_if = {
+				limit = {
+					is_planet_class = pc_barren_cold
+				}
+				random_list = {
+					50 = {change_pc = pc_barren}
+					50 = {}
+				}
+			}
+		}
 	}
 	
 	option = {
@@ -762,7 +809,51 @@ planet_event = { #preshocks 2
 	is_triggered_only = yes
 
 	immediate = {
-		
+		random_list = {
+			15 = {
+				random_system_planet = {
+					limit = {
+						uninhabitable_regular_planet = yes
+					}
+					save_event_target_as = damaged_planet
+					random_list = {
+						70 = {change_pc = pc_broken}
+						30 = {change_pc = pc_shattered}
+					}
+				}
+			}
+			55 = {
+				random_system_planet = {
+					limit = {
+						OR = {
+							is_planet_class = pc_barren
+							is_planet_class = pc_barren_cold
+							#is_planet_class = pc_toxic
+							is_planet_class = pc_frozen
+						}
+					}
+					save_event_target_as = damaged_planet
+					change_pc = pc_molten
+				}
+			}
+			30 = {
+				random_system_planet = {
+					limit = {
+						is_planet_class = pc_gas_giant
+					}
+					save_event_target_as = damaged_planet
+					random_list = {
+						40 = {change_pc = pc_toxic}
+						40 = {change_pc = pc_molten}
+						20 = {change_pc = pc_broken}
+					}
+					add_modifier = {
+						modifier = chthonian_planet
+						days = -1
+					}
+				}
+			}
+		}
 	}
 	
 	option = {
@@ -872,7 +963,12 @@ country_event = { #protected dialog box
 	is_triggered_only = yes
 
 	immediate = {
-	
+		random_owned_leader = {
+			limit = { 
+				leader_class = scientist
+			}
+			save_global_event_target_as = solar_storm_gifter
+		}
 	}
 	
 	option = {
@@ -880,9 +976,16 @@ country_event = { #protected dialog box
 		ai_chance = {
 			factor = 150
 		}
-		end_event_chain = solar_storm_chain
-		clear_global_event_target = alerans
-		clear_global_event_target = solar_storm_planet
+		add_modifier = {
+			modifier = analysing_shield
+			days = 3600
+		}
+		add_research_option = tech_mega_engineering
+		add_tech_progress = { tech = tech_mega_engineering progress = 0.2 }
+		hidden_effect = {
+			remove_country_flag = solar_storm_ignored #for unhappy faction
+			country_event = {id = aleran_ongoing.211}
+		}
 	}
 }
 
@@ -907,5 +1010,166 @@ country_event = { #unprotected dialog box
 		end_event_chain = solar_storm_chain	
 		clear_global_event_target = alerans
 		clear_global_event_target = solar_storm_planet
+		clear_global_event_target = solar_storm_star
+		clear_global_event_target = solar_storm_primitives
+	}
+}
+
+country_event = { #they show gratitude
+	id = aleran_ongoing.211
+	title = "aleran_ongoing.211.name"
+	desc = "aleran_ongoing.211.desc"
+	
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:solar_storm_primitives
+		planet_background = event_target:solar_storm_primitives
+		graphical_culture = event_target:solar_storm_primitives
+		city_level = event_target:solar_storm_primitives
+		room = event_target:solar_storm_primitives.ruler
+	}
+
+	immediate = {
+		event_target:solar_storm_primitives = {
+			country_event = { id = primitive.16 }
+			clear_ethos = yes
+			
+			#country_remove_ethic = ethic_spiritualist
+			#country_remove_ethic = ethic_fanatic_spiritualist
+			#country_remove_ethic = ethic_militarist
+			#country_remove_ethic = ethic_fanatic_militarist
+			#country_remove_ethic = ethic_fanatic_egalitarian
+			#country_remove_ethic = ethic_fanatic_authoritarian
+			
+			country_add_ethic = ethic_fanatic_xenophile
+			country_add_ethic = ethic_materialist
+			
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_materialist
+			#shift_ethic = ethic_materialist
+			#shift_ethic = ethic_materialist
+			#shift_ethic = ethic_materialist
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_fanatic_xenophile
+			#shift_ethic = ethic_fanatic_xenophile #this should work
+			change_government = { authority = auth_oligarchic civics = random }
+			set_country_flag = aleran_saved_from_storm
+		}
+	}
+	
+	option = {
+		name = "aleran_ongoing.211.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+			NOT = {
+				any_country = { is_fallen_empire_xenophobe = yes }
+			}
+		}
+		event_target:solar_storm_primitives = {
+			set_subject_of = { who = prev subject_type = protectorate }
+		}
+		add_influence = 100
+		end_event_chain = solar_storm_chain	
+		clear_global_event_target = alerans
+		clear_global_event_target = solar_storm_planet
+		clear_global_event_target = solar_storm_star
+		clear_global_event_target = solar_storm_primitives
+		clear_global_event_target = solar_storm_culprit
+		clear_global_event_target = solar_storm_gifter
+	}
+	
+	option = {
+		name = "aleran_ongoing.211.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+			any_country = { is_fallen_empire_xenophobe = yes }
+		}
+		event_target:solar_storm_primitives = {
+			set_subject_of = { who = prev subject_type = protectorate }
+		}
+		add_influence = 100
+		hidden_effect = {
+			random_country = {
+				limit = { is_fallen_empire_xenophobe = yes }
+				save_global_event_target_as = solar_storm_culprit
+			}
+			country_event = {id = aleran_ongoing.212 days = 180 random = 180}
+		}
+	}
+}
+
+country_event = { #the FE culprit gets pissed
+	id = aleran_ongoing.212
+	title = "aleran_ongoing.212.name"
+	desc = "aleran_ongoing.212.desc"
+	#picture = GFX_evt_solar_flare
+	#show_sound = event_solar_fusion
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:solar_storm_culprit
+		planet_background = event_target:solar_storm_culprit
+		graphical_culture = event_target:solar_storm_culprit
+		city_level = event_target:solar_storm_culprit
+		room = event_target:solar_storm_culprit.ruler
+	}
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_ongoing.212.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		event_target:solar_storm_culprit = {
+			add_opinion_modifier = { modifier = opinion_aleran_interfered_cleansing who = prev }
+		}
+		end_event_chain = solar_storm_chain	
+		clear_global_event_target = alerans
+		clear_global_event_target = solar_storm_planet
+		clear_global_event_target = solar_storm_star
+		clear_global_event_target = solar_storm_primitives
+		clear_global_event_target = solar_storm_culprit
+		clear_global_event_target = solar_storm_gifter
+	}
+	
+	option = {
+		name = "aleran_ongoing.212.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		event_target:solar_storm_culprit = {
+			add_opinion_modifier = { modifier = opinion_aleran_interfered_cleansing who = prev }
+		}
+		declare_war = {
+			target = event_target:solar_storm_culprit
+			name = "Genocide Prevention Initiative"
+			attacker_war_goal = wg_dragon
+		}
+		add_modifier = {
+			modifier = determined_stop_genocide
+			days = 3600
+		}
+		end_event_chain = solar_storm_chain	
+		clear_global_event_target = alerans
+		clear_global_event_target = solar_storm_planet
+		clear_global_event_target = solar_storm_star
+		clear_global_event_target = solar_storm_primitives
+		clear_global_event_target = solar_storm_culprit
+		clear_global_event_target = solar_storm_gifter
 	}
 }

@@ -1063,6 +1063,33 @@ aleran_faction = {
 		}
 	}
 
+	demand = {
+		title = "aleran_faction_solarstorm"
+		unfulfilled_title = "aleran_faction_solarstorm_unfilled"
+		desc = "aleran_faction_solarstorm_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -50
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran
+				OR = {
+					has_country_flag = solar_storm
+					has_country_flag = solar_storm_ended
+				}
+				has_country_flag = identified_solar_storm
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {has_country_flag = solar_storm_ignored}
+			}
+		}
+	}
+
 	on_create = {
 		pop_faction_event = { id = factions.1 }
 	}

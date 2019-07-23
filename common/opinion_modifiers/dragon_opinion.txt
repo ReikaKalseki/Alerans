@@ -38,6 +38,18 @@ opinion_aleran_allied = {
 	}
 }
 
+opinion_aleran_interfered_cleansing = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = no
+
+	decay = {
+		base = 1
+	}
+}
+
 
 #######
 ##What others think of Alerans
@@ -50,6 +62,7 @@ opinion_dragon_cold = {
 		this = {
 			has_ethic = "ethic_egalitarian"
 			is_country_type = default
+			NOT = { has_country_flag = aleran_saved_from_storm }
 		}
 	}
 	opinion = {
@@ -65,6 +78,7 @@ opinion_dragon_ruthless = {
 		this = {
 			has_ethic = "ethic_fanatic_egalitarian"
 			is_country_type = default
+			NOT = { has_country_flag = aleran_saved_from_storm }
 		}
 	}
 	opinion = {
@@ -80,6 +94,7 @@ opinion_dragon_antitheist = {
 		this = {
 			has_ethic = "ethic_spiritualist"
 			is_country_type = default
+			NOT = { has_country_flag = aleran_saved_from_storm }
 		}
 	}
 	opinion = {
@@ -114,6 +129,7 @@ opinion_dragon_meddler = {
 				has_ethic = "ethic_materialist"
 				has_ethic = "ethic_fanatic_materialist"
 			}
+			NOT = { has_country_flag = aleran_saved_from_storm }
 		}
 	}
 	opinion = {
@@ -148,6 +164,7 @@ opinion_dragon_meek = {
 		this = {
 			has_ethic = "ethic_fanatic_militarist"
 			is_country_type = default
+			NOT = { has_country_flag = aleran_saved_from_storm }
 		}
 	}
 	opinion = {

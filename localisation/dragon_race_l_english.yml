@@ -185,6 +185,10 @@ aleran_faction_genocide:0 "Genocide Opposed"
 aleran_faction_genocide_unfilled:0 "Genocide Ignored"
 aleran_faction_genocide_desc:0 "Failing to try to stop an ongoing genocide will be extremely disliked by the [Root.GetName]."
 
+aleran_faction_solarstorm:0 "Solar Storm Deflected"
+aleran_faction_solarstorm_unfilled:0 "Solar Storm Ignored"
+aleran_faction_solarstorm_desc:0 "The [Root.GetName] will expect all attempts to be made to prevent a solar storm from obliterating a sapient civilization."
+
 
 tb_animal_yard:0 "£blocker  Abandoned Animal Farm"
 tb_animal_yard_desc:0 "Before the advent of cultured food, it was sourced by growing large, stupid animals which were then harvested. Long since made obsolete, the animals remain, as useless as ever."
@@ -256,6 +260,9 @@ tech_pk_stupor_desc:0 "Spreading stupor-inducing drugs throughout a planetary at
 genocide_bioweapon_chain_title:0 "Mystery Virus"
 genocide_bioweapon_chain_desc:0 "A virus is ravaging our citizens. We need to stop this as soon as possible."
 
+solar_storm_chain_title:0 "Solar Storm"
+solar_storm_chain_desc:0 "A star in our borders is behaving erratically, threatening a primitive civilization there."
+
 
 aleran_ongoing.1.name:0 "Unfettered Expansion"
 aleran_ongoing.1.desc:0 "The Aleran Commonwealth has been spreading among the stars, and has been made the better for it. This has made the process of acquiring new systems somewhat simpler to conduct."
@@ -308,6 +315,48 @@ aleran_ongoing.107.a.tooltip:0 "The scientist is forgiven and returns to their r
 aleran_ongoing.108.name:0 "Genocide Part Two"
 aleran_ongoing.108.desc:0 "It was clearly a mistake to allow [murderer.GetName] to continue their work; they have secretly been developing a second, even more lethal strain of their virus. While we have managed to stop it by refining our previous cure, countless more of our citizens are dead."
 aleran_ongoing.108.click:0 "We are left with no choice but to remove [murderer.GetName] from society."
+
+aleran_ongoing.200.name:0 "Unusual Solar Activity"
+aleran_ongoing.200.desc:0 "A star within our borders has begun to demonstrate some unusual activity. [solar_storm_star.GetName] recently emitted solar flares whose size and spectra do not align with those typically given off by a star in its class. Complicating matters is that this system is home to a primitive civilization, the [solar_storm_primitives.GetName]."
+aleran_ongoing.200.click.a:0 "This portents potentially dire events - dig deeper."
+aleran_ongoing.200.click.b:0 "We have more important matters to focus on."
+aleran_ongoing.200.b.tooltip:0 "Do nothing"
+
+aleran_ongoing.202.name:0 "Solar Analysis Complete"
+aleran_ongoing.202.desc:0 "The research into the unusual solar activity in [solar_storm_star.GetName] has been completed, and the news is not good. The star has, for reasons still unknown to us, entered a period of increasingly violent oscillations. Each cycle is concluded by the emission of an unusually powerful coronal ejection event. Over time, these oscillations will build, releasing more and more energy, until the star eventually unleashes a massive storm of radiation and charged particles, breaking the cycle.\n\nIf left unchecked, this §Hwill§! spell the end of the [solar_storm_primitives.GetName] civilization developing in that system.\n\nSome of our scientists have devised a plan: We could potentially build an enormous structure in a Lagrange point of the planet's orbit, acting as a giant shade to shield them from the worst effects of the storm. It would not prevent all damage, but it would ensure some semblance of their species and civilization survives. That would, however, be an enormous undertaking, and will divert the majority of our physics and engineering research efforts while the shield is being designed and built.\n\nThough there is no evidence that the [solar_storm_primitives.GetName] is yet aware of us, building a shield is guaranteed to change that."
+aleran_ongoing.202.click.a:0 "We cannot just watch a budding society be destroyed!"
+aleran_ongoing.202.click.b:0 "Maybe we'll get a nice new planet for colonization."
+aleran_ongoing.202.b.tooltip:0 "Do nothing"
+
+aleran_ongoing.203.name:0 "Solar Shield Complete"
+aleran_ongoing.203.desc:0 "The shield to protect [solar_storm_planet.GetName] from the upcoming cataclysm is complete. We can only hope it works as well as we wish it to."
+aleran_ongoing.203.click:0 "Hope indeed."
+
+aleran_ongoing.204.name:0 "Solar Flare Event"
+aleran_ongoing.204.desc:0 "[solar_storm_star.GetName] has entered another oscillation, and with it has released another wave of energy, damaging other planets in its system."
+aleran_ongoing.204.click:0 "We need that shield!"
+
+aleran_ongoing.205.name:0 "Strong Solar Flare Event"
+aleran_ongoing.205.desc:0 "The outbursts coming from [solar_storm_star.GetName] have entered a new phase, and are both more frequent and more powerful. An enormous pulse has been thrown out, fortunately missing [solar_storm_planet.GetName], but [damaged_planet.GetName] has been severely damaged or destroyed. The time before the main event is clearly running out."
+aleran_ongoing.205.click:0 "We need that shield!"
+
+aleran_ongoing.209.name:0 "Solar Storm Deflected"
+aleran_ongoing.209.desc:0 "The storm originating from [solar_storm_star.GetName] has finally come, and our shield performed admirably. [solar_storm_planet.GetName] has been protected from the worst of the blast, and our observations clearly show that the [solar_storm_primitives.GetName], while damaged, has survived. We have withdrawn the shield, so that we can study and ultimately disassemble it, reclaiming the materials and learning a great deal about unusual solar physics and large-scale construction.\n\nWe are also receiving a communication attempt from the [solar_storm_primitives.GetName]; it is primtive in its format, but we have managed to decipher it."
+aleran_ongoing.209.click:0 "Patch it through."
+
+aleran_ongoing.210.name:0 "Solar Storm Impact"
+aleran_ongoing.210.desc:0 "The storm originating from [solar_storm_star.GetName] has finally come, and unfortunately our shield was not ready. [solar_storm_planet.GetName] was hit with the full force of the blast, and our observations clearly show that the [solar_storm_primitives.GetName] is gone, as is their species. Their planet is now empty of intelligent life."
+aleran_ongoing.210.click:0 "A colossal tragedy."
+
+aleran_ongoing.211.name:0 "Message from the [solar_storm_primitives.GetName]"
+aleran_ongoing.211.desc:0 "We may be trapped on our planet for the present, but we were nonetheless able to observe both the activity of our star and your efforts to avert disaster. Our science may not be as advanced as yours - though we greatly appreciate the research gift from a '[solar_storm_gifter.GetName]', I think it was - but we can plainly observe that were it not for your intervention, we would have been exterminated. You have our unending gratitude, and I can speak for most of us when I say that I hope we can one day join your society."
+aleran_ongoing.211.click.a:0 "We did what was right; hopefully you would do the same in our place."
+aleran_ongoing.211.click.b:0 "We did what was right. But now we must seek the cause of this event."
+
+aleran_ongoing.212.name:0 "Message from the [solar_storm_culprit.GetName]"
+aleran_ongoing.212.desc:0 "You impudent little misbegotten reprobates! Who are you to try to derail the plans of the [solar_storm_culprit.GetName]?!\n\nWe have the right by authority to keep this galaxy pure, and if that means a worthless planet full of backwards animals is destroyed, then so be it.\n\nYour interference in plans older than your entire civilization, and your nauseating efforts to save everything you get your pathetic little grasp on, shall not go unanswered!"
+aleran_ongoing.212.click.a:0 "If you want the galaxy pure, feel free to remove yourself from it."
+aleran_ongoing.212.click.b:0 "You want it pure? OK, let's start by removing you sadistic idiots."
 
 dragon_misc.32.name:0 "Leviathan Destroyed"
 dragon_misc.32.desc:0 "We have successfully destroyed the [This.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
@@ -484,6 +533,12 @@ stop_genocide_bioweapon_DESC:0 "Now that we have identified this virus as a biow
 stop_genocide_bioweapon_late:0 "Bioweapon Neutralization - Late Start"
 stop_genocide_bioweapon_late_DESC:0 "Now that we have identified this virus as a bioweapon, it must be thoroughly researched to find weaknesses and a cure. We really should have started this sooner."
 
+investigate_solar_storm:0 "Solar Flare Investigation"
+investigate_solar_storm_DESC:0 "A star in our space has flared in an unusual way; we should search for the cause of this anomalous behavior."
+
+build_solar_shield:0 "Solar Shield Construction"
+build_solar_shield_DESC:0 "We can protect the life-bearing planet in the system with an enormous solar shield, preventing the upcoming cataclysm from wiping out the fledgling civilization."
+
 nova_irradiated:0 "Nova Irradiated"
 nova_irradiated_desc:0 "A nova event in a nearby system has caused a serious environmental damage on this planet. Surface radiation levels are well above normal, which affects the health of both populations and crops."
 
@@ -498,6 +553,24 @@ bioweapon_death_desc:0 "Someone recently died here from the virus, depressing mo
 
 bioweapon_not_stopped:0 "Bioweapon Cure Unsuccessful"
 bioweapon_not_stopped_desc:0 "The failure to cure the bioweapon in time has greatly upset the populace."
+
+unshielded_storm:0 "Flare-Ravaged"
+unshielded_storm_desc:0 "This planet has been struck with the full power of a massive solar storm, and has been all but scoured of life."
+
+shielded_storm:0 "Flare-Damaged"
+shielded_storm_desc:0 "This planet has been struck with a mostly-shielded solar storm, causing moderate damage to life and technology."
+
+early_storm:0 "Flare-Damaged"
+early_storm_desc:0 "This planet has been struck with a powerful solar storm, causing moderate damage."
+
+building_shield:0 "Solar Shield Construction"
+building_shield_desc:0 "A massive solar shield is being constructed, consuming large quantities of minerals and all but monopolizing physics and engineering research resources."
+
+analysing_shield:0 "Solar Shield Analysis"
+analysing_shield_desc:0 "We are dismantling and studying the solar shield we recently used to protect a planet from a solar storm."
+
+determined_stop_genocide:0 "Moralistic Fervor"
+determined_stop_genocide_desc:0 "We are engaged in a war to stop a vastly more powerful empire from engaging in its spree of genocide."
 
 
 aleran_colossus.3.name:0 "Population in Withdrawal"
@@ -579,6 +652,7 @@ opinion_dragon_alvothari_from:0 "Moral Adherents"
 opinion_aleran_threatened:0 "First Contact Threat"
 opinion_aleran_insulted:0 "First Contact Insult"
 opinion_aleran_allied:0 "First Contact Alliance"
+opinion_aleran_interfered_cleansing:0 "Cleansing Interference"
 
 opinion_dragon_warning_rejected_1:0 "Ideological Requests Ignored"
 opinion_dragon_warning_rejected_2:0 "Ideological Requests Refused"
