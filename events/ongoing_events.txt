@@ -856,6 +856,10 @@ planet_event = { #storm, no protection
 			}
 		}
 		destroy_colony = yes
+		if = {
+			limit = { planet_size < 22 }
+			set_planet_size = 22
+		}
 	}
 }
 
