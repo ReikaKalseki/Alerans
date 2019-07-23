@@ -754,36 +754,47 @@ planet_event = { #preshocks 1
 	is_triggered_only = yes
 
 	immediate = {
-		random_system_planet = {
-			add_modifier = {
-				modifier = early_storm
-				days = -1
-			}
-			if = {
-				limit = {
-					is_planet_class = pc_toxic
+		solar_system = {
+			random_system_planet = {
+				add_modifier = {
+					modifier = early_storm
+					days = 60
 				}
-				random_list = {
-					40 = {change_pc = pc_barren}
-					60 = {}
+				if = {
+					limit = {
+						is_planet_class = pc_toxic
+					}
+					random_list = {
+						40 = {change_pc = pc_barren}
+						60 = {}
+					}
 				}
-			}
-			else_if = {
-				limit = {
-					is_planet_class = pc_barren
+				else_if = {
+					limit = {
+						is_planet_class = pc_barren
+					}
+					random_list = {
+						25 = {change_pc = pc_molten}
+						75 = {}
+					}
 				}
-				random_list = {
-					25 = {change_pc = pc_molten}
-					75 = {}
+				else_if = {
+					limit = {
+						is_planet_class = pc_molten
+					}
+					random_list = {
+						10 = {change_pc = pc_shattered}
+						90 = {}
+					}
 				}
-			}
-			else_if = {
-				limit = {
-					is_planet_class = pc_barren_cold
-				}
-				random_list = {
-					50 = {change_pc = pc_barren}
-					50 = {}
+				else_if = {
+					limit = {
+						is_planet_class = pc_barren_cold
+					}
+					random_list = {
+						50 = {change_pc = pc_barren}
+						50 = {}
+					}
 				}
 			}
 		}
@@ -809,47 +820,49 @@ planet_event = { #preshocks 2
 	is_triggered_only = yes
 
 	immediate = {
-		random_list = {
-			15 = {
-				random_system_planet = {
-					limit = {
-						uninhabitable_regular_planet = yes
-					}
-					save_event_target_as = damaged_planet
-					random_list = {
-						70 = {change_pc = pc_broken}
-						30 = {change_pc = pc_shattered}
-					}
-				}
-			}
-			55 = {
-				random_system_planet = {
-					limit = {
-						OR = {
-							is_planet_class = pc_barren
-							is_planet_class = pc_barren_cold
-							#is_planet_class = pc_toxic
-							is_planet_class = pc_frozen
+		solar_system = {
+			random_list = {
+				15 = {
+					random_system_planet = {
+						limit = {
+							uninhabitable_regular_planet = yes
+						}
+						save_event_target_as = damaged_planet
+						random_list = {
+							70 = {change_pc = pc_broken}
+							30 = {change_pc = pc_shattered}
 						}
 					}
-					save_event_target_as = damaged_planet
-					change_pc = pc_molten
 				}
-			}
-			30 = {
-				random_system_planet = {
-					limit = {
-						is_planet_class = pc_gas_giant
+				55 = {
+					random_system_planet = {
+						limit = {
+							OR = {
+								is_planet_class = pc_barren
+								is_planet_class = pc_barren_cold
+								#is_planet_class = pc_toxic
+								is_planet_class = pc_frozen
+							}
+						}
+						save_event_target_as = damaged_planet
+						change_pc = pc_molten
 					}
-					save_event_target_as = damaged_planet
-					random_list = {
-						40 = {change_pc = pc_toxic}
-						40 = {change_pc = pc_molten}
-						20 = {change_pc = pc_broken}
-					}
-					add_modifier = {
-						modifier = chthonian_planet
-						days = -1
+				}
+				30 = {
+					random_system_planet = {
+						limit = {
+							is_planet_class = pc_gas_giant
+						}
+						save_event_target_as = damaged_planet
+						random_list = {
+							40 = {change_pc = pc_toxic}
+							40 = {change_pc = pc_molten}
+							20 = {change_pc = pc_broken}
+						}
+						add_modifier = {
+							modifier = chthonian_planet
+							days = -1
+						}
 					}
 				}
 			}
@@ -868,7 +881,7 @@ planet_event = { #preshocks 2
 }
 
 planet_event = { #storm fork
-	id = aleran_ongoing.206
+	id = aleran_ongoing.	
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -881,6 +894,44 @@ planet_event = { #storm fork
 		solar_system = {
 			every_fleet_in_system = {
 				destroy_fleet = this
+			}
+			every_system_planet = {
+				if = {
+					limit = {
+						is_planet_class = pc_toxic
+					}
+					random_list = {
+						70 = {change_pc = pc_barren}
+						30 = {}
+					}
+				}
+				else_if = {
+					limit = {
+						is_planet_class = pc_barren
+					}
+					random_list = {
+						70 = {change_pc = pc_molten}
+						30 = {}
+					}
+				}
+				else_if = {
+					limit = {
+						is_planet_class = pc_molten
+					}
+					random_list = {
+						50 = {change_pc = pc_shattered}
+						50 = {}
+					}
+				}
+				else_if = {
+					limit = {
+						is_planet_class = pc_barren_cold
+					}
+					random_list = {
+						80 = {change_pc = pc_barren}
+						20 = {}
+					}
+				}
 			}
 		}
 		if = {
