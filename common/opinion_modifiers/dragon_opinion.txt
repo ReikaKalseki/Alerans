@@ -50,6 +50,17 @@ opinion_aleran_interfered_cleansing = {
 	}
 }
 
+opinion_aleran_saved_from_storm = {
+	opinion = {
+		base = 300
+	}
+
+	accumulative = no
+
+	decay = {
+		base = 2
+	}
+}
 
 #######
 ##What others think of Alerans

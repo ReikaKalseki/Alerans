@@ -747,13 +747,23 @@ country_event = { #finish the shield so that the storm is harmless
 
 planet_event = { #preshocks 1
 	id = aleran_ongoing.204
-	title = "aleran_ongoing.204.name"
-	desc = "aleran_ongoing.204.desc"
-	picture = GFX_evt_solar_flare
-	show_sound = event_solar_fusion
+	#title = "aleran_ongoing.204.name"
+	#desc = "aleran_ongoing.204.desc"
+	#picture = GFX_evt_solar_flare
+	#show_sound = event_solar_fusion
+	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
+		event_target:alerans = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = solar_storm_shielded }
+					NOT = { has_country_flag = seen_preshock_1 }
+				}
+				country_event = {id = aleran_ongoing.213}
+			}
+		}
 		solar_system = {
 			random_system_planet = {
 				add_modifier = {
@@ -813,13 +823,23 @@ planet_event = { #preshocks 1
 
 planet_event = { #preshocks 2
 	id = aleran_ongoing.205
-	title = "aleran_ongoing.205.name"
-	desc = "aleran_ongoing.205.desc"
-	picture = GFX_evt_solar_flare
-	show_sound = event_solar_fusion
+	#title = "aleran_ongoing.205.name"
+	#desc = "aleran_ongoing.205.desc"
+	#picture = GFX_evt_solar_flare
+	#show_sound = event_solar_fusion
+	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
+		event_target:alerans = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = solar_storm_shielded }
+					NOT = { has_country_flag = seen_preshock_1 }
+				}
+				country_event = {id = aleran_ongoing.214}
+			}
+		}
 		solar_system = {
 			random_list = {
 				15 = {
@@ -1111,6 +1131,7 @@ country_event = { #they show gratitude
 			#shift_ethic = ethic_fanatic_xenophile #this should work
 			change_government = { authority = auth_oligarchic civics = random }
 			set_country_flag = aleran_saved_from_storm
+			add_opinion_modifier = { modifier = opinion_aleran_saved_from_storm who = event_target:alerans }
 		}
 	}
 	
@@ -1222,5 +1243,45 @@ country_event = { #the FE culprit gets pissed
 		clear_global_event_target = solar_storm_primitives
 		clear_global_event_target = solar_storm_culprit
 		clear_global_event_target = solar_storm_gifter
+	}
+}
+
+country_event = { #preshock 1 dialog box
+	id = aleran_ongoing.213
+	title = "aleran_ongoing.213.name"
+	desc = "aleran_ongoing.213.desc"
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_ongoing.213.click"
+		ai_chance = {
+			factor = 150
+		}
+	}
+}
+
+country_event = { #preshock 2 dialog box
+	id = aleran_ongoing.214
+	title = "aleran_ongoing.214.name"
+	desc = "aleran_ongoing.214.desc"
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_ongoing.214.click"
+		ai_chance = {
+			factor = 150
+		}
 	}
 }
