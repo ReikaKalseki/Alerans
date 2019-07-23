@@ -1444,7 +1444,7 @@ country_event = {
 				def_war_exhaustion_sum >= 0.4
 				count_system_within_border = {
 					count >= 3
-					any_system_planet = {
+					any_planet = {
 					 	is_occupied_flag = yes
 					}
 				}

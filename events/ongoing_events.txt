@@ -596,11 +596,17 @@ country_event = { #the star does something funny
 	trigger = {
 		is_ai = no
 		has_country_flag = aleran
+		NOT = {exists = event_target:solar_storm_planet}
 		NOR = {
 			has_country_flag = solar_storm
 			has_country_flag = solar_storm_ended
 		}
-		
+		any_planet_within_border = { 
+			exists = owner
+			owner = {
+				is_primitive = yes
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -609,16 +615,28 @@ country_event = { #the star does something funny
 	
 	immediate = {
 		set_country_flag = solar_storm
+		save_global_event_target_as = alerans
 		begin_event_chain = { event_chain = solar_storm_chain target = owner }
-		country_event = {id = aleran_ongoing.203 days = 200 random = 50} #queue some "preshocks"
-		country_event = {id = aleran_ongoing.203 days = 300 random = 50}
-		country_event = {id = aleran_ongoing.203 days = 400 random = 150}
-		country_event = {id = aleran_ongoing.203 days = 600 random = 150}
-		country_event = {id = aleran_ongoing.203 days = 800 random = 150}
-		country_event = {id = aleran_ongoing.204 days = 1000 random = 150} #some bigger events
-		country_event = {id = aleran_ongoing.204 days = 1200 random = 200}
-		country_event = {id = aleran_ongoing.204 days = 1500 random = 200}
-		country_event = {id = aleran_ongoing.205 days = 1800 random = 300} #queue the storm
+		
+		random_planet_within_border = {
+			limit = {
+				exists = owner
+				owner = {
+					is_primitive = yes
+				}
+			}
+			save_global_event_target_as = solar_storm_planet
+		
+			planet_event = {id = aleran_ongoing.204 days = 20 random = 5} #queue some "preshocks"
+			planet_event = {id = aleran_ongoing.204 days = 30 random = 5}
+			planet_event = {id = aleran_ongoing.204 days = 40 random = 15}
+			planet_event = {id = aleran_ongoing.204 days = 60 random = 15}
+			planet_event = {id = aleran_ongoing.204 days = 80 random = 15}
+			planet_event = {id = aleran_ongoing.205 days = 100 random = 15} #some bigger events
+			planet_event = {id = aleran_ongoing.205 days = 120 random = 20}
+			planet_event = {id = aleran_ongoing.205 days = 150 random = 20}
+			planet_event = {id = aleran_ongoing.206 days = 180 random = 30} #queue the storm
+		}
 	}
 	
 	option = { #investigate further
@@ -629,7 +647,7 @@ country_event = { #the star does something funny
 		owner = {
 			enable_special_project = {
 				name = "investigate_solar_storm"
-				location = event_target:star
+				location = event_target:solar_storm_planet
 				owner = this
 			}
 		}		
@@ -648,9 +666,9 @@ country_event = { #the star does something funny
 }
 
 country_event = { #realize upcoming solar event
-	id = aleran_ongoing.201
-	title = "aleran_ongoing.201.name"
-	desc = "aleran_ongoing.201.desc"
+	id = aleran_ongoing.202
+	title = "aleran_ongoing.202.name"
+	desc = "aleran_ongoing.202.desc"
 	picture = GFX_evt_solar_flare
 	show_sound = event_solar_fusion
 	is_triggered_only = yes
@@ -660,22 +678,26 @@ country_event = { #realize upcoming solar event
 	}
 	
 	option = { #build shield
-		name = "aleran_ongoing.201.click.a"
+		name = "aleran_ongoing.202.click.a"
 		ai_chance = {
 			factor = 150
 		}
 		owner = {
 			enable_special_project = {
 				name = "build_solar_shield"
-				location = event_target:star
+				location = event_target:solar_storm_planet
 				owner = this
+			}
+			add_modifier = {
+				modifier = building_shield
+				days = -1
 			}
 		}		
 	}
 	
 	option = { #ignore, let them die
-		name = "aleran_ongoing.201.click.b"
-		custom_tooltip = aleran_ongoing.201.b.tooltip
+		name = "aleran_ongoing.202.click.b"
+		custom_tooltip = aleran_ongoing.202.b.tooltip
 		ai_chance = {
 			factor = 50
 		}
@@ -686,9 +708,9 @@ country_event = { #realize upcoming solar event
 }
 
 country_event = { #finish the shield so that the storm is harmless
-	id = aleran_ongoing.202
-	title = "aleran_ongoing.202.name"
-	desc = "aleran_ongoing.202.desc"
+	id = aleran_ongoing.203
+	title = "aleran_ongoing.203.name"
+	desc = "aleran_ongoing.203.desc"
 	picture = GFX_evt_solar_flare
 	show_sound = event_solar_fusion
 	is_triggered_only = yes
@@ -698,40 +720,17 @@ country_event = { #finish the shield so that the storm is harmless
 	}
 	
 	option = {
-		name = "aleran_ongoing.202.click"
-		ai_chance = {
-			factor = 150
-		}
-		owner = {
-			
-		}		
-	}
-}
-
-country_event = { #preshocks 1
-	id = aleran_ongoing.203
-	title = "aleran_ongoing.203.name"
-	desc = "aleran_ongoing.203.desc"
-	picture = GFX_evt_solar_flare
-	show_sound = event_solar_fusion
-	is_triggered_only = yes
-
-	immediate = {
-		
-	}
-	
-	option = {
 		name = "aleran_ongoing.203.click"
 		ai_chance = {
 			factor = 150
 		}
 		owner = {
-			
+			remove_modifier = building_shield
 		}		
 	}
 }
 
-country_event = { #preshocks 2
+planet_event = { #preshocks 1
 	id = aleran_ongoing.204
 	title = "aleran_ongoing.204.name"
 	desc = "aleran_ongoing.204.desc"
@@ -754,53 +753,139 @@ country_event = { #preshocks 2
 	}
 }
 
-country_event = { #storm fork
+planet_event = { #preshocks 2
 	id = aleran_ongoing.205
+	title = "aleran_ongoing.205.name"
+	desc = "aleran_ongoing.205.desc"
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_ongoing.205.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			
+		}		
+	}
+}
+
+planet_event = { #storm fork
+	id = aleran_ongoing.206
 	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
-		set_country_flag = solar_storm_ended
-		remove_country_flag = solar_storm
+		event_target:alerans = {
+			set_country_flag = solar_storm_ended
+			remove_country_flag = solar_storm
+			remove_modifier = building_shield
+		}
+		solar_system = {
+			every_fleet_in_system = {
+				destroy_fleet = this
+			}
+		}
 		if = {
 			limit = {
-				has_country_flag = solar_storm_shielded
+				event_target:alerans = {
+					has_country_flag = solar_storm_shielded
+				}
 			}
-			country_event = {id = aleran_ongoing.206 days = 1}
+			planet_event = {id = aleran_ongoing.207 days = 1}
 		}
 		else = {
-			country_event = {id = aleran_ongoing.207 days = 1}
+			planet_event = {id = aleran_ongoing.208 days = 1}
 		}
 	}
 }
 
-country_event = { #storm, with protection
-	id = aleran_ongoing.206
-	title = "aleran_ongoing.206.name"
-	desc = "aleran_ongoing.206.desc"
-	picture = GFX_evt_solar_flare
-	show_sound = event_solar_fusion
-	is_triggered_only = yes
-
-	immediate = {
-		
-	}
-	
-	option = {
-		name = "aleran_ongoing.206.click"
-		ai_chance = {
-			factor = 150
-		}
-		owner = {
-			end_event_chain = solar_storm_chain
-		}		
-	}
-}
-
-country_event = { #storm, no protection
+planet_event = { #storm, with protection
 	id = aleran_ongoing.207
-	title = "aleran_ongoing.207.name"
-	desc = "aleran_ongoing.207.desc"
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:alerans = {
+			country_event = {id = aleran_ongoing.209 days = 1}
+		}
+		add_modifier = {
+			modifier = shielded_storm
+			days = 180
+		}
+		owner = {
+			if = {
+				limit = {
+					#has_country_flag = industrial_age
+					#has_country_flag = machine_age
+					has_country_flag = atomic_age
+					has_country_flag = early_space_age
+				}
+				#set_primitive_age = industrial_age
+				set_primitive_age = atomic_age
+			}
+		}
+	}
+}
+
+planet_event = { #storm, no protection
+	id = aleran_ongoing.208
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:alerans = {
+			country_event = {id = aleran_ongoing.210 days = 1}
+		}
+		add_modifier = {
+			modifier = unshielded_storm
+			days = 360
+		}
+		every_tile = {
+			kill_pop = yes
+			random_list = {
+				10 = {remove_building = yes}
+				35 = {set_ruined = yes}
+				55 = {}
+			}
+		}
+		destroy_colony = yes
+	}
+}
+
+country_event = { #protected dialog box
+	id = aleran_ongoing.209
+	title = "aleran_ongoing.209.name"
+	desc = "aleran_ongoing.209.desc"
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+	is_triggered_only = yes
+
+	immediate = {
+	
+	}
+	
+	option = {
+		name = "aleran_ongoing.209.click"
+		ai_chance = {
+			factor = 150
+		}
+		end_event_chain = solar_storm_chain
+		clear_global_event_target = alerans
+		clear_global_event_target = solar_storm_planet
+	}
+}
+
+country_event = { #unprotected dialog box
+	id = aleran_ongoing.210
+	title = "aleran_ongoing.210.name"
+	desc = "aleran_ongoing.210.desc"
 	picture = GFX_evt_solar_flare
 	show_sound = event_solar_fusion
 	is_triggered_only = yes
@@ -810,13 +895,13 @@ country_event = { #storm, no protection
 	}
 	
 	option = {
-		name = "aleran_ongoing.207.click"
+		name = "aleran_ongoing.210.click"
 		ai_chance = {
 			factor = 150
 		}
-		owner = {
-			set_country_flag = solar_storm_ignored #for unhappy faction
-			end_event_chain = solar_storm_chain
-		}		
+		set_country_flag = solar_storm_ignored #for unhappy faction
+		end_event_chain = solar_storm_chain	
+		clear_global_event_target = alerans
+		clear_global_event_target = solar_storm_planet
 	}
 }

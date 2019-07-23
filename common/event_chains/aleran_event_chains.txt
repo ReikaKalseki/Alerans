@@ -10,3 +10,7 @@ genocide_bioweapon_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
 	picture = GFX_evt_microscopic_life
 }
+solar_storm_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	picture = GFX_evt_solar_flare
+}

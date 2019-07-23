@@ -21,3 +21,19 @@ pm_bioweapon_death = {
 	
 	modifier = "bioweapon_death"
 }
+
+pm_unshielded_storm = {
+	spawn_chance = {
+		
+	}
+	
+	modifier = "shielded_storm"
+}
+
+pm_shielded_storm = {
+	spawn_chance = {
+		
+	}
+	
+	modifier = "shielded_storm"
+}
