@@ -613,7 +613,7 @@ country_event = { #the star does something funny
 	}
 
 	mean_time_to_happen = {
-		days = 3600
+		days = 12600 #25y
 	}
 	
 	immediate = {
@@ -817,16 +817,6 @@ planet_event = { #preshocks 1
 			}
 		}
 	}
-	
-	option = {
-		name = "aleran_ongoing.204.click"
-		ai_chance = {
-			factor = 150
-		}
-		owner = {
-			
-		}		
-	}
 }
 
 planet_event = { #preshocks 2
@@ -918,20 +908,10 @@ planet_event = { #preshocks 2
 			}
 		}
 	}
-	
-	option = {
-		name = "aleran_ongoing.205.click"
-		ai_chance = {
-			factor = 150
-		}
-		owner = {
-			
-		}		
-	}
 }
 
 planet_event = { #storm fork
-	id = aleran_ongoing.	
+	id = aleran_ongoing.206
 	hide_window = yes
 	is_triggered_only = yes
 
