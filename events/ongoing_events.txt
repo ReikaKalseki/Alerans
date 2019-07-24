@@ -1305,9 +1305,22 @@ country_event = { #preshock 1 dialog box
 	}
 	
 	option = {
-		name = "aleran_ongoing.213.click"
+		name = "aleran_ongoing.213.click.a"
 		ai_chance = {
 			factor = 150
+		}
+		trigger = {
+			NOT = { has_country_flag = solar_storm_ignored }
+		}
+	}
+	
+	option = {
+		name = "aleran_ongoing.213.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+			has_country_flag = solar_storm_ignored
 		}
 	}
 }
@@ -1325,9 +1338,22 @@ country_event = { #preshock 2 dialog box
 	}
 	
 	option = {
-		name = "aleran_ongoing.214.click"
+		name = "aleran_ongoing.214.click.a"
 		ai_chance = {
 			factor = 150
+		}
+		trigger = {
+			NOT = { has_country_flag = solar_storm_ignored }
+		}
+	}
+	
+	option = {
+		name = "aleran_ongoing.214.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+			has_country_flag = solar_storm_ignored
 		}
 	}
 }
