@@ -765,6 +765,7 @@ planet_event = { #preshocks 1
 		event_target:alerans = {
 			if = {
 				limit = {
+					has_country_flag = identified_solar_storm
 					NOT = { has_country_flag = solar_storm_shielded }
 					NOT = { has_country_flag = seen_preshock_1 }
 				}
@@ -862,6 +863,7 @@ planet_event = { #preshocks 2
 		event_target:alerans = {
 			if = {
 				limit = {
+					has_country_flag = identified_solar_storm
 					NOT = { has_country_flag = solar_storm_shielded }
 					NOT = { has_country_flag = seen_preshock_1 }
 				}
@@ -1319,7 +1321,7 @@ country_event = { #preshock 1 dialog box
 	is_triggered_only = yes
 
 	immediate = {
-		
+		set_country_flag = seen_preshock_1
 	}
 	
 	option = {
@@ -1339,7 +1341,7 @@ country_event = { #preshock 2 dialog box
 	is_triggered_only = yes
 
 	immediate = {
-		
+		set_country_flag = seen_preshock_2
 	}
 	
 	option = {
