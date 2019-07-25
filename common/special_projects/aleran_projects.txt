@@ -27,7 +27,7 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-		owner = {country_event = {id = aleran_ongoing.102 }}
+		owner = {country_event = {id = aleran_chain.102 }}
 	}	
 }
 special_project = {
@@ -44,7 +44,7 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-		owner = {country_event = {id = aleran_ongoing.105 }}
+		owner = {country_event = {id = aleran_chain.105 }}
 	}	
 }
 special_project = {
@@ -61,7 +61,7 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-		owner = {country_event = {id = aleran_ongoing.105 }}
+		owner = {country_event = {id = aleran_chain.105 }}
 	}	
 }
 special_project = {
@@ -78,7 +78,7 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-		event_target:alerans = {country_event = {id = aleran_ongoing.202 }}
+		event_target:alerans = {country_event = {id = aleran_chain.202 }}
 	}	
 }
 special_project = {
@@ -95,6 +95,6 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-		event_target:alerans = {country_event = {id = aleran_ongoing.203 }}
+		event_target:alerans = {country_event = {id = aleran_chain.203 }}
 	}	
 }
