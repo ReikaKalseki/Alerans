@@ -43,7 +43,7 @@ aleran
 	ruler={
 		gender=female
 		name="Kaeva Alixiati"
-		portrait="dgnfemale13"
+		portrait="dgnfemale1" #was dgnfemale13
 		texture=0
 		hair=0
 		clothes=0
