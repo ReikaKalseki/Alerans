@@ -10,91 +10,17 @@
 
 
 portraits = {
-	dgnuni1 = { texturefile = "gfx/models/portraits/unisex/a1.dds" }
-	dgnuni2 = { texturefile = "gfx/models/portraits/unisex/a2.dds" }
-	dgnuni3 = { texturefile = "gfx/models/portraits/unisex/a3.dds" }
+	dgnuni1 = { texturefile = "gfx/models/portraits/placeholder.dds" }
 	
-	dgnuni4 = { texturefile = "gfx/models/portraits/unisex/b1.dds" }
-	dgnuni5 = { texturefile = "gfx/models/portraits/unisex/b2.dds" }
-	dgnuni6 = { texturefile = "gfx/models/portraits/unisex/b3.dds" }
+	dgnmale1 = { texturefile = "gfx/models/portraits/placeholder.dds" }
 	
-	dgnuni7 = { texturefile = "gfx/models/portraits/unisex/c1.dds" }
-	dgnuni8 = { texturefile = "gfx/models/portraits/unisex/c2.dds" }
-	
-	dgnuni9 = { texturefile = "gfx/models/portraits/unisex/d1.dds" }
-	
-	
-	dgnmale1 = { texturefile = "gfx/models/portraits/male/a1.dds" }
-	dgnmale2 = { texturefile = "gfx/models/portraits/male/a2.dds" }
-	dgnmale3 = { texturefile = "gfx/models/portraits/male/a3.dds" }
-	dgnmale4 = { texturefile = "gfx/models/portraits/male/a4.dds" }
-	
-	dgnmale5 = { texturefile = "gfx/models/portraits/male/b1.dds" }
-	dgnmale6 = { texturefile = "gfx/models/portraits/male/b2.dds" }
-	
-	#dgnmale7 = { texturefile = "gfx/models/portraits/male/c1.dds" }
-	#dgnmale8 = { texturefile = "gfx/models/portraits/male/c2.dds" }
-	#dgnmale9 = { texturefile = "gfx/models/portraits/male/c3.dds" }
-	#dgnmale10 = { texturefile = "gfx/models/portraits/male/c4.dds" }
-	#dgnmale11 = { texturefile = "gfx/models/portraits/male/c5.dds" }
-	
-	#dgnmale12 = { texturefile = "gfx/models/portraits/male/d1.dds" }
-	#dgnmale13 = { texturefile = "gfx/models/portraits/male/d2.dds" }
-	#dgnmale14 = { texturefile = "gfx/models/portraits/male/d3.dds" }
-	
-	dgnmale15 = { texturefile = "gfx/models/portraits/male/e1.dds" }
-	dgnmale16 = { texturefile = "gfx/models/portraits/male/e2.dds" }
-	dgnmale17 = { texturefile = "gfx/models/portraits/male/e3.dds" }
-	dgnmale18 = { texturefile = "gfx/models/portraits/male/e4.dds" }
-	
-	dgnmale19 = { texturefile = "gfx/models/portraits/male/f1.dds" }
-	dgnmale20 = { texturefile = "gfx/models/portraits/male/f2.dds" }
-	dgnmale21 = { texturefile = "gfx/models/portraits/male/f3.dds" }
-	
-	dgnmale22 = { texturefile = "gfx/models/portraits/male/g1.dds" }
-	dgnmale23 = { texturefile = "gfx/models/portraits/male/g2.dds" }
-	dgnmale24 = { texturefile = "gfx/models/portraits/male/g3.dds" }
-	dgnmale25 = { texturefile = "gfx/models/portraits/male/g4.dds" }
-	
-	dgnmale26 = { texturefile = "gfx/models/portraits/male/h1.dds" }
-	dgnmale27 = { texturefile = "gfx/models/portraits/male/h2.dds" }
-	
-	dgnmale28 = { texturefile = "gfx/models/portraits/male/i1.dds" }
-	
-	
-	dgnfemale1 = { texturefile = "gfx/models/portraits/female/a1.dds" }
-	dgnfemale2 = { texturefile = "gfx/models/portraits/female/a2.dds" }
-	dgnfemale3 = { texturefile = "gfx/models/portraits/female/a3.dds" }
-	dgnfemale4 = { texturefile = "gfx/models/portraits/female/a4.dds" }
-	dgnfemale5 = { texturefile = "gfx/models/portraits/female/a5.dds" }
-	
-	dgnfemale6 = { texturefile = "gfx/models/portraits/female/b1.dds" }
-	dgnfemale7 = { texturefile = "gfx/models/portraits/female/b2.dds" }
-	dgnfemale8 = { texturefile = "gfx/models/portraits/female/b3.dds" }
-	dgnfemale9 = { texturefile = "gfx/models/portraits/female/b4.dds" }
-	dgnfemale10 = { texturefile = "gfx/models/portraits/female/b5.dds" }
-	
-	dgnfemale11 = { texturefile = "gfx/models/portraits/female/c1.dds" }
-	dgnfemale12 = { texturefile = "gfx/models/portraits/female/c2.dds" }
-	dgnfemale13 = { texturefile = "gfx/models/portraits/female/c3.dds" }
-	
-	dgnfemale14 = { texturefile = "gfx/models/portraits/female/d1.dds" }
-	dgnfemale15 = { texturefile = "gfx/models/portraits/female/d2.dds" }
-	dgnfemale16 = { texturefile = "gfx/models/portraits/female/d3.dds" }
-	
-	dgnfemale17 = { texturefile = "gfx/models/portraits/female/e1.dds" }
-	dgnfemale18 = { texturefile = "gfx/models/portraits/female/e2.dds" }
-	
-	dgnfemale19 = { texturefile = "gfx/models/portraits/female/f1.dds" }
-	
-	#dgnfemale20 = { texturefile = "gfx/models/portraits/female/g1.dds" }
-	#dgnfemale21 = { texturefile = "gfx/models/portraits/female/g2.dds" }
+	dgnfemale1 = { texturefile = "gfx/models/portraits/placeholder.dds" }
 }
 
 
 portrait_groups = {
     dragon = {
-    default = dgnmale5
+    default = dgnmale1 # was 5
     game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
       add = {
       	trigger = {
@@ -102,43 +28,8 @@ portrait_groups = {
 		}
 		portraits = {
 			dgnmale1
-			dgnmale2
-			dgnmale3
-			dgnmale4
-			dgnmale5
-			dgnmale6
-			#dgnmale7
-			#dgnmale8
-			#dgnmale9
-			#dgnmale10
-			#dgnmale11
-			#dgnmale12
-			#dgnmale13
-			#dgnmale14
-			dgnmale15
-			dgnmale16
-			dgnmale17
-			dgnmale18
-			dgnmale19
-			dgnmale20
-			dgnmale21
-			dgnmale22
-			dgnmale23
-			dgnmale24
-			dgnmale25
-			dgnmale26
-			dgnmale27
-			dgnmale28
 
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
 		}
 	}
 	add = {
@@ -147,36 +38,8 @@ portrait_groups = {
 		}
 		portraits = {
 			dgnfemale1
-			dgnfemale2
-			dgnfemale3
-			dgnfemale4
-			dgnfemale5
-			dgnfemale6
-			dgnfemale7
-			dgnfemale8
-			dgnfemale9
-			dgnfemale10
-			dgnfemale11
-			dgnfemale12
-			dgnfemale13
-			dgnfemale14
-			dgnfemale15
-			dgnfemale16
-			dgnfemale17
-			dgnfemale18
-			dgnfemale19
-			#dgnfemale20
-			#dgnfemale21
 
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
 		}
 	}
 }
@@ -186,65 +49,10 @@ portrait_groups = {
       add = {
         portraits = {
 			dgnmale1
-			dgnmale2
-			dgnmale3
-			dgnmale4
-			dgnmale5
-			dgnmale6
-			#dgnmale7
-			#dgnmale8
-			#dgnmale9
-			#dgnmale10
-			#dgnmale11
-			#dgnmale12
-			#dgnmale13
-			#dgnmale14
-			dgnmale15
-			dgnmale16
-			dgnmale17
-			dgnmale18
-			dgnmale19
-			dgnmale20
-			dgnmale21
-			dgnmale22
-			dgnmale23
-			dgnmale24
-			dgnmale25
-			dgnmale26
-			dgnmale27
-			dgnmale28
 			
 			dgnfemale1
-			dgnfemale2
-			dgnfemale3
-			dgnfemale4
-			dgnfemale5
-			dgnfemale6
-			dgnfemale7
-			dgnfemale8
-			dgnfemale9
-			dgnfemale10
-			dgnfemale11
-			dgnfemale12
-			dgnfemale13
-			dgnfemale14
-			dgnfemale15
-			dgnfemale16
-			dgnfemale17
-			dgnfemale18
-			dgnfemale19
-			#dgnfemale20
-			#dgnfemale21
 			
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
 		}
 	}
 }
@@ -253,65 +61,10 @@ portrait_groups = {
       add = {
         portraits = {
 			dgnmale1
-			dgnmale2
-			dgnmale3
-			dgnmale4
-			dgnmale5
-			dgnmale6
-			#dgnmale7
-			#dgnmale8
-			#dgnmale9
-			#dgnmale10
-			#dgnmale11
-			#dgnmale12
-			#dgnmale13
-			#dgnmale14
-			dgnmale15
-			dgnmale16
-			dgnmale17
-			dgnmale18
-			dgnmale19
-			dgnmale20
-			dgnmale21
-			dgnmale22
-			dgnmale23
-			dgnmale24
-			dgnmale25
-			dgnmale26
-			dgnmale27
-			dgnmale28
 			
 			dgnfemale1
-			dgnfemale2
-			dgnfemale3
-			dgnfemale4
-			dgnfemale5
-			dgnfemale6
-			dgnfemale7
-			dgnfemale8
-			dgnfemale9
-			dgnfemale10
-			dgnfemale11
-			dgnfemale12
-			dgnfemale13
-			dgnfemale14
-			dgnfemale15
-			dgnfemale16
-			dgnfemale17
-			dgnfemale18
-			dgnfemale19
-			#dgnfemale20
-			#dgnfemale21
 			
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
 		}
 	}
 }
@@ -322,79 +75,16 @@ leader = { #scientists, generals, admirals, governor
 		trigger = { gender = male }
 		portraits = {
 			dgnmale1
-			dgnmale2
-			dgnmale3
-			dgnmale4
-			dgnmale5
-			dgnmale6
-			#dgnmale7
-			#dgnmale8
-			#dgnmale9
-			#dgnmale10
-			#dgnmale11
-			#dgnmale12
-			#dgnmale13
-			#dgnmale14
-			dgnmale15
-			dgnmale16
-			dgnmale17
-			dgnmale18
-			dgnmale19
-			dgnmale20
-			dgnmale21
-			dgnmale22
-			dgnmale23
-			dgnmale24
-			dgnmale25
-			dgnmale26
-			dgnmale27
-			dgnmale28
 
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
 		}
 	}
 	add = {
 		trigger = { gender = female }
 		portraits = {
 			dgnfemale1
-			dgnfemale2
-			dgnfemale3
-			dgnfemale4
-			dgnfemale5
-			dgnfemale6
-			dgnfemale7
-			dgnfemale8
-			dgnfemale9
-			dgnfemale10
-			dgnfemale11
-			dgnfemale12
-			dgnfemale13
-			dgnfemale14
-			dgnfemale15
-			dgnfemale16
-			dgnfemale17
-			dgnfemale18
-			dgnfemale19
-			#dgnfemale20
-			#dgnfemale21
 
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
         }
 	}
 }
@@ -405,79 +95,16 @@ ruler = {
 		trigger = { gender = male }
 		portraits = {
 			dgnmale1
-			dgnmale2
-			dgnmale3
-			dgnmale4
-			dgnmale5
-			dgnmale6
-			#dgnmale7
-			#dgnmale8
-			#dgnmale9
-			#dgnmale10
-			#dgnmale11
-			#dgnmale12
-			#dgnmale13
-			#dgnmale14
-			dgnmale15
-			dgnmale16
-			dgnmale17
-			dgnmale18
-			dgnmale19
-			dgnmale20
-			dgnmale21
-			dgnmale22
-			dgnmale23
-			dgnmale24
-			dgnmale25
-			dgnmale26
-			dgnmale27
-			dgnmale28
 
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
 		}
 	}
       add = {
 		trigger = { gender = female }
 		portraits = {
 			dgnfemale1
-			dgnfemale2
-			dgnfemale3
-			dgnfemale4
-			dgnfemale5
-			dgnfemale6
-			dgnfemale7
-			dgnfemale8
-			dgnfemale9
-			dgnfemale10
-			dgnfemale11
-			dgnfemale12
-			dgnfemale13
-			dgnfemale14
-			dgnfemale15
-			dgnfemale16
-			dgnfemale17
-			dgnfemale18
-			dgnfemale19
-			#dgnfemale20
-			#dgnfemale21
 
 			dgnuni1
-			dgnuni2
-			dgnuni3
-			dgnuni4
-			dgnuni5
-			dgnuni6
-			dgnuni7
-			dgnuni8
-			dgnuni9
         }
       }
     }
