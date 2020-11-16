@@ -16,7 +16,13 @@ Dragon_organ:0 "heart"
 Dragon_mouth:0 "mouth"
 
 trait_dragonbody:0 "Dragon"
-trait_dragonbody_desc:0 "This species is imposing both physically and mentally - they are large, tough, and long-lived, while also being highly intelligent. They are, however, prone to avarice and to social conflict, and their food needs are greater than average."
+trait_dragonbody_desc:0 "This species is imposing both physically and mentally - they are large, tough, and long-lived, while also being highly intelligent, and can tolerate a wide range of environments. They do, however, have greater than average need for food and resources, a fairly rigid genetic structure."
+trait_pampered:0 "Pampered"
+trait_pampered_desc:0 "This species is naturally fairly demanding; they require comfortable and above-average living conditions and access to resources, and are easily made dissatisfied by those standards failing to be met."
+trait_insensitive:0 "Insensitive"
+trait_insensitive_desc:0 "This species has a mindset that is strongly focused on what they consider right, often failing to account for or accurately predict the perceptions, reactions, and preferences of others. While not actively seeking to cause offence, they are nonetheless very prone to irritating or alienating others in their pursuit of what they consider right, and even when ideological allies may be quite difficult to get along with."
+trait_tooltip_insensitive_effects:0 "Border Friction: §R+40%§!\n§R-10%§! happiness for other species pops in their empire\nUnity Production: §R-5%§!\nReduced §YOpinion§! from other empires"
+
 
 name_list_DRGN1: "Dragon"
 
@@ -616,6 +622,7 @@ personality_dragons:0 "Moral and Meritocratic Enforcers"
 personality_dragons_desc:0 "This society places a very high importance on the rights and prosperity of all sentient beings, achieved by way of rapid technological progress and unwavering adherence to these goals. They will be benign and even friendly to empires that hold similar values, and very aggressive towards those that do not, particularly those they feel present a danger to their citizens or their neighbors."
 
 
+opinion_insensitive:0 "Insensitive Assholes"
 opinion_dragon_cold:0 "Cynical Misanthropes"
 opinion_dragon_ruthless:0 "Ruthless Utilitarians"
 opinion_dragon_antitheist:0 "Faithless Morons"

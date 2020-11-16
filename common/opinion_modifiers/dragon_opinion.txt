@@ -65,6 +65,24 @@ opinion_aleran_saved_from_storm = {
 #######
 ##What others think of Alerans
 #######
+opinion_insensitive = {
+	trigger = {
+		FROM = {
+			has_trait = trait_insensitive
+		}
+		this = {
+			is_country_type = default
+			NOR = {
+				has_country_flag = aleran
+				has_country_flag = aleran_saved_from_storm
+			}
+		}
+	}
+	opinion = {
+		base = -15
+	}
+}
+
 opinion_dragon_cold = {
 	trigger = {
 		FROM = {
