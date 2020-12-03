@@ -334,11 +334,11 @@ aleran_chain.109.desc:0 "Whether [murderer.GetName] was seeking to cause a genoc
 aleran_chain.109.click:0 "Excellent news."
 
 aleran_chain.110.name:0 "Genocide Culprit Found, Part Two"
-aleran_chain.110.desc:0 "While conducting routine maintenance on one of our communications networks, we discovered a data cache pertaining to the genocide virus from some time ago, with momentous news.\n\nAs it turns out, [murderer.GetName] was a scapegoat, probably chosen because their field would naturally make give them the skill and tools to have achieved such a thing.\n\nIn fact, it was [realmurderer.GetName] using unauthorized access to [murderer.GetName]'s hardware. This time, they DID confess a motive - as part of a long-winded diatribe about genetic purity, no less - and thus our expectations have proven accurate."
+aleran_chain.110.desc:0 "While conducting routine maintenance on one of our communications networks, we discovered a data cache pertaining to the genocide virus from some time ago, with momentous news.\n\nAs it turns out, [murderer.GetName] was a scapegoat, probably chosen because their field would naturally give them the skill and tools to have achieved such a thing.\n\nIn fact, it was [realmurderer.GetName] using unauthorized access to [murderer.GetName]'s hardware. This time, they DID confess a motive - as part of a long-winded diatribe about genetic purity, no less - and thus our expectations have proven accurate."
 aleran_chain.110.click:0 "Destroy their virus plans and destroy them."
 
 aleran_chain.111.name:0 "Genocide Culprit Found, Part Two"
-aleran_chain.111.desc:0 "Further study of the viral agent used in the recent genocide has revealed a more likely real origin: The [murdererFE.GetName].\n\nTheir motives to do this are obvious, and the pattern of spread is consistent with origin in the colonies nearest their borders. Additionally, this virus has a bioengineering sophistication that even [murderer.GetName], as good as they are, could not have pulled it off."
+aleran_chain.111.desc:0 "Further study of the viral agent used in the recent genocide has revealed a more likely real origin: The [murdererFE.GetName].\n\nTheir motives to do this are obvious, and upon closer research the pattern of spread is consistent with an origin in the colonies nearest their borders.\n\nAdditionally, this virus has a bioengineering sophistication that even [murderer.GetName], as good as they are, could not have pulled it off.\n\nAs for the virus' minimal lethality among our own species, we may have just gotten very lucky, or the [murdererFE.GetName] may have seen some benefit in leaving us to survive. Either way, they are the real culprit behind this."
 aleran_chain.111.click.a:0 "This atrocity cannot go unanswered. We shall finish what time started."
 aleran_chain.111.click.b:0 "This is an atrocity, but we are not yet in a position to destroy them."
 
@@ -612,7 +612,7 @@ analysing_shield:0 "Solar Shield Analysis"
 analysing_shield_desc:0 "We are dismantling and studying the solar shield we recently used to protect a planet from a solar storm."
 
 determined_stop_genocide:0 "Moralistic Fervor"
-determined_stop_genocide_desc:0 "We are engaged in a war to stop another empire from engaging in its spree of genocide."
+determined_stop_genocide_desc:0 "We are unified in our efforts in a war to stop another empire from engaging in its spree of genocide."
 
 refused_fight_fe_genocide:0 "Demoralized"
 refused_fight_fe_genocide_desc:0 "Apparently our values are worth nothing when another genocidal empire is more powerful than us."

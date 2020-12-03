@@ -28,6 +28,7 @@ special_project = {
 	
 	on_success = {
 		owner = {country_event = {id = aleran_chain.102 }}
+		log = "Aleran Genocide: Triggered ID from project"
 	}	
 }
 special_project = {
@@ -45,6 +46,7 @@ special_project = {
 	
 	on_success = {
 		owner = {country_event = {id = aleran_chain.105 }}
+		log = "Aleran Genocide: Triggered neutralization from project"
 	}	
 }
 special_project = {
@@ -62,6 +64,7 @@ special_project = {
 	
 	on_success = {
 		owner = {country_event = {id = aleran_chain.105 }}
+		log = "Aleran Genocide: Triggered neutralization from late project"
 	}	
 }
 special_project = {

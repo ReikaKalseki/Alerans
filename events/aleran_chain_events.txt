@@ -46,6 +46,7 @@ country_event = { #start the genocide
 				location = owner.capital_scope
 				owner = this
 			}
+			log = "Aleran Genocide: Enabled project for ID"
 		}		
 	}
 	
@@ -56,7 +57,10 @@ country_event = { #start the genocide
 			factor = 50
 		}
 		owner = {
-			hidden_effect = {country_event = {id = aleran_chain.103 days = 360 random = 180}}
+			hidden_effect = {
+				country_event = {id = aleran_chain.103 days = 360 random = 180}
+				log = "Aleran Genocide: Queued no-project ID"
+			}
 		}
 	}
 	
@@ -95,7 +99,7 @@ country_event = { #kill a random pop and check for burnout
 					NOT = {is_same_species = owner}
 				}
 				genocide_pop = yes
-				change_variable = { which = genocided_pops value = 1 }
+				owner = { change_variable = { which = genocided_pops value = 1 } }
 				prev = {
 					if = {
 						limit = {
@@ -117,6 +121,7 @@ country_event = { #kill a random pop and check for burnout
 				NOT = {has_country_flag = genocide_bioweapon_ended}
 			}
 			country_event = {id = aleran_chain.106 days = 5 random = 3}
+			log = "Aleran Genocide: Burnout"
 		}
 	}
 }
@@ -153,6 +158,7 @@ country_event = { #realize it is a genocide
 				location = owner.capital_scope
 				owner = this
 			}
+			log = "Aleran Genocide: Enabled project for neutralization, with ID"
 		}		
 	}
 	
@@ -203,6 +209,7 @@ country_event = { #realize it is a genocide without having researched
 				location = owner.capital_scope
 				owner = this
 			}
+			log = "Aleran Genocide: Enabled project for neutralization, with no ID"
 		}		
 	}
 	
@@ -240,6 +247,7 @@ country_event = { #genocide progress update ("X pops dead")
 	trigger = {
 		has_country_flag = genocide_bioweapon
 		has_country_flag = identified_genocide
+		NOT = { always = yes } #DISABLE
 	}
 
 	mean_time_to_happen = {
@@ -288,7 +296,8 @@ country_event = { #bioweapon neutralized via special project, search for the cul
 		every_owned_planet = {
 			remove_modifier = bioweapon_death
 		}
-		country_event = {id = aleran_chain.107 days = 60 random = 30}
+		country_event = {id = aleran_chain.107 days = 120 random = 120}
+		log = "Aleran Genocide: Queued search for culprit via project completion"
 	}
 	
 	option = {
@@ -344,7 +353,6 @@ country_event = { #bioweapon burned itself out, search for the culprit
 		abort_special_project = { type = identify_genocide_bioweapon location = owner.capital_scope }
 		abort_special_project = { type = stop_genocide_bioweapon location = owner.capital_scope }
 		abort_special_project = { type = stop_genocide_bioweapon_late location = owner.capital_scope }
-		country_event = {id = aleran_chain.107 days = 60 random = 30}
 	}
 	
 	option = {
@@ -353,7 +361,8 @@ country_event = { #bioweapon burned itself out, search for the culprit
 			factor = 150
 		}
 		owner = {
-			
+			country_event = {id = aleran_chain.107 days = 120 random = 120}
+			log = "Aleran Genocide: Queued search for culprit via burnout"
 		}		
 	}
 }
@@ -391,7 +400,7 @@ country_event = { #found the scientist, what do we do with them?
 		}
 		owner = {
 			event_target:murderer = {
-				kill_leader = { show_notification = yes }
+				kill_leader = { show_notification = no }
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
@@ -413,23 +422,23 @@ country_event = { #found the scientist, what do we do with them?
 								is_country_type = awakened_empire
 							}
 							is_xenophobe = yes
+							has_communications = prev
 						}
 					}
 					random_list = {
-						10 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
-						10 = {country_event = {id = aleran_chain.109 days = 360 random = 120}} #they do not do it
-						15 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
-						25 = {country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
-						40 = {country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
+						10 = {log = "Aleran Genocide: Queued reoffence" country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+						10 = {log = "Aleran Genocide: Queued no-event ending" country_event = {id = aleran_chain.109 days = 360 random = 120}} #they do not do it
+						15 = {log = "Aleran Genocide: Queued other leader" country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
+						25 = {log = "Aleran Genocide: Queued FE" country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
+						40 = {log = "Aleran Genocide: Queued mistake" country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
 					}
 				}
 				else = {
 					random_list = {
-						20 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
-						20 = {country_event = {id = aleran_chain.109 days = 360 random = 120}} #they do not do it
-						20 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
-						#20 = {country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
-						40 = {country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
+						20 = {log = "Aleran Genocide: Queued reoffence" country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+						20 = {log = "Aleran Genocide: Queued no-event ending" country_event = {id = aleran_chain.109 days = 360 random = 120}} #they do not do it
+						20 = {log = "Aleran Genocide: Queued other leader" country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
+						40 = {log = "Aleran Genocide: Queued mistake" country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
 					}
 				}
 			}
@@ -446,8 +455,8 @@ country_event = { #found the scientist, what do we do with them?
 			hidden_effect = {
 				set_country_flag = genocide_unpunished
 				random_list = {
-					50 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
-					50 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+					50 = {log = "Aleran Genocide: Queued forgiving reoffence" country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+					50 = {log = "Aleran Genocide: Queued forgiving no-event ending" country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
 				}
 			}
 		}		
@@ -489,6 +498,7 @@ country_event = { #they did it again
 				}
 			}
 		}
+		set_country_flag = genocide_bioweapon_ignored
 	}
 	
 	option = {
@@ -497,18 +507,8 @@ country_event = { #they did it again
 			factor = 150
 		}
 		owner = {
-			every_owned_leader = {
-				if = {
-					limit = {
-						owner = {
-							research_leader = {
-								area = society
-								is_same_value = prevprev
-							}
-						}
-					}
-					kill_leader = { show_notification = yes }
-				}
+			event_target:murderer = {
+				kill_leader = { show_notification = no }
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
@@ -573,10 +573,11 @@ country_event = { #was other leader
 	immediate = {#random weights for https://i.imgur.com/2V5TH4q.png
 		random_owned_leader = {
 			limit = {
-				NOT = {
+				NOR = {
 					leader_class = ruler
+					is_same_value = event_target:murderer
+					#is_event_leader = yes
 				}
-				#is_event_leader = no
 			}
 			weights = {
 				base = 2
@@ -599,6 +600,7 @@ country_event = { #was other leader
 				}
 			}
 			save_event_target_as = realmurderer
+			log = "Aleran Genocide: Selected random leader"
 		}
 	}
 	
@@ -609,7 +611,7 @@ country_event = { #was other leader
 		}
 		owner = {
 			event_target:realmurderer = {
-				kill_leader = { show_notification = yes }
+				kill_leader = { show_notification = no }
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
@@ -643,6 +645,7 @@ country_event = { #was FE
 					is_country_type = fallen_empire
 					is_country_type = awakened_empire
 				}
+				has_communications = prev
 				is_xenophobe = yes
 			}
 			save_event_target_as = murdererFE
@@ -756,6 +759,10 @@ country_event = { #was mistake
 					modifier = unhappy_nogenocide_punish
 					days = 900
 				}
+			}
+			add_modifier = {
+				modifier = society_leader_forgive
+				days = 360
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
