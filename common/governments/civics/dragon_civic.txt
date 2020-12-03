@@ -28,7 +28,7 @@ civic_dragon_gov = {
 	possible = {
 		ethics = {
 			value = ethic_authoritarian
-			value = ethic_materialist
+			value = ethic_materialist		
 			value = ethic_xenophile
 		}
 		authority = { value = auth_dragon }
@@ -36,34 +36,34 @@ civic_dragon_gov = {
 	random_weight = { base = 0 }
 	modifier = {
 		edict_cost = -0.1
-		country_leader_cap = 1
+		edict_length_mult = 0.2
+		#removed#country_leader_cap = 1
+		#removed#country_leader_pool_size = 1
 		country_resource_influence_add = 2
 		country_core_sector_system_cap = 2
-		country_starbase_capacity_add = 3
+		#removed#country_starbase_capacity_add = 3
 		#pop_ethic_materialist_attraction_mult = 0.1
 		pop_government_ethic_attraction = 0.4
 		country_piracy_risk_mult = -0.1
 		country_naval_cap_mult = 0.2
-		country_war_exhaustion_mult = 0.6
+		country_war_exhaustion_mult = 1.5 #was 0.6
 		#subject_integration_influence_cost_mult = 0.8
 		subject_integration_influence_cost_mult = -0.4
 		#pop_other_species_owner_happiness = -0.3 #penalizes owning robots too
 		alliance_influence_cost = -0.8
-		country_claim_influence_cost_mult = 0.8
+		country_claim_influence_cost_mult = 4 #was 0.8
 		faction_influence_mult = -0.5 #was 0.25
 		rivalry_influence_gain = -0.9 #was 0.75
 		country_subject_integration_speed_add = 10
-		country_integration_cooldown_mult = -0.5
-		country_election_influence_cost_mult = -0.6
-		edict_length_mult = 0.2
-		country_leader_pool_size = 1
+		country_integration_cooldown_mult = -0.9 #the 3600 days base; was 0.5
+		country_election_influence_cost_mult = -0.9 #was 0.6
 		starbase_defensive_war_ship_build_speed_mult = 0.2
 		diplomacy_influence_cost = -1
 		defensive_war_influence_gain_add = 4 #was 2.5
-		damage_vs_country_type_pirate_mult = 0.2
-		damage_vs_country_type_dormant_marauders_mult = 0.3
-		damage_vs_country_type_awakened_marauders_mult = 0.4
-		damage_vs_country_type_ruined_marauders_mult = 0.2
+		#removed#damage_vs_country_type_pirate_mult = 0.2
+		#removed#damage_vs_country_type_dormant_marauders_mult = 0.3
+		#removed#damage_vs_country_type_awakened_marauders_mult = 0.4
+		#removed#damage_vs_country_type_ruined_marauders_mult = 0.2
 	}
 
 	#description = "civic_tooltip_dragongov_effects"
@@ -99,10 +99,10 @@ civic_dragon_tech = {
 		planet_colony_development_speed_mult = 0.25
 		planet_clear_blocker_time_mult = -0.25
 		#pop_robot_upkeep_mult = 0.2
-		country_ship_upgrade_cost_mult = 0.2
-		planet_building_cost_mult = 0.2
-		planet_building_upkeep_mult = 0.1
-		shipsize_colonizer_build_cost_mult = 0.3
+		country_ship_upgrade_cost_mult = 0.5 #was 0.2
+		planet_building_cost_mult = 1 #was 0.2 then 0.5
+		planet_building_upkeep_mult = 0.15  #was 0.1
+		shipsize_colonizer_build_cost_mult = 0.5 #was 0.3
 	}
 
 	#description = "civic_tooltip_dragontech_effects"

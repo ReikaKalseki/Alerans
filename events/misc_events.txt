@@ -107,23 +107,75 @@ country_event = {
 		if = {
 			limit = {
 				from = {
-					OR = {
-						is_country_type = guardian
-						is_country_type = guardian_dragon
-						is_country_type = guardian_stellarite
-						is_country_type = guardian_wraith #
-						is_country_type = guardian_hiver
-						is_country_type = guardian_horror
-						is_country_type = guardian_fortress
-						is_country_type = guardian_dreadnought
-						is_country_type = guardian_sphere
-						is_country_type = guardian_scavenger_bot
-						is_country_type = guardian_elderly_tiyanki
-						is_country_type = guardian_hatchling
+					AND = {
+						NOR = {
+							is_country_type = guardian_hiver
+							is_country_type = guardian_scavenger_bot
+							is_country_type = guardian_fortress
+							is_country_type = guardian_dreadnought
+							is_country_type = guardian_sphere
+							is_country_type = guardian_elderly_tiyanki
+						}
+						OR = {
+							is_country_type = guardian
+							is_country_type = guardian_dragon
+							is_country_type = guardian_stellarite
+							is_country_type = guardian_wraith
+							is_country_type = guardian_horror
+							is_country_type = guardian_hatchling
+						}
 					}
 				}
 			}
 			country_event = {id = dragon_misc.32}
+		}
+		if = {
+			limit = {
+				from = {
+					AND = {
+						NOR = {
+							is_country_type = guardian_dragon
+							is_country_type = guardian_stellarite
+							is_country_type = guardian_wraith
+							is_country_type = guardian_horror
+							is_country_type = guardian_hatchling
+							is_country_type = guardian_fortress
+							is_country_type = guardian_dreadnought
+							is_country_type = guardian_sphere
+							is_country_type = guardian_elderly_tiyanki
+						}
+						OR = {
+							is_country_type = guardian_hiver
+							is_country_type = guardian_scavenger_bot
+						}
+					}
+				}
+			}
+			country_event = {id = dragon_misc.33}
+		}
+		if = {
+			limit = {
+				from = {
+					AND = {
+						NOR = {
+							is_country_type = guardian_dragon
+							is_country_type = guardian_stellarite
+							is_country_type = guardian_wraith
+							is_country_type = guardian_horror
+							is_country_type = guardian_hatchling
+							is_country_type = guardian_hiver
+							is_country_type = guardian_scavenger_bot
+						}
+						OR = {
+							is_country_type = guardian_fortress
+							is_country_type = guardian_dreadnought
+							is_country_type = guardian_sphere
+							is_country_type = guardian_elderly_tiyanki
+						}
+					}
+				}
+			}
+			country_event = {id = dragon_misc.34}
 		}
 	}
 }
@@ -142,6 +194,54 @@ country_event = {
 	
 	option = {
 		name = "dragon_misc.32.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_influence = 200
+		}
+		
+	}
+}
+
+country_event = {
+	id = dragon_misc.33
+	is_triggered_only = yes
+	title = "dragon_misc.33.name"
+	desc = "dragon_misc.33.desc"
+	picture = GFX_evt_wraith
+	show_sound = event_space_whale
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_misc.33.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_influence = 20
+		}
+		
+	}
+}
+
+country_event = {
+	id = dragon_misc.34
+	is_triggered_only = yes
+	title = "dragon_misc.34.name"
+	desc = "dragon_misc.34.desc"
+	picture = GFX_evt_wraith
+	show_sound = event_space_whale
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_misc.34.click"
 		ai_chance = {
 			factor = 150
 		}

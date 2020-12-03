@@ -1909,3 +1909,29 @@ country_event = {
 		name = "aleran_diplomacy.1231.click"
 	}
 }
+
+country_event = {
+	id = aleran_diplomacy.2000
+	hide_window = yes
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	immediate = {
+		
+	}
+}
+
+country_event = {
+	id = aleran_diplomacy.2001
+	hide_window = yes
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	immediate = {
+		add_threat = {
+			who = from
+			amount = -500
+		}
+		log = "Subtract threat from [This.GetName] to [from.GetName]"
+	}
+}

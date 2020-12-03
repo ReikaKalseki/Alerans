@@ -1,4 +1,6 @@
 aleran_expansion = {
+	country_core_sector_system_cap = 6
+	country_starbase_capacity_add = 2
 	country_starbase_influence_cost_mult = -0.2
 	mod_distance_to_capital_static_modifier_efficiency_mult = -1
 	tradition_cost_num_colonies_mult = -0.5

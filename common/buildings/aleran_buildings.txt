@@ -133,7 +133,11 @@ building_dragon_library = {
 		tile_resource_physics_research_mult = 0.05
 		tile_resource_society_research_mult = 0.05
 		tile_resource_engineering_research_mult = 0.05
-	}	
+	}
+	
+	country_modifier = {
+		country_core_sector_system_cap = 1
+	}
 }
 
 building_dragon_central_library = {
@@ -202,6 +206,7 @@ building_dragon_central_library = {
 		country_resource_engineering_research_mult = 0.2
 		country_resource_unity_mult = 0.1
 		pop_government_ethic_attraction = 0.10
+		country_core_sector_system_cap = 4
 	}
 	
 	required_resources = {

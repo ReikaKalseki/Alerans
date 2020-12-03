@@ -14,6 +14,20 @@ opinion_aleran_threatened = {
 	}
 }
 
+opinion_enlighten_threat_counter = {
+	opinion = {
+		base = 1000
+	}
+
+	accumulative = no
+	monthly = no
+	unique = yes
+
+	decay = {
+		base = 6
+	}
+}
+
 opinion_aleran_insulted = {
 	opinion = {
 		base = -40
@@ -262,6 +276,24 @@ opinion_dragon_seethelight = {
 	}
 	opinion = {
 		base = 40
+	}
+}
+
+opinion_dragon_xenophilefe = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_xenophile"
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+	}
+	opinion = {
+		base = 100
 	}
 }
 

@@ -25,7 +25,7 @@ wg_dragon = {
 	surrender_acceptance = -250 # Default 0
 
 	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
-	war_exhaustion = 0.2 # Default 1.0
+	war_exhaustion = 0.05 # Default 1.0; was 0.2
 
 	# This decides whether claims should be listed in the description
 	#show_claims_in_description = yes # Default no
@@ -82,6 +82,8 @@ wg_dragon = {
 		from = { add_modifier = { modifier = recently_liberated days = 7300 } }		
 		add_opinion_modifier = { modifier = opinion_we_liberated who = from }	
 		from = { add_opinion_modifier = { modifier = opinion_liberated_us who = root } }
+		from = { remove_opinion_modifier = { modifier = opinion_aleran_insulted who = root } }
+		from = { remove_opinion_modifier = { modifier = opinion_aleran_threatened who = root } }
 		end_rivalry = from
 		from = { end_rivalry = root }	
 		every_country = {
@@ -106,21 +108,27 @@ wg_dragon = {
 				remove_claims = { who = from }
 			}
 		}
-		from = {
-			add_threat = {
-				who = root
-				amount = -1
-			}				
-		}
+		#from = {
+		#	add_threat = {
+		#		who = root
+		#		amount = -1
+		#	}				
+		#}
 		every_country = {
 			#log = "this in anycountry is [This.GetName]"
 			limit = {
 				OR = {
 					is_country_type = default
-					is_country_type = dormant_marauders
-					is_country_type = awakened_marauders
+					#is_country_type = dormant_marauders
+					#is_country_type = awakened_marauders
+					is_country_type = ruined_marauders
+				}
+				NOR = {
+					is_same_value = root
+					is_same_value = from
 				}
 			}
+			add_opinion_modifier = { modifier = opinion_enlighten_threat_counter who = root }
 			if = {
 				limit = {
 					root = {
@@ -134,19 +142,22 @@ wg_dragon = {
 				}
 				add_threat = {
 					who = root
-					amount = 5
+					amount = 40 #was 5, then 25
 				}
+				log = "Add threat to [This.GetName]"
 				root = {
 					prev = { save_event_target_as = aleran_youre_next }
 					country_event = { id = aleran_diplomacy.2000 days = 1 random = 30 }
 				}
 				#log = "Firing event about [prev.GetName]"
 			}
-			else = {
+			else = { #this makes it go negative and gives -1000 opinion
 				add_threat = {
 					who = root
-					amount = -0.5
+					amount = -500
 				}
+				country_event = { id = aleran_diplomacy.2001 days = 10 }
+				#log = "Subtract threat from [This.GetName]"
 			}
 		}
 		from = {

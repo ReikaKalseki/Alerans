@@ -31,6 +31,7 @@ country_event = { #start the genocide
 	
 	immediate = {
 		set_country_flag = genocide_bioweapon
+		remove_country_flag = genocide_reset
 		begin_event_chain = { event_chain = genocide_bioweapon_chain target = owner }
 	}
 	
@@ -58,6 +59,18 @@ country_event = { #start the genocide
 			hidden_effect = {country_event = {id = aleran_chain.103 days = 360 random = 180}}
 		}
 	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
 }
 
 country_event = { #kill a random pop and check for burnout
@@ -69,7 +82,7 @@ country_event = { #kill a random pop and check for burnout
 	}
 
 	mean_time_to_happen = {
-		days = 1 #was 10, then 8, then 3
+		days = 10 #was 10, then 8, then 3, then 1
 	}
 	
 	immediate = {
@@ -153,6 +166,18 @@ country_event = { #realize it is a genocide
 			set_country_flag = genocide_bioweapon_ignored #for unhappy faction
 		}		
 	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
 }
 
 country_event = { #realize it is a genocide without having researched
@@ -191,6 +216,18 @@ country_event = { #realize it is a genocide without having researched
 			set_country_flag = genocide_bioweapon_ignored #for unhappy faction
 		}		
 	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
 }
 
 country_event = { #genocide progress update ("X pops dead")
@@ -222,6 +259,18 @@ country_event = { #genocide progress update ("X pops dead")
 			
 		}		
 	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
 }
 
 country_event = { #bioweapon neutralized via special project, search for the culprit
@@ -249,6 +298,18 @@ country_event = { #bioweapon neutralized via special project, search for the cul
 		}
 		owner = {
 			
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
 		}		
 	}
 }
@@ -330,7 +391,13 @@ country_event = { #found the scientist, what do we do with them?
 			factor = 150
 		}
 		owner = {
-			hidden_effect = {country_event = {id = aleran_chain.108 days = 720 random = 360}}
+			hidden_effect = {
+				random = {
+					40 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+					40 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+					20 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat
+				}
+			}
 		}		
 	}
 	
@@ -343,6 +410,18 @@ country_event = { #found the scientist, what do we do with them?
 			event_target:murderer = {
 				kill_leader = { show_notification = yes }
 			}
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
 			end_event_chain = genocide_bioweapon_chain
 		}		
 	}
@@ -394,6 +473,75 @@ country_event = { #they did it again
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+}
+
+country_event = { #they stopped
+	id = aleran_chain.109
+	title = "aleran_chain.109.name"
+	desc = "aleran_chain.109.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_chain.109.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+}
+
+country_event = { #manual reset
+	id = aleran_chain.120
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_flag = genocide_bioweapon
+		remove_country_flag = genocide_bioweapon_ended
+		remove_country_flag = genocide_bioweapon_ignored
+		remove_country_flag = genocide_bioweapon_stopped
+		remove_country_flag = identified_genocide
+		remove_country_flag = genocide_culprit_found
+		remove_modifier = bioweapon_death
+		remove_modifier = bioweapon_not_stopped
+		end_event_chain = genocide_bioweapon_chain
+		set_country_flag = genocide_reset
+		abort_special_project = { type = identify_genocide_bioweapon location = owner.capital_scope }
+		abort_special_project = { type = stop_genocide_bioweapon location = owner.capital_scope }
+		abort_special_project = { type = stop_genocide_bioweapon_late location = owner.capital_scope }
 	}
 }
 

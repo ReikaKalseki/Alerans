@@ -18,83 +18,118 @@ cb_dragon = {
 	is_valid = {
 		NOT = { is_same_species = FROM }
 		OR = {
-			from = { has_valid_civic = civic_machine_terminator }
-			from = { has_valid_civic = civic_machine_assimilator }
-			from = { has_valid_civic = civic_barbaric_despoilers }
-			from = { has_valid_civic = civic_hive_devouring_swarm }
-			from = { has_valid_civic = civic_fanatic_purifiers }
-			from = { has_ethic = ethic_fanatic_xenophobe }
 			AND = {
-				from = { has_ethic = ethic_fanatic_egalitarian }
-				OR = {
-					from = { has_ethic = ethic_spiritualist }
-					from = { has_ethic = ethic_xenophobe }
-					from = { has_ethic = ethic_militarist }
-				}
-			}
-			from = { has_ethic = ethic_fanatic_spiritualist }
-			from = { has_ethic = ethic_fanatic_militarist }
-			AND = {
-				from = { has_ethic = ethic_militarist }
-				OR = {
-					from = { has_ethic = ethic_spiritualist }
-					from = { has_ethic = ethic_xenophobe }
-				}
-			}
-			AND = {
-				from = { has_ethic = ethic_spiritualist }
-				from = { has_ethic = ethic_xenophobe }
-			}
-			AND = {
-				from = { has_ethic = ethic_fanatic_authoritarian }
-				OR = {
-					from = { has_ethic = ethic_spiritualist }
-					from = { has_ethic = ethic_militarist }
-					from = { has_ethic = ethic_xenophobe }
-				}
-			}
-			
-			#replaced with the block below
-			#from = { has_policy_flag = slavery_allowed }
-			#from = { has_policy_flag = purge_allowed }
-			from = {
-				any_owned_pop_species = {
+				from = { 
 					OR = {
-						AND = {
-							has_citizenship_type = { country = from type = citizenship_purge }
-							OR = {
-								has_purge_type = { country = from type = purge_processing }		
-								has_purge_type = { country = from type = purge_matrix }		
-								has_purge_type = { country = from type = purge_normal }		
-								has_purge_type = { country = from type = purge_neutering }		
-								has_purge_type = { country = from type = purge_displacement }		
-								has_purge_type = { country = from type = purge_labor_camps }
-							}									
+						is_country_type = fallen_empire
+						is_country_type = awakened_empire
+					}
+					OR = {
+						is_xenophobe = yes
+						is_spiritualist = yes
+					}
+				}				
+			}
+			AND = {
+				OR = {
+					from = { is_country_type = default }
+					from = { is_country_type = primitive }
+				}
+				OR = {
+					from = { has_valid_civic = civic_machine_terminator }
+					from = { has_valid_civic = civic_machine_assimilator }
+					from = { has_valid_civic = civic_barbaric_despoilers }
+					from = { has_valid_civic = civic_hive_devouring_swarm }
+					from = { has_valid_civic = civic_fanatic_purifiers }
+					from = { has_ethic = ethic_fanatic_xenophobe }
+					AND = {
+						from = { has_ethic = ethic_fanatic_egalitarian }
+						OR = {
+							from = { has_ethic = ethic_spiritualist }
+							from = { has_ethic = ethic_xenophobe }
+							from = { has_ethic = ethic_militarist }
 						}
-						AND = {
-							has_citizenship_type = { country = from type = citizenship_slavery }
+					}
+					from = { has_ethic = ethic_fanatic_spiritualist }
+					from = { has_ethic = ethic_fanatic_militarist }
+					AND = {
+						from = { has_ethic = ethic_militarist }
+						OR = {
+							from = { has_ethic = ethic_spiritualist }
+							from = { has_ethic = ethic_xenophobe }
+						}
+					}
+					AND = {
+						from = { has_ethic = ethic_spiritualist }
+						from = { has_ethic = ethic_xenophobe }
+					}
+					AND = {
+						from = { has_ethic = ethic_fanatic_authoritarian }
+						OR = {
+							from = { has_ethic = ethic_spiritualist }
+							from = { has_ethic = ethic_militarist }
+							from = { has_ethic = ethic_xenophobe }
+						}
+					}
+					
+					#replaced with the block below
+					#from = { has_policy_flag = slavery_allowed }
+					#from = { has_policy_flag = purge_allowed }
+					from = {
+						any_owned_pop_species = {
 							OR = {
-								has_slavery_type = { country = from type = slavery_livestock }
-								has_slavery_type = { country = from type = slavery_matrix }
-								has_slavery_type = { country = from type = slavery_domestic }
-								has_slavery_type = { country = from type = slavery_military }
-								has_slavery_type = { country = from type = slavery_normal }
-							}
+								AND = {
+									has_citizenship_type = { country = from type = citizenship_purge }
+									OR = {
+										has_purge_type = { country = from type = purge_processing }		
+										has_purge_type = { country = from type = purge_matrix }		
+										has_purge_type = { country = from type = purge_normal }		
+										has_purge_type = { country = from type = purge_neutering }		
+										has_purge_type = { country = from type = purge_displacement }		
+										has_purge_type = { country = from type = purge_labor_camps }
+									}									
+								}
+								AND = {
+									has_citizenship_type = { country = from type = citizenship_slavery }
+									OR = {
+										has_slavery_type = { country = from type = slavery_livestock }
+										has_slavery_type = { country = from type = slavery_matrix }
+										has_slavery_type = { country = from type = slavery_domestic }
+										has_slavery_type = { country = from type = slavery_military }
+										has_slavery_type = { country = from type = slavery_normal }
+									}
+								}
+								OR = {
+									has_living_standard  = { country = from type = living_standard_poor }
+									has_living_standard  = { country = from type = living_standard_subsistence }
+									has_living_standard  = { country = from type = living_standard_servitude }
+									has_living_standard  = { country = from type = living_standard_none }
+								}
+							}				
+						}
+					}
+					
+					from = { has_policy_flag = pre_sapients_purge }
+					
+					AND = {
+						NOR = {
+							is_country_type = fallen_empire
+							is_country_type = awakened_fallen_empire
+							is_country_type = nomad
+							is_country_type = primitive
+							is_country_type = enclave
+							is_country_type = shroud
+							#is_country_type = ratlings
+							#is_country_type = nivlacs
 						}
 						OR = {
-							has_living_standard  = { country = from type = living_standard_poor }
-							has_living_standard  = { country = from type = living_standard_subsistence }
-							has_living_standard  = { country = from type = living_standard_servitude }
-							has_living_standard  = { country = from type = living_standard_none }
+							#from = { has_policy_flag = ai_outlawed }
+							from = { has_policy_flag = robots_outlawed }
+							from = { has_policy_flag = refugees_not_allowed }
 						}
-					}				
+					}
 				}
 			}
-			
-			#from = { has_policy_flag = ai_outlawed }
-			from = { has_policy_flag = robots_outlawed }
-			from = { has_policy_flag = pre_sapients_purge }
-			from = { has_policy_flag = refugees_not_allowed }
 		}
 	}
 }

@@ -125,7 +125,7 @@
 
 		generic = {
 			names = { #Alera is not on this list intentionally
-				Kanza Intek Hovek Kasek Maukiat Vei Saneita Kaldi Kalein Ineki Tilza Atket Vaset Tivet Vitaki Kenat Sivek Katdi Neviak Cancuak Sanden Axpiri Misivari Ivini Tirzi Arkit Siriaki Kavi Kalik Lakita Tirik Sali Ixpana
+				Kanza Intek Hovek Kasek Maukiat Vei Saneita Kaldi Kalein Ineki Tilza Atket Vaset Tivet Vitaki Kenat Sivek Katdi Neviak Cancuak Sanden Axpiri Misivari Ivini Tirzi Arkit Siriaki Kavi Kalik Lakita Tirik Sali Ixpana Miyasaka
 			}
 		}
 		
