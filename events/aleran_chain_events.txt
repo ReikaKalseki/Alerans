@@ -417,7 +417,7 @@ country_event = { #found the scientist, what do we do with them?
 					}
 					random_list = {
 						10 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
-						10 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+						10 = {country_event = {id = aleran_chain.109 days = 360 random = 120}} #they do not do it
 						15 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
 						25 = {country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
 						40 = {country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
@@ -426,7 +426,7 @@ country_event = { #found the scientist, what do we do with them?
 				else = {
 					random_list = {
 						20 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
-						20 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+						20 = {country_event = {id = aleran_chain.109 days = 360 random = 120}} #they do not do it
 						20 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
 						#20 = {country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
 						40 = {country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
@@ -444,6 +444,7 @@ country_event = { #found the scientist, what do we do with them?
 		}
 		owner = {
 			hidden_effect = {
+				set_country_flag = genocide_unpunished
 				random_list = {
 					50 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
 					50 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
@@ -569,33 +570,35 @@ country_event = { #was other leader
 	show_sound = event_laboratory_sound
 	is_triggered_only = yes
 
-	immediate = {
-		random_list = { #random weights for https://i.imgur.com/2V5TH4q.png
-			20 = {
-				random_owned_leader = {
-					limit = {
-						OR = {
-							leader_class = admiral
-							leader_class = general
-						}
+	immediate = {#random weights for https://i.imgur.com/2V5TH4q.png
+		random_owned_leader = {
+			limit = {
+				NOT = {
+					leader_class = ruler
+				}
+				#is_event_leader = no
+			}
+			weights = {
+				base = 2
+				modifier = {
+					add = 1
+					OR = {
+						leader_class = admiral
+						leader_class = general
 					}
-					save_event_target_as = realmurderer
 				}
-			}
-			20 = {
-				random_owned_leader = {
-					save_event_target_as = realmurderer
+				modifier = {
+					add = 1
+					leader_of_faction = yes
 				}
-			}
-			20 = {
-				random_pop_faction = {
-					limit = {
-						is_pop_faction_type = supremacist
+				modifier = {
+					mult = 2
+					NOT = {
+						is_same_species = owner
 					}
-					exile_leader_as = realmurderer
-					#save_event_target_as = realmurderer
 				}
 			}
+			save_event_target_as = realmurderer
 		}
 	}
 	
@@ -607,6 +610,152 @@ country_event = { #was other leader
 		owner = {
 			event_target:realmurderer = {
 				kill_leader = { show_notification = yes }
+			}
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+}
+
+country_event = { #was FE
+	id = aleran_chain.111
+	title = "aleran_chain.111.name"
+	desc = "aleran_chain.111.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_laboratory_sound
+	is_triggered_only = yes
+
+	immediate = {
+		random_country = {
+			limit = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_empire
+				}
+				is_xenophobe = yes
+			}
+			save_event_target_as = murdererFE
+		}
+	}
+	
+	option = {
+		name = "aleran_chain.111.click.a" #war, with bonus, like in the solar storm
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			declare_war = {
+				target = event_target:murdererFE
+				name = "Genocide Prevention Initiative"
+				attacker_war_goal = wg_dragon
+			}
+			add_modifier = {
+				modifier = determined_stop_genocide
+				days = 3600
+			}
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.111.click.b" #refuse war, modifier
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_modifier = {
+				modifier = refused_fight_fe_genocide
+				days = 1800
+			}
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+}
+
+country_event = { #was mistake
+	id = aleran_chain.112
+	title = "aleran_chain.112.name"
+	desc = "aleran_chain.112.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_laboratory_sound
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "aleran_chain.112.click.a" #kill them
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+			owner = {
+				influence > 49
+			}
+		}
+		owner = {
+			event_target:murderer = {
+				kill_leader = { show_notification = yes }
+			}
+			add_influence = -50
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.112.click.b" #remove them
+		custom_tooltip = aleran_chain.112.b.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			hidden_effect = {
+				event_target:murderer = {
+					kill_leader = { show_notification = yes }
+				}
+			}
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.112.click.c" #do nothing, modifier
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			every_owned_pop = {
+				limit = {
+					NOT = {is_same_species = owner}
+				}
+				add_modifier = {
+					modifier = unhappy_nogenocide_punish
+					days = 900
+				}
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
@@ -1316,6 +1465,10 @@ country_event = { #the FE culprit gets pissed
 		}
 		event_target:solar_storm_culprit = {
 			add_opinion_modifier = { modifier = opinion_aleran_interfered_cleansing who = prev }
+		}
+		add_modifier = {
+			modifier = refused_fight_fe_genocide
+			days = 1800
 		}
 		end_event_chain = solar_storm_chain	
 		clear_global_event_target = alerans

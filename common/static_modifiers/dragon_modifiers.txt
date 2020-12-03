@@ -179,11 +179,38 @@ bioweapon_death = {
 
 bioweapon_not_stopped = {
 	pop_happiness = -0.15
+	pop_government_ethic_attraction = -0.4 #was 0.25
+	pop_growth_speed = -0.2 #was 0.1
+	pop_resource_output = -0.2
+	army_morale = -0.1
+	country_resource_influence_mult = -0.2
+	
+	icon = "gfx/interface/icons/modifiers/bioweapon_not_stopped.dds"
+}
+
+refused_fight_fe_genocide = {
+	pop_happiness = -0.05
+	pop_government_ethic_attraction = -0.1
+	army_morale = -0.1
+	country_resource_influence_mult = -0.1
+	
+	icon = "gfx/interface/icons/modifiers/nofefight.dds"
+}
+
+unhappy_nogenocide_punish = {
+	pop_happiness = -0.1
 	pop_government_ethic_attraction = -0.25
 	pop_growth_speed = -0.1
+	pop_resource_output = -0.1
 	army_morale = -0.1
 	
-	icon = "gfx/interface/icons/modifiers/bioweapon.dds"
+	#icon = "gfx/interface/icons/modifiers/genounpunish.dds"
+}
+
+society_leader_forgive = {
+	country_society_tech_research_speed = 0.05
+	
+	icon = "gfx/interface/icons/modifiers/socioforgive.dds"
 }
 
 unshielded_storm = {

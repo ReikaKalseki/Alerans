@@ -1064,6 +1064,29 @@ aleran_faction = {
 	}
 
 	demand = {
+		title = "aleran_faction_genocide_unpunished"
+		unfulfilled_title = "aleran_faction_genocide_unpunished_unfilled"
+		desc = "aleran_faction_genocide_unpunished_desc"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran
+				has_country_flag = genocide_culprit_found
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {has_country_flag = genocide_unpunished}
+			}
+		}
+	}
+
+	demand = {
 		title = "aleran_faction_solarstorm"
 		unfulfilled_title = "aleran_faction_solarstorm_unfilled"
 		desc = "aleran_faction_solarstorm_desc"

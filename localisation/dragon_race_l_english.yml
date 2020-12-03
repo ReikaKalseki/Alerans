@@ -191,6 +191,10 @@ aleran_faction_genocide:0 "Genocide Opposed"
 aleran_faction_genocide_unfilled:0 "Genocide Ignored"
 aleran_faction_genocide_desc:0 "Failing to try to stop an ongoing genocide will be extremely disliked by the [Root.GetName]."
 
+aleran_faction_genocide_unpunished:0 "Genocide Attempt Punished"
+aleran_faction_genocide_unpunished_unfilled:0 "Genocide Attempt Forgiven"
+aleran_faction_genocide_unpunished_desc:0 "Forgiving the perpetrator of an attempted genocide is unacceptable to the [Root.GetName]."
+
 aleran_faction_solarstorm:0 "Solar Storm Deflected"
 aleran_faction_solarstorm_unfilled:0 "Solar Storm Ignored"
 aleran_faction_solarstorm_desc:0 "The [Root.GetName] will expect all attempts to be made to prevent a solar storm from obliterating a sapient civilization."
@@ -238,7 +242,7 @@ civic_dragon_research_desc:0 "Study of the sciences is the path to the future, a
 
 civic_dragon_init:0 "Aleran Mentality"
 civic_dragon_init_desc:0 "Science, reason, and morality that is grounded in tangible proofs must remain king. Anything else is to turn one's back on progress, ethicality, or even survival. Holding true to these often requires sacrifice and willingness to ignore how one is perceived."
-civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YTechnology Focus§! civics upon map start\n\nLocks civics on map start\n\n§RReduced§! §YOpinion§! from dissimilarly-minded empires, §GIncreased§! opinion from similar ones\n\nHas minor bonuses to centralized power and administration\n\nHas access to the §Y'Enlightenment By Force'§! casus belli and wargoal against empires they see as sufficiently harmful, and the §Y'Moralistic Fervor'§! combat bonus in wars against them\n\nStarts without the technology to build military ships until they have met an empire against whom the above casus belli applies\n\nRivalries and factions produce minimal influence, and the dominant faction strongly penalizes deviations from proper administration\n\nAllows for the construction of Commonwealth Libraries to boost science and influence production, and increase administrative capacity\n\nWill get gradually better at building starbases over time to make up for inability to take systems by traditional conquest\n\nWill always remain leader of a Federation if they are the most powerful member"
+civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YTechnology Focus§! civics upon map start\n\nLocks civics on map start\n\n§RReduced§! §YOpinion§! from dissimilarly-minded empires, §GIncreased§! opinion from similar ones\n\nHas minor bonuses to centralized power and administration\n\nHas access to the §Y'Enlightenment By Force'§! casus belli and wargoal against empires they see as sufficiently harmful, and the §Y'Moralistic Fervor'§! combat bonus in wars against the most evil ones\n\nStarts without the technology to build military ships until they have met an empire against whom the above casus belli applies\n\nRivalries and factions produce minimal influence, and the dominant faction strongly penalizes deviations from proper administration\n\nAllows for the construction of Commonwealth Libraries to boost science and influence production, and increase administrative capacity\n\nWill get gradually better at building starbases over time to make up for inability to take systems by traditional conquest\n\nWill always remain leader of a Federation if they are the most powerful member"
 
 civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
@@ -314,14 +318,36 @@ aleran_chain.106.desc:0 "The spread of the virus has finally slowed; it appears 
 aleran_chain.106.click:0 "Whoever they are, they are an enemy of the [This.GetName]."
 
 aleran_chain.107.name:0 "Genocide Culprit Found"
-aleran_chain.107.desc:0 "The creator of the virus has been identified, and to our abject horror, it is one of our own, and worse, one of our most respected researchers! During the examination of virus samples, we found what amounts to blueprints for the virus on the computer databases of one of our research scientists, a [murderer.GetName]. They have already been captured, and while they have admitted no motive, they are almost certainly in some way upset by the mosaic of species that the [This.GetName] contains."
-aleran_chain.107.click.a:0 "They are too valuable to our research efforts."
-aleran_chain.107.click.b:0 "They have committed crimes beyond imagining."
-aleran_chain.107.a.tooltip:0 "The scientist is forgiven and returns to their research duties"
+aleran_chain.107.desc:0 "The creator of the virus has been identified, and to our abject horror, it appears to be one of our most respected researchers! During the examination of virus samples, we found what amounts to blueprints for the virus on the computer databases of one of our research scientists, a [murderer.GetName]. They have already been captured, and while they have admitted no motive, it is probably safe to assume that they are offended by the mosaic of species that the [This.GetName] contains. However, they swear their innocence, that this was not at all their objective."
+aleran_chain.107.click.a:0 "They have committed crimes beyond imagining. This ends now."
+aleran_chain.107.click.b:0 "We cannot risk having the wrong offender. Monitor them for now."
+aleran_chain.107.click.c:0 "They are too valuable to our research efforts to consider action."
+aleran_chain.107.b.tooltip:0 "The virus is eradicated, the scientist is put under monitoring, and is allowed to return to their research duties"
+aleran_chain.107.c.tooltip:0 "The virus is eradicated, but the scientist is forgiven and returns to their research duties"
 
 aleran_chain.108.name:0 "Genocide Part Two"
 aleran_chain.108.desc:0 "It was clearly a mistake to allow [murderer.GetName] to continue their work; they have secretly been developing a second, even more lethal strain of their virus. While we have managed to stop it by refining our previous cure, countless more of our citizens are dead."
 aleran_chain.108.click:0 "We are left with no choice but to remove [murderer.GetName] from society."
+
+aleran_chain.109.name:0 "Genocide Averted"
+aleran_chain.109.desc:0 "Whether [murderer.GetName] was seeking to cause a genocide or not, we have no evidence that the previous or other similar pathogens are spreading in our population. This crisis can be considered to be averted."
+aleran_chain.109.click:0 "Excellent news."
+
+aleran_chain.110.name:0 "Genocide Culprit Found, Part Two"
+aleran_chain.110.desc:0 "While conducting routine maintenance on one of our communications networks, we discovered a data cache pertaining to the genocide virus from some time ago, with momentous news.\n\nAs it turns out, [murderer.GetName] was a scapegoat, probably chosen because their field would naturally make give them the skill and tools to have achieved such a thing.\n\nIn fact, it was [realmurderer.GetName] using unauthorized access to [murderer.GetName]'s hardware. This time, they DID confess a motive - as part of a long-winded diatribe about genetic purity, no less - and thus our expectations have proven accurate."
+aleran_chain.110.click:0 "Destroy their virus plans and destroy them."
+
+aleran_chain.111.name:0 "Genocide Culprit Found, Part Two"
+aleran_chain.111.desc:0 "Further study of the viral agent used in the recent genocide has revealed a more likely real origin: The [murdererFE.GetName].\n\nTheir motives to do this are obvious, and the pattern of spread is consistent with origin in the colonies nearest their borders. Additionally, this virus has a bioengineering sophistication that even [murderer.GetName], as good as they are, could not have pulled it off."
+aleran_chain.111.click.a:0 "This atrocity cannot go unanswered. We shall finish what time started."
+aleran_chain.111.click.b:0 "This is an atrocity, but we are not yet in a position to destroy them."
+
+aleran_chain.112.name:0 "Genocide Update"
+aleran_chain.112.desc:0 "As it turns out, [murderer.GetName] WAS the source of the virus that killed many of our citizens.\n\nHowever, this was not at ALL the result they were trying to achieve. In fact, they were trying to engineer a virus to transfer genetic material from our genome to that of our other member species - in their own words, they 'wanted to correct obvious inequalities in genetic potential'.\n\nClearly, that plan went horribly wrong, and they are wracked with guilt over the disaster they caused. In fact, they have offered their resignation."
+aleran_chain.112.click.a:0 "They killed countless people with their carelessness. Add one more."
+aleran_chain.112.click.b:0 "Accepted. They may mean well, but they clearly are unfit to work."
+aleran_chain.112.click.c:0 "Nonsense. Accidents happen, and I doubt there will be a repetition."
+aleran_chain.200.b.tooltip:0 "[murderer.GetName] resigns as research leader and fades into anonymity among the general public"
 
 aleran_chain.200.name:0 "Unusual Solar Activity"
 aleran_chain.200.desc:0 "A star within our borders has begun to demonstrate some unusual activity. [solar_storm_star.GetName] recently emitted solar flares whose size and spectra do not align with those typically given off by a star in its class. Complicating matters is that this system is home to a primitive civilization, the [solar_storm_primitives.GetName]."
@@ -586,7 +612,13 @@ analysing_shield:0 "Solar Shield Analysis"
 analysing_shield_desc:0 "We are dismantling and studying the solar shield we recently used to protect a planet from a solar storm."
 
 determined_stop_genocide:0 "Moralistic Fervor"
-determined_stop_genocide_desc:0 "We are engaged in a war to stop a vastly more powerful empire from engaging in its spree of genocide."
+determined_stop_genocide_desc:0 "We are engaged in a war to stop another empire from engaging in its spree of genocide."
+
+refused_fight_fe_genocide:0 "Demoralized"
+refused_fight_fe_genocide_desc:0 "Apparently our values are worth nothing when another genocidal empire is more powerful than us."
+
+unhappy_nogenocide_punish:0 "Alienated"
+unhappy_nogenocide_punish_desc:0 "This pop feels like their suffering as a result of the bioweapon was largely ignored, and are unhappy that the culprit has gone entirely unpunished."
 
 
 aleran_colossus.3.name:0 "Population in Withdrawal"
