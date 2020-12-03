@@ -385,24 +385,7 @@ country_event = { #found the scientist, what do we do with them?
 	}
 	
 	option = {
-		name = "aleran_chain.107.click.a" #do nothing, queuing a repeat in the future
-		custom_tooltip = aleran_chain.107.a.tooltip
-		ai_chance = {
-			factor = 150
-		}
-		owner = {
-			hidden_effect = {
-				random = {
-					40 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
-					40 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
-					20 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat
-				}
-			}
-		}		
-	}
-	
-	option = {
-		name = "aleran_chain.107.click.b" #kill them
+		name = "aleran_chain.107.click.a" #kill them
 		ai_chance = {
 			factor = 150
 		}
@@ -411,6 +394,61 @@ country_event = { #found the scientist, what do we do with them?
 				kill_leader = { show_notification = yes }
 			}
 			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.107.click.b" #do nothing, taking a chance
+		custom_tooltip = aleran_chain.107.b.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			hidden_effect = {
+				if = {
+					limit = {
+						any_country = {
+							OR = {
+								is_country_type = fallen_empire
+								is_country_type = awakened_empire
+							}
+							is_xenophobe = yes
+						}
+					}
+					random_list = {
+						10 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+						10 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+						15 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
+						25 = {country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
+						40 = {country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
+					}
+				}
+				else = {
+					random_list = {
+						20 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+						20 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+						20 = {country_event = {id = aleran_chain.110 days = 720 random = 360}} #they are a scapegoat, real culprit is another leader, bias to leader of xenophobe faction if possible
+						#20 = {country_event = {id = aleran_chain.111 days = 720 random = 360}} #they are a scapegoat, real culprit is xenophobe FE
+						40 = {country_event = {id = aleran_chain.112 days = 30 random = 60}} #they were trying something good
+					}
+				}
+			}
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.107.click.c" #do nothing, making a future repeat more likely
+		custom_tooltip = aleran_chain.107.c.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			hidden_effect = {
+				random_list = {
+					50 = {country_event = {id = aleran_chain.108 days = 720 random = 360}} #they do it again
+					50 = {country_event = {id = aleran_chain.109 days = 360 random = 360}} #they do not do it
+				}
+			}
 		}		
 	}
 	
@@ -493,7 +531,7 @@ country_event = { #they stopped
 	title = "aleran_chain.109.name"
 	desc = "aleran_chain.109.desc"
 	picture = GFX_evt_microscopic_life
-	show_sound = event_yellow_alert
+	show_sound = event_default
 	is_triggered_only = yes
 
 	immediate = {
@@ -506,6 +544,70 @@ country_event = { #they stopped
 			factor = 150
 		}
 		owner = {
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+	
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = { has_country_flag = genocide_reset }
+		owner = {
+			remove_country_flag = genocide_reset
+			end_event_chain = genocide_bioweapon_chain
+		}		
+	}
+}
+
+country_event = { #was other leader
+	id = aleran_chain.110
+	title = "aleran_chain.110.name"
+	desc = "aleran_chain.110.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_laboratory_sound
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = { #random weights for https://i.imgur.com/2V5TH4q.png
+			20 = {
+				random_owned_leader = {
+					limit = {
+						OR = {
+							leader_class = admiral
+							leader_class = general
+						}
+					}
+					save_event_target_as = realmurderer
+				}
+			}
+			20 = {
+				random_owned_leader = {
+					save_event_target_as = realmurderer
+				}
+			}
+			20 = {
+				random_pop_faction = {
+					limit = {
+						is_pop_faction_type = supremacist
+					}
+					exile_leader_as = realmurderer
+					#save_event_target_as = realmurderer
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_chain.110.click" #kill them
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			event_target:realmurderer = {
+				kill_leader = { show_notification = yes }
+			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
 	}
