@@ -347,7 +347,8 @@ aleran_chain.112.desc:0 "As it turns out, [murderer.GetName] WAS the source of t
 aleran_chain.112.click.a:0 "They killed countless people with their carelessness. Add one more."
 aleran_chain.112.click.b:0 "Accepted. They may mean well, but they clearly are unfit to work."
 aleran_chain.112.click.c:0 "Nonsense. Accidents happen, and I doubt there will be a repetition."
-aleran_chain.200.b.tooltip:0 "[murderer.GetName] resigns as research leader and fades into anonymity among the general public"
+aleran_chain.112.b.tooltip:0 "[murderer.GetName] resigns as research leader and fades into anonymity among the general public"
+aleran_chain.112.c.tooltip:0 "[murderer.GetName] is forgiven and focuses more intensely on their studies\n\nPops of other species will feel alienated for some time\n"
 
 aleran_chain.200.name:0 "Unusual Solar Activity"
 aleran_chain.200.desc:0 "A star within our borders has begun to demonstrate some unusual activity. [solar_storm_star.GetName] recently emitted solar flares whose size and spectra do not align with those typically given off by a star in its class. Complicating matters is that this system is home to a primitive civilization, the [solar_storm_primitives.GetName]."
@@ -619,6 +620,9 @@ refused_fight_fe_genocide_desc:0 "Apparently our values are worth nothing when a
 
 unhappy_nogenocide_punish:0 "Alienated"
 unhappy_nogenocide_punish_desc:0 "This pop feels like their suffering as a result of the bioweapon was largely ignored, and are unhappy that the culprit has gone entirely unpunished."
+
+society_leader_forgive:0 "Alienated"
+society_leader_forgive_desc:0 "This pop feels like their suffering as a result of the bioweapon was largely ignored, and are unhappy that the culprit has gone entirely unpunished."
 
 
 aleran_colossus.3.name:0 "Population in Withdrawal"

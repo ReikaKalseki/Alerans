@@ -16,6 +16,9 @@ country_event = { #start the genocide
 		NOR = {
 			has_country_flag = genocide_bioweapon
 			has_country_flag = genocide_bioweapon_ended
+			
+			has_country_flag = solar_storm
+			has_country_flag = solar_storm_ended
 		}
 		research_leader = {
 			area = society
@@ -579,26 +582,26 @@ country_event = { #was other leader
 					#is_event_leader = yes
 				}
 			}
-			weights = {
-				base = 2
-				modifier = {
-					add = 1
-					OR = {
-						leader_class = admiral
-						leader_class = general
-					}
-				}
-				modifier = {
-					add = 1
-					leader_of_faction = yes
-				}
-				modifier = {
-					mult = 2
-					NOT = {
-						is_same_species = owner
-					}
-				}
-			}
+			#weights = { #only works in 2.2+
+			#	base = 2
+			#	modifier = {
+			#		add = 1
+			#		OR = {
+			#			leader_class = admiral
+			#			leader_class = general
+			#		}
+			#	}
+			#	modifier = {
+			#		add = 1
+			#		leader_of_faction = yes
+			#	}
+			#	modifier = {
+			#		mult = 2
+			#		NOT = {
+			#			is_same_species = owner
+			#		}
+			#	}
+			#}
 			save_event_target_as = realmurderer
 			log = "Aleran Genocide: Selected random leader"
 		}
@@ -722,7 +725,7 @@ country_event = { #was mistake
 		}
 		owner = {
 			event_target:murderer = {
-				kill_leader = { show_notification = yes }
+				kill_leader = { show_notification = no }
 			}
 			add_influence = -50
 			end_event_chain = genocide_bioweapon_chain
@@ -738,7 +741,7 @@ country_event = { #was mistake
 		owner = {
 			hidden_effect = {
 				event_target:murderer = {
-					kill_leader = { show_notification = yes }
+					kill_leader = { show_notification = no }
 				}
 			}
 			end_event_chain = genocide_bioweapon_chain
@@ -747,6 +750,7 @@ country_event = { #was mistake
 	
 	option = {
 		name = "aleran_chain.112.click.c" #do nothing, modifier
+		custom_tooltip = aleran_chain.112.c.tooltip
 		ai_chance = {
 			factor = 150
 		}
@@ -760,9 +764,25 @@ country_event = { #was mistake
 					days = 900
 				}
 			}
-			add_modifier = {
-				modifier = society_leader_forgive
-				days = 360
+			event_target:murderer = {
+				random_list = {
+					90 = {
+						add_trait = leader_trait_maniacal
+					}
+					10 = {
+						
+					}
+				}
+			}
+			event_target:murderer = {
+				random_list = {
+					50 = {
+						add_trait = leader_trait_substance_abuser
+					}
+					50 = {
+						
+					}
+				}
 			}
 			end_event_chain = genocide_bioweapon_chain
 		}		
@@ -820,6 +840,9 @@ country_event = { #the star does something funny
 		NOR = {
 			has_country_flag = solar_storm
 			has_country_flag = solar_storm_ended
+			
+			has_country_flag = genocide_bioweapon
+			has_country_flag = genocide_bioweapon_ended
 		}
 		any_planet_within_border = { 
 			exists = owner

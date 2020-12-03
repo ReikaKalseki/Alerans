@@ -207,11 +207,11 @@ unhappy_nogenocide_punish = {
 	#icon = "gfx/interface/icons/modifiers/genounpunish.dds"
 }
 
-society_leader_forgive = {
-	country_society_tech_research_speed = 0.05
-	
-	icon = "gfx/interface/icons/modifiers/socioforgive.dds"
-}
+#society_leader_forgive = {
+#	country_society_tech_research_speed = 0.05
+#	
+#	icon = "gfx/interface/icons/modifiers/socioforgive.dds"
+#}
 
 unshielded_storm = {
 	pop_growth_speed = -0.15
