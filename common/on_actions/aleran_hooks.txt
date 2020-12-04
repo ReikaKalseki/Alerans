@@ -92,3 +92,20 @@ on_space_battle_won = {
 		dragon_misc.31
 	}
 }
+
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system_first_time = {
+	events = {
+		dragon_misc.50
+	}
+}
+
+# Scope = Ship
+# From = Planet
+on_survey = {
+	events = {
+		#dragon_misc.51
+	}
+}

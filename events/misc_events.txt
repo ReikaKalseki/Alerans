@@ -251,3 +251,142 @@ country_event = {
 		
 	}
 }
+
+ship_event = { #Entering system - check meiza
+	id = dragon_misc.50
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				from = {has_star_flag = meiza}
+			}
+			ship_event = {id = dragon_misc.52}
+		}
+	}
+}
+
+ship_event = { #Entering Meiza, neutron star dance
+	id = dragon_misc.52
+	is_triggered_only = yes
+	title = "dragon_misc.52.name"
+	desc = "dragon_misc.52.desc"
+	picture = GFX_evt_binary_stars
+	show_sound = event_solar_fusion
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = "dragon_misc.52.click"
+		ai_chance = {
+			factor = 150
+		}
+		solar_system = {
+			every_system_planet = {
+				limit = {
+					is_planet_class = pc_neutron_star
+				}
+				hidden_effect = {
+					orbital_deposit_tile = {
+						clear_deposits = yes
+					}
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_immense_physics_deposit#d_enormous1_physics_deposit
+					add_deposit = d_rich_engineering_deposit#d_enormous1_engineering_deposit
+				}
+			}
+		}
+		owner = {
+		
+		}
+		
+	}
+}
+
+ship_event = { #animated rings
+	id = dragon_misc.51
+	is_triggered_only = yes
+	title = "dragon_misc.51.name"
+	desc = "dragon_misc.51.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_solar_fusion
+	
+	immediate = {
+		#leader = {
+		#	set_event_target = pilot
+		#}
+	}
+	
+	option = {
+		name = "dragon_misc.51.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			enable_special_project = {
+				name = "study_meiza_rings"
+				location = fromfrom
+				owner = this
+			}
+		}
+		
+	}
+	
+	option = {
+		name = "dragon_misc.51.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			add_influence = 40
+		}
+		
+	}
+}
+
+ship_event = { #finished researching animated rings
+	id = dragon_misc.53
+	is_triggered_only = yes
+	title = "dragon_misc.53.name"
+	desc = "dragon_misc.53.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_solar_fusion
+	
+	immediate = { #scopes: this = ship, from = ship, fromfromfrom = planet
+		
+	}
+	
+	option = {
+		name = "dragon_misc.53.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			from = {
+				fleet = {
+					leader = {
+						add_trait = leader_trait_meticulous
+						add_trait = leader_trait_expertise_field_manipulation
+					}
+				}
+			}
+			fromfromfrom = {
+				orbital_deposit_tile = {
+					add_deposit = d_enormous3_physics_deposit
+					add_deposit = d_enormous1_engineering_deposit
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 8
+				min = 60
+				max = 900
+			}
+		}
+		
+	}
+}

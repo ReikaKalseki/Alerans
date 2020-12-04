@@ -32,6 +32,7 @@ tech_aleran_expansion = {
 			factor = 2
 			num_starbases > 120
 		}
+	}
 		
 	modifier = {
 		country_core_sector_system_cap = 100 #was 4

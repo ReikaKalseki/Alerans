@@ -797,6 +797,7 @@ aleris_neighbor_science_outpost = {
 			#}
 		}
 		set_star_flag = aleran_nearby
+		set_star_flag = meiza
 	}
 
 	planet = {
@@ -807,6 +808,10 @@ aleris_neighbor_science_outpost = {
 		orbit_angle = 1
 		size = 20
 		has_ring = no
+		
+		init_effect = {
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
 	}
 
 	planet = {
@@ -817,6 +822,10 @@ aleris_neighbor_science_outpost = {
 		orbit_angle = 48
 		size = 16
 		has_ring = no
+		
+		init_effect = {
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
 	}
 
 	planet = {
@@ -827,6 +836,12 @@ aleris_neighbor_science_outpost = {
 		orbit_angle = 213
 		size = 27
 		has_ring = yes
+		
+		init_effect = {
+			set_planet_flag = meiza_ringed_star
+			add_anomaly = meiza_ringed_star
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
 	}
 	
 	change_orbit = 45

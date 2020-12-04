@@ -1,0 +1,27 @@
+meiza_ringed_star = {				# Anomaly category ID key
+
+	should_ai_use = yes				# Allows AI empires to generate the category. Default: no
+	should_ai_and_humans_use = yes # If yes, both AI and human empires can use this anomaly (overrides should_ai_use)
+
+	#desc = "key"					# Optional, if no desc is given "<category key>_desc" is assumed
+
+	picture = GFX_evt_space_debris	# Picture displayed in category window
+	level = 3						# Anomaly level, 1 to 10
+
+	null_spawn_chance = 1.0			# Default 0. 0.0 - 1.0 (0 to 100%) chance category will NOT spawn
+									# even if it is picked by the anomaly die roll. Used to make
+									# categories for unusual objects (e.g. black holes) actually rare.
+
+	max_once = yes					# default NO, if true will spawn category only once per empire
+	max_once_global = yes			# default NO, if true will spawn category only once per game
+
+	spawn_chance = {				# Chance for this anomaly category to spawn, 
+		base = 0					# relative to other valid categories. Default: base = 0
+	}
+
+	#on_spawn = { <effects> }		# Executes immediately when anomaly category is spawned. 
+									# Scopes are this/root: planet, from: ship
+									# NOTE: on_spawn effects will not run if category is spawned through console
+
+	on_success = dragon_misc.51		# Shorthand for on_success = { 1 = { anomaly_event = <event id> } }; scope is this=ship, from=planet for COUNTRY events, this=ship, from=ship, fromfrom=planet for ship events
+}

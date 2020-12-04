@@ -1,5 +1,7 @@
 ﻿l_english:
 
+
+#MISC#
 Dragon:0 "Dragon"
 Dragon_desc:0 "Dragons"
 Dragon_plural:0 "Dragons"
@@ -15,32 +17,7 @@ Dragon_sound_03:0 "purring"
 Dragon_organ:0 "heart"
 Dragon_mouth:0 "mouth"
 
-trait_dragonbody:0 "Dragon"
-trait_dragonbody_desc:0 "This species is imposing both physically and mentally - they are large, tough, and long-lived, while also being highly intelligent, and can tolerate a wide range of environments. They do, however, have greater than average need for food and resources, a fairly rigid genetic structure."
-trait_pampered:0 "Pampered"
-trait_pampered_desc:0 "This species is naturally fairly demanding; they require comfortable and above-average living conditions and access to resources, and are easily made dissatisfied by those standards failing to be met."
-trait_insensitive:0 "Insensitive"
-trait_insensitive_desc:0 "This species has a mindset that is strongly focused on what they consider right, often failing to account for or accurately predict the perceptions, reactions, and preferences of others. While not actively seeking to cause offence, they are nonetheless very prone to irritating or alienating others in their pursuit of what they consider right, and even when ideological allies may be quite difficult to get along with."
-trait_tooltip_insensitive_effects:0 "Border Friction: §R+40%§!\n§R-10%§! happiness for other species pops in their empire\nUnity Production: §R-5%§!\nReduced §YOpinion§! from other empires"
-
-
 name_list_DRGN1: "Dragon"
-
-auth_dragon:0 "Conditional Autocracy"
-auth_dragon_desc:0 "In this goverment structure, one ruler, together with their advisors, wield full control so long as they remain true to the goverment's founding principles.\n\nLarge or prolonged deviations from what best serves the nation or its ethics result in a swift and sometimes violent removal from power."
-AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE:0 "Holds an election upon ruler death to select a new ruler, but can call interim elections - or resort to force - to remove a ruler that is ineffective or unethical."
-
-DRAGON_RULER_MALE:0 "Consul"
-DRAGON_RULER_FEMALE:0 "Empress"
-
-DRAGON_SUBRULER_MALE:0 "Delegate"
-DRAGON_SUBRULER_FEMALE:0 "Delegate"
-
-gov_dragon:0 "Technocratic Meritocracy"
-gov_dragon_desc:0 "This government chooses a ruler based on their ability to lead the population both effectively and ethically.\n\nOnce elected, a ruler remains in power until they either die or are forced out due to their inability to lead according to those enshrined principles.\n\nScientists are held in especially high regard, both in government and everyday life."
-
-gov_dragon_takeover:0 "Aleran Satellite"
-gov_dragon_takeover_desc:0 "This civilization has been forcibly reformed by the Aleran Commonwealth, and has become a satellite nation. It no longer seeks to subjugate or eliminate its peers, or to unfairly exploit its own citizens, and is instead focused on prosperity and happiness for its own citizens and for its neighbors. It is no longer fully independent, is prevented from expanding or engaging in diplomacy, and generally is subservient to the Commonwealth proper."
 
 EMPIRE_DESIGN_aleran:0 "Aleran Commonwealth"
 EMPIRE_DESIGN_aleran_desc:1 "Some describe them as cold, unsympathetic, and even ruthless; Others call them amicable, caring, and generous. Alerans' reputation is as complex and varied as their history.\n\nThe commonwealth was founded on a very simple principle: Some things, no matter how unappealing, simply must be done to stave off an even worse outcome; blindly clinging to rigid ideals in the face of larger practical concerns is a recipe for at best ineffectuality and at worst catastrophe.\n\nFrom that, the Alerans built their entire society, focused on maximal collective tangible benefit - for oneself and others. They have a deeply ingrained deference to those best able to bring about that result, and a strong appreciation for science and technology to move society forwards.\n\nOther societies that still hold - to an Aleran, at least - impractical or outdated beliefs, such as the right of the masses to direct the course of societal progress, are likely to find this unsettling or even appalling, but to an Aleran mind this is the only realistic way for society to remain productive and enjoyable for all.\n\nWhere more conservative civilizations may refrain from pursuing certain technologies, fearful of the effects, Alerans will embrace them, seeing their potential. Where some societies place heavy emphasis on a leader who the population selects, the Alerans wholly seek one who can serve their princples most effectively. Where some may seek to use slaves to maximize productivity, the Alerans use robotic workers.\n\nAs a result of this mindset, Alerans rarely seek war for their own benefit, but this is of little comfort to those whose destruction they have deemed a necessary price for a larger goal, such as those empires built on fear, conflict, abuse, or trying to resist progress."
@@ -50,10 +27,52 @@ dragon_system_initializer_DESC:0 "A complex system of gas giants and moons, upon
 
 dragon_advisor:0 "Aleran"
 
+START_SCREEN_DRAGONS:0 "In the depths of space lie two things.\n\nThe first is an endless expanse of resources and inhabitable worlds, the necessary foundations of the continued prosperity of our species.\n\nThe second is the probability of other intelligent life, which we can learn from, or, if need be, drag away from primitive mentalities and into the light of reason and true morality.\n\nWhether as simple colonizers or enforcers of morals and rationality, [Root.GetSpeciesNamePlural] will leave an enduring mark on this galaxy, with all intents towards the better."
 
+PLANET_KILLER_STUPOR:0 "Atmospheric Drug Lacing"
+PLANET_KILLER_STUPOR_DESC:0 "Spreads psychoactive compounds throughout a planet's atmosphere to make the population complacent and unproductive. Much more humane than neutron radition or planet cracking, and reversible."
+PLANET_KILLER_STARRAY:0 "Solar Event Triggering"
+PLANET_KILLER_STARRAY_DESC:0 "Sends vast quantities of energy into the central star of a system, destabilizing it. Most of the time, this causes a strong solar storm, destroying all unshielded electronics. More...violent reactions are possible in some cases."
+PLANET_KILLER_STUPOR_ACTION:0 "Spread Drugs"
+PLANET_KILLER_STARRAY_ACTION:0 "Trigger Solar Event"
+FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STUPOR:0 "Preparing to drug $PLANET|Y$"
+FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STARRAY:0 "Preparing to destabilize $PLANET|Y$"
+MESSAGE_DESC_FOR_PLANET_KILLER_STUPOR:0 "was laced with drugs by"
+MESSAGE_DESC_FOR_PLANET_KILLER_STARRAY:0 "was destabilized by"
+
+war_goal_wg_dragon:0 "Enlighten"
+war_goal_wg_dragon_desc:0 "War is waged to put an end to regimes built on ideologies that harm their citizens or the galactic community at large, or to put a definitive end to evils done against citizens, a civilization, a species, or reason itself."
+wg_enlighten_accept:0 "Policy changes are imposed in line with Aleran ideology\n\nUnreformable pops are killed\n\n250 influence gained"
+
+casus_belli_cb_dragon:0 "Enlightenment By Force"
+casus_belli_cb_dragon_desc:0 "???"
+
+personality_dragons:0 "Moral and Meritocratic Enforcers"
+personality_dragons_desc:0 "This society places a very high importance on the rights and prosperity of all sentient beings, achieved by way of rapid technological progress and unwavering adherence to these goals. They will be benign and even friendly to empires that hold similar values, and very aggressive towards those that do not, particularly those they feel present a danger to their citizens or their neighbors."
+
+genocide_bioweapon_chain_title:0 "Mystery Virus"
+genocide_bioweapon_chain_desc:0 "A virus is ravaging our citizens. We need to stop this as soon as possible."
+
+solar_storm_chain_title:0 "Solar Storm"
+solar_storm_chain_desc:0 "A star in our borders is behaving erratically, threatening a primitive civilization there."
+
+meiza_ringed_star:0 "Waving Rings"
+meiza_ringed_star_desc:0 "The rings around [From.GetName] exhibit very unusual properties."
+
+
+#TRAITS#
+trait_dragonbody:0 "Dragon"
+trait_dragonbody_desc:0 "This species is imposing both physically and mentally - they are large, tough, and long-lived, while also being highly intelligent, and can tolerate a wide range of environments. They do, however, have greater than average need for food and resources, a fairly rigid genetic structure."
+trait_pampered:0 "Pampered"
+trait_pampered_desc:0 "This species is naturally fairly demanding; they require comfortable and above-average living conditions and access to resources, and are easily made dissatisfied by those standards failing to be met."
+trait_insensitive:0 "Insensitive"
+trait_insensitive_desc:0 "This species has a mindset that is strongly focused on what they consider right, often failing to account for or accurately predict the perceptions, reactions, and preferences of others. While not actively seeking to cause offence, they are nonetheless very prone to irritating or alienating others in their pursuit of what they consider right, and even when ideological allies may be quite difficult to get along with."
+trait_tooltip_insensitive_effects:0 "Border Friction: §R+40%§!\n§R-10%§! happiness for other species pops in their empire\nUnity Production: §R-5%§!\nReduced §YOpinion§! from other empires"
+
+
+#FACTION#
 pft_aleran_faction:0 "Supervisory Faction"
 pft_aleran_faction_desc:1 "This faction is comprised of citizens that wish for the government to live up to its founding principles of scientific progress and rights for all species, and strongly dislike a government that acts incompetently, with self-interest, or immorally.\n\n§LMaterialist, Xenophile, Authoritarian Ethos§!"
-
 
 aleran_faction_authority:0 "Effective Government"
 aleran_faction_authority_unfilled:0 "Ineffective Government"
@@ -200,6 +219,7 @@ aleran_faction_solarstorm_unfilled:0 "Solar Storm Ignored"
 aleran_faction_solarstorm_desc:0 "The [Root.GetName] will expect all attempts to be made to prevent a solar storm from obliterating a sapient civilization."
 
 
+#TILE BLOCKERS#
 tb_animal_yard:0 "£blocker  Abandoned Animal Farm"
 tb_animal_yard_desc:0 "Before the advent of cultured food, it was sourced by growing large, stupid animals which were then harvested. Long since made obsolete, the animals remain, as useless as ever."
 
@@ -207,6 +227,7 @@ tb_meteor_crater:0 "£blocker  Meteorite Crater"
 tb_meteor_crater_desc:0 "Eons ago, a large body entered from space and slammed into this location, leaving a massive crater."
 
 
+#BUILDING#
 building_basic_meat_lab:0 "Basic Meat Farm"
 building_basic_meat_lab_desc:1 "Meat farms - more accurately lab facilities - grow meatlike tissue on an industrial scale to feed carnivorous Pops."
 building_meat_lab_1:0 "Meat Farm I"
@@ -220,7 +241,6 @@ building_meat_lab_4_desc:1 "$building_basic_meat_lab_desc$"
 building_meat_lab_5:0 "Meat Farm V"
 building_meat_lab_5_desc:1 "$building_basic_meat_lab_desc$"
 
-
 building_dragon_library:0 "Library of the Commonwealth"
 building_dragon_library_desc:0 "A branch of the libraries of the Aleran commonwealth. Contains many volumes on Aleran science, technology, morality, and the governing ethics of the Commonwealth itself. These resources help aid scientists and remind citizens why society is run the way it is. This also means it requires far less work to administrate, allowing it to operate within the Core Sector for free."
 
@@ -231,6 +251,7 @@ building_art_display:0 "Art Display"
 building_art_display_desc:1 "A sculpture commissioned from a respected Aleran artist."
 
 
+#GOVERNMENT#
 civic_dragon_gov:0 "Ethical Dominance"
 civic_dragon_gov_desc:0 "Those with the power to spread reason and morality have the obligation to do so, whether that be simple expansion to the stars or the elimination of ideologies which do nothing but cause stagnation or suffering. However, those who resist progress will no doubt prove an enduring irritant, and conflict must never be sought for its own sake. Should these goals or survival itself be threatened, any feasible efforts must be made to address the threat."
 
@@ -253,7 +274,24 @@ civic_dragon_listened_desc:0 "This civilization has been persuaded to align more
 SUBJECT_dragon_control:0 "Aleran Satellite"
 SUBJECT_DESC_dragon_control:0 "Satellite empires are ones that have been overthrown by the Aleran Commonwealth. They take on the commonwealth's style of governance and ethics, are forbidden from expanding their borders, and cannot enter diplomacy on their own. They can be integrated directly, at significant cost."
 
+auth_dragon:0 "Conditional Autocracy"
+auth_dragon_desc:0 "In this goverment structure, one ruler, together with their advisors, wield full control so long as they remain true to the goverment's founding principles.\n\nLarge or prolonged deviations from what best serves the nation or its ethics result in a swift and sometimes violent removal from power."
+AUTHORITY_ELECTION_ON_RULER_DEATH_OR_INCOMPETENCE:0 "Holds an election upon ruler death to select a new ruler, but can call interim elections - or resort to force - to remove a ruler that is ineffective or unethical."
 
+DRAGON_RULER_MALE:0 "Consul"
+DRAGON_RULER_FEMALE:0 "Empress"
+
+DRAGON_SUBRULER_MALE:0 "Delegate"
+DRAGON_SUBRULER_FEMALE:0 "Delegate"
+
+gov_dragon:0 "Technocratic Meritocracy"
+gov_dragon_desc:0 "This government chooses a ruler based on their ability to lead the population both effectively and ethically.\n\nOnce elected, a ruler remains in power until they either die or are forced out due to their inability to lead according to those enshrined principles.\n\nScientists are held in especially high regard, both in government and everyday life."
+
+gov_dragon_takeover:0 "Aleran Satellite"
+gov_dragon_takeover_desc:0 "This civilization has been forcibly reformed by the Aleran Commonwealth, and has become a satellite nation. It no longer seeks to subjugate or eliminate its peers, or to unfairly exploit its own citizens, and is instead focused on prosperity and happiness for its own citizens and for its neighbors. It is no longer fully independent, is prevented from expanding or engaging in diplomacy, and generally is subservient to the Commonwealth proper."
+
+
+#TECH#
 tech_aleran_expansion:0 "Commonwealth Administration and Expansion"
 tech_aleran_expansion_desc:0 "Maintaining the wide borders of our nation, and laying the foundation for further growth."
 
@@ -267,13 +305,7 @@ tech_pk_stupor:0 "Atmospheric Drug Lacing"
 tech_pk_stupor_desc:0 "Spreading stupor-inducing drugs throughout a planetary atmosphere to humanely pacify and economically nullify the colony."
 
 
-genocide_bioweapon_chain_title:0 "Mystery Virus"
-genocide_bioweapon_chain_desc:0 "A virus is ravaging our citizens. We need to stop this as soon as possible."
-
-solar_storm_chain_title:0 "Solar Storm"
-solar_storm_chain_desc:0 "A star in our borders is behaving erratically, threatening a primitive civilization there."
-
-
+#ONGOING EVENTS#
 aleran_ongoing.1.name:0 "Unfettered Expansion"
 aleran_ongoing.1.desc:0 "The Aleran Commonwealth has been spreading among the stars, and has been made the better for it. This has made the process of acquiring new systems somewhat simpler to conduct."
 aleran_ongoing.1.click:0 "Excellent."
@@ -286,6 +318,8 @@ aleran_ongoing.3.name:0 "Galaxy-Spanning Empire"
 aleran_ongoing.3.desc:0 "The Commonwealth now spans the majority of the galaxy, and we must update our drive technology so as to be able to rapidly traverse it, and our communications technology to administrate it."
 aleran_ongoing.3.click:0 "Excellent."
 
+
+#CHAIN EVENTS#
 aleran_chain.100.name:0 "Virulent New Pathogen"
 aleran_chain.100.desc:0 "A highly contagious and highly lethal virus has been detected in our population. It spreads through multiple transmission vectors and has thus far achieved a mortality rate near a hundred percent, with the symptoms resisting all medical treatment so far attempted."
 aleran_chain.100.click.a:0 "We must investigate this to the best of our abilities."
@@ -348,7 +382,7 @@ aleran_chain.112.click.a:0 "They killed countless people with their carelessness
 aleran_chain.112.click.b:0 "Accepted. They may mean well, but they clearly are unfit to work."
 aleran_chain.112.click.c:0 "Nonsense. Accidents happen, and I doubt there will be a repetition."
 aleran_chain.112.b.tooltip:0 "[murderer.GetName] resigns as research leader and fades into anonymity among the general public"
-aleran_chain.112.c.tooltip:0 "[murderer.GetName] is forgiven and focuses more intensely on their studies\n\nPops of other species will feel alienated for some time\n"
+aleran_chain.112.c.tooltip:0 "[murderer.GetName] is forgiven and focuses more intensely on their studies\n\nPops of other species will feel alienated for some time\n\n"
 
 aleran_chain.200.name:0 "Unusual Solar Activity"
 aleran_chain.200.desc:0 "A star within our borders has begun to demonstrate some unusual activity. [solar_storm_star.GetName] recently emitted solar flares whose size and spectra do not align with those typically given off by a star in its class. Complicating matters is that this system is home to a primitive civilization, the [solar_storm_primitives.GetName]."
@@ -393,23 +427,39 @@ aleran_chain.212.desc:0 "You impudent little misbegotten reprobates! Who are you
 aleran_chain.212.click.a:0 "If you want the galaxy pure, feel free to remove yourself from it."
 aleran_chain.212.click.b:0 "You want it pure? OK, let's start by removing you sadistic idiots."
 
+
+#MISC EVENTS#
 dragon_misc.32.name:0 "Dangerous Leviathan Destroyed"
-dragon_misc.32.desc:0 "We have successfully destroyed the [From.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
+dragon_misc.32.desc:0 "We have successfully destroyed the [FromFromFrom.Owner.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
 dragon_misc.32.click:0 "No more shall it harass us or our citizens."
 
 dragon_misc.33.name:0 "Minor Leviathan Destroyed"
-dragon_misc.33.desc:0 "We have successfully destroyed the [From.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
+dragon_misc.33.desc:0 "We have successfully destroyed the [FromFromFrom.Owner.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
 dragon_misc.33.click:0 "Its system is now ours."
 
 dragon_misc.34.name:0 "Leviathan Destroyed"
-dragon_misc.34.desc:0 "We have successfully destroyed the [From.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
+dragon_misc.34.desc:0 "We have successfully destroyed the [FromFromFrom.Owner.GetName] in the [FromFromFrom.Solar_System.GetName] system. Aside from the obvious benefit of eliminating the threat, we can count on this increasing our standing."
 dragon_misc.34.click:0 "We are no longer forced to avoid it."
+
+dragon_misc.52.name:0 "Neutron Star Dance"
+dragon_misc.52.desc:0 "On entering the [FromFrom.GetName] system, [This.Leader.GetName] was left speechless by what they found. The center of this system is dominated by two neutron stars, locked in a gravitational dance at such close distances that gas streams between them.\n\nWhat makes this truly spectacular, however, is the third star, a small red dwarf. Not only does this star swing around and between the two neutron stars, executing a kind of handover, the star is surrounded by a large ring system, something hitherto completely unwitnessed."
+dragon_misc.52.click:0 "Beautiful."
+
+dragon_misc.51.name:0 "Waving Rings"
+dragon_misc.51.desc:0 "The rings around the red dwarf [FromFrom.GetName] were stunning and unique enough, but upon closer inspection, they yielded another massive surprise.\n\nThe rings continuously undergo a kind of cyclical rolling wave, where each orbiting body slowly spirals outwards before being swung back in to the inner rim of the ring system. The net result of this is that the rings appear to slowly and endlessly slide outwards, with the darker and lighter bands looking like ripples emanating from a point.\n\nThis is probably a result of the complex gravitational environment around the two neutron star primaries, but more research would be needed to confirm this. We may learn something else in the process."
+dragon_misc.51.click.a:0 "We may indeed. Study it as much as you can."
+dragon_misc.51.click.b:0 "Strange but useless. We have better things to do."
+
+dragon_misc.53.name:0 "Gravitational Waves"
+dragon_misc.53.desc:0 "The behavior exhibited by [FromFromFrom.GetName]'s rings are indeed a result of the gravitational environment of the system. In fact, the two neutron stars are spiralling inwards towards each other, and will probably merge in the next few million years.\n\nIn the meantime, their motion generates gravitational waves which spread across the system. As those waves wash over [This.GetName], they perturb the orbits of the tiny bodies that form the rings, which, when combined with the slight changes in direction and strength that star experiences from the gravity directly, result in the wavelike motion we observed."
+dragon_misc.53.click:0 "Fascinating."
 
 aleran_ai.500.name:0 "Destructive Society Enlightened"
 aleran_ai.500.desc:0 "We have completed our forced enlightenment process. The [event_target:aleran_youre_next.GetName] have reacted with some concern, as they know that we can and probably should do the same to them."
 aleran_ai.500.click:0 "They are right to be concerned."
 
 
+#DIPLO EVENTS#
 aleran_diplomacy.1.name:0 "Potential Ally Civilization"
 aleran_diplomacy.1.desc:0 "The Aleran Commonwealth is founded on very similar ideals as those of our own society, and they appear to consider us both enlightened and ethical. As a result, we have every reason to expect that our diplomatic relations with them will always be cordial, if not outright allied."
 aleran_diplomacy.1.click:0 "We will extend the same to them."
@@ -428,7 +478,6 @@ aleran_diplomacy.3.name:0 "Aleran Contact Established"
 aleran_diplomacy.3.desc:0 "The Aleran Commonwealth is founded on very different ideology than we are accustomed to, but fortunately not in a way that makes them consider us a problem to be dealt with, merely a...neutral oddity."
 aleran_diplomacy.3.click.a:0 "They are not a problem for us either."
 aleran_diplomacy.3.click.b:0 "We shall prove them wrong in time."
-
 
 aleran_diplomacy.101.name:0 "Communication from §H[From.GetName]§!"
 aleran_diplomacy.101.desc:0 "Hello from the [From.GetName]; our sociological and moral experts have finished our examination of the [Root.GetName]. Several serious lapses have been identified, and this message is to request you address them as soon as is feasible. Assuming you do, this matter need not escalate further."
@@ -466,7 +515,6 @@ aleran_diplomacy.202.name:0 "Declaration of War"
 aleran_diplomacy.202.desc:0 "It is not often that I can honestly say that an entire society is beyond redemption, and that there is absolutely zero hope for improvement. Clearly, [evil.GetName] actually is. As a result, the only defensible solution is its complete destruction, a goal which the [From.GetName] shall now pursue with its full attention. When this is over, the name '[evil.GetName]' will be nothing more than an unpleasant memory, with such an associated stigma that its very idea will be regarded with nothing but horror or disgust."
 aleran_diplomacy.202.click:0 "We eagerly await YOUR destruction."
 
-
 aleran_diplomacy.1001.name:0 "Declaration of War"
 aleran_diplomacy.1002.name:0 "Declaration of War"
 aleran_diplomacy.1003.name:0 "Declaration of War"
@@ -494,12 +542,10 @@ aleran_diplomacy.501.name:0 "Declaration of War"
 aleran_diplomacy.501.desc:0 "You expressly swore that you would refrain from committing atrocities against those you wage war with. Should we have known at the time that you had as much integrity as you appear to have intellect, we could have skipped this whole charade and going straight to the us-destroying-you part. Well, at least we are there now."
 aleran_diplomacy.501.click:0 "Your words mean nothing to me."
 
-
 aleran_diplomacy.801.name:0 "Warning from the [From.GetName]"
 aleran_diplomacy.801.desc:0 "I am watching your conduct in your little conflict with the [defender.GetName] closely. Merely taking territory for resources, or seeking to establish some sort of political appearances, in its own right, is undesirable but not intolerable. However, let me be clear on one thing: Should you commit any sort of gross violation on the inhabitants of the lands you claim, whatever suffering you inflict on them will be visited upon you tenfold. I swear to that, and, should you be skeptical, need I remind you that I have the fleets and power of the [From.GetName] to make it happen."
 aleran_diplomacy.801.click.a:0 "You have my word that no such atrocities will take place."
 aleran_diplomacy.801.click.b:0 "This war is our business. Why should I listen to you?"
-
 
 aleran_diplomacy.1211.name:0 "Offer from the [From.GetName]"
 aleran_diplomacy.1211.desc:0 "You are losing this war, and for what? Retaining the ability to oppress and mistreat your subjects? Being able to conquer independent nations as if you have some sort of inherent superiority? You already know how this ends, if you stay on this path.\n\nHowever, I will make you an offer: Abandon these practices, and recognize all sentients as equals, and not only will we cease our current military campaign against you, but will also not take more dramatic measures against you to prevent future problems from you. Actions that WILL be taken should you refuse this offer and choose to continue to approach complete defeat."
@@ -508,7 +554,6 @@ aleran_diplomacy.1211.click.b:0 "We have no interest in that; we shall yet win t
 aleran_diplomacy.1211.a.tooltip:0 "This will not fundamentally change our style of government, but it will change many of our policies, particularly those which govern species rights and acts of war.\n\nThey will withdraw their armies in response."
 aleran_diplomacy.1211.b.tooltip:0 "The war will continue and we will experience far more severe penalties if we lose."
 
-
 aleran_diplomacy.1221.name:0 "Offer from the [From.GetName]"
 aleran_diplomacy.1221.desc:0 "Believe it or not, a much larger threat to galactic peace and stability than you has arisen, and I wish to direct our focus to them. Are you interested in a ceasefire so that this problem does not go unaddressed?"
 aleran_diplomacy.1221.click.a:0 "This is a welcome escape; We accept your offer."
@@ -516,16 +561,13 @@ aleran_diplomacy.1221.click.b:0 "We have no interest in that; we shall yet win t
 aleran_diplomacy.1221.a.tooltip:0 "They will redirect their military forces to fight the other threats, instead of fighting us, but we will not technically yet be at peace."
 aleran_diplomacy.1221.b.tooltip:0 "The war will continue as normal."
 
-
 aleran_diplomacy.1231.name:0 "Message from the [From.GetName]"
 aleran_diplomacy.1231.desc:0 "Believe it or not, a much larger threat to galactic peace and stability than you has arisen. Therefore, you can take some assurance in that we will not engage in military action against you while this threat persists, unless you make yourself worse than them."
 aleran_diplomacy.1231.click:0 "Understood."
 
-
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
 aleran_megastructures.1.click:0 "Excellent."
-
 
 aleran_megastructures.101.name:0 "Gateway Update"
 aleran_megastructures.101.desc:0 "The recently opened gateway in the [FromFromFrom.GetName] system has just released a massive flare of energy, nearly overwhelming all the control systems and destroying the structure, and all the other nearby fleets. Fortunately, it was able to be contained, and a small amount was able to be harnessed. Repairs, however, will be costly."
@@ -547,7 +589,6 @@ aleran_megastructures.105.name:0 "Gateway Update"
 aleran_megastructures.105.desc:0 "The gateway in [FromFromFrom.GetName] emitted barely a burp as it was activated. A couple final tweaks are necessary, but we can probably consider these surges a thing of the past."
 aleran_megastructures.105.click:0 "Finally."
 
-
 aleran_expansion:0 "Unfettered Expansion"
 aleran_expansion_desc:0 "We have the ability and the motivation to reach for all the stars we can find."
 
@@ -558,6 +599,7 @@ aleran_expansion_2b:0 "Expansive Empire"
 aleran_expansion_2b_desc:0 "In order to adequately serve the Commonwealth, we need to be able to rapidly traverse it."
 
 
+#PROJECTS#
 stupor_drugged:0 "Drugged Stupor"
 stupor_drugged_desc:0 "The atmosphere of this planet has been laced with psychoactive compounds. The population is happy, but lethargic and utterly useless, not to mention suggestible."
 
@@ -582,6 +624,11 @@ investigate_solar_storm_DESC:0 "A star in our space has flared in an unusual way
 build_solar_shield:0 "Solar Shield Construction"
 build_solar_shield_DESC:0 "We can protect the life-bearing planet in the system with an enormous solar shield, preventing the upcoming cataclysm from wiping out the fledgling civilization."
 
+study_meiza_rings:0 "Waving Ring Study"
+study_meiza_rings_DESC:0 "We need to monitor, examine, and model the rings to learn what we can from their unusual behavior."
+
+
+#MODIFIERS#
 nova_irradiated:0 "Nova Irradiated"
 nova_irradiated_desc:0 "A nova event in a nearby system has caused a serious environmental damage on this planet. Surface radiation levels are well above normal, which affects the health of both populations and crops."
 
@@ -625,6 +672,7 @@ society_leader_forgive:0 "Alienated"
 society_leader_forgive_desc:0 "This pop feels like their suffering as a result of the bioweapon was largely ignored, and are unhappy that the culprit has gone entirely unpunished."
 
 
+#COLOSSUS EVENTS#
 aleran_colossus.3.name:0 "Population in Withdrawal"
 aleran_colossus.3.desc:0 "The removal of the psychoactive drugs from the atmosphere of [Root.GetName] has had an unintended side effect. The entire population of the planet is now suffering from withdrawal symptoms, and is very unhappy as a result. Some factions there even want to return to their previous conditions. Time will ease these problems, but it will take years."
 aleran_colossus.3.wait:0 "Siiiiiiiiiiiiiiiiigh"
@@ -643,30 +691,7 @@ aleran_colossus.206.desc:0 "The attempt to destabilize the primary of [Root.GetS
 aleran_colossus.206.click:0 "#$@&!!"
 
 
-PLANET_KILLER_STUPOR:0 "Atmospheric Drug Lacing"
-PLANET_KILLER_STUPOR_DESC:0 "Spreads psychoactive compounds throughout a planet's atmosphere to make the population complacent and unproductive. Much more humane than neutron radition or planet cracking, and reversible."
-PLANET_KILLER_STARRAY:0 "Solar Event Triggering"
-PLANET_KILLER_STARRAY_DESC:0 "Sends vast quantities of energy into the central star of a system, destabilizing it. Most of the time, this causes a strong solar storm, destroying all unshielded electronics. More...violent reactions are possible in some cases."
-PLANET_KILLER_STUPOR_ACTION:0 "Spread Drugs"
-PLANET_KILLER_STARRAY_ACTION:0 "Trigger Solar Event"
-FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STUPOR:0 "Preparing to drug $PLANET|Y$"
-FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STARRAY:0 "Preparing to destabilize $PLANET|Y$"
-MESSAGE_DESC_FOR_PLANET_KILLER_STUPOR:0 "was laced with drugs by"
-MESSAGE_DESC_FOR_PLANET_KILLER_STARRAY:0 "was destabilized by"
-
-
-war_goal_wg_dragon:0 "Enlighten"
-war_goal_wg_dragon_desc:0 "War is waged to put an end to regimes built on ideologies that harm their citizens or the galactic community at large, or to put a definitive end to evils done against citizens, a civilization, a species, or reason itself."
-wg_enlighten_accept:0 "Policy changes are imposed in line with Aleran ideology\n\nUnreformable pops are killed\n\n250 influence gained"
-
-casus_belli_cb_dragon:0 "Enlightenment By Force"
-casus_belli_cb_dragon_desc:0 "???"
-
-
-personality_dragons:0 "Moral and Meritocratic Enforcers"
-personality_dragons_desc:0 "This society places a very high importance on the rights and prosperity of all sentient beings, achieved by way of rapid technological progress and unwavering adherence to these goals. They will be benign and even friendly to empires that hold similar values, and very aggressive towards those that do not, particularly those they feel present a danger to their citizens or their neighbors."
-
-
+#OPINIONS#
 opinion_dragon_xenophilefe:0 "Shared Ideology"
 opinion_insensitive:0 "Insensitive Assholes"
 opinion_dragon_cold:0 "Cynical Misanthropes"
@@ -714,6 +739,7 @@ opinion_dragon_warning_rejected_2:0 "Ideological Requests Refused"
 opinion_dragon_warning_rejected_3:0 "Ideological Requests Refused"
 
 
+#DIPLOMACY#
 DRGN_insult_evil_01:0 "??"
 DRGN_insult_evil_plural_01:0 "??s"
 DRGN_insult_evil_02:0 "??"
@@ -740,8 +766,6 @@ DRGN_insult_egalitarian_04:0 "??"
 DRGN_insult_egalitarian_plural_04:0 "??s"
 DRGN_compliment_01:0 "??"
 DRGN_compliment_plural_01:0 "??s"
-
-START_SCREEN_DRAGONS:0 "In the depths of space lie two things.\n\nThe first is an endless expanse of resources and inhabitable worlds, the necessary foundations of the continued prosperity of our species.\n\nThe second is the probability of other intelligent life, which we can learn from, or, if need be, drag away from primitive mentalities and into the light of reason and true morality.\n\nWhether as simple colonizers or enforcers of morals and rationality, [Root.GetSpeciesNamePlural] will leave an enduring mark on this galaxy, with all intents towards the better."
 
 DRGN_GREETING_CONTACT:0 "Hello. I am [contact_empire.GetRulerTitle] [contact_empire.GetRulerName] and represent the [contact_empire.GetName]. We are founded on the principles of achieving the highest possible quality of life for all sentient beings, by way of the pursuit of rapid scientific progress and adherence to a strict moral code of the rights of all sapient species. I hope that you share similar values, so that our two societies can not only coexist but actively cooperate; we do not derive pleasure from imposing our values by force, but will do so if we deem it necessary."
 DRGN_GREETING_CONTACT_LIKE:0 "Hello. I am [contact_empire.GetRulerTitle] [contact_empire.GetRulerName] and represent the [contact_empire.GetName]. We are founded on the principles of achieving the highest possible quality of life for all sentient beings, by way of the pursuit of rapid scientific progress and adherence to a strict moral code of the rights of all sapient species. We can see that you share similar values, and as such cooperation and coexistence is a very likely outcome for our two societies."

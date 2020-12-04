@@ -13,6 +13,30 @@ special_project = {
 		planet_event = { id = aleran_colossus.1 }
 	}	
 }
+
+special_project = {
+	key = "study_meiza_rings"
+	days_to_research = 180
+	cost = 0
+	#tech_department = physics_technology
+	location = yes
+	picture = GFX_evt_space_debris
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 2
+	}
+	
+	on_success = {
+		log = "Finished meiza ring study"
+		ship_event = { id = dragon_misc.53 }
+	}	
+}
+
 special_project = {
 	key = "identify_genocide_bioweapon"
 	event_chain = "genocide_bioweapon_chain"
@@ -31,6 +55,7 @@ special_project = {
 		log = "Aleran Genocide: Triggered ID from project"
 	}	
 }
+
 special_project = {
 	key = "stop_genocide_bioweapon"
 	event_chain = "genocide_bioweapon_chain"
@@ -49,6 +74,7 @@ special_project = {
 		log = "Aleran Genocide: Triggered neutralization from project"
 	}	
 }
+
 special_project = {
 	key = "stop_genocide_bioweapon_late"
 	event_chain = "genocide_bioweapon_chain"
@@ -67,6 +93,7 @@ special_project = {
 		log = "Aleran Genocide: Triggered neutralization from late project"
 	}	
 }
+
 special_project = {
 	key = "investigate_solar_storm"
 	event_chain = "solar_storm_chain"
@@ -84,6 +111,7 @@ special_project = {
 		event_target:alerans = {country_event = {id = aleran_chain.202 }}
 	}	
 }
+
 special_project = {
 	key = "build_solar_shield"
 	event_chain = "solar_storm_chain"

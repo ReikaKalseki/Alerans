@@ -755,37 +755,39 @@ country_event = { #was mistake
 			factor = 150
 		}
 		owner = {
-			every_owned_pop = {
-				limit = {
-					NOT = {is_same_species = owner}
-				}
-				add_modifier = {
-					modifier = unhappy_nogenocide_punish
-					days = 900
+			hidden_effect = {
+				every_owned_pop = {
+					limit = {
+						NOT = {is_same_species = owner}
+					}
+					add_modifier = {
+						modifier = unhappy_nogenocide_punish
+						days = 900
+					}
 				}
 			}
-			event_target:murderer = {
-				random_list = {
-					90 = {
+			random_list = {
+				90 = {
+					event_target:murderer = {
 						add_trait = leader_trait_maniacal
 					}
-					10 = {
-						
-					}
+				}
+				10 = {
+					
 				}
 			}
-			event_target:murderer = {
-				random_list = {
-					50 = {
+			random_list = {
+				50 = {
+					event_target:murderer = {
 						add_trait = leader_trait_substance_abuser
 					}
-					50 = {
-						
-					}
+				}
+				50 = {
+					
 				}
 			}
 			end_event_chain = genocide_bioweapon_chain
-		}		
+		}
 	}
 	
 	option = {
