@@ -42,7 +42,7 @@ MESSAGE_DESC_FOR_PLANET_KILLER_STARRAY:0 "was destabilized by"
 
 war_goal_wg_dragon:0 "Enlighten"
 war_goal_wg_dragon_desc:0 "War is waged to put an end to regimes built on ideologies that harm their citizens or the galactic community at large, or to put a definitive end to evils done against citizens, a civilization, a species, or reason itself."
-wg_enlighten_accept:0 "Policy changes are imposed in line with Aleran ideology\n\nUnreformable pops are killed\n\n250 influence gained"
+wg_enlighten_accept:0 "Policy changes are imposed in line with Aleran ideology\n\nUnreformable pops are killed\n\nUnethical buildings are demolished\n\n250 influence gained\n\n"
 
 casus_belli_cb_dragon:0 "Enlightenment By Force"
 casus_belli_cb_dragon_desc:0 "???"
@@ -242,7 +242,7 @@ building_meat_lab_5:0 "Meat Farm V"
 building_meat_lab_5_desc:1 "$building_basic_meat_lab_desc$"
 
 building_dragon_library:0 "Library of the Commonwealth"
-building_dragon_library_desc:0 "A branch of the libraries of the Aleran commonwealth. Contains many volumes on Aleran science, technology, morality, and the governing ethics of the Commonwealth itself. These resources help aid scientists and remind citizens why society is run the way it is. This also means it requires far less work to administrate, allowing it to operate within the Core Sector for free."
+building_dragon_library_desc:0 "A branch of the libraries of the Aleran commonwealth. Contains many volumes on Aleran science, technology, morality, and the governing ethics of the Commonwealth itself. These resources help aid scientists and remind citizens why society is run the way it is. This also means the colony requires far less work to administrate, allowing it to operate within the Core Sector for free."
 
 building_dragon_central_library:0 "Central Library of the Commonwealth"
 building_dragon_central_library_desc:0 "The central hub of the Aleran Commonwealth's library systems. Contains massive amounts of knowledge of Aleran science and society, and the founding documents of the Commonwealth itself, available to any researcher seeking insight or any citizen who wishes to remind themselves of society's guiding principles."
