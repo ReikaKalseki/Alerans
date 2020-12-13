@@ -667,7 +667,7 @@ country_event = { #was FE
 				attacker_war_goal = wg_dragon
 			}
 			add_modifier = {
-				modifier = determined_stop_genocide
+				modifier = moralistic_fervor
 				days = 3600
 			}
 			end_event_chain = genocide_bioweapon_chain
@@ -1525,7 +1525,7 @@ country_event = { #the FE culprit gets pissed
 			attacker_war_goal = wg_dragon
 		}
 		add_modifier = {
-			modifier = determined_stop_genocide
+			modifier = moralistic_fervor
 			days = 3600
 		}
 		end_event_chain = solar_storm_chain	

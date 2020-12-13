@@ -59,6 +59,8 @@ solar_storm_chain_desc:0 "A star in our borders is behaving erratically, threate
 meiza_ringed_star:0 "Waving Rings"
 meiza_ringed_star_desc:0 "The rings around [From.GetName] exhibit very unusual properties."
 
+contact_empire_too_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore."
+
 
 #TRAITS#
 trait_dragonbody:0 "Dragon"
@@ -507,9 +509,9 @@ aleran_diplomacy.200.name:0 "Warning from the [From.GetName]"
 aleran_diplomacy.200.desc:0 "The very foundations of your society are antithetical to moral or sensible conduct. While I do not exactly have great hopes for a reformation on your part, I will nonetheless offer this one - and only - warning: If you continue to present a threat to all other life in the galaxy, we will see to it that you lose the ability to do so."
 aleran_diplomacy.200.click:0 "The only offer I seek is one to destroy you."
 
-aleran_diplomacy.2-1.name:0 "Declaration of War"
-aleran_diplomacy.2-1.desc:0 "It is not often that I can honestly say that an entire society is beyond redemption, and that there is absolutely zero hope for improvement. Clearly, the [evil.GetName] actually is. As a result, the only defensible solution is its complete destruction, a goal which the [From.GetName] shall now pursue with its full attention. Some of your citizens may survive, should they not be as far gone as you are, but when this is over the [evil.GetName] will be nothing more than an unpleasant memory, with such an associated stigma that its very idea will be regarded with nothing but horror or disgust."
-aleran_diplomacy.2-1.click:0 "We eagerly await YOUR destruction."
+aleran_diplomacy.201.name:0 "Declaration of War"
+aleran_diplomacy.201.desc:0 "It is not often that I can honestly say that an entire society is beyond redemption, and that there is absolutely zero hope for improvement. Clearly, the [evil.GetName] actually is. As a result, the only defensible solution is its complete destruction, a goal which the [From.GetName] shall now pursue with its full attention. Some of your citizens may survive, should they not be as far gone as you are, but when this is over the [evil.GetName] will be nothing more than an unpleasant memory, with such an associated stigma that its very idea will be regarded with nothing but horror or disgust."
+aleran_diplomacy.201.click:0 "We eagerly await YOUR destruction."
 
 aleran_diplomacy.202.name:0 "Declaration of War"
 aleran_diplomacy.202.desc:0 "It is not often that I can honestly say that an entire society is beyond redemption, and that there is absolutely zero hope for improvement. Clearly, [evil.GetName] actually is. As a result, the only defensible solution is its complete destruction, a goal which the [From.GetName] shall now pursue with its full attention. When this is over, the name '[evil.GetName]' will be nothing more than an unpleasant memory, with such an associated stigma that its very idea will be regarded with nothing but horror or disgust."
@@ -659,8 +661,11 @@ building_shield_desc:0 "A massive solar shield is being constructed, consuming l
 analysing_shield:0 "Solar Shield Analysis"
 analysing_shield_desc:0 "We are dismantling and studying the solar shield we recently used to protect a planet from a solar storm."
 
-determined_stop_genocide:0 "Moralistic Fervor"
-determined_stop_genocide_desc:0 "We are unified in our efforts in a war to stop another empire from engaging in its spree of genocide."
+moralistic_fervor_weak:0 "Moralistic Fervor"
+moralistic_fervor_weak_desc:0 "We are unified in our efforts in a war to stop an evil empire from continuing its abuses or termination of sentient life."
+
+moralistic_fervor:0 "Moralistic Fervor"
+moralistic_fervor_desc:0 "We are unified in our efforts in a war to stop another empire from engaging in its spree of genocide."
 
 refused_fight_fe_genocide:0 "Demoralized"
 refused_fight_fe_genocide_desc:0 "Apparently our values are worth nothing when another genocidal empire is more powerful than us."

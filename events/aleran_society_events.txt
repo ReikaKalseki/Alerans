@@ -1,11 +1,174 @@
 namespace = aleran_society
 
+#events designed to guide the player onto the right play path
+
+#100s: inter-empire interactions
+#400s: events that can happen due to being evil
+#500s: events that can happen due to mismanagement
+#1000s: actually dishing out the punishments
+
+country_event = {
+	id = aleran_society.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "Queued AleranSoc 101"
+		this = { country_event = { id = aleran_society.101 days = 30 random = 30} }
+	}
+}
+
+country_event = {
+	id = aleran_society.101
+	is_triggered_only = yes
+	title = "aleran_society.101.name"
+	desc = "aleran_society.101.desc"
+	picture = GFX_evt_throne_room
+	show_sound = event_factions
+	
+	immediate = {	
+		log = "------------------------------"
+		log = "- Printing the current scopes (effect) -"
+		log = "- This: [This.GetName]"
+		log = "- Root: [Root.GetName]"
+		log = "- Prev: [Prev.GetName]"
+		log = "- PrevPrev: [Prev.Prev.GetName]"
+		log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
+		log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
+		log = "- From: [From.GetName]"
+		log = "- FromFrom: [From.From.GetName]"
+		log = "- FromFromFrom: [From.From.From.GetName]"
+		log = "- FromFromFromFrom: [From.From.From.From.GetName]"
+		log = "- Root's Solar System / Star Name: [Root.Solar_System.GetName] / [Root.GetStarName]"
+		log = "- Root's Owner's Name: [Root.Owner.GetName]"
+		log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+		log = "------------------------------"	
+		if = {
+			limit = {
+				from = {is_country_type = default}
+				root = {
+					is_ai = no
+					has_casus_belli = {target = from type = cb_dragon}
+				}
+			}
+			
+		}
+	}
+	
+	option = {
+		name = "aleran_society.101.click.a" #immediate war
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			declare_war = {
+				target = from
+				name = "Aleran Duty"
+				attacker_war_goal = wg_dragon
+			}
+			add_modifier = {
+				modifier = moralistic_fervor_weak
+				days = 3600
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.101.click.b" #delayed war
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			if = {
+				limit = {
+					OR = {
+						from = { has_ethic = ethic_fanatic_xenophobe }
+						from = { has_ethic = ethic_fanatic_spiritualist }
+						from = { has_ethic = ethic_fanatic_militarist }
+						AND = {
+							from = { has_ethic = ethic_militarist }
+							OR = {
+								from = { is_spiritualist = yes}
+								from = { is_xenophobe = yes}
+							}
+						}
+					}
+				}
+				add_modifier = {
+					modifier = aleran_duty_dragfeet
+					days = 900
+				}
+			}
+			add_modifier = {
+				modifier = aleran_contact_war_prepare
+				days = 900
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.101.click.c" #ignore
+		ai_chance = {
+			factor = 150
+		}
+		
+		allow = {
+			custom_tooltip = {
+				fail_text = "contact_empire_too_evil"		
+				NOR = {
+					from = { has_valid_civic = civic_machine_terminator }
+					from = { has_valid_civic = civic_machine_assimilator }
+					from = { has_valid_civic = civic_barbaric_despoilers }
+					from = { has_valid_civic = civic_hive_devouring_swarm }
+					from = { has_valid_civic = civic_fanatic_purifiers }
+					from = {
+						any_owned_pop_species = {
+							OR = {
+								AND = {
+									has_citizenship_type = { country = from type = citizenship_purge }
+									OR = {
+										has_purge_type = { country = from type = purge_processing }		
+										has_purge_type = { country = from type = purge_matrix }		
+										has_purge_type = { country = from type = purge_normal }		
+										has_purge_type = { country = from type = purge_neutering }		
+										has_purge_type = { country = from type = purge_displacement }		
+										has_purge_type = { country = from type = purge_labor_camps }
+									}									
+								}
+								AND = {
+									has_citizenship_type = { country = from type = citizenship_slavery }
+									OR = {
+										has_slavery_type = { country = from type = slavery_livestock }
+										has_slavery_type = { country = from type = slavery_matrix }
+										has_slavery_type = { country = from type = slavery_domestic }
+										has_slavery_type = { country = from type = slavery_normal }
+									}
+								}
+								OR = {
+									has_living_standard  = { country = from type = living_standard_servitude }
+									has_living_standard  = { country = from type = living_standard_none }
+								}
+							}				
+						}
+					}
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_duty_ignore
+				days = 7200
+			}
+		}
+	}
+}
+
 #country_event = {
-#	id = aleran_society.100
+#	id = aleran_society.400
 #	#hide_window = yes
 #	#is_triggered_only = yes
-#	title = "aleran_society.100.name"
-#	desc = "aleran_society.100.desc"
+#	title = "aleran_society.400.name"
+#	desc = "aleran_society.400.desc"
 #	picture = GFX_evt_throne_room
 #	show_sound = event_factions
 #	
@@ -29,7 +192,7 @@ namespace = aleran_society
 #	}
 #	
 #	option = {
-#		name = "aleran_society.100.click.a"
+#		name = "aleran_society.400.click.a"
 #		ai_chance = {
 #			factor = 150
 #		}
@@ -83,11 +246,11 @@ country_event = {
 }
 
 planet_event = {
-	id = aleran_society.530
+	id = aleran_society.1530
 	#hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.530.name"
-	desc = "aleran_society.530.desc"
+	title = "aleran_society.1530.name"
+	desc = "aleran_society.1530.desc"
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
@@ -99,7 +262,7 @@ planet_event = {
 	}
 	
 	option = {
-		name = "aleran_society.530.click.a"
+		name = "aleran_society.1530.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -110,11 +273,11 @@ planet_event = {
 }
 
 planet_event = {
-	id = aleran_society.531
+	id = aleran_society.1531
 	#hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.531.name"
-	desc = "aleran_society.531.desc"
+	title = "aleran_society.1531.name"
+	desc = "aleran_society.1531.desc"
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
@@ -135,7 +298,7 @@ planet_event = {
 	}
 	
 	option = {
-		name = "aleran_society.531.click.a"
+		name = "aleran_society.1531.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -146,11 +309,11 @@ planet_event = {
 }
 
 country_event = {
-	id = aleran_society.540
+	id = aleran_society.1540
 	#hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.540.name"
-	desc = "aleran_society.540.desc"
+	title = "aleran_society.1540.name"
+	desc = "aleran_society.1540.desc"
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
@@ -172,7 +335,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_society.540.click.a"
+		name = "aleran_society.1540.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -183,11 +346,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_society.541
+	id = aleran_society.1541
 	#hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.541.name"
-	desc = "aleran_society.541.desc"
+	title = "aleran_society.1541.name"
+	desc = "aleran_society.1541.desc"
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
@@ -202,7 +365,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_society.541.click.a"
+		name = "aleran_society.1541.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -213,11 +376,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_society.542
+	id = aleran_society.1542
 	#hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.542.name"
-	desc = "aleran_society.542.desc"
+	title = "aleran_society.1542.name"
+	desc = "aleran_society.1542.desc"
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
@@ -238,7 +401,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_society.542.click.a"
+		name = "aleran_society.1542.click.a"
 		ai_chance = {
 			factor = 150
 		}
@@ -249,11 +412,11 @@ country_event = {
 }
 
 country_event = {
-	id = aleran_society.550
+	id = aleran_society.1550
 	#hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.550.name"
-	desc = "aleran_society.550.desc"
+	title = "aleran_society.1550.name"
+	desc = "aleran_society.1550.desc"
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
@@ -282,7 +445,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_society.550.click.a"
+		name = "aleran_society.1550.click.a"
 		ai_chance = {
 			factor = 150
 		}

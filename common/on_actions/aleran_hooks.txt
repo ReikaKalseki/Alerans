@@ -109,3 +109,9 @@ on_survey = {
 		#dragon_misc.51
 	}
 }
+
+on_first_contact = {
+	events = {
+		aleran_society.100
+	}
+}

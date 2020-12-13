@@ -259,7 +259,22 @@ analysing_shield = { #lasts 5x as long as the building, so must give 1/5th the m
 	icon = "gfx/interface/icons/modifiers/analysing_solar_shield.dds"
 }
 
-determined_stop_genocide = {
+moralistic_fervor_weak = {
+	army_morale = 0.25
+	ship_fire_rate_mult = 0.1
+	ship_speed_mult = 0.1
+	ship_accuracy_mult = 0.15
+	country_resource_influence_add = 1
+	shipsize_corvette_build_speed_mult = 0.1
+	shipsize_destroyer_build_speed_mult = 0.1
+	shipsize_cruiser_build_speed_mult = 0.05
+	shipsize_battleship_build_speed_mult = 0.02
+	tile_resource_unity_mult = 0.2
+	
+	icon = "gfx/interface/icons/modifiers/moralistic_fervor.dds"
+}
+
+moralistic_fervor = {
 	army_morale = 0.5 #was 0.25
 	ship_weapon_range_mult = 0.1 #was 0.2
 	ship_fire_rate_mult = 0.2 #was 0.1
@@ -278,5 +293,5 @@ determined_stop_genocide = {
 	#damage_vs_country_type_fallen_empire_mult = 0.25
 	#damage_vs_country_type_awakened_empire_mult = 0.25
 	
-	icon = "gfx/interface/icons/modifiers/determined_stop_genocide.dds"
+	icon = "gfx/interface/icons/modifiers/moralistic_fervor.dds"
 }

@@ -1,0 +1,38 @@
+namespace = aleran_war
+
+#1-100: random happenings during war; can spawn chain or other events
+
+country_event = {
+	id = aleran_war.1
+	#hide_window = yes
+	#is_triggered_only = yes
+	title = "aleran_war.1.name"
+	desc = "aleran_war.1.desc"
+	picture = GFX_evt_throne_room
+	show_sound = event_factions
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_ai = no
+		is_at_war = yes
+		always = no
+	}
+
+	mean_time_to_happen = {
+		days = 180
+	}
+	
+	immediate = {		
+			
+	}
+	
+	option = {
+		name = "aleran_war.1.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		
+		}
+	}
+}
