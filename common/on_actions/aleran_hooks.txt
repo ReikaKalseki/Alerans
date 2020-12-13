@@ -11,7 +11,7 @@ on_monthly_pulse = {
 # FromFromFrom = Fleet
 on_megastructure_built = {
 	events = {
-		aleran_megastructures.1
+		#aleran_megastructures.1
 	}
 }
 
@@ -21,7 +21,7 @@ on_megastructure_built = {
 # FromFrom = System
 on_megastructure_upgraded = {
 	events = {
-		aleran_megastructures.2
+		#aleran_megastructures.2
 	}
 }
 
