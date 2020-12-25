@@ -106,8 +106,11 @@ stupor_drugged = {
 	pop_growth_speed = -1
 	pop_government_ethic_attraction = -0.2
 	pop_food_req_mult = -0.3
-	army_morale = -1
-	pop_resettlement_cost_mult = 4
+	#army_morale = -10
+	army_defense_damage_mult = -0.95
+	army_defense_health_mult = -0.5
+	pop_resettlement_cost_mult = 10
+	planet_army_build_speed_mult = -0.95
 	
 	icon = "gfx/interface/icons/planet_modifiers/pm_stupor_drugged.dds"
 	icon_frame = 2

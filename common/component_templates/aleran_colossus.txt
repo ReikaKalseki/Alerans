@@ -37,7 +37,7 @@ weapon_component_template = { #induces chemical bliss, and destroys the morale o
 
 	component_set = "PLANET_KILLER_STUPOR"
 
-	planet_destruction_gfx = "god_ray_gfx"
+	planet_destruction_gfx = "assimilation_nanobots_gfx"
 }
 
 weapon_component_template = { #hits a star, and triggers a massive solar event -> wipes out all hostile electronics -> destroys all enemy navy, starbase, shield domes

@@ -217,6 +217,12 @@ planet_event = {
 			modifier = stupor_drugged
 			days = -1
 		}
+		every_planet_army = {
+			random_list = {
+				70 = { remove_army = yes }
+				30 = { }
+			}
+		}
 		set_planet_flag = was_stupor
 		enable_special_project = {
 			name = "stupor_removal"
