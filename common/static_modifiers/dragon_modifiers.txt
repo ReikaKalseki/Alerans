@@ -311,6 +311,11 @@ aleran_contact_war_prepare = {
 
 aleran_no_navy = {
 	country_naval_cap_mult = -100
+	shipsize_corvette_build_speed_mult = -10
+	shipsize_destroyer_build_speed_mult = -10
+	shipsize_cruiser_build_speed_mult = -10
+	shipsize_battleship_build_speed_mult = -10
+	country_piracy_risk_mult = -1
 	
 	icon = "gfx/interface/icons/modifiers/nonavy.dds"
 }

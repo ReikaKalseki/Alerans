@@ -59,8 +59,6 @@ solar_storm_chain_desc:0 "A star in our borders is behaving erratically, threate
 meiza_ringed_star:0 "Waving Rings"
 meiza_ringed_star_desc:0 "The rings around [From.GetName] exhibit very unusual properties."
 
-contact_empire_too_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore."
-
 
 #TRAITS#
 trait_dragonbody:0 "Dragon"
@@ -572,8 +570,11 @@ aleran_society.102.desc:0 "We have found in the [event_target:empire.GetName] ex
 aleran_society.102.desc2:0 "The time has come for us to carry out our duties against the [event_target:empire.GetName]."
 aleran_society.102.click.a:0 "We will rise to the occasion as is our obligation."
 aleran_society.102.click.b:0 "We are not ready for war, but we can prepare."
-aleran_society.102.click.c:0 "We have better things to do than influence another nation."
+aleran_society.102.click.c:0 "They are backwards, but not bad enough to justify this."
+aleran_society.102.click.d:0 "We have better things to do than babysit the galaxy."
 aleran_society.102.b.tooltip:0 "We will re-evaluate our ability to go to war once we have better prepared."
+contact_empire_too_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore."
+contact_empire_is_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore."
 
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."

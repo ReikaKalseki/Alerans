@@ -13,8 +13,8 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "Queued AleranSoc 101"
-		this = { country_event = { id = aleran_society.101 days = 30 random = 30} }
+		log = "Queued AleranSoc 101 via contact with [From.GetName]"
+		this = { country_event = { id = aleran_society.101 days = 180 random = 180} } #was 30/30
 	}
 }
 
@@ -49,7 +49,7 @@ country_event = {
 	desc = {
 		trigger = {
 			OR = { 
-				NOT = { exists = event_target:empire {
+				NOT = { exists = event_target:empire }
 				event_target:empire = {
 					NOT = { has_country_flag = started_contact_war_prep_against }
 				}
@@ -164,7 +164,57 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_society.102.click.c" #ignore
+		name = "aleran_society.102.click.c" #ignore, "not bad enough"
+		ai_chance = {
+			factor = 150
+		}
+		
+		trigger = {
+			OR = {
+				event_target:empire = { has_ethic = ethic_fanatic_xenophile }
+				event_target:empire = { 
+					AND = {
+						has_ethic = ethic_fanatic_materialist
+						NOR = {
+							has_ethic = ethic_xenophobe
+						}
+					}
+				}
+				event_target:empire = { 
+					AND = {
+						has_ethic = ethic_fanatic_egalitarian
+						NOR = {
+							has_ethic = ethic_spiritualist
+							has_ethic = ethic_xenophobe
+							has_ethic = ethic_militarist
+						}
+					}
+				}
+				event_target:empire = { 
+					AND = {
+						has_ethic = ethic_egalitarian
+						NOR = {
+							has_ethic = ethic_spiritualist
+							has_ethic = ethic_xenophobe
+							has_ethic = ethic_fanatic_spiritualist
+							has_ethic = ethic_fanatic_xenophobe
+							has_ethic = ethic_militarist
+							has_ethic = ethic_fanatic_militarist
+						}
+					}
+				}
+			}
+		}
+		
+		owner = {
+			#hidden_effect = {
+				add_modifier = { modifier = "aleran_no_navy" days = -1 }
+			#}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.102.click.d" #ignore duty
 		ai_chance = {
 			factor = 150
 		}
