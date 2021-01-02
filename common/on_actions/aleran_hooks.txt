@@ -2,6 +2,13 @@
 on_monthly_pulse = {
 	events = {
 		#aleran_colossus.2
+		aleran_society.100
+	}
+}
+
+on_five_year_pulse = {
+	events = {
+		aleran_society.101
 	}
 }
 

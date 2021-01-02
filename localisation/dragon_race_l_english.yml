@@ -567,6 +567,7 @@ aleran_diplomacy.1231.click:0 "Understood."
 
 aleran_society.102.name:0 "Duty Calls"
 aleran_society.102.desc:0 "We have found in the [event_target:empire.GetName] exactly what we have as a society vowed to stop - a nation run by incompetent or despotic leaders who at best are ignorant of how to care for their citizens and at worst actively seek to do them harm, or a nation which left unchecked will eradicate those unlucky enough to live near it.\n\nWe must not allow this to go unanswered."
+aleran_society.102.desc3:0 "We have always known the [event_target:empire.GetName] to be by incompetent or despotic leaders, and the suffering their citizens and/or neighbors endure under their influence; the passage of time has only made that clearer.\n\nCalls to end their harms have become increasingly frequent and prominent in our society; we should do our duty to protect their victims."
 aleran_society.102.desc2:0 "The time has come for us to carry out our duties against the [event_target:empire.GetName]."
 aleran_society.102.click.a:0 "We will rise to the occasion as is our obligation."
 aleran_society.102.click.b:0 "We are not ready for war, but we can prepare."

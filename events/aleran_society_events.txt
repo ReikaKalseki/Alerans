@@ -7,36 +7,90 @@ namespace = aleran_society
 #500s: events that can happen due to mismanagement
 #1000s: actually dishing out the punishments
 
-country_event = {
+event = {
 	id = aleran_society.100
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "Queued AleranSoc 101 via contact with [From.GetName]"
-		this = { country_event = { id = aleran_society.101 days = 180 random = 180} } #was 30/30
+		random_country = {
+			limit = {
+				is_ai = no
+				has_valid_civic = civic_dragon_gov
+			}
+			save_event_target_as = alerans
+		}
+		#log = "Ran AleranSoc 100, alerans are [event_target:alerans.GetName]"
+		if = {
+			limit = { exists = event_target:alerans }
+			random_country = {
+				limit = {
+					is_country_type = default
+					NOR = {
+						is_same_value = root
+						has_country_flag = aleran_contact_warduty
+						has_country_flag = started_contact_war_prep_against
+						has_valid_civic = civic_dragon_gov
+						is_at_war_with = event_target:alerans
+					}
+					has_communications = event_target:alerans
+					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
+				}
+				save_event_target_as = empire
+				set_country_flag = aleran_contact_warduty
+			}
+		}
+		if = {
+			limit = { exists = event_target:empire }
+			#log = "Queued AleranSoc 102 via contact with [event_target:empire.GetName], CB is valid"
+			event_target:alerans = { country_event = { id = aleran_society.102 days = 180 random = 180} } #was 30/30
+		}
+		else = {		
+			#log = "AleranSoc 102, not valid; no target found"
+		}
 	}
 }
 
-country_event = {
+event = {
 	id = aleran_society.101
 	hide_window = yes
 	is_triggered_only = yes
 	
-	immediate = {	
-		#fromfrom = them
-		#fromfromfrom = encounter system
-		if = {
+	immediate = {
+		random_country = {
 			limit = {
-				fromfrom = { is_country_type = default }
 				is_ai = no
-				has_casus_belli = {target = from.from type = cb_dragon}
+				has_valid_civic = civic_dragon_gov
 			}
-			log = "Queued AleranSoc 102 for [From.From.GetName]"
-			this = { country_event = { id = aleran_society.102 } }
+			save_event_target_as = alerans
 		}
-		else = {
-			log = "AleranSoc 102 Not valid for [From.From.GetName]"
+		#log = "Ran AleranSoc 101, alerans are [event_target:alerans.GetName]"
+		if = {
+			limit = { exists = event_target:alerans }
+			random_country = {
+				limit = {
+					is_country_type = default
+					NOR = {
+						is_same_value = root
+						has_country_flag = started_contact_war_prep_against
+						has_country_flag = war_prompt_again
+						has_valid_civic = civic_dragon_gov
+						is_at_war_with = event_target:alerans
+					}
+					has_communications = event_target:alerans
+					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
+				}
+				save_event_target_as = empire
+				set_timed_country_flag = { flag = war_prompt_again days = 5400 } #15y
+			}
+		}
+		if = {
+			limit = { exists = event_target:empire }
+			#log = "Queued AleranSoc 102 via ambient comms with [event_target:empire.GetName], CB is valid"
+			event_target:alerans = { country_event = { id = aleran_society.102 days = 360 random = 720} }
+		}
+		else = {		
+			#log = "AleranSoc 102, not valid; no target found"
 		}
 	}
 }
@@ -61,6 +115,16 @@ country_event = {
 		trigger = {
 			exists = event_target:empire
 			event_target:empire = {
+				NOT = { has_country_flag = started_contact_war_prep_against }
+				has_country_flag = war_prompt_again
+			}
+		}
+		text = aleran_society.102.desc3
+	}
+	desc = {
+		trigger = {
+			exists = event_target:empire
+			event_target:empire = {
 				has_country_flag = started_contact_war_prep_against
 			}
 		}
@@ -80,19 +144,6 @@ country_event = {
 			give_technology = { tech = tech_corvettes message = yes }
 		}
 		remove_modifier = "aleran_no_navy"
-		if = {
-			limit = {
-				NOT = {
-					fromfromfrom = {
-						is_same_value = root
-					}
-				}
-			}
-			fromfromfrom = {
-				save_event_target_as = empire
-			}
-			log = "AleranSoc 102: Saving [From.From.From.GetName] as event target"
-		}
 	}
 	
 	option = {
@@ -170,6 +221,9 @@ country_event = {
 		}
 		
 		trigger = {
+			event_target:empire = {
+				NOT = { has_country_flag = started_contact_war_prep_against }
+			}
 			OR = {
 				event_target:empire = { has_ethic = ethic_fanatic_xenophile }
 				event_target:empire = { 
