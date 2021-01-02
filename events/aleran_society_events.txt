@@ -20,49 +20,89 @@ country_event = {
 
 country_event = {
 	id = aleran_society.101
+	hide_window = yes
 	is_triggered_only = yes
-	title = "aleran_society.101.name"
-	desc = "aleran_society.101.desc"
+	
+	immediate = {	
+		#fromfrom = them
+		#fromfromfrom = encounter system
+		if = {
+			limit = {
+				fromfrom = { is_country_type = default }
+				is_ai = no
+				has_casus_belli = {target = from.from type = cb_dragon}
+			}
+			log = "Queued AleranSoc 102 for [From.From.GetName]"
+			this = { country_event = { id = aleran_society.102 } }
+		}
+		else = {
+			log = "AleranSoc 102 Not valid for [From.From.GetName]"
+		}
+	}
+}
+
+country_event = {
+	id = aleran_society.102
+	is_triggered_only = yes
+	title = "aleran_society.102.name"
+	#desc = "aleran_society.102.desc"
+	desc = {
+		trigger = {
+			OR = { 
+				NOT = { exists = event_target:empire {
+				event_target:empire = {
+					NOT = { has_country_flag = started_contact_war_prep_against }
+				}
+			}
+		}
+		text = aleran_society.102.desc
+	}
+	desc = {
+		trigger = {
+			exists = event_target:empire
+			event_target:empire = {
+				has_country_flag = started_contact_war_prep_against
+			}
+		}
+		text = aleran_society.102.desc2
+	}
 	picture = GFX_evt_throne_room
 	show_sound = event_factions
 	
 	immediate = {	
-		log = "------------------------------"
-		log = "- Printing the current scopes (effect) -"
-		log = "- This: [This.GetName]"
-		log = "- Root: [Root.GetName]"
-		log = "- Prev: [Prev.GetName]"
-		log = "- PrevPrev: [Prev.Prev.GetName]"
-		log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
-		log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
-		log = "- From: [From.GetName]"
-		log = "- FromFrom: [From.From.GetName]"
-		log = "- FromFromFrom: [From.From.From.GetName]"
-		log = "- FromFromFromFrom: [From.From.From.From.GetName]"
-		log = "- Root's Solar System / Star Name: [Root.Solar_System.GetName] / [Root.GetStarName]"
-		log = "- Root's Owner's Name: [Root.Owner.GetName]"
-		log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
-		log = "------------------------------"	
+		#log = "- FromFrom: [From.From.GetName]"
+		#log = "- FromFromFrom: [From.From.From.GetName]"
+		#log = "- FromFromFromFrom: [From.From.From.From.GetName]"
 		if = {
 			limit = {
-				from = {is_country_type = default}
-				root = {
-					is_ai = no
-					has_casus_belli = {target = from type = cb_dragon}
+				NOT = { has_technology = tech_corvettes }
+			}
+			give_technology = { tech = tech_corvettes message = yes }
+		}
+		remove_modifier = "aleran_no_navy"
+		if = {
+			limit = {
+				NOT = {
+					fromfromfrom = {
+						is_same_value = root
+					}
 				}
 			}
-			
+			fromfromfrom = {
+				save_event_target_as = empire
+			}
+			log = "AleranSoc 102: Saving [From.From.From.GetName] as event target"
 		}
 	}
 	
 	option = {
-		name = "aleran_society.101.click.a" #immediate war
+		name = "aleran_society.102.click.a" #immediate war
 		ai_chance = {
 			factor = 150
 		}
 		owner = {
 			declare_war = {
-				target = from
+				target = event_target:empire
 				name = "Aleran Duty"
 				attacker_war_goal = wg_dragon
 			}
@@ -74,22 +114,28 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_society.101.click.b" #delayed war
+		name = "aleran_society.102.click.b" #delayed war
 		ai_chance = {
 			factor = 150
+		}
+		custom_tooltip = aleran_society.102.b.tooltip
+		trigger = {
+			event_target:empire = {
+				NOT = { has_country_flag = started_contact_war_prep_against }
+			}
 		}
 		owner = {
 			if = {
 				limit = {
 					OR = {
-						from = { has_ethic = ethic_fanatic_xenophobe }
-						from = { has_ethic = ethic_fanatic_spiritualist }
-						from = { has_ethic = ethic_fanatic_militarist }
+						event_target:empire = { has_ethic = ethic_fanatic_xenophobe }
+						event_target:empire = { has_ethic = ethic_fanatic_spiritualist }
+						event_target:empire = { has_ethic = ethic_fanatic_militarist }
 						AND = {
-							from = { has_ethic = ethic_militarist }
+							event_target:empire = { has_ethic = ethic_militarist }
 							OR = {
-								from = { is_spiritualist = yes}
-								from = { is_xenophobe = yes}
+								event_target:empire = { is_spiritualist = yes}
+								event_target:empire = { is_xenophobe = yes}
 							}
 						}
 					}
@@ -99,15 +145,26 @@ country_event = {
 					days = 900
 				}
 			}
-			add_modifier = {
-				modifier = aleran_contact_war_prepare
-				days = 900
+			if = {
+				limit = {
+					#NOT = { has_country_flag = started_contact_war_prep }
+					NOT = { has_modifier = aleran_contact_war_prepare }
+				}
+				add_modifier = {
+					modifier = aleran_contact_war_prepare
+					days = 900
+				}
+			}
+			hidden_effect = {
+				this = { country_event = { id = aleran_society.102 days = 900 } }
+				#set_country_flag = started_contact_war_prep
+				event_target:empire = { set_country_flag = started_contact_war_prep_against }
 			}
 		}
 	}
 	
 	option = {
-		name = "aleran_society.101.click.c" #ignore
+		name = "aleran_society.102.click.c" #ignore
 		ai_chance = {
 			factor = 150
 		}
@@ -116,37 +173,37 @@ country_event = {
 			custom_tooltip = {
 				fail_text = "contact_empire_too_evil"		
 				NOR = {
-					from = { has_valid_civic = civic_machine_terminator }
-					from = { has_valid_civic = civic_machine_assimilator }
-					from = { has_valid_civic = civic_barbaric_despoilers }
-					from = { has_valid_civic = civic_hive_devouring_swarm }
-					from = { has_valid_civic = civic_fanatic_purifiers }
-					from = {
+					event_target:empire = { has_valid_civic = civic_machine_terminator }
+					event_target:empire = { has_valid_civic = civic_machine_assimilator }
+					event_target:empire = { has_valid_civic = civic_barbaric_despoilers }
+					event_target:empire = { has_valid_civic = civic_hive_devouring_swarm }
+					event_target:empire = { has_valid_civic = civic_fanatic_purifiers }
+					event_target:empire = {
 						any_owned_pop_species = {
 							OR = {
 								AND = {
-									has_citizenship_type = { country = from type = citizenship_purge }
+									has_citizenship_type = { country = event_target:empire type = citizenship_purge }
 									OR = {
-										has_purge_type = { country = from type = purge_processing }		
-										has_purge_type = { country = from type = purge_matrix }		
-										has_purge_type = { country = from type = purge_normal }		
-										has_purge_type = { country = from type = purge_neutering }		
-										has_purge_type = { country = from type = purge_displacement }		
-										has_purge_type = { country = from type = purge_labor_camps }
+										has_purge_type = { country = event_target:empire type = purge_processing }		
+										has_purge_type = { country = event_target:empire type = purge_matrix }		
+										has_purge_type = { country = event_target:empire type = purge_normal }		
+										has_purge_type = { country = event_target:empire type = purge_neutering }		
+										has_purge_type = { country = event_target:empire type = purge_displacement }		
+										has_purge_type = { country = event_target:empire type = purge_labor_camps }
 									}									
 								}
 								AND = {
-									has_citizenship_type = { country = from type = citizenship_slavery }
+									has_citizenship_type = { country = event_target:empire type = citizenship_slavery }
 									OR = {
-										has_slavery_type = { country = from type = slavery_livestock }
-										has_slavery_type = { country = from type = slavery_matrix }
-										has_slavery_type = { country = from type = slavery_domestic }
-										has_slavery_type = { country = from type = slavery_normal }
+										has_slavery_type = { country = event_target:empire type = slavery_livestock }
+										has_slavery_type = { country = event_target:empire type = slavery_matrix }
+										has_slavery_type = { country = event_target:empire type = slavery_domestic }
+										has_slavery_type = { country = event_target:empire type = slavery_normal }
 									}
 								}
 								OR = {
-									has_living_standard  = { country = from type = living_standard_servitude }
-									has_living_standard  = { country = from type = living_standard_none }
+									has_living_standard  = { country = event_target:empire type = living_standard_servitude }
+									has_living_standard  = { country = event_target:empire type = living_standard_none }
 								}
 							}				
 						}

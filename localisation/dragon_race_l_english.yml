@@ -265,7 +265,7 @@ civic_dragon_research_desc:0 "Study of the sciences is the path to the future, a
 
 civic_dragon_init:0 "Aleran Mentality"
 civic_dragon_init_desc:0 "Science, reason, and morality that is grounded in tangible proofs must remain king. Anything else is to turn one's back on progress, ethicality, or even survival. Holding true to these often requires sacrifice and willingness to ignore how one is perceived."
-civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YTechnology Focus§! civics upon map start\n\nLocks civics on map start\n\n§RReduced§! §YOpinion§! from dissimilarly-minded empires, §GIncreased§! opinion from similar ones\n\nHas minor bonuses to centralized power and administration\n\nHas access to the §Y'Enlightenment By Force'§! casus belli and wargoal against empires they see as sufficiently harmful, and the §Y'Moralistic Fervor'§! combat bonus in wars against the most evil ones\n\nStarts without the technology to build military ships until they have met an empire against whom the above casus belli applies\n\nRivalries and factions produce minimal influence, and the dominant faction strongly penalizes deviations from proper administration\n\nAllows for the construction of Commonwealth Libraries to boost science and influence production, and increase administrative capacity\n\nWill get gradually better at building starbases over time to make up for inability to take systems by traditional conquest\n\nWill always remain leader of a Federation if they are the most powerful member"
+civic_tooltip_dragoninit_effects:0 "Converts to §YEthical Dominance§! and §YTechnology Focus§! civics upon map start\n\nLocks civics on map start\n\n§RReduced§! §YOpinion§! from dissimilarly-minded empires, §GIncreased§! opinion from similar ones\n\nHas minor bonuses to centralized power and administration\n\nHas access to the §Y'Enlightenment By Force'§! casus belli and wargoal against empires they see as sufficiently harmful, and the §Y'Moralistic Fervor'§! combat bonus in wars against the most evil ones\n\nNaval capacity is zero until they have met an empire against whom the above casus belli applies\n\nRivalries and factions produce minimal influence, and the dominant faction strongly penalizes deviations from proper administration\n\nAllows for the construction of Commonwealth Libraries to boost science and influence production, and increase administrative capacity\n\nWill get gradually better at building starbases over time to make up for inability to take systems by traditional conquest\n\nWill always remain leader of a Federation if they are the most powerful member"
 
 civic_dragon_takeover:0 "Aleran Reformation"
 civic_dragon_takeover_desc:0 "This civilization has been reformed - by force - by the Aleran Commonwealth. It no longer seeks to subjugate or eliminate its peers, and is instead focused on prosperity and happiness for its own citizens and for its neighbors."
@@ -567,6 +567,14 @@ aleran_diplomacy.1231.name:0 "Message from the [From.GetName]"
 aleran_diplomacy.1231.desc:0 "Believe it or not, a much larger threat to galactic peace and stability than you has arisen. Therefore, you can take some assurance in that we will not engage in military action against you while this threat persists, unless you make yourself worse than them."
 aleran_diplomacy.1231.click:0 "Understood."
 
+aleran_society.102.name:0 "Duty Calls"
+aleran_society.102.desc:0 "We have found in the [event_target:empire.GetName] exactly what we have as a society vowed to stop - a nation run by incompetent or despotic leaders who at best are ignorant of how to care for their citizens and at worst actively seek to do them harm, or a nation which left unchecked will eradicate those unlucky enough to live near it.\n\nWe must not allow this to go unanswered."
+aleran_society.102.desc2:0 "The time has come for us to carry out our duties against the [event_target:empire.GetName]."
+aleran_society.102.click.a:0 "We will rise to the occasion as is our obligation."
+aleran_society.102.click.b:0 "We are not ready for war, but we can prepare."
+aleran_society.102.click.c:0 "We have better things to do than influence another nation."
+aleran_society.102.b.tooltip:0 "We will re-evaluate our ability to go to war once we have better prepared."
+
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
 aleran_megastructures.1.click:0 "Excellent."
@@ -591,14 +599,23 @@ aleran_megastructures.105.name:0 "Gateway Update"
 aleran_megastructures.105.desc:0 "The gateway in [FromFromFrom.GetName] emitted barely a burp as it was activated. A couple final tweaks are necessary, but we can probably consider these surges a thing of the past."
 aleran_megastructures.105.click:0 "Finally."
 
-aleran_expansion:0 "Unfettered Expansion"
-aleran_expansion_desc:0 "We have the ability and the motivation to reach for all the stars we can find."
+#COLOSSUS EVENTS#
+aleran_colossus.3.name:0 "Population in Withdrawal"
+aleran_colossus.3.desc:0 "The removal of the psychoactive drugs from the atmosphere of [Root.GetName] has had an unintended side effect. The entire population of the planet is now suffering from withdrawal symptoms, and is very unhappy as a result. Some factions there even want to return to their previous conditions. Time will ease these problems, but it will take years."
+aleran_colossus.3.wait:0 "Siiiiiiiiiiiiiiiiigh"
+aleran_colossus.3.kill:0 "We don't have years. They have outlived their utility."
 
-aleran_expansion_2:0 "??"
-aleran_expansion_2_desc:0 "??"
+aleran_colossus.204.name:0 "Stellar Instability Detected"
+aleran_colossus.204.desc:0 "After being struck with the energy pulse from the enemy ship, [Root.GetName] has been showing signs of instability. Solar activity is fluctuating on a daily basis, and the magnetic fields are abnormally intense. The effects this will have on the system is as yet unknown."
+aleran_colossus.204.click:0 "Odd..."
 
-aleran_expansion_2b:0 "Expansive Empire"
-aleran_expansion_2b_desc:0 "In order to adequately serve the Commonwealth, we need to be able to rapidly traverse it."
+aleran_colossus.205.name:0 "Unnatural Supernova"
+aleran_colossus.205.desc:0 "The enemy ship's attempt to destabilize [Root.GetName] was...far more successful than either they or us desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. The radiation has also damaged planets in nearby systems."
+aleran_colossus.205.click:0 "#$@&!!"
+
+aleran_colossus.206.name:0 "Unnatural Supernova"
+aleran_colossus.206.desc:0 "The attempt to destabilize the primary of [Root.GetStarName] was far more successful than we could have desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. Our colossus is also missing and presumed destroyed."
+aleran_colossus.206.click:0 "#$@&!!"
 
 
 #PROJECTS#
@@ -631,6 +648,15 @@ study_meiza_rings_DESC:0 "We need to monitor, examine, and model the rings to le
 
 
 #MODIFIERS#
+aleran_expansion:0 "Unfettered Expansion"
+aleran_expansion_desc:0 "We have the ability and the motivation to reach for all the stars we can find."
+
+aleran_expansion_2:0 "??"
+aleran_expansion_2_desc:0 "??"
+
+aleran_expansion_2b:0 "Expansive Empire"
+aleran_expansion_2b_desc:0 "In order to adequately serve the Commonwealth, we need to be able to rapidly traverse it."
+
 nova_irradiated:0 "Nova Irradiated"
 nova_irradiated_desc:0 "A nova event in a nearby system has caused a serious environmental damage on this planet. Surface radiation levels are well above normal, which affects the health of both populations and crops."
 
@@ -676,24 +702,17 @@ unhappy_nogenocide_punish_desc:0 "This pop feels like their suffering as a resul
 society_leader_forgive:0 "Alienated"
 society_leader_forgive_desc:0 "This pop feels like their suffering as a result of the bioweapon was largely ignored, and are unhappy that the culprit has gone entirely unpunished."
 
+aleran_contact_war_prepare:0 "Preparing for War"
+aleran_contact_war_prepare_desc:0 "We are preparing to wage war on another empire to liberate or rescue their population."
 
-#COLOSSUS EVENTS#
-aleran_colossus.3.name:0 "Population in Withdrawal"
-aleran_colossus.3.desc:0 "The removal of the psychoactive drugs from the atmosphere of [Root.GetName] has had an unintended side effect. The entire population of the planet is now suffering from withdrawal symptoms, and is very unhappy as a result. Some factions there even want to return to their previous conditions. Time will ease these problems, but it will take years."
-aleran_colossus.3.wait:0 "Siiiiiiiiiiiiiiiiigh"
-aleran_colossus.3.kill:0 "We don't have years. They have outlived their utility."
+aleran_duty_dragfeet:0 "Duty Reluctance"
+aleran_duty_dragfeet_desc:0 "The fact we are dragging our feet with our duties to the rest of the galaxy has not gone unnoticed."
 
-aleran_colossus.204.name:0 "Stellar Instability Detected"
-aleran_colossus.204.desc:0 "After being struck with the energy pulse from the enemy ship, [Root.GetName] has been showing signs of instability. Solar activity is fluctuating on a daily basis, and the magnetic fields are abnormally intense. The effects this will have on the system is as yet unknown."
-aleran_colossus.204.click:0 "Odd..."
+aleran_duty_ignore:0 "Duty Ignored"
+aleran_duty_ignore_desc:0 "The fact we are have forsaken our duty to protect people across the galaxy from evil or backwards governance has not gone unnoticed, and our population has lost confidence in the ethicality of our rule."
 
-aleran_colossus.205.name:0 "Unnatural Supernova"
-aleran_colossus.205.desc:0 "The enemy ship's attempt to destabilize [Root.GetName] was...far more successful than either they or us desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. The radiation has also damaged planets in nearby systems."
-aleran_colossus.205.click:0 "#$@&!!"
-
-aleran_colossus.206.name:0 "Unnatural Supernova"
-aleran_colossus.206.desc:0 "The attempt to destabilize the primary of [Root.GetStarName] was far more successful than we could have desired...or feared. The energy pulses did more than increase solar activity, and instead triggered a runaway reaction in the core of the star. Within hours, the star experienced something akin to a nova, which was..."catastrophic" would be putting it mildly. The system has been completely destroyed, and even the hyperlanes have been sufficiently damaged to be rendered unusable. Our colossus is also missing and presumed destroyed."
-aleran_colossus.206.click:0 "#$@&!!"
+aleran_no_navy:0 "Naval Avoidance"
+aleran_no_navy_desc:0 "We will not waste time or resources on pointless warships."
 
 
 #OPINIONS#

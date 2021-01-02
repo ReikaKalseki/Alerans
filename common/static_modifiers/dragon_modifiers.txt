@@ -298,3 +298,40 @@ moralistic_fervor = {
 	
 	icon = "gfx/interface/icons/modifiers/moralistic_fervor.dds"
 }
+
+aleran_contact_war_prepare = {
+	shipsize_corvette_build_speed_mult = 0.25
+	shipsize_destroyer_build_speed_mult = 0.15
+	shipsize_cruiser_build_speed_mult = 0.1
+	shipsize_battleship_build_speed_mult = 0.05
+	planet_army_build_speed_mult = 0.2
+	
+	icon = "gfx/interface/icons/modifiers/war_prepare.dds"
+}
+
+aleran_no_navy = {
+	country_naval_cap_mult = -100
+	
+	icon = "gfx/interface/icons/modifiers/nonavy.dds"
+}
+
+aleran_duty_dragfeet = {
+	pop_happiness = -0.05
+	#pop_government_ethic_attraction = -0.25
+	#pop_growth_speed = -0.1
+	#pop_resource_output = -0.1
+	tile_resource_unity_mult = -0.05
+	army_morale = -0.1
+	
+	icon = "gfx/interface/icons/modifiers/duty_ignore.dds"
+}
+
+aleran_duty_ignore = {
+	pop_happiness = -0.1
+	pop_government_ethic_attraction = -0.25
+	pop_resource_output = -0.05
+	army_morale = -0.1
+	tile_resource_unity_mult = -0.2
+	
+	icon = "gfx/interface/icons/modifiers/duty_ignore.dds"
+}

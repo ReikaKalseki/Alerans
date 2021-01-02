@@ -20,6 +20,7 @@ country_event = {
 			}
 			give_technology = { message = no tech = tech_robotic_workers }
 			add_minerals = 200 #start with 200 by default
+			add_modifier = { modifier = aleran_no_navy days = -1 }
 		}
 	}
 }
