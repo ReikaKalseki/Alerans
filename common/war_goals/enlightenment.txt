@@ -66,10 +66,10 @@ wg_dragon = {
 		#from = { remove_country_flag = is_astroraptors }
 		hidden_effect = {
 			root = {
-				set_timed_country_flag = {flag = recently_enlightened_someone days = 900} #2.5y
+				set_timed_country_flag = {flag = recently_enlightened_someone days = 3600} #was 900 = 2.5y
 			}
 			from = {
-				set_timed_country_flag = {flag = recently_enlightened days = 180} #0.5y
+				set_timed_country_flag = {flag = recently_enlightened days = 720} #was 180 = 0.5y
 				set_country_type = default
 			}
 		}

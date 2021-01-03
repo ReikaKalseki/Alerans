@@ -208,3 +208,28 @@ is_very_ugly = {
 			species_portrait = pla4
 		}
 }
+
+is_absolutely_evil = {
+	OR = {
+		has_valid_civic = civic_machine_terminator
+		has_valid_civic = civic_machine_assimilator
+		has_valid_civic = civic_barbaric_despoilers
+		has_valid_civic = civic_hive_devouring_swarm
+		has_valid_civic = civic_fanatic_purifiers
+		any_owned_pop_species = {
+			OR = {
+				AND = {
+					has_citizenship_type = { country = event_target:empire type = citizenship_purge }
+					OR = {
+						has_purge_type = { country = event_target:empire type = purge_processing }		
+						has_purge_type = { country = event_target:empire type = purge_matrix }		
+						has_purge_type = { country = event_target:empire type = purge_normal }		
+						has_purge_type = { country = event_target:empire type = purge_neutering }		
+						has_purge_type = { country = event_target:empire type = purge_displacement }		
+						has_purge_type = { country = event_target:empire type = purge_labor_camps }
+					}									
+				}
+			}				
+		}
+	}
+}

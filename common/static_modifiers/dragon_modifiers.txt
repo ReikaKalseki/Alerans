@@ -281,6 +281,7 @@ moralistic_fervor_weak = {
 	planet_army_build_cost_mult = -0.5
 	
 	country_piracy_risk_mult = -0.4
+	country_naval_cap_mult = 0.25
 	
 	icon = "gfx/interface/icons/modifiers/moralistic_fervor.dds"
 }
@@ -310,6 +311,7 @@ moralistic_fervor = {
 	shipsize_corvette_build_cost_mult = -0.5
 	shipsize_destroyer_build_cost_mult = -0.25
 	planet_army_build_cost_mult = -0.5
+	country_naval_cap_mult = 0.4	
 	
 	icon = "gfx/interface/icons/modifiers/moralistic_fervor.dds"
 }
@@ -320,6 +322,7 @@ aleran_contact_war_prepare = {
 	shipsize_cruiser_build_speed_mult = 0.1
 	shipsize_battleship_build_speed_mult = 0.05
 	planet_army_build_speed_mult = 0.2
+	country_naval_cap_mult = 0.15
 	
 	icon = "gfx/interface/icons/modifiers/war_prepare.dds"
 }

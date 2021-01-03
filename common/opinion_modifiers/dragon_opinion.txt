@@ -8,6 +8,8 @@ opinion_aleran_threatened = {
 	}
 
 	accumulative = no
+	unique = yes
+	monthly = yes
 
 	decay = {
 		base = 2
@@ -34,6 +36,8 @@ opinion_aleran_insulted = {
 	}
 
 	accumulative = no
+	unique = yes
+	monthly = yes
 
 	decay = {
 		base = 1

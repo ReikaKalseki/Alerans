@@ -668,12 +668,13 @@ aleran_faction = {
 		desc = "aleran_faction_food_desc"
 
 		fulfilled_effect = 5
-		unfulfilled_effect = -5
 
 		potential = {
 			exists = owner
 			owner = {
-				has_country_flag = aleran			
+				has_country_flag = aleran	
+				food > 999
+				has_monthly_income = { resource = food value > 50 }	
 			}
 		}
 
@@ -681,6 +682,32 @@ aleran_faction = {
 			owner = {
 				food > 999
 				has_monthly_income = { resource = food value > 50 }
+			}
+		}
+	}
+
+	demand = {
+		title = "aleran_faction_lowfood"
+		unfulfilled_title = "aleran_faction_lowfood_unfilled"
+		desc = "aleran_faction_lowfood_desc"
+
+		unfulfilled_effect = -15
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = aleran	
+				NAND = {
+					food > 250
+					has_monthly_income = { resource = food value > 0 }
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				food > 250
+				has_monthly_income = { resource = food value > 0 }
 			}
 		}
 	}
@@ -745,22 +772,27 @@ aleran_faction = {
 				OR = {
 					has_country_flag = amoeba_encountered
 					has_country_flag = crystal_encountered
+					has_country_flag = cloud_encountered
 				}
 			}
 		}
 
 		trigger = {
 			owner = {
-				OR = {
-					has_modifier = pacified_amoebas
-					NOT = {has_country_flag = amoeba_encountered}
+				#OR = {
+				#	has_modifier = pacified_amoebas
+				#	NOT = {has_country_flag = amoeba_encountered}
+				#}
+				NOR = {
+					has_modifier = cloud_hunting_buff
+					has_modifier = amoeba_hunting_buff
+					has_modifier = crystal_hunting_buff
+					has_modifier = drone_hunting_buff
 				}
-				NOT = {has_modifier = cloud_hunting_buff}
-				OR = {
-					has_modifier = pacified_crystals
-					NOT = {has_country_flag = crystal_encountered}
-				}
-				#NOT = {has_modifier = drone_hunting_buff}
+				#OR = {
+				#	has_modifier = pacified_crystals
+				#	NOT = {has_country_flag = crystal_encountered}
+				#}
 			}
 		}
 	}

@@ -16,13 +16,15 @@ event = {
 		random_country = {
 			limit = {
 				is_ai = no
+				is_at_war = no
 				has_valid_civic = civic_dragon_gov
+				NOT = { has_modifier = aleran_contact_war_prepare }
 			}
 			save_event_target_as = alerans
 		}
 		#log = "Ran AleranSoc 100, alerans are [event_target:alerans.GetName]"
 		if = {
-			limit = { exists = event_target:alerans }
+			limit = {exists = event_target:alerans }
 			random_country = {
 				limit = {
 					is_country_type = default
@@ -76,6 +78,32 @@ event = {
 						has_country_flag = war_prompt_again
 						has_valid_civic = civic_dragon_gov
 						is_at_war_with = event_target:alerans
+					}
+					NAND = {
+						has_country_flag = aleran_contact_warduty
+						OR = {
+							event_target:empire = { has_ethic = ethic_fanatic_xenophile }
+							event_target:empire = { 
+								AND = {
+									has_ethic = ethic_fanatic_materialist
+									NOR = {
+										has_ethic = ethic_xenophobe
+									}
+								}
+							}
+							event_target:empire = { 
+								AND = {
+									has_ethic = ethic_egalitarian
+									NOR = {
+										has_ethic = ethic_spiritualist
+										has_ethic = ethic_xenophobe
+										has_ethic = ethic_fanatic_spiritualist
+										has_ethic = ethic_fanatic_xenophobe
+										has_ethic = ethic_fanatic_militarist
+									}
+								}
+							}
+						}
 					}
 					has_communications = event_target:alerans
 					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
@@ -157,9 +185,61 @@ country_event = {
 				name = "Aleran Duty"
 				attacker_war_goal = wg_dragon
 			}
+			if = {
+				limit = {
+					event_target:empire = { is_absolutely_evil = yes }
+				}
+				add_modifier = {
+					modifier = moralistic_fervor
+					days = 7200
+				}
+			}
+			else = {
+				add_modifier = {
+					modifier = moralistic_fervor_weak
+					days = 3600
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.102.click.b2" #delayed war x2
+		ai_chance = {
+			factor = 150
+		}
+		custom_tooltip = aleran_society.102.b2.tooltip
+		trigger = {
+			event_target:empire = {
+				has_country_flag = started_contact_war_prep_against
+				NOT = { has_country_flag = started_contact_war_prep_against2 }
+			}
+		}
+		
+		allow = {
+			custom_tooltip = {
+				fail_text = "contact_empire_too_evil_second_delay"		
+				is_absolutely_evil = no
+			}
+		}
+		
+		owner = {
+			if = {
+				limit = {
+					NOT = { has_modifier = aleran_contact_war_prepare }
+				}
+				add_modifier = {
+					modifier = aleran_contact_war_prepare
+					days = 900
+				}
+			}
 			add_modifier = {
-				modifier = moralistic_fervor_weak
-				days = 3600
+				modifier = aleran_duty_dragfeet
+				days = 900
+			}
+			hidden_effect = {
+				this = { country_event = { id = aleran_society.102 days = 900 } }
+				event_target:empire = { set_country_flag = started_contact_war_prep_against2 }
 			}
 		}
 	}
@@ -258,30 +338,7 @@ country_event = {
 					}
 				}
 			}
-			NOR = {
-				event_target:empire = { has_valid_civic = civic_machine_terminator }
-				event_target:empire = { has_valid_civic = civic_machine_assimilator }
-				event_target:empire = { has_valid_civic = civic_barbaric_despoilers }
-				event_target:empire = { has_valid_civic = civic_hive_devouring_swarm }
-				event_target:empire = { has_valid_civic = civic_fanatic_purifiers }
-				event_target:empire = {
-					any_owned_pop_species = {
-						OR = {
-							AND = {
-								has_citizenship_type = { country = event_target:empire type = citizenship_purge }
-								OR = {
-									has_purge_type = { country = event_target:empire type = purge_processing }		
-									has_purge_type = { country = event_target:empire type = purge_matrix }		
-									has_purge_type = { country = event_target:empire type = purge_normal }		
-									has_purge_type = { country = event_target:empire type = purge_neutering }		
-									has_purge_type = { country = event_target:empire type = purge_displacement }		
-									has_purge_type = { country = event_target:empire type = purge_labor_camps }
-								}									
-							}
-						}				
-					}
-				}
-			}
+			event_target:empire = { is_absolutely_evil = no }
 		}
 		
 		owner = {
@@ -295,33 +352,19 @@ country_event = {
 			factor = 150
 		}
 		
+		trigger = {
+			event_target:empire = {
+				NOR = {
+					has_country_flag = started_contact_war_prep_against
+					has_country_flag = started_contact_war_prep_against2
+				}
+			}
+		}
+		
 		allow = {
 			custom_tooltip = {
 				fail_text = "contact_empire_too_evil"		
-				NOR = {
-					event_target:empire = { has_valid_civic = civic_machine_terminator }
-					event_target:empire = { has_valid_civic = civic_machine_assimilator }
-					event_target:empire = { has_valid_civic = civic_barbaric_despoilers }
-					event_target:empire = { has_valid_civic = civic_hive_devouring_swarm }
-					event_target:empire = { has_valid_civic = civic_fanatic_purifiers }
-					event_target:empire = {
-						any_owned_pop_species = {
-							OR = {
-								AND = {
-									has_citizenship_type = { country = event_target:empire type = citizenship_purge }
-									OR = {
-										has_purge_type = { country = event_target:empire type = purge_processing }		
-										has_purge_type = { country = event_target:empire type = purge_matrix }		
-										has_purge_type = { country = event_target:empire type = purge_normal }		
-										has_purge_type = { country = event_target:empire type = purge_neutering }		
-										has_purge_type = { country = event_target:empire type = purge_displacement }		
-										has_purge_type = { country = event_target:empire type = purge_labor_camps }
-									}									
-								}
-							}				
-						}
-					}
-				}
+				is_absolutely_evil = no
 			}
 		}
 		owner = {
@@ -329,6 +372,64 @@ country_event = {
 				modifier = aleran_duty_ignore
 				days = 7200
 			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.102.click.d2" #ignore duty
+		ai_chance = {
+			factor = 150
+		}
+		
+		trigger = {
+			event_target:empire = {
+				OR = {
+					has_country_flag = started_contact_war_prep_against
+					has_country_flag = started_contact_war_prep_against2
+				}
+			}
+		}
+		
+		allow = {
+			custom_tooltip = {
+				fail_text = "contact_empire_too_evil"		
+				is_absolutely_evil = no
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = aleran_duty_ignore
+				days = 7200
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.102.click.e" #other empires are priority
+		ai_chance = {
+			factor = 150
+		}
+		
+		trigger = {
+			event_target:empire = {
+				is_absolutely_evil = no
+			}
+			any_country = {
+				NOR = {
+					is_same_value = event_target:empire
+					is_same_value = event_target:alerans
+					has_valid_civic = civic_dragon_gov
+					is_at_war_with = event_target:alerans
+				}
+				is_absolutely_evil = yes
+				is_country_type = default
+				has_communications = event_target:alerans
+				event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
+			}
+		}
+		
+		owner = {
+		
 		}
 	}
 }
