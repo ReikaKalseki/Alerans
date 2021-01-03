@@ -258,12 +258,34 @@ country_event = {
 					}
 				}
 			}
+			NOR = {
+				event_target:empire = { has_valid_civic = civic_machine_terminator }
+				event_target:empire = { has_valid_civic = civic_machine_assimilator }
+				event_target:empire = { has_valid_civic = civic_barbaric_despoilers }
+				event_target:empire = { has_valid_civic = civic_hive_devouring_swarm }
+				event_target:empire = { has_valid_civic = civic_fanatic_purifiers }
+				event_target:empire = {
+					any_owned_pop_species = {
+						OR = {
+							AND = {
+								has_citizenship_type = { country = event_target:empire type = citizenship_purge }
+								OR = {
+									has_purge_type = { country = event_target:empire type = purge_processing }		
+									has_purge_type = { country = event_target:empire type = purge_matrix }		
+									has_purge_type = { country = event_target:empire type = purge_normal }		
+									has_purge_type = { country = event_target:empire type = purge_neutering }		
+									has_purge_type = { country = event_target:empire type = purge_displacement }		
+									has_purge_type = { country = event_target:empire type = purge_labor_camps }
+								}									
+							}
+						}				
+					}
+				}
+			}
 		}
 		
 		owner = {
-			#hidden_effect = {
-				add_modifier = { modifier = "aleran_no_navy" days = -1 }
-			#}
+		
 		}
 	}
 	
@@ -295,19 +317,6 @@ country_event = {
 										has_purge_type = { country = event_target:empire type = purge_displacement }		
 										has_purge_type = { country = event_target:empire type = purge_labor_camps }
 									}									
-								}
-								AND = {
-									has_citizenship_type = { country = event_target:empire type = citizenship_slavery }
-									OR = {
-										has_slavery_type = { country = event_target:empire type = slavery_livestock }
-										has_slavery_type = { country = event_target:empire type = slavery_matrix }
-										has_slavery_type = { country = event_target:empire type = slavery_domestic }
-										has_slavery_type = { country = event_target:empire type = slavery_normal }
-									}
-								}
-								OR = {
-									has_living_standard  = { country = event_target:empire type = living_standard_servitude }
-									has_living_standard  = { country = event_target:empire type = living_standard_none }
 								}
 							}				
 						}

@@ -107,6 +107,7 @@ wg_dragon = {
 			every_country = {
 				#log = "this in anycountry is [This.GetName]"
 				limit = {
+					has_communications = root
 					OR = {
 						is_country_type = default
 						#is_country_type = dormant_marauders
