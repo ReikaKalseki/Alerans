@@ -578,6 +578,8 @@ aleran_society.102.click.c:0 "They are backwards, but not bad enough to justify 
 aleran_society.102.click.d:0 "We have better things to do than babysit the galaxy."
 aleran_society.102.click.d2:0 "We have changed our mind."
 aleran_society.102.click.e:0 "Other empires are of greater concern at this time."
+aleran_society.102.click.f:0 "There is another much greater threat we need to focus on."
+aleran_society.102.click.g:0 "We are already busy dealing with another empire."
 aleran_society.102.b.tooltip:0 "We will re-evaluate our ability to go to war once we have better prepared."
 aleran_society.102.b2.tooltip:0 "We will continue our preparations."
 contact_empire_too_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore."

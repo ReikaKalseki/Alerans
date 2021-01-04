@@ -233,3 +233,13 @@ is_absolutely_evil = {
 		}
 	}
 }
+
+is_genocidal = {
+	OR = {
+		has_valid_civic = civic_machine_terminator
+		has_valid_civic = civic_machine_assimilator
+		#has_valid_civic = civic_barbaric_despoilers
+		has_valid_civic = civic_hive_devouring_swarm
+		has_valid_civic = civic_fanatic_purifiers
+	}
+}

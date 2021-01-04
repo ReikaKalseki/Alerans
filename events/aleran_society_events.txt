@@ -32,6 +32,7 @@ event = {
 						is_same_value = root
 						has_country_flag = aleran_contact_warduty
 						has_country_flag = started_contact_war_prep_against
+						has_country_flag = war_prompt_otherempire
 						has_valid_civic = civic_dragon_gov
 						is_at_war_with = event_target:alerans
 					}
@@ -171,7 +172,7 @@ country_event = {
 			}
 			give_technology = { tech = tech_corvettes message = yes }
 		}
-		remove_modifier = "aleran_no_navy"
+		remove_modifier = aleran_no_navy
 	}
 	
 	option = {
@@ -184,6 +185,10 @@ country_event = {
 				target = event_target:empire
 				name = "Aleran Duty"
 				attacker_war_goal = wg_dragon
+			}
+			hidden_effect = {
+				remove_modifier = aleran_duty_dragfeet
+				remove_modifier = aleran_duty_ignore
 			}
 			if = {
 				limit = {
@@ -420,6 +425,7 @@ country_event = {
 					is_same_value = event_target:alerans
 					has_valid_civic = civic_dragon_gov
 					is_at_war_with = event_target:alerans
+					has_country_flag = war_prompt_otherempire
 				}
 				is_absolutely_evil = yes
 				is_country_type = default
@@ -429,7 +435,64 @@ country_event = {
 		}
 		
 		owner = {
+			hidden_effect = {
+				remove_modifier = aleran_duty_dragfeet
+				remove_modifier = aleran_duty_ignore
+				event_target:empire = { set_timed_country_flag = { flag = war_prompt_otherempire days = 1800 } } #5y
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.102.click.f" #other empires are priority due to them being genocidal
+		ai_chance = {
+			factor = 150
+		}
 		
+		trigger = {
+			event_target:empire = {
+				is_absolutely_evil = yes
+				is_genocidal = no
+			}
+			any_country = {
+				NOR = {
+					is_same_value = event_target:empire
+					is_same_value = event_target:alerans
+					has_valid_civic = civic_dragon_gov
+					is_at_war_with = event_target:alerans
+					has_country_flag = war_prompt_otherempire
+				}
+				is_genocidal = yes
+				is_country_type = default
+				has_communications = event_target:alerans
+				event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
+			}
+		}
+		
+		owner = {
+			hidden_effect = {
+				remove_modifier = aleran_duty_dragfeet
+				remove_modifier = aleran_duty_ignore
+				#this = { country_event = { id = aleran_society.101 days = 60 } }
+				event_target:empire = { set_timed_country_flag = { flag = war_prompt_otherempire days = 1800 } } #5y
+				#queue war with that other target?
+				country_event = { id = aleran_society.102 days = 1800 random = 1800}
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_society.102.click.g" #already at war
+		ai_chance = {
+			factor = 150
+		}
+		
+		trigger = {
+			event_target:alerans = { is_at_war = yes }
+		}
+		
+		owner = {
+			country_event = { id = aleran_society.102 days = 3600 random = 3600 }
 		}
 	}
 }
