@@ -117,6 +117,7 @@ wg_dragon = {
 					NOR = {
 						is_same_value = root
 						is_same_value = from
+						is_at_war_with = root
 					}
 				}
 				add_opinion_modifier = { modifier = opinion_enlighten_threat_counter who = root }

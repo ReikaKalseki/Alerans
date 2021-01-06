@@ -492,7 +492,9 @@ country_event = {
 		}
 		
 		owner = {
-			country_event = { id = aleran_society.102 days = 3600 random = 3600 }
+			hidden_effect = {
+				country_event = { id = aleran_society.102 days = 3600 random = 3600 }
+			}
 		}
 	}
 }

@@ -34,6 +34,9 @@ cb_dragon = {
 				OR = {
 					from = { is_country_type = default }
 					from = { is_country_type = primitive }
+					from = { is_country_type = rebel }
+					from = { is_country_type = ratlings }
+					from = { is_country_type = nivlacs }
 				}
 				OR = {
 					from = { has_valid_civic = civic_machine_terminator }
@@ -41,6 +44,15 @@ cb_dragon = {
 					from = { has_valid_civic = civic_barbaric_despoilers }
 					from = { has_valid_civic = civic_hive_devouring_swarm }
 					from = { has_valid_civic = civic_fanatic_purifiers }
+					from = { has_ai_personality_behaviour = slaver }
+					from = { has_ai_personality_behaviour = purger }
+					from = { has_ai_personality_behaviour = displacer }
+					from = { has_ai_personality = evangelising_zealots }
+					from = { has_ai_personality = slaving_despots }
+					from = { has_ai_personality = fanatic_purifiers }
+					from = { has_ai_personality = devouring_swarm }
+					from = { has_ai_personality = assimilators }
+					from = { has_ai_personality = exterminators }
 					from = { has_ethic = ethic_fanatic_xenophobe }
 					AND = {
 						from = { has_ethic = ethic_fanatic_egalitarian }
