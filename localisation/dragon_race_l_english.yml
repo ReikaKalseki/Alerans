@@ -596,18 +596,17 @@ aleran_war.801.desc:0 "Perhaps you have been busy with whatever it is fledgling 
 aleran_war.801.desc2:0 "You have had your time to prepare. Now you must honor your promise."
 aleran_war.801.click.a:0 "We will join you as you ask."
 aleran_war.801.click.b:0 "We shall fulfill this duty, but we will not surrender our independence."
-aleran_war.801.click.c:0 "We are willing to join you, but we need time to prepare."
+aleran_war.801.click.c:0 "We are willing to join you, but we are not yet ready for a war."
 aleran_war.801.click.d:0 "This is your fight, not ours. We have no need to get involved."
 aleran_war.801.click.e:0 "We have changed our mind; we will not join you."
-aleran_war.801.click.f:0 "We do indeed have a duty here, but we cannot afford this war."
 
 aleran_war.803.name:0 "Reply from the [goodempire.GetName]"
 aleran_war.803.desc:0 "Better late than never. Good luck and try not to get wiped out by the [badempire.GetName] or its allies."
 aleran_war.803.desc2:0 "We do not appreciate your defiance, but for now we will accept this state of affairs. Good luck."
 aleran_war.803.desc3:0 "So all your talk about defending people from unjust rule and fighting ignorance was mere posturing? Or perhaps a flimsy excuse to use to trick your people into supporting unjust conquests of your own?\n\nYou clearly have no idea what is at stake here, but what else should we have expected from an ignorant upstart who has not seen what life can be like under the thumb of the [badempire.GetName].\n\nWe will not forget this dereliction of your alleged duties or how easily you abandoned your sworn principles once facing a real threat."
 aleran_war.803.desc6:0 "So all your talk about defending people from unjust rule and fighting ignorance was mere posturing? Or perhaps a flimsy excuse to use to trick your people into supporting unjust conquests of your own?\n\nYou clearly have no idea what is at stake here, but what else should we have expected from an ignorant upstart who has not seen what life can be like under the thumb of the [badempire.GetName].\n\nWe will not forget this dereliction of your alleged duties or how easily you abandoned your sworn principles once facing a real threat.\n\nNor how you accepted our generous aid to help you prepare and squirreled it away for your own ends!"
-aleran_war.803.desc4:0 "None of us were as prepared as we would like, and time is not something we have the luxury to waste. You have five years, no more."
-aleran_war.803.desc5:0 "You would be better prepared if you had not squandered your time and resources on pointless endeavors for the past decades. Take this to help prepare you for your duty. You have five years to use these resources to make preparations. We can afford no more time than that."
+aleran_war.803.desc4:0 "None of us are as prepared as we would like, and time is not something we have the luxury to waste. You have five years, no more. Take this to help you meet that deadline. Do not squander it."
+aleran_war.803.desc5:0 "You would be better prepared if you had not squandered your time and resources on pointless endeavors for the past decades. You have five years to make preparations. We can afford no more time than that."
 aleran_war.803.click.a:0 "Goodbye."
 
 

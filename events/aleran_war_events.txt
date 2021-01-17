@@ -290,11 +290,57 @@ country_event = {
 		owner = {
 			hidden_effect = {
 				set_country_flag = war_in_heaven_delay
-				country_event = { id = aleran_war.801 days = 1800}	 #5y
+			}
+			if = {
+				limit = {
+					event_target:goodempire = { opinion = { who = prev value >= 100 } }
+					fleet_power < 120000
+					OR = {
+						running_balance <= 0
+						has_monthly_income =  { type = minerals amount < 500 }
+						AND = {
+							fleet_power < 40000
+							has_country_resource = { type = minerals amount < 50000 }
+							has_monthly_income =  { type = minerals amount < 5000 }
+						}
+						AND = {
+							fleet_power < 50000
+							has_country_resource = { type = minerals amount < 30000 }
+							has_monthly_income =  { type = minerals amount < 4000 }
+						}
+						AND = {
+							fleet_power < 60000
+							has_country_resource = { type = minerals amount < 20000 }
+							has_monthly_income =  { type = minerals amount < 3000 }
+						}
+						AND = {
+							fleet_power < 80000
+							has_country_resource = { type = minerals amount < 10000 }
+							has_monthly_income =  { type = minerals amount < 2000 }
+						}
+						AND = {
+							fleet_power < 100000
+							has_country_resource = { type = minerals amount < 5000 }
+							has_monthly_income =  { type = minerals amount < 1000 }
+						}
+					}
+				}
+				set_country_flag = war_in_heaven_gift
+				add_minerals = 60000
+				add_energy = 8000
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = 12
+					min = 2000
+					max = 20000
+				}
 			}
 			add_modifier = {
 				modifier = aleran_contact_war_prepare
 				days = 900
+			}
+			hidden_effect = {
+				country_event = { id = aleran_war.801 days = 1800}	 #5y
 			}
 		}
 	}
@@ -327,7 +373,7 @@ country_event = {
 				set_country_flag = refused_wih_join
 				if = {
 					limit = {
-						has_country_flag = war_in_heaven_noafford
+						has_country_flag = war_in_heaven_gift
 					}
 					event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_refused_wih_duty_gift } }	
 				}
@@ -335,42 +381,6 @@ country_event = {
 					event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_refused_wih_duty } }	
 				}
 				country_event = { id = aleran_war.803 }
-			}
-		}
-	}
-	
-	option = {
-		name = "aleran_war.801.click.f" #cannot afford
-		custom_tooltip = aleran_war.801.f.tooltip
-		trigger = {
-			NOR = {
-				has_country_flag = war_in_heaven_delay
-				has_country_flag = war_in_heaven_noafford
-			}
-			event_target:goodempire = { opinion = { who = prev value >= 100 } }
-			fleet_power < 40000
-			OR = {
-				running_balance <= 0
-				has_country_resource = { type = minerals amount < 8000 }
-			}
-		}
-		owner = {	
-			hidden_effect = {
-				set_country_flag = war_in_heaven_delay
-				set_country_flag = war_in_heaven_noafford
-				country_event = { id = aleran_war.801 days = 1800}	 #5y
-			}
-			add_minerals = 30000
-			add_energy = 5000
-			add_monthly_resource_mult = {
-				resource = engineering_research
-				value = 12
-				min = 2000
-				max = 20000
-			}
-			add_modifier = {
-				modifier = aleran_contact_war_prepare
-				days = 900
 			}
 		}
 	}
@@ -406,7 +416,7 @@ country_event = {
 			NOR = {
 				has_country_flag = joined_wih_novassal
 				has_country_flag = refused_wih_join
-				has_country_flag = war_in_heaven_noafford
+				has_country_flag = war_in_heaven_gift
 			}
 		}
 		text = aleran_war.803.desc
@@ -424,7 +434,7 @@ country_event = {
 			has_country_flag = refused_wih_join
 			NOR = {
 				has_country_flag = joined_wih_novassal
-				has_country_flag = war_in_heaven_noafford
+				has_country_flag = war_in_heaven_gift
 				has_country_flag = war_in_heaven_delay
 			}
 		}
@@ -434,7 +444,7 @@ country_event = {
 	desc = {
 		trigger = {
 			has_country_flag = refused_wih_join
-			has_country_flag = war_in_heaven_noafford
+			has_country_flag = war_in_heaven_gift
 			NOR = {
 				has_country_flag = joined_wih_novassal
 				has_country_flag = war_in_heaven_delay
@@ -448,11 +458,11 @@ country_event = {
 			NOR = {
 				has_country_flag = joined_wih_novassal
 				has_country_flag = refused_wih_join
-				has_country_flag = war_in_heaven_noafford
+				has_country_flag = war_in_heaven_gift
 			}
 			has_country_flag = war_in_heaven_delay
 		}
-		text = aleran_war.803.desc4
+		text = aleran_war.803.desc5
 	}
 	
 	desc = {
@@ -462,9 +472,9 @@ country_event = {
 				has_country_flag = refused_wih_join
 			}
 			has_country_flag = war_in_heaven_delay
-			has_country_flag = war_in_heaven_noafford
+			has_country_flag = war_in_heaven_gift
 		}
-		text = aleran_war.803.desc5
+		text = aleran_war.803.desc4
 	}
 	
 	is_triggered_only = yes
