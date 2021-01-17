@@ -134,59 +134,354 @@ country_event = {
 	hide_window = yes
 	
 	trigger = {
-		is_country_type = awakened_fallen_empire
 		has_global_flag = war_in_heaven_ongoing
-		is_xenophobe = no
-		is_spiritualist = no
-		any_war = {
-			using_war_goal = { type = wg_war_in_heaven owner = prev }
-			any_war_participant = {
-				is_country_type = awakened_fallen_empire
-				OR = {
-					is_xenophobe = yes
-					is_spiritualist = yes
-				}
-				is_at_war_with = prevprev
-			}
-		}
-		any_country = {
-			has_valid_civic = civic_dragon_gov
-			is_ai = no
-			is_at_war = no
-			fleet_power > 50000
+		has_valid_civic = civic_dragon_gov
+		is_ai = no
+		is_at_war = no
+		NOR = {
+			has_country_flag = refused_wih_join
+			has_country_flag = war_in_heaven_picked_side
 		}
 	}
 
 	mean_time_to_happen = {
 		days = 3600
 		modifier = {
-			factor = 0.3
-			any_planet_within_border = {
-				has_mining_station = yes
-				has_planet_flag = hiver_asteroid_2
-			}
+			factor = 0.9
+			fleet_power > 40000
+		}
+		modifier = {
+			factor = 0.8
+			fleet_power > 60000
+		}
+		modifier = {
+			factor = 0.75
+			fleet_power > 90000
+		}
+		modifier = {
+			factor = 0.675
+			fleet_power > 120000
+		}
+		modifier = {
+			factor = 0.5
+			fleet_power > 180000
+		}
+		modifier = {
+			factor = 0.75
+			has_technology = tech_titans
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = tech_colossus
 		}
 	}
 	
-	immediate = {		
-			
+	immediate = {
+		random_country = {
+			limit = {
+				is_country_type = awakened_fallen_empire
+				OR = {
+					is_xenophile = yes
+					is_materialist = yes
+				}
+				any_war = {
+					using_war_goal = { type = wg_war_in_heaven owner = prev }
+					any_war_participant = {
+						is_country_type = awakened_fallen_empire
+						OR = {
+							is_xenophobe = yes
+							is_spiritualist = yes
+						}
+						is_at_war_with = prevprev
+					}
+				}
+			}
+			save_event_target_as = goodempire
+			every_war = {
+				random_war_participant = {
+					limit = { 
+						is_country_type = awakened_fallen_empire
+						OR = {
+							is_xenophobe = yes
+							is_spiritualist = yes
+						}
+						is_at_war_with = event_target:goodempire
+					}
+					save_event_target_as = badempire
+					prev = { save_event_target_as = wih }
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:goodempire
+				exists = event_target:badempire
+			}
+			country_event = { id = aleran_war.801 }
+		}
+	}
+}
+
+country_event = {
+	id = aleran_war.801
+	title = "aleran_war.801.name"
+	
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = war_in_heaven_delay }
+		}
+		text = aleran_war.801.desc
+	}
+	
+	desc = {
+		trigger = {
+			has_country_flag = war_in_heaven_delay
+		}
+		text = aleran_war.801.desc2
+	}
+	
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:goodempire
+		planet_background = event_target:goodempire
+		graphical_culture = event_target:goodempire
+		city_level = event_target:goodempire
+		room = event_target:goodempire.ruler
 	}
 	
 	option = {
-		name = "aleran_war.800.click.a"
-		ai_chance = {
-			factor = 150
+		name = "aleran_war.801.click.a" #agree to war, vassalize
+		custom_tooltip = aleran_war.801.a.tooltip
+		owner = {	
+			hidden_effect = {
+				country_event = { id = aleran_war.802 }
+				country_event = { id = aleran_war.803 }
+			}
+			set_subject_of = {
+				who = event_target:goodempire
+				subject_type = signatory
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_war.801.click.b" #agree to war, but no vassal
+		custom_tooltip = aleran_war.801.b.tooltip
+		owner = {	
+			hidden_effect = {
+				set_country_flag = joined_wih_novassal
+				event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_novassal } }
+				country_event = { id = aleran_war.802 }
+				country_event = { id = aleran_war.803 }
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_war.801.click.c" #we need some time
+		custom_tooltip = aleran_war.801.c.tooltip
+		trigger = { 
+			NOT = {
+				has_country_flag = war_in_heaven_delay
+			}
 		}
 		owner = {
-			hidden_effect = { set_country_flag = war_in_heaven_picked_side }
-	
 			hidden_effect = {
-				hidden_effect = { add_opinion_modifier = { who = event_target:FirstSleeper modifier = opinion_war_in_heaven_ally } }
-				event_target:FirstSleeper = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_ally } }
-				hidden_effect = { add_opinion_modifier = { who = from modifier = opinion_war_in_heaven_enemy } }
-				from = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_enemy } }		
+				set_country_flag = war_in_heaven_delay
+				country_event = { id = aleran_war.801 days = 1800}	 #5y
 			}
-			join_war = event_target:FirstSleeper
+			add_modifier = {
+				modifier = aleran_contact_war_prepare
+				days = 900
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_war.801.click.d" #refuse
+		custom_tooltip = aleran_war.801.d.tooltip
+		trigger = { 
+			NOT = {
+				has_country_flag = war_in_heaven_delay
+			}
+		}
+		owner = {	
+			hidden_effect = {
+				set_country_flag = refused_wih_join
+				event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_refused_wih_duty } }	
+				country_event = { id = aleran_war.803 }
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_war.801.click.e" #change mind
+		custom_tooltip = aleran_war.801.d.tooltip
+		trigger = {
+			has_country_flag = war_in_heaven_delay
+		}
+		owner = {	
+			hidden_effect = {
+				set_country_flag = refused_wih_join
+				if = {
+					limit = {
+						has_country_flag = war_in_heaven_noafford
+					}
+					event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_refused_wih_duty_gift } }	
+				}
+				else = {
+					event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_refused_wih_duty } }	
+				}
+				country_event = { id = aleran_war.803 }
+			}
+		}
+	}
+	
+	option = {
+		name = "aleran_war.801.click.f" #cannot afford
+		custom_tooltip = aleran_war.801.f.tooltip
+		trigger = {
+			NOR = {
+				has_country_flag = war_in_heaven_delay
+				has_country_flag = war_in_heaven_noafford
+			}
+			event_target:goodempire = { opinion = { who = prev value >= 100 } }
+			fleet_power < 40000
+			OR = {
+				running_balance <= 0
+				has_country_resource = { type = minerals amount < 8000 }
+			}
+		}
+		owner = {	
+			hidden_effect = {
+				set_country_flag = war_in_heaven_delay
+				set_country_flag = war_in_heaven_noafford
+				country_event = { id = aleran_war.801 days = 1800}	 #5y
+			}
+			add_minerals = 30000
+			add_energy = 5000
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 12
+				min = 2000
+				max = 20000
+			}
+			add_modifier = {
+				modifier = aleran_contact_war_prepare
+				days = 900
+			}
+		}
+	}
+}
+
+country_event = {
+	id = aleran_war.802
+	hide_window = yes	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = war_in_heaven_picked_side
+			add_opinion_modifier = { who = event_target:goodempire modifier = opinion_war_in_heaven_ally }
+			event_target:goodempire = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_ally } }
+			add_opinion_modifier = { who = event_target:badempire modifier = opinion_war_in_heaven_enemy }
+			event_target:badempire = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_enemy } }		
+		}
+		add_modifier = {
+			modifier = moralistic_fervor
+			days = 7200
+		}
+		join_war = event_target:goodempire	
+	}
+}
+
+country_event = {
+	id = aleran_war.803
+	title = "aleran_war.803.name"
+	
+	desc = {
+		trigger = {
+			NOR = {
+				has_country_flag = joined_wih_novassal
+				has_country_flag = refused_wih_join
+				has_country_flag = war_in_heaven_noafford
+			}
+		}
+		text = aleran_war.803.desc
+	}
+	
+	desc = {
+		trigger = {
+			has_country_flag = joined_wih_novassal
+		}
+		text = aleran_war.803.desc2
+	}
+	
+	desc = {
+		trigger = {
+			has_country_flag = refused_wih_join
+			NOR = {
+				has_country_flag = joined_wih_novassal
+				has_country_flag = war_in_heaven_noafford
+				has_country_flag = war_in_heaven_delay
+			}
+		}
+		text = aleran_war.803.desc3
+	}
+	
+	desc = {
+		trigger = {
+			has_country_flag = refused_wih_join
+			has_country_flag = war_in_heaven_noafford
+			NOR = {
+				has_country_flag = joined_wih_novassal
+				has_country_flag = war_in_heaven_delay
+			}
+		}
+		text = aleran_war.803.desc6
+	}
+	
+	desc = {
+		trigger = {
+			NOR = {
+				has_country_flag = joined_wih_novassal
+				has_country_flag = refused_wih_join
+				has_country_flag = war_in_heaven_noafford
+			}
+			has_country_flag = war_in_heaven_delay
+		}
+		text = aleran_war.803.desc4
+	}
+	
+	desc = {
+		trigger = {
+			NOR = {
+				has_country_flag = joined_wih_novassal
+				has_country_flag = refused_wih_join
+			}
+			has_country_flag = war_in_heaven_delay
+			has_country_flag = war_in_heaven_noafford
+		}
+		text = aleran_war.803.desc5
+	}
+	
+	is_triggered_only = yes
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:goodempire
+		planet_background = event_target:goodempire
+		graphical_culture = event_target:goodempire
+		city_level = event_target:goodempire
+		room = event_target:goodempire.ruler
+	}
+	
+	option = {
+		name = "aleran_war.803.click"
+		owner = {	
+			
 		}
 	}
 }

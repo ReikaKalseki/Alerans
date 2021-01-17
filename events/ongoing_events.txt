@@ -191,3 +191,26 @@ country_event = {
 		set_federation_leader = this
 	}
 }
+
+event = {
+	id = aleran_ongoing.20
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				OR = {
+					is_xenophobe = yes
+					is_spiritualist = yes
+				}
+			}
+			remove_opinion_modifier = { modifier = opinion_enlighten_threat_counter }
+		}
+	}
+}

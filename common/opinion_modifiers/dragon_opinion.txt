@@ -677,6 +677,42 @@ opinion_dragon_allieswar = {
 }
 
 
+opinion_war_in_heaven_novassal = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_refused_wih_duty = {
+	opinion = {
+		base = -150
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_refused_wih_duty_gift = {
+	opinion = {
+		base = -300
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}
+
 
 #ie they dismissed the Alerans as a threat
 opinion_dragon_dismissed = {

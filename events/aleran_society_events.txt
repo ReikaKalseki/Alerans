@@ -27,7 +27,7 @@ event = {
 		}
 		#log = "Ran AleranSoc 100, alerans are [event_target:alerans.GetName]"
 		if = {
-			limit = {exists = event_target:alerans }
+			limit = { exists = event_target:alerans }
 			random_country = {
 				limit = {
 					is_country_type = default

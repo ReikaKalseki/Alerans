@@ -156,6 +156,16 @@ wg_dragon = {
 						is_same_value = from
 						is_at_war_with = root
 						is_absolutely_evil = yes
+						AND = {
+							OR = {
+								is_country_type = fallen_empire
+								is_country_type = awakened_fallen_empire
+							}
+							OR = {
+								is_xenophobe = yes
+								is_spiritualist = yes
+							}
+						}
 					}
 				}
 				add_opinion_modifier = { modifier = opinion_enlighten_threat_counter who = root }

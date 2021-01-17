@@ -568,6 +568,8 @@ aleran_diplomacy.1231.name:0 "Message from the [From.GetName]"
 aleran_diplomacy.1231.desc:0 "Believe it or not, a much larger threat to galactic peace and stability than you has arisen. Therefore, you can take some assurance in that we will not engage in military action against you while this threat persists, unless you make yourself worse than them."
 aleran_diplomacy.1231.click:0 "Understood."
 
+
+#SOCIETY EVENTS#
 aleran_society.102.name:0 "Duty Calls"
 aleran_society.102.desc:0 "We have found in the [event_target:empire.GetName] exactly what we have as a society vowed to stop - a nation run by incompetent or despotic leaders who at best are ignorant of how to care for their citizens and at worst actively seek to do them harm, or a nation which left unchecked will eradicate those unlucky enough to live near it.\n\nWe must not allow this to go unanswered."
 aleran_society.102.desc3:0 "We have always known the [event_target:empire.GetName] to be run by incompetent or despotic leaders, and the suffering their citizens and/or neighbors endure under their influence; the passage of time has only made that clearer.\n\nCalls to end their harms have become increasingly frequent and prominent in our society; we should do our duty to protect their victims."
@@ -587,6 +589,29 @@ contact_empire_too_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignor
 contact_empire_too_evil_second_delay:1 "$TRIGGER_FAIL$They are too dangerous or evil to wait further."
 contact_empire_is_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore."
 
+
+#WAR EVENTS#
+aleran_war.801.name:0 "Message from the [goodempire.GetName]"
+aleran_war.801.desc:0 "Perhaps you have been busy with whatever it is fledgling nations do, or maybe our last message to you got buried under whatever trivialities consume most of your diplomacy, but in case you were not aware, a threat to the entire galaxy has arisen. The [badempire.GetName] has once again decided to try and impose itself as the dominant force of every one of your empires, including your precious [Root.GetName].\n\nLeft unchecked, they will destroy everything you claim to stand for, along with countless lives. We have observed you long enough to know your alleged principles, and now is a very fitting time to live up to them.\n\nJoin with the [goodempire.GetName] in once again ending the threat of the [badempire.GetName]."
+aleran_war.801.desc2:0 "You have had your time to prepare. Now you must honor your promise."
+aleran_war.801.click.a:0 "We will join you as you ask."
+aleran_war.801.click.b:0 "We shall fulfill this duty, but we will not surrender our independence."
+aleran_war.801.click.c:0 "We are willing to join you, but we need time to prepare."
+aleran_war.801.click.d:0 "This is your fight, not ours. We have no need to get involved."
+aleran_war.801.click.e:0 "We have changed our mind; we will not join you."
+aleran_war.801.click.f:0 "We do indeed have a duty here, but we cannot afford this war."
+
+aleran_war.803.name:0 "Reply from the [goodempire.GetName]"
+aleran_war.803.desc:0 "Better late than never. Good luck and try not to get wiped out by the [badempire.GetName] or its allies."
+aleran_war.803.desc2:0 "We do not appreciate your defiance, but for now we will accept this state of affairs. Good luck."
+aleran_war.803.desc3:0 "So all your talk about defending people from unjust rule and fighting ignorance was mere posturing? Or perhaps a flimsy excuse to use to trick your people into supporting unjust conquests of your own?\n\nYou clearly have no idea what is at stake here, but what else should we have expected from an ignorant upstart who has not seen what life can be like under the thumb of the [badempire.GetName].\n\nWe will not forget this dereliction of your alleged duties or how easily you abandoned your sworn principles once facing a real threat."
+aleran_war.803.desc6:0 "So all your talk about defending people from unjust rule and fighting ignorance was mere posturing? Or perhaps a flimsy excuse to use to trick your people into supporting unjust conquests of your own?\n\nYou clearly have no idea what is at stake here, but what else should we have expected from an ignorant upstart who has not seen what life can be like under the thumb of the [badempire.GetName].\n\nWe will not forget this dereliction of your alleged duties or how easily you abandoned your sworn principles once facing a real threat.\n\nNor how you accepted our generous aid to help you prepare and squirreled it away for your own ends!"
+aleran_war.803.desc4:0 "None of us were as prepared as we would like, and time is not something we have the luxury to waste. You have five years, no more."
+aleran_war.803.desc5:0 "You would be better prepared if you had not squandered your time and resources on pointless endeavors for the past decades. Take this to help prepare you for your duty. You have five years to use these resources to make preparations. We can afford no more time than that."
+aleran_war.803.click.a:0 "Goodbye."
+
+
+#MEGASTRUCTURE EVENTS#
 aleran_megastructures.1.name:0 "Megastructure Construction In Progress"
 aleran_megastructures.1.desc:0 "The framework for the [From.GetControllerName] in [FromFrom.GetName] is complete. The commonwealth has once again demonstrated the virtues of its ethics of science and progress."
 aleran_megastructures.1.click:0 "Excellent."
@@ -610,6 +635,7 @@ aleran_megastructures.104.click:0 "Almost there."
 aleran_megastructures.105.name:0 "Gateway Update"
 aleran_megastructures.105.desc:0 "The gateway in [FromFromFrom.GetName] emitted barely a burp as it was activated. A couple final tweaks are necessary, but we can probably consider these surges a thing of the past."
 aleran_megastructures.105.click:0 "Finally."
+
 
 #COLOSSUS EVENTS#
 aleran_colossus.3.name:0 "Population in Withdrawal"
