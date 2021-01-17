@@ -2,6 +2,8 @@ namespace = aleran_war
 
 #1-100: random happenings during war; can spawn chain or other events
 
+#800-900: war in heaven events
+
 country_event = {
 	id = aleran_war.1
 	#hide_window = yes
@@ -33,6 +35,158 @@ country_event = {
 		}
 		owner = {
 		
+		}
+	}
+}
+
+event = {
+	id = aleran_war.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		random_country = {
+			limit = {
+				has_valid_civic = civic_dragon_gov
+			}
+			#log = "Found a country with matching civics: [This.GetName]"
+			country_event = { id = aleran_war.4 }
+		}
+	}
+}
+
+event = {
+	id = aleran_war.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		if = {
+			limit = {
+				has_valid_civic = civic_dragon_gov
+			}
+			log = "War started with a country with matching civics: [This.GetName]"
+			country_event = { id = aleran_war.4 }
+		}
+	}
+}
+
+event = {
+	id = aleran_war.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {	
+		if = {
+			limit = {
+				is_at_war = yes
+				any_war = { 
+					using_war_goal = { type = wg_dragon owner = prev }
+					OR = {
+						any_attacker = { is_same_value = prevprev }
+						any_war_participant = {
+							NOR = {
+								has_valid_civic = civic_dragon_gov
+								is_same_value = prevprev
+							}
+							is_absolutely_evil = yes
+						}
+					}
+				}
+			}
+			#log = "Has matching war"
+			if = {
+				limit = {
+					any_war = {
+						any_war_participant = {
+							NOR = {
+								has_valid_civic = civic_dragon_gov
+								is_same_value = prevprev
+							}
+							is_absolutely_evil = yes
+						}
+					}
+				}
+				#log = "War involves someone truly evil, applying strong modifier"
+				add_modifier = {
+					modifier = moralistic_fervor
+					days = 720
+				}
+			}
+			else = {
+				#log = "War does not involve someone truly evil, applying weak modifier"
+				add_modifier = {
+					modifier = moralistic_fervor_weak
+					days = 720
+				}
+			}
+		}
+		else = {
+			#log = "Has no applicable war"
+			remove_modifier = moralistic_fervor
+			remove_modifier = moralistic_fervor_weak
+		}
+	}
+}
+
+country_event = {
+	id = aleran_war.800
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = awakened_fallen_empire
+		has_global_flag = war_in_heaven_ongoing
+		is_xenophobe = no
+		is_spiritualist = no
+		any_war = {
+			using_war_goal = { type = wg_war_in_heaven owner = prev }
+			any_war_participant = {
+				is_country_type = awakened_fallen_empire
+				OR = {
+					is_xenophobe = yes
+					is_spiritualist = yes
+				}
+				is_at_war_with = prevprev
+			}
+		}
+		any_country = {
+			has_valid_civic = civic_dragon_gov
+			is_ai = no
+			is_at_war = no
+			fleet_power > 50000
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3600
+		modifier = {
+			factor = 0.3
+			any_planet_within_border = {
+				has_mining_station = yes
+				has_planet_flag = hiver_asteroid_2
+			}
+		}
+	}
+	
+	immediate = {		
+			
+	}
+	
+	option = {
+		name = "aleran_war.800.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+			hidden_effect = { set_country_flag = war_in_heaven_picked_side }
+	
+			hidden_effect = {
+				hidden_effect = { add_opinion_modifier = { who = event_target:FirstSleeper modifier = opinion_war_in_heaven_ally } }
+				event_target:FirstSleeper = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_ally } }
+				hidden_effect = { add_opinion_modifier = { who = from modifier = opinion_war_in_heaven_enemy } }
+				from = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_enemy } }		
+			}
+			join_war = event_target:FirstSleeper
 		}
 	}
 }

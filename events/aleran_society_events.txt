@@ -18,7 +18,10 @@ event = {
 				is_ai = no
 				is_at_war = no
 				has_valid_civic = civic_dragon_gov
-				NOT = { has_modifier = aleran_contact_war_prepare }
+				NOR = {
+					has_modifier = aleran_contact_war_prepare
+					has_country_flag = recently_enlightened_someone
+				}
 			}
 			save_event_target_as = alerans
 		}
@@ -427,10 +430,18 @@ country_event = {
 					is_at_war_with = event_target:alerans
 					has_country_flag = war_prompt_otherempire
 				}
-				is_absolutely_evil = yes
-				is_country_type = default
+				OR = {
+					AND = {
+						is_absolutely_evil = yes
+						is_country_type = default
+						event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
+					}
+					AND = {
+						is_xenophobe = yes
+						is_country_type = awakened_fallen_empire
+					}
+				}
 				has_communications = event_target:alerans
-				event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
 			}
 		}
 		
@@ -488,7 +499,21 @@ country_event = {
 		}
 		
 		trigger = {
-			event_target:alerans = { is_at_war = yes }
+			OR = {
+				event_target:alerans = { is_at_war = yes }
+				any_country = {
+					is_country_type = awakened_marauders
+					is_country_type = feral_prethoryn
+					is_country_type = feral_prethoryn_infighting
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = ai_empire
+					is_country_type = cybrex_empire
+					is_country_type = sentinels
+				}
+			}
 		}
 		
 		owner = {

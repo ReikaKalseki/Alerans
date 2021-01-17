@@ -219,6 +219,22 @@ opinion_dragon_meek = {
 	}
 }
 
+opinion_dragon_obstacle = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			is_genocidal = yes
+			is_country_type = default
+			NOT = { has_country_flag = aleran_saved_from_storm }
+		}
+	}
+	opinion = {
+		base = -2500
+	}
+}
+
 opinion_dragon_rightpath = {
 	trigger = {
 		FROM = {

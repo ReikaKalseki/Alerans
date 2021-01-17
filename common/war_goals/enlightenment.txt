@@ -57,7 +57,42 @@ wg_dragon = {
 	
 	# Run when war ends in status quo
 	on_status_quo = {
-
+		#custom_tooltip = wg_enlighten_quo
+		#hidden_effect = {
+		#	from = {
+		#		every_system_within_border = {
+		#			limit = {
+		#				controller = {
+		#					exists = yes
+		#					is_same_value = root
+		#				}
+		#				#starbase = {
+		#				#	exists = yes
+		#				#	controller = {
+		#				#		exists = yes
+		#				#		is_same_value = root
+		#				#	}
+		#				#}
+		#				#NOT = {
+		#				#	any_system_planet = { #scope does not exist in 2.1?
+		#				#		is_colony = yes
+		#				#		controller = {
+		#				#			NOT = { is_same_value = root }
+		#				#		}
+		#				#	}
+		#				#}
+		#			}
+		#			#starbase = { set_owner = root }
+		#			#every_system_planet = {
+		#			#	limit = {
+		#			#		controller = { is_same_value = root }
+		#			#	}
+		#			#	set_owner = root
+		#			#}
+		#			set_owner = root
+		#		}
+		#	}
+		#}
 	}
 	
 	# Run when target surrenders after claims are ceded
@@ -113,11 +148,14 @@ wg_dragon = {
 						#is_country_type = dormant_marauders
 						#is_country_type = awakened_marauders
 						is_country_type = ruined_marauders
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
 					}
 					NOR = {
 						is_same_value = root
 						is_same_value = from
 						is_at_war_with = root
+						is_absolutely_evil = yes
 					}
 				}
 				add_opinion_modifier = { modifier = opinion_enlighten_threat_counter who = root }
@@ -157,7 +195,9 @@ wg_dragon = {
 			limit = { 	
 				OR = {
 					is_same_value = from
-					is_in_federation_with = from 
+					is_in_federation_with = from
+					has_defensive_pact = from
+					has_overlord = from
 				}
 			}
 			#leave_alliance = { override_requirements = yes }
