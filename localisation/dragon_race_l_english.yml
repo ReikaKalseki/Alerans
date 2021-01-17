@@ -592,13 +592,17 @@ contact_empire_is_evil:1 "$TRIGGER_FAIL$They are too dangerous or evil to ignore
 
 #WAR EVENTS#
 aleran_war.801.name:0 "Message from the [goodempire.GetName]"
-aleran_war.801.desc:0 "Perhaps you have been busy with whatever it is fledgling nations do, or maybe our last message to you got buried under whatever trivialities consume most of your diplomacy, but in case you were not aware, a threat to the entire galaxy has arisen. The [badempire.GetName] has once again decided to try and impose itself as the dominant force of every one of your empires, including your precious [Root.GetName].\n\nLeft unchecked, they will destroy everything you claim to stand for, along with countless lives. We have observed you long enough to know your alleged principles, and now is a very fitting time to live up to them.\n\nJoin with the [goodempire.GetName] in once again ending the threat of the [badempire.GetName]."
+aleran_war.801.desc:0 "Perhaps you have been busy with whatever it is fledgling nations do, or maybe our last message to you got buried under whatever trivialities constitute most of your diplomacy, but in case you were not aware, a threat to the entire galaxy has arisen. The [badempire.GetName] has once again decided to try and impose itself as the dominant force of every one of your empires, including your precious [Root.GetName].\n\nLeft unchecked, they will destroy everything you claim to stand for, along with countless lives. We have observed you long enough to know your alleged principles, and now is a very fitting time to live up to them.\n\nJoin with the [goodempire.GetName] in once again ending the threat of the [badempire.GetName]."
 aleran_war.801.desc2:0 "You have had your time to prepare. Now you must honor your promise."
 aleran_war.801.click.a:0 "We will join you as you ask."
 aleran_war.801.click.b:0 "We shall fulfill this duty, but we will not surrender our independence."
 aleran_war.801.click.c:0 "We are willing to join you, but we are not yet ready for a war."
 aleran_war.801.click.d:0 "This is your fight, not ours. We have no need to get involved."
 aleran_war.801.click.e:0 "We have changed our mind; we will not join you."
+aleran_war.801.a.tooltip:0 "We will join their war."
+aleran_war.801.b.tooltip:0 "We will join their war, but will not submit as their subject. This will annoy them."
+aleran_war.801.c.tooltip:0 ""
+
 
 aleran_war.803.name:0 "Reply from the [goodempire.GetName]"
 aleran_war.803.desc:0 "Better late than never. Good luck and try not to get wiped out by the [badempire.GetName] or its allies."
@@ -608,6 +612,7 @@ aleran_war.803.desc6:0 "So all your talk about defending people from unjust rule
 aleran_war.803.desc4:0 "None of us are as prepared as we would like, and time is not something we have the luxury to waste. You have five years, no more. Take this to help you meet that deadline. Do not squander it."
 aleran_war.803.desc5:0 "You would be better prepared if you had not squandered your time and resources on pointless endeavors for the past decades. You have five years to make preparations. We can afford no more time than that."
 aleran_war.803.click.a:0 "Goodbye."
+aleran_war.803.click.b:0 "Thank you!"
 
 
 #MEGASTRUCTURE EVENTS#
@@ -799,6 +804,10 @@ opinion_aleran_saved_from_storm:0 "Solar Saviors"
 opinion_dragon_warning_rejected_1:0 "Ideological Requests Ignored"
 opinion_dragon_warning_rejected_2:0 "Ideological Requests Refused"
 opinion_dragon_warning_rejected_3:0 "Ideological Requests Refused"
+
+opinion_war_in_heaven_novassal:0 "Defiantly Independent"
+opinion_refused_wih_duty:0 "Refused War In Heaven Duty"
+opinion_refused_wih_duty_gift:0 "Stole War In Heaven Aid"
 
 
 #DIPLOMACY#

@@ -197,27 +197,45 @@ country_event = {
 				}
 			}
 			save_event_target_as = goodempire
-			every_war = {
-				random_war_participant = {
-					limit = { 
-						is_country_type = awakened_fallen_empire
-						OR = {
-							is_xenophobe = yes
-							is_spiritualist = yes
-						}
-						is_at_war_with = event_target:goodempire
-					}
-					save_event_target_as = badempire
-					prev = { save_event_target_as = wih }
+			#every_war = { #does not exist in 2.1
+			#	random_war_participant = {
+			#		limit = { 
+			#			is_country_type = awakened_fallen_empire
+			#			OR = {
+			#				is_xenophobe = yes
+			#				is_spiritualist = yes
+			#			}
+			#			is_at_war_with = event_target:goodempire
+			#		}
+			#		save_event_target_as = badempire
+			#		prev = { save_event_target_as = wih }
+			#	}
+			#}
+		}
+		random_country = {
+			limit = {
+				is_country_type = awakened_fallen_empire
+				OR = {
+					is_xenophobe = yes
+					is_spiritualist = yes
+				}
+				is_at_war_with = event_target:goodempire
+				any_war = {
+					using_war_goal = { type = wg_war_in_heaven owner = prev }
 				}
 			}
+			save_event_target_as = badempire
 		}
 		if = {
 			limit = {
 				exists = event_target:goodempire
 				exists = event_target:badempire
 			}
+			log = "Found valid FEs, firing war request"
 			country_event = { id = aleran_war.801 }
+		}
+		else = {
+			log = "Did not find valid FEs"
 		}
 	}
 }
@@ -281,7 +299,7 @@ country_event = {
 	
 	option = {
 		name = "aleran_war.801.click.c" #we need some time
-		custom_tooltip = aleran_war.801.c.tooltip
+		#custom_tooltip = aleran_war.801.c.tooltip
 		trigger = { 
 			NOT = {
 				has_country_flag = war_in_heaven_delay
@@ -297,57 +315,55 @@ country_event = {
 					fleet_power < 120000
 					OR = {
 						running_balance <= 0
-						has_monthly_income =  { type = minerals amount < 500 }
+						has_monthly_income =  { resource = minerals value < 500 }
 						AND = {
 							fleet_power < 40000
 							has_country_resource = { type = minerals amount < 50000 }
-							has_monthly_income =  { type = minerals amount < 5000 }
+							has_monthly_income =  { resource = minerals value < 5000 }
 						}
 						AND = {
 							fleet_power < 50000
 							has_country_resource = { type = minerals amount < 30000 }
-							has_monthly_income =  { type = minerals amount < 4000 }
+							has_monthly_income =  { resource = minerals value < 4000 }
 						}
 						AND = {
 							fleet_power < 60000
 							has_country_resource = { type = minerals amount < 20000 }
-							has_monthly_income =  { type = minerals amount < 3000 }
+							has_monthly_income =  { resource = minerals value < 3000 }
 						}
 						AND = {
 							fleet_power < 80000
 							has_country_resource = { type = minerals amount < 10000 }
-							has_monthly_income =  { type = minerals amount < 2000 }
+							has_monthly_income =  { resource = minerals value < 2000 }
 						}
 						AND = {
 							fleet_power < 100000
 							has_country_resource = { type = minerals amount < 5000 }
-							has_monthly_income =  { type = minerals amount < 1000 }
+							has_monthly_income =  { resource = minerals value < 1000 }
 						}
 					}
 				}
-				set_country_flag = war_in_heaven_gift
-				add_minerals = 60000
-				add_energy = 8000
-				add_monthly_resource_mult = {
-					resource = engineering_research
-					value = 12
-					min = 2000
-					max = 20000
+				hidden_effect = {
+					log = "Eligible for FE gift"
+					set_country_flag = war_in_heaven_gift
 				}
+			}
+			else = {
+				log = "Not eligible for FE gift"
 			}
 			add_modifier = {
 				modifier = aleran_contact_war_prepare
-				days = 900
+				days = 1800
 			}
 			hidden_effect = {
 				country_event = { id = aleran_war.801 days = 1800}	 #5y
+				country_event = { id = aleran_war.803 }
 			}
 		}
 	}
 	
 	option = {
 		name = "aleran_war.801.click.d" #refuse
-		custom_tooltip = aleran_war.801.d.tooltip
 		trigger = { 
 			NOT = {
 				has_country_flag = war_in_heaven_delay
@@ -417,6 +433,7 @@ country_event = {
 				has_country_flag = joined_wih_novassal
 				has_country_flag = refused_wih_join
 				has_country_flag = war_in_heaven_gift
+				has_country_flag = war_in_heaven_delay
 			}
 		}
 		text = aleran_war.803.desc
@@ -489,9 +506,29 @@ country_event = {
 	}
 	
 	option = {
-		name = "aleran_war.803.click"
+		name = "aleran_war.803.click.a"
+		trigger = {
+			NOT = { has_country_flag = war_in_heaven_gift }
+		}
 		owner = {	
 			
+		}
+	}
+	
+	option = {
+		name = "aleran_war.803.click.b"
+		trigger = {
+			has_country_flag = war_in_heaven_gift
+		}
+		owner = {	
+			add_minerals = 60000
+			add_energy = 8000
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 12
+				min = 2000
+				max = 20000
+			}
 		}
 	}
 }
