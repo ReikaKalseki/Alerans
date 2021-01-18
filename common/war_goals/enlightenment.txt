@@ -105,6 +105,7 @@ wg_dragon = {
 			}
 			from = {
 				set_timed_country_flag = {flag = recently_enlightened days = 720} #was 180 = 0.5y
+				set_country_flag = was_forcibly_enlightened
 				set_country_type = default
 			}
 		}

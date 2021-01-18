@@ -174,6 +174,12 @@ country_event = {
 			factor = 0.5
 			has_technology = tech_colossus
 		}
+		modifier = {
+			factor = 0.2
+			any_country = {
+				is_subject_of = prev
+			}
+		}
 	}
 	
 	immediate = {
@@ -246,9 +252,29 @@ country_event = {
 	
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = war_in_heaven_delay }
+			NOR = {
+				has_country_flag = war_in_heaven_delay
+				any_country = {
+					OR = {
+						has_country_flag = recently_enlightened
+						has_country_flag = was_forcibly_enlightened
+						is_subject_type = dragon_control
+					}
+					OR = {
+						event_target:badempire = { has_opinion_modifier = { who = prev modifier = opinion_war_in_heaven_ally } }
+						has_country_flag = picked_evil_wih_side
+					}
+				}
+			}
 		}
 		text = aleran_war.801.desc
+	}
+	
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = war_in_heaven_delay }
+		}
+		text = aleran_war.801.desc3
 	}
 	
 	desc = {
@@ -528,6 +554,46 @@ country_event = {
 				value = 12
 				min = 2000
 				max = 20000
+			}
+		}
+	}
+}
+
+country_event = {
+	id = aleran_war.805
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		country_event = { id = aleran_war.806 days = 2 }
+	}
+}
+
+country_event = {
+	id = aleran_war.806
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		if = {
+			limit = {
+				OR = {
+					is_subject_type = dragon_control
+					has_country_flag = recently_enlightened
+				}
+				any_country = {
+					has_opinion_modifier = { who = prev modifier = opinion_war_in_heaven_ally }
+					is_country_type = awakened_fallen_empire
+					OR = {
+						is_xenophobe = yes
+						is_spiritualist = yes
+					}
+				}
+			}
+			log = "[This.GetName] Was sided on the evil WIH"
+			set_country_flag = picked_evil_wih_side
+			every_country = {
+				remove_opinion_modifier = { modifier = opinion_war_in_heaven_ally who = prev }
 			}
 		}
 	}

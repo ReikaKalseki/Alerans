@@ -184,6 +184,24 @@ opinion_dragon_meddler = {
 	}
 }
 
+opinion_dragon_meddler_fe = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			is_xenophobe = yes
+			OR = {
+				is_country_type = awakened_fallen_empire
+				is_country_type = fallen_empire
+			}
+		}
+	}
+	opinion = {
+		base = -30
+	}
+}
+
 opinion_dragon_oppressor = {
 	trigger = {
 		FROM = {

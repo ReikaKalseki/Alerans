@@ -73,6 +73,15 @@ on_war_beginning = {
 	}
 }
 
+# A war has ended
+# Root = Loser
+# From = Main Winner
+on_war_ended = {
+	events = {
+		aleran_war.805
+	}
+}
+
 # This = Pop scope
 # From = Planet
 on_purge_begun = {
