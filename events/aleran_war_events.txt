@@ -598,3 +598,35 @@ country_event = {
 		}
 	}
 }
+
+event = {
+	id = aleran_war.807
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		every_country = {
+			limit = {
+				exists = this
+				OR = {
+					is_subject_type = dragon_control
+					has_country_flag = recently_enlightened
+				}
+			}
+			log = "ambient: [This.GetName] subject"
+			every_country = {
+				limit = {
+					is_country_type = awakened_fallen_empire
+					OR = {
+						is_xenophobe = yes
+						is_spiritualist = yes
+					}
+					has_opinion_modifier = { who = prev modifier = opinion_war_in_heaven_ally }
+				}
+				remove_opinion_modifier = { modifier = opinion_war_in_heaven_ally who = prev }
+				prev = { set_country_flag = picked_evil_wih_side }
+				log = "ambient: [Prev.GetName] was sided on the evil WIH"
+			}
+		}
+	}
+}

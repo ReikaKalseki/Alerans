@@ -4,6 +4,7 @@ on_monthly_pulse = {
 		#aleran_colossus.2
 		aleran_society.100 #war target scan
 		aleran_war.2 #war modifiers
+		aleran_war.807 #war modifiers
 		aleran_ongoing.20
 	}
 }
