@@ -58,12 +58,13 @@ aleran_ai_bonus = {
 	ship_upkeep_mult = -0.4 #was 0.2
 	planet_building_upkeep_mult = -0.2 #was 0.2
 	country_naval_cap_mult = 0.35
+	country_command_limit_add = 50
 	army_upkeep_mult = -0.1
-	country_starbase_influence_cost_mult = -0.05
+	country_starbase_influence_cost_mult = -0.25 #was 0.05
 	planet_building_build_speed_mult = 0.2
 	all_technology_research_speed = 0.2 #was 0.08
-	pop_growth_speed = 0.05
-	science_ship_survey_speed = 0.2
+	pop_growth_speed = 0.1 #was 0.05
+	science_ship_survey_speed = 0.3 #was 0.2
 	ship_anomaly_research_speed_mult = 0.1
 	ship_speed_mult = 0.25
 	ship_interstellar_speed_mult = 0.25
@@ -282,6 +283,7 @@ moralistic_fervor_weak = {
 	
 	country_piracy_risk_mult = -0.4
 	country_naval_cap_mult = 0.25
+	country_command_limit_add = 10
 	starbase_upgrade_speed_mult = 0.2
 	shipsize_military_station_small_build_speed_mult = 0.2
 	
@@ -313,7 +315,8 @@ moralistic_fervor = {
 	shipsize_corvette_build_cost_mult = -0.5
 	shipsize_destroyer_build_cost_mult = -0.25
 	planet_army_build_cost_mult = -0.5
-	country_naval_cap_mult = 0.4	
+	country_naval_cap_mult = 0.4
+	country_command_limit_add = 30
 	
 	starbase_upgrade_speed_mult = 0.5
 	shipsize_military_station_small_build_speed_mult = 0.5
@@ -328,6 +331,7 @@ aleran_contact_war_prepare = {
 	shipsize_battleship_build_speed_mult = 0.05
 	planet_army_build_speed_mult = 0.2
 	country_naval_cap_mult = 0.15
+	country_command_limit_add = 20
 	
 	starbase_upgrade_speed_mult = 0.1
 	shipsize_military_station_small_build_speed_mult = 0.1
@@ -337,6 +341,7 @@ aleran_contact_war_prepare = {
 
 aleran_no_navy = {
 	country_naval_cap_mult = -10
+	country_command_limit_mult = -10
 	shipsize_corvette_build_speed_mult = -1
 	shipsize_destroyer_build_speed_mult = -1
 	shipsize_cruiser_build_speed_mult = -1

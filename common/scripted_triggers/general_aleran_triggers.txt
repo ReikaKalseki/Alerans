@@ -216,6 +216,16 @@ is_absolutely_evil = {
 		has_valid_civic = civic_barbaric_despoilers
 		has_valid_civic = civic_hive_devouring_swarm
 		has_valid_civic = civic_fanatic_purifiers
+		AND = {
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_empire
+			}
+			OR = {
+				is_xenophobe = yes
+				#is_spiritualist = yes
+			}
+		}
 		any_owned_pop_species = {
 			OR = {
 				AND = {
@@ -241,5 +251,9 @@ is_genocidal = {
 		#has_valid_civic = civic_barbaric_despoilers
 		has_valid_civic = civic_hive_devouring_swarm
 		has_valid_civic = civic_fanatic_purifiers
+		AND = {
+			is_country_type = awakened_empire
+			is_xenophobe = yes
+		}
 	}
 }

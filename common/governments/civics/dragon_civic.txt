@@ -103,6 +103,7 @@ civic_dragon_tech = {
 		planet_building_cost_mult = 1 #was 0.2 then 0.5
 		planet_building_upkeep_mult = 0.15  #was 0.1
 		shipsize_colonizer_build_cost_mult = 0.5 #was 0.3
+		country_command_limit_add = 30
 	}
 
 	#description = "civic_tooltip_dragontech_effects"
