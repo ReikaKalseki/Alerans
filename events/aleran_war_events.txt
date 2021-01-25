@@ -48,6 +48,19 @@ event = {
 		random_country = {
 			limit = {
 				has_valid_civic = civic_dragon_gov
+				NAND = {
+					has_country_flag = war_in_heaven_picked_side
+					any_war = { 
+						any_war_participant = {
+							is_country_type = awakened_fallen_empire
+							OR = {
+								is_xenophobe = yes
+								is_spritualist = yes
+							}
+							is_at_war_with = prevprev
+						}
+					}
+				}
 			}
 			#log = "Found a country with matching civics: [This.GetName]"
 			country_event = { id = aleran_war.4 }
@@ -64,6 +77,19 @@ event = {
 		if = {
 			limit = {
 				has_valid_civic = civic_dragon_gov
+				NAND = {
+					has_country_flag = war_in_heaven_picked_side
+					any_war = { 
+						any_war_participant = {
+							is_country_type = awakened_fallen_empire
+							OR = {
+								is_xenophobe = yes
+								is_spritualist = yes
+							}
+							is_at_war_with = prevprev
+						}
+					}
+				}
 			}
 			log = "War started with a country with matching civics: [This.GetName]"
 			country_event = { id = aleran_war.4 }
@@ -137,10 +163,14 @@ country_event = {
 		has_global_flag = war_in_heaven_ongoing
 		has_valid_civic = civic_dragon_gov
 		is_ai = no
-		is_at_war = no
+		OR = {
+			is_at_war = no
+			off_war_exhaustion_sum < 4
+		}
 		NOR = {
 			has_country_flag = refused_wih_join
 			has_country_flag = war_in_heaven_picked_side
+			has_country_flag = war_in_heaven_delay
 		}
 	}
 
@@ -177,7 +207,97 @@ country_event = {
 		modifier = {
 			factor = 0.2
 			any_country = {
-				is_subject_of = prev
+				is_subject_type = dragon_control
+				has_country_flag = picked_evil_wih_side
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_starbases > 120
+		}
+		modifier = {
+			factor = 0.5
+			num_starbases > 300
+		}
+		modifier = {
+			factor = 0.2
+			num_starbases > 600
+		}
+		modifier = {
+			factor = 0.8
+			num_owned_planets > 25
+		}
+		modifier = {
+			factor = 0.8
+			num_owned_planets > 25
+		}
+		modifier = {
+			factor = 0.6
+			num_owned_planets > 50
+		}
+		modifier = {
+			factor = 0.4
+			num_owned_planets > 100
+		}
+		modifier = {
+			factor = 0.8
+			num_pops > 600
+		}
+		modifier = {
+			factor = 0.5
+			num_pops > 1000
+		}
+		modifier = {
+			factor = 0.8
+			num_ascension_perks > 6
+		}
+		modifier = {
+			factor = 0.5
+			num_ascension_perks > 8
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				has_country_resource = { type = minerals amount > 100000 }
+				has_monthly_income = { resource = minerals value > 4000 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_country_resource = { type = minerals amount > 150000 }
+				has_monthly_income = { resource = minerals value > 7500 }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_country_resource = { type = minerals amount > 250000 }
+				has_monthly_income = { resource = minerals value > 12000 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_megastructure = dyson_sphere_2
+				has_megastructure = think_tank_restored
+				has_megastructure = think_tank_4
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_megastructure = dyson_sphere_3
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_megastructure = ring_world_restored
+				has_megastructure = ring_world_3_intermediate
+				has_megastructure = dyson_sphere_restored
+				has_megastructure = dyson_sphere_4
+				has_megastructure = dyson_sphere_5
 			}
 		}
 	}
@@ -295,6 +415,13 @@ country_event = {
 		room = event_target:goodempire.ruler
 	}
 	
+	immediate = {
+		if = {
+			limit = { has_country_flag = war_in_heaven_delay }
+			set_country_flag = war_in_heaven_timeup
+		}
+	}
+	
 	option = {
 		name = "aleran_war.801.click.a" #agree to war, vassalize
 		custom_tooltip = aleran_war.801.a.tooltip
@@ -342,14 +469,25 @@ country_event = {
 					OR = {
 						running_balance <= 0
 						has_monthly_income =  { resource = minerals value < 500 }
+						fleet_power < 1000
+						AND = {
+							fleet_power < 10000
+							has_country_resource = { type = minerals amount < 160000 }
+							has_monthly_income =  { resource = minerals value < 9000 }
+						}
+						AND = {
+							fleet_power < 20000
+							has_country_resource = { type = minerals amount < 120000 }
+							has_monthly_income =  { resource = minerals value < 7500 }
+						}
 						AND = {
 							fleet_power < 40000
-							has_country_resource = { type = minerals amount < 50000 }
+							has_country_resource = { type = minerals amount < 80000 }
 							has_monthly_income =  { resource = minerals value < 5000 }
 						}
 						AND = {
 							fleet_power < 50000
-							has_country_resource = { type = minerals amount < 30000 }
+							has_country_resource = { type = minerals amount < 50000 }
 							has_monthly_income =  { resource = minerals value < 4000 }
 						}
 						AND = {
@@ -406,7 +544,7 @@ country_event = {
 	
 	option = {
 		name = "aleran_war.801.click.e" #change mind
-		custom_tooltip = aleran_war.801.d.tooltip
+		#custom_tooltip = aleran_war.801.e.tooltip
 		trigger = {
 			has_country_flag = war_in_heaven_delay
 		}
@@ -441,11 +579,69 @@ country_event = {
 			add_opinion_modifier = { who = event_target:badempire modifier = opinion_war_in_heaven_enemy }
 			event_target:badempire = { add_opinion_modifier = { who = root modifier = opinion_war_in_heaven_enemy } }		
 		}
+		remove_modifier = moralistic_fervor_weak
+		remove_modifier = moralistic_fervor
 		add_modifier = {
 			modifier = moralistic_fervor
 			days = 7200
 		}
 		join_war = event_target:goodempire	
+		every_relation = {
+			limit = {
+				has_country_flag = war_in_heaven_picked_side
+				has_communications = prev
+				OR = {
+					event_target:goodempire = { has_opinion_modifier = { who = prev modifier = opinion_war_in_heaven_ally } }
+					has_opinion_modifier = { who = event_target:goodempire modifier = opinion_war_in_heaven_ally }
+					is_at_war_with = event_target:badempire
+					AND = {
+						event_target:goodempire = { is_overlord_to = prev }
+						OR = {
+							is_subject_type = signatory
+							is_subject_type = satellite
+						}
+					}
+					is_same_value = event_target:goodempire
+				}
+				NOR = {
+					is_at_war_with = prev
+					is_same_value = prev
+					is_country_type = fallen_empire
+					#is_country_type = awakened_fallen_empire
+				}
+			}
+			#log = "Forcing open-borders due to WIH join: [This.GetName]"
+			set_closed_borders = {
+				who = prev
+				status = no
+				forced = 20
+			}
+			every_subject = {
+				#log = "Forcing open-borders due to WIH join: [This.GetName]"
+				set_closed_borders = {
+					who = prevprev
+					status = no
+					forced = 20
+				}
+			}
+		}
+		event_target:badempire = { 
+			every_system_within_border = {
+				add_claims = { who = prevprev num_of_claims = 100 show_notification = no }
+			}
+		}
+		#event_target:badempire = { 
+		#	every_system_within_border = {
+		#		every_country = {
+		#			limit = {
+		#				has_claim = prev
+		#			}
+		#			remove_claims = {
+		#				who = <country>
+		#			}
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -545,6 +741,9 @@ country_event = {
 		name = "aleran_war.803.click.b"
 		trigger = {
 			has_country_flag = war_in_heaven_gift
+			NOT = {
+				has_country_flag = war_in_heaven_timeup
+			}
 		}
 		owner = {	
 			add_minerals = 60000

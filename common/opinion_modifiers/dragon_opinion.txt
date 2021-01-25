@@ -253,6 +253,23 @@ opinion_dragon_obstacle = {
 	}
 }
 
+opinion_dragon_violent = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			has_ethic = "ethic_fanatic_pacifist"
+			is_xenophile = no
+			is_country_type = default
+			NOT = { has_country_flag = aleran_saved_from_storm }
+		}
+	}
+	opinion = {
+		base = -100
+	}
+}
+
 opinion_dragon_rightpath = {
 	trigger = {
 		FROM = {
