@@ -145,17 +145,3 @@ cb_dragon = {
 		}
 	}
 }
-
-cb_dragon_internalize = {
-	show_in_diplomacy = yes
-	show_notification = no #yes
-	potential = {
-		is_country_type = default	
-		has_country_flag = aleran
-	}
-	is_valid = {
-		NOT = { is_same_species = FROM }
-		from = { is_subject_type = dragon_control }
-		is_overlord_to = from
-	}
-}
