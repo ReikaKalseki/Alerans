@@ -87,6 +87,8 @@ cb_dragon = {
 					#replaced with the block below
 					#from = { has_policy_flag = slavery_allowed }
 					#from = { has_policy_flag = purge_allowed }
+					from = { has_policy_flag = pre_sapients_purge }
+					from = { has_policy_flag = pre_sapients_eat }
 					from = {
 						any_owned_pop_species = {
 							OR = {

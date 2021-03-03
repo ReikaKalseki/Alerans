@@ -39,6 +39,7 @@ event = {
 						has_valid_civic = civic_dragon_gov
 						is_at_war_with = event_target:alerans
 					}
+					is_recursively_allied = no
 					has_communications = event_target:alerans
 					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
 				}
@@ -83,6 +84,8 @@ event = {
 						has_valid_civic = civic_dragon_gov
 						is_at_war_with = event_target:alerans
 					}
+					is_friendly_empire = no
+					is_recursively_allied = no
 					NAND = {
 						has_country_flag = aleran_contact_warduty
 						OR = {
@@ -119,10 +122,44 @@ event = {
 		if = {
 			limit = { exists = event_target:empire }
 			#log = "Queued AleranSoc 102 via ambient comms with [event_target:empire.GetName], CB is valid"
-			event_target:alerans = { country_event = { id = aleran_society.102 days = 360 random = 720} }
+			event_target:alerans = { country_event = { id = aleran_society.103 days = 360 random = 720} }
 		}
 		else = {		
 			#log = "AleranSoc 102, not valid; no target found"
+		}
+	}
+}
+
+event = {
+	id = aleran_society.103
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "validating queued war call with [event_target:empire.GetName] at future date"
+		if = {
+			limit = {
+				exists = event_target:alerans
+				exists = event_target:empire
+				event_target:empire = {
+					is_country_type = default
+					has_communications = event_target:alerans
+					is_friendly_empire = no
+					NOR = {
+						is_same_value = root
+						has_valid_civic = civic_dragon_gov
+						is_at_war_with = event_target:alerans
+						#is_friendly_to = event_target:alerans
+					}
+					is_recursively_allied = no
+					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
+				}
+			}
+			log = "Validation passed, queued AleranSoc 102"
+			event_target:alerans = { country_event = { id = aleran_society.102 } }
+		}
+		else = {		
+			log = "AleranSoc 103, validation failed"
 		}
 	}
 }
@@ -226,7 +263,7 @@ country_event = {
 		
 		allow = {
 			custom_tooltip = {
-				fail_text = "contact_empire_too_evil_second_delay"		
+				fail_text = "contact_empire_too_evil_second_delay"
 				is_absolutely_evil = no
 			}
 		}

@@ -257,3 +257,62 @@ is_genocidal = {
 		}
 	}
 }
+
+is_good_fe = {
+	AND = {
+		OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_empire
+		}
+		OR = {
+			is_xenophile = yes
+			is_materialist = yes
+		}
+	}
+}
+
+is_friendly_empire = {
+	OR = {
+		is_good_fe = yes
+		has_valid_civic = civic_dragon_gov
+		is_subject_type = dragon_control
+		is_loyal_to = event_target:alerans
+		#is_friendly_to = event_target:alerans
+		is_in_federation_with = event_target:alerans
+		has_non_aggression_pact = event_target:alerans
+		has_research_agreement = event_target:alerans
+		AND = {
+			has_ethic = ethic_fanatic_xenophile
+			is_spiritualist = no
+		}
+		AND = {
+			is_materialist = yes
+			is_xenophile = yes
+		}
+		AND = {
+			is_materialist = yes
+			is_xenophobe = no
+			NOR = {
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_fanatic_authoritarian
+			}
+			has_policy_flag = slavery_not_allowed
+			has_policy_flag = purge_not_allowed
+		}
+	}
+}
+
+is_recursively_allied = { #indirectly allied, ie allied with allies or would otherwise drag allies into a war
+	any_country = {
+		AND = {
+			is_friendly_empire = yes
+			OR = {
+				has_defensive_pact = prev
+				is_in_federation_with = prev
+				any_subject = { is_same_value = prev }
+				would_join_war = { attacker = event_target:alerans defender = prev side = prev }
+			}
+		}
+	}
+}
