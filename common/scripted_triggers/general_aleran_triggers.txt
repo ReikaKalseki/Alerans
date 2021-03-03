@@ -271,6 +271,18 @@ is_good_fe = {
 	}
 }
 
+is_fe_vassal = {
+	OR = {
+		any_country = {
+			is_overlord_to = prev
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_empire
+			}
+		}
+	}
+}
+
 is_friendly_empire = {
 	OR = {
 		is_good_fe = yes

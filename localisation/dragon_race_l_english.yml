@@ -595,6 +595,10 @@ aleran_society.110.click.a:0 "Indeed we must, and we shall."
 aleran_society.110.click.b:0 "We are not prepared for this."
 aleran_society.110.click.c:0 "This is not our concern."
 
+aleran_society.401.name:0 "Coexistence Rejected"
+aleran_society.401.desc:0 "Our refusal to coexist with our immediate planetary neighbors has not gone unnoticed; large segments of the population are severely offended that our reaction to finding other life on our worlds is to exterminate it."
+aleran_society.401.click.a:0 "We had more important concerns."
+
 
 #WAR EVENTS#
 aleran_war.801.name:0 "Message from the [goodempire.GetName]"

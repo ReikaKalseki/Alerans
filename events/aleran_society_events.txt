@@ -18,10 +18,13 @@ event = {
 				is_ai = no
 				is_at_war = no
 				has_valid_civic = civic_dragon_gov
+				years_passed >= 8
 				NOR = {
+					has_global_flag = war_in_heaven_ongoing
 					has_modifier = aleran_contact_war_prepare
 					has_country_flag = recently_enlightened_someone
 				}
+				has_monthly_income = { resource = minerals value > 200 }
 			}
 			save_event_target_as = alerans
 		}
@@ -39,6 +42,7 @@ event = {
 						has_valid_civic = civic_dragon_gov
 						is_at_war_with = event_target:alerans
 					}
+					is_fe_vassal = no
 					is_recursively_allied = no
 					has_communications = event_target:alerans
 					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
@@ -68,12 +72,17 @@ event = {
 			limit = {
 				is_ai = no
 				has_valid_civic = civic_dragon_gov
+				has_monthly_income = { resource = minerals value > 200 }
 			}
 			save_event_target_as = alerans
 		}
 		#log = "Ran AleranSoc 101, alerans are [event_target:alerans.GetName]"
 		if = {
-			limit = { exists = event_target:alerans }
+			limit = {
+				exists = event_target:alerans
+				years_passed >= 8
+				NOT = { has_global_flag = war_in_heaven_ongoing }
+			}
 			random_country = {
 				limit = {
 					is_country_type = default
@@ -85,6 +94,7 @@ event = {
 						is_at_war_with = event_target:alerans
 					}
 					is_friendly_empire = no
+					is_fe_vassal = no
 					is_recursively_allied = no
 					NAND = {
 						has_country_flag = aleran_contact_warduty
@@ -599,6 +609,48 @@ country_event = {
 #		}
 #	}
 #}
+
+country_event = {
+	id = aleran_society.401
+	hide_window = yes
+	is_triggered_only = yes
+	title = "aleran_society.401.name"
+	desc = "aleran_society.401.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_planetary_riot
+	
+	trigger = {
+		has_valid_civic = civic_dragon_gov
+		is_ai = no
+		OR = {
+			has_country_flag=subterraneans_defeated_once
+			any_owned_planet = {
+				OR = {
+					has_planet_flag=seismic_disturbance_destroyed
+					has_planet_flag=burned_forests
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 360
+	}
+	
+	immediate = {		
+		set_country_flag = refused_coexist #for unhappy faction
+	}
+	
+	option = {
+		name = "aleran_society.401.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		
+		}
+	}
+}
 
 country_event = {
 	id = aleran_society.500

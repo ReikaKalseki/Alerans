@@ -798,6 +798,25 @@ aleran_faction = {
 	}
 
 	demand = {
+		title = "aleran_faction_coexist"
+		unfulfilled_title = "aleran_faction_coexist_unfilled"
+		desc = "aleran_faction_coexist_desc"
+
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = aleran
+				has_country_flag = refused_coexist
+			}
+		}
+	}
+
+	demand = {
 		title = "aleran_faction_refugees"
 		unfulfilled_title = "aleran_faction_refugees_unfilled"
 		desc = "aleran_faction_refugees_desc"

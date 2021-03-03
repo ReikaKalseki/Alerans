@@ -16,7 +16,10 @@ cb_dragon = {
 		has_country_flag = aleran
 	}
 	is_valid = {
-		NOT = { is_same_species = FROM }
+		NOR = {
+			has_country_flag = aleran
+			has_valid_civic = civic_dragon_gov
+		}
 		OR = {
 			AND = {
 				from = { 
