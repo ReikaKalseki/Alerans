@@ -3,6 +3,7 @@ namespace = aleran_society
 #events designed to guide the player onto the right play path
 
 #100s: inter-empire interactions
+#200s: presapients, try to encourage enlightenment
 #400s: events that can happen due to being evil
 #500s: events that can happen due to mismanagement
 #1000s: actually dishing out the punishments
@@ -135,7 +136,7 @@ event = {
 			event_target:alerans = { country_event = { id = aleran_society.103 days = 360 random = 720} }
 		}
 		else = {		
-			#log = "AleranSoc 102, not valid; no target found"
+			#log = "AleranSoc 102 not valid; no target found"
 		}
 	}
 }
@@ -146,7 +147,7 @@ event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "validating queued war call with [event_target:empire.GetName] at future date"
+		#log = "validating queued war call with [event_target:empire.GetName] at future date"
 		if = {
 			limit = {
 				exists = event_target:alerans
@@ -165,11 +166,11 @@ event = {
 					event_target:alerans = { has_casus_belli = {target = prev type = cb_dragon} }
 				}
 			}
-			log = "Validation passed, queued AleranSoc 102"
+			#log = "Validation passed, queued AleranSoc 102"
 			event_target:alerans = { country_event = { id = aleran_society.102 } }
 		}
 		else = {		
-			log = "AleranSoc 103, validation failed"
+			#log = "AleranSoc 103 validation failed"
 		}
 	}
 }

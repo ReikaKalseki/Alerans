@@ -221,6 +221,10 @@ aleran_faction_solarstorm:0 "Solar Storm Deflected"
 aleran_faction_solarstorm_unfilled:0 "Solar Storm Ignored"
 aleran_faction_solarstorm_desc:0 "The [Root.GetName] will expect all attempts to be made to prevent a solar storm from obliterating a sapient civilization."
 
+aleran_faction_coexist:0 "Planet Sharing"
+aleran_faction_coexist_unfilled:0 "Genocidal Expansion"
+aleran_faction_coexist_desc:0 "The [Root.GetName] does not abide by destroying all those who share space with the [PrevPrev.GetName]."
+
 
 #TILE BLOCKERS#
 tb_animal_yard:0 "£blocker  Abandoned Animal Farm"
@@ -594,6 +598,11 @@ aleran_society.110.desc:0 "We must act against the [event_target:empire.GetName]
 aleran_society.110.click.a:0 "Indeed we must, and we shall."
 aleran_society.110.click.b:0 "We are not prepared for this."
 aleran_society.110.click.c:0 "This is not our concern."
+
+aleran_society.202.name:0 "Primitive Suffering"
+aleran_society.202.desc:0 ""
+aleran_society.202.click.a:0 ""
+aleran_society.202.click.b:0 ""
 
 aleran_society.401.name:0 "Coexistence Rejected"
 aleran_society.401.desc:0 "Our refusal to coexist with our immediate planetary neighbors has not gone unnoticed; large segments of the population are severely offended that our reaction to finding other life on our worlds is to exterminate it."

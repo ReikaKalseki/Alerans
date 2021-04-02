@@ -17,8 +17,8 @@ cb_dragon = {
 	}
 	is_valid = {
 		NOR = {
-			has_country_flag = aleran
-			has_valid_civic = civic_dragon_gov
+			from = { has_country_flag = aleran }
+			from = { has_valid_civic = civic_dragon_gov }
 		}
 		OR = {
 			AND = {
@@ -126,23 +126,23 @@ cb_dragon = {
 						}
 					}
 					
-					from = { has_policy_flag = pre_sapients_purge }
-					
-					AND = {
-						NOR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-							is_country_type = nomad
-							is_country_type = primitive
-							is_country_type = enclave
-							is_country_type = shroud
-							#is_country_type = ratlings
-							#is_country_type = nivlacs
-						}
-						OR = {
-							#from = { has_policy_flag = ai_outlawed }
-							from = { has_policy_flag = robots_outlawed }
-							from = { has_policy_flag = refugees_not_allowed }
+					from = {
+						AND = {
+							NOR = {
+								is_country_type = fallen_empire
+								is_country_type = awakened_fallen_empire
+								is_country_type = nomad
+								is_country_type = primitive
+								is_country_type = enclave
+								is_country_type = shroud
+								#is_country_type = ratlings
+								#is_country_type = nivlacs
+							}
+							OR = {
+								#has_policy_flag = ai_outlawed
+								has_policy_flag = robots_outlawed
+								has_policy_flag = refugees_not_allowed
+							}
 						}
 					}
 				}

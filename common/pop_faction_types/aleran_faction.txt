@@ -806,12 +806,12 @@ aleran_faction = {
 
 		potential = {
 			exists = owner
+			owner = { has_country_flag = aleran } 
 		}
 
 		trigger = {
 			owner = {
-				has_country_flag = aleran
-				has_country_flag = refused_coexist
+				NOT = { has_country_flag = refused_coexist }
 			}
 		}
 	}
