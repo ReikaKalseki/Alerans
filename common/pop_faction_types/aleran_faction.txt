@@ -1311,7 +1311,7 @@ aleran_faction = {
 
 			effect = {
 				parameter:empire = {
-					add_modifier = { modifier = promoted_materialist days = -1 
+					add_modifier = { modifier = promoted_materialist days = -1 }
 					add_modifier = { modifier = promoted_authoritarian days = -1 }
 					add_modifier = { modifier = promoted_xenophile days = -1 }
 				}

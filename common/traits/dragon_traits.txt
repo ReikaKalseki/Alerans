@@ -27,7 +27,7 @@ trait_dragonbody = {
 		leader_skill_levels = 3
 	}
 	
-	opposites = { "trait_strong" "trait_weak" "trait_very_strong" "trait_enduring" "trait_fleeting" "trait_venerable" "trait_wasteful" "trait_conservational" "trait_resilient" "trait_robust" "trait_industrious" "trait_intelligent"}
+	opposites = { "trait_strong" "trait_weak" "trait_very_strong" "trait_enduring" "trait_fleeting" "trait_venerable" "trait_wasteful" "trait_conservational" "trait_resilient" "trait_robust" "trait_industrious" "trait_intelligent" }
 }
 
 trait_unused = {

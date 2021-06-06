@@ -116,16 +116,12 @@ building_dragon_library = {
 				type = food
 				amount > 0
 			}
+			is_slave_tile_or_planet = yes
 		}
 	}
 
 	ai_weight = {
 		factor = 100
-	}
-	
-	ai_allow = {
-		# If planet only has slaves/robots, keep it to mining and farming...
-		is_slave_tile_or_planet = no
 	}
 	
 	planet_modifier = {
@@ -242,17 +238,13 @@ building_dragon_central_library = {
 				type = food
 				amount > 0
 			}
+			is_slave_tile_or_planet = yes
 		}
 	}
 
 	ai_weight = {
 		factor = 1000
 	}
-	
-	ai_allow = {
-		# If planet only has slaves/robots, keep it to mining and farming...
-		is_slave_tile_or_planet = no
-	}	
 }
 
 ## Farm reskins - they are statistically identical to the hydroponics farms, only reskinned for theme
@@ -316,7 +308,7 @@ building_meat_lab_1 = {
 		planet = {
 			NOT = { is_planet_class = pc_habitat }	
 		}
-		owner = { has_country_flag = aleran }
+		owner = { has_trait = trait_dragonbody }
 	}
 
 	destroy_if = {
@@ -361,7 +353,7 @@ building_meat_lab_2 = {
 		planet = {
 			NOT = { is_planet_class = pc_habitat }	
 		}
-		owner = { has_country_flag = aleran }
+		owner = { has_trait = trait_dragonbody }
 	}	
 
 	destroy_if = {
@@ -443,7 +435,7 @@ building_meat_lab_3 = {
 		planet = {
 			NOT = { is_planet_class = pc_habitat }	
 		}
-		owner = { has_country_flag = aleran }
+		owner = { has_trait = trait_dragonbody }
 	}	
 
 	destroy_if = {
@@ -524,7 +516,7 @@ building_meat_lab_4 = {
 		planet = {
 			NOT = { is_planet_class = pc_habitat }	
 		}
-		owner = { has_country_flag = aleran }
+		owner = { has_trait = trait_dragonbody }
 	}
 
 	destroy_if = {
@@ -606,7 +598,7 @@ building_meat_lab_5 = {
 			is_capital = yes
 			NOT = { is_planet_class = pc_habitat }	
 		}
-		owner = { has_country_flag = aleran }
+		owner = { has_trait = trait_dragonbody }
 	}
 
 	destroy_if = {

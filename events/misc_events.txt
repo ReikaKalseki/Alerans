@@ -56,7 +56,7 @@ planet_event = {
 					has_building = building_hydroponics_farm_1
 					planet = {
 						owner = {
-							has_country_flag = aleran
+							has_trait = trait_dragonbody
 						}
 					}
 				}
