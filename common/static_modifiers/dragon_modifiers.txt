@@ -298,7 +298,6 @@ moralistic_fervor = {
 	ship_accuracy_mult = 0.25 #was 0.2
 	ship_tracking_mult = 0.25 #was 0.2
 	ship_speed_mult = 0.15 #was 0.1
-	ship_accuracy_mult = 0.25 #was 0.2
 	pop_resource_output = 0.1
 	country_resource_influence_add = 4
 	shipsize_corvette_build_speed_mult = 0.4

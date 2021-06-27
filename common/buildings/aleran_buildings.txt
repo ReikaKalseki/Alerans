@@ -205,7 +205,7 @@ building_dragon_central_library = {
 		pop_government_ethic_attraction = 0.10
 		country_core_sector_system_cap = 4
 		country_leader_cap = 2
-		country_starbase_starbase_capacity_add = 5
+		country_starbase_capacity_add = 5
 	}
 	
 	required_resources = {
