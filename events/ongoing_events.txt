@@ -214,3 +214,55 @@ event = {
 		}
 	}
 }
+
+event = {
+	id = aleran_ongoing.21
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = aleran
+			}
+			random_owned_planet = {
+				limit = { 
+					is_colony = yes
+					has_building = building_dragon_library
+				}
+				random_owned_pop = {
+					remove_modifier = pop_recently_conquered
+					remove_modifier = culture_shock_stone_age
+					remove_modifier = culture_shock_bronze_age
+					remove_modifier = culture_shock_iron_age
+					remove_modifier = culture_shock_late_medieval_age
+					remove_modifier = culture_shock_renaissance_age
+					remove_modifier = culture_shock_steam_age
+					remove_modifier = culture_shock_industrial_age
+					remove_modifier = culture_shock_machine_age
+					remove_modifier = culture_shock_atomic_age
+					remove_modifier = culture_shock_early_space_age
+				}
+			}
+		}
+	}
+}
+
+event = {
+	id = aleran_ongoing.22
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = aleran
+			}
+			every_country = {
+				#not possible until updates: end_truce = prev
+			}
+		}
+	}
+}

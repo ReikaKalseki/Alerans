@@ -1,6 +1,7 @@
 namespace = aleran_war
 
 #1-100: random happenings during war; can spawn chain or other events
+#200-300: war balancing events
 
 #800-900: war in heaven events
 
@@ -151,6 +152,30 @@ event = {
 			#log = "Has no applicable war"
 			remove_modifier = moralistic_fervor
 			remove_modifier = moralistic_fervor_weak
+		}
+	}
+}
+
+event = {
+	id = aleran_war.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_country = {
+			limit = {
+				has_valid_civic = civic_dragon_gov
+				is_at_war = yes
+				count_country = {
+					limit = { is_at_war_with = prev }
+					count > 2
+				}
+			}
+			log = "Found a country with matching civics with at least 3 warring empires: [This.GetName]"
+			add_modifier = {
+				modifier = many_aleran_wars
+				days = 30
+			}
 		}
 	}
 }

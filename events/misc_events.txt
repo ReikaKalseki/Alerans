@@ -390,3 +390,177 @@ ship_event = { #finished researching animated rings
 		
 	}
 }
+
+country_event = {
+	id = dragon_misc.60
+	title = "dragon_misc.60.name"
+	desc = "dragon_misc.60.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_laboratory_sound
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			observation_outpost_owner = {
+				# Xenoist Faction Enlightenment Demand
+				set_timed_country_flag = {
+					flag = recent_enlightenment_timed
+					days = 7200 # 20 years
+				}
+				set_timed_country_flag = {
+					flag = recent_aleran_primitive_enlighten
+					days = 7200 # 20 years
+				}
+			}
+			observation_outpost = {
+				dismantle = yes
+			}
+			solar_system = {
+				starbase = {
+					set_owner = root
+				}	
+				every_system_planet = {
+					set_owner = root
+				}
+			}	
+		}
+	}
+	
+	option = {
+		name = "dragon_misc.60.a"
+	}
+}
+
+planet_event = {
+	id = dragon_misc.61
+	hide_window = yes
+
+	trigger = {
+		has_owner = yes
+		owner = {
+			is_country_type = primitive
+		}
+		has_observation_outpost = yes
+		observation_outpost = {
+			OR = {
+				has_mission = aleran_enlightenment_ancient
+				has_mission = aleran_enlightenment
+				has_mission = aleran_enlightenment_modern
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 40
+		modifier = {
+			factor = 0.5
+			owner = {
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				has_ethic = ethic_xenophobe
+			}
+		}
+		modifier = {
+			factor = 0.4
+			owner = {
+				has_ethic = ethic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		#modifier = {
+		#	factor = 0.9
+		#	owner = { has_country_flag = late_medieval_age }
+		#}
+	}
+
+	immediate = {
+		owner = { save_event_target_as = primitive_country_aleran_integration }
+		observation_outpost_owner = {
+			random_list = {
+				50 = { country_event = { id = dragon_misc.62 } }
+				50 = { country_event = { id = dragon_misc.63 } }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = dragon_misc.62
+	title = "dragon_misc.62.name"
+	desc = "dragon_misc.62.desc"
+	picture = GFX_evt_burning_settlement
+	location = FROM
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			random_tile = {
+				limit = { has_building = yes }
+				set_ruined = yes
+				kill_pop = yes
+			}
+			observation_outpost = {
+				add_mission_progress = -0.2
+			}
+		}
+	}
+
+	option = {
+		name = dragon_misc.62.a
+	}
+
+	option = {
+		name = dragon_misc.62.b
+		declare_war = {
+			target = event_target:primitive_country_aleran_integration
+			attacker_war_goal = wg_dragon
+		}
+	}
+}
+
+country_event = {
+	id = dragon_misc.63
+	title = "dragon_misc.63.name"
+	desc = "dragon_misc.63.desc"
+	picture = GFX_evt_exploding_ship
+	location = FROM
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			observation_outpost = {
+				dismantle = yes
+			}
+		}
+	}
+
+	option = {
+		name = dragon_misc.63.a
+	}
+
+	option = {
+		name = dragon_misc.63.b
+		declare_war = {
+			target = event_target:primitive_country_aleran_integration
+			attacker_war_goal = wg_dragon
+		}
+	}
+
+	option = {
+		name = dragon_misc.63.c
+		add_modifier = { modifier = humiliated days = 360 }
+	}
+}

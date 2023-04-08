@@ -1,0 +1,1669 @@
+namespace = aleran_chain
+
+country_event = {
+	id = aleran_chain.100
+	title = "aleran_chain.100.name"
+	desc = "aleran_chain.100.desc"
+
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	trigger = {
+		is_ai = no
+		has_country_flag = aleran
+		NOR = {
+		  has_country_flag = genocide_bioweapon
+		  has_country_flag = genocide_bioweapon_ended
+		  has_country_flag = solar_storm
+		  has_country_flag = solar_storm_ended
+		}
+		research_leader = {
+		  area = society
+		  exists = this
+		  has_level >= 4
+		}
+		has_lots_of_xenos = yes
+	}
+
+	mean_time_to_happen = {
+		days = 3600
+	}
+
+	immediate = {
+		set_country_flag = genocide_bioweapon
+		remove_country_flag = genocide_reset
+		begin_event_chain = {
+		  event_chain = genocide_bioweapon_chain
+		  target = owner
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  enable_special_project = {
+		      name = "identify_genocide_bioweapon"
+		      location = owner.capital_scope
+		      owner = this
+		  }
+		  log = "Aleran Genocide: Enabled project for ID"
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.click.b"
+		custom_tooltip = aleran_chain.100.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+		  hidden_effect = {
+		      country_event = { id = aleran_chain.103 days = 360 random = 180 }
+		      log = "Aleran Genocide: Queued no-project ID"
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.101
+
+	hide_window = yes
+
+
+	trigger = {
+		trigger = { has_country_flag = genocide_bioweapon }
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		random_owned_planet = {
+		  limit = { num_pops > 2 }
+		  random_owned_pop = {
+		      limit = {
+		            NOT = { is_same_species = owner }
+		      }
+		      genocide_pop = yes
+		      owner = {
+		            change_variable = {
+		                    which = genocided_pops
+		                    value = 1
+		            }
+		      }
+		      prev = {
+		            if = {
+		                    limit = {
+		                              NOT = { has_modifier = bioweapon_death }
+		                    }
+		                    add_modifier = {
+		                              modifier = bioweapon_death
+		                              days = -1
+		                    }
+		            }
+		      }
+		  }
+		}
+		if = {
+		  limit = {
+		      has_lots_of_xenos = no
+		      NOT = { has_country_flag = genocide_bioweapon_ended }
+		  }
+		  country_event = { id = aleran_chain.106 days = 5 random = 3 }
+		  log = "Aleran Genocide: Burnout"
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.102
+	title = "aleran_chain.102.name"
+	desc = "aleran_chain.102.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	immediate = {
+		immediate = { set_country_flag = identified_genocide }
+	}
+
+	option = {
+		name = "aleran_chain.102.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  enable_special_project = {
+		      name = "stop_genocide_bioweapon"
+		      location = owner.capital_scope
+		      owner = this
+		  }
+		  log = "Aleran Genocide: Enabled project for neutralization, with ID"
+		}
+	}
+
+	option = {
+		name = "aleran_chain.102.click.b"
+		custom_tooltip = aleran_chain.102.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+		  set_country_flag = genocide_bioweapon_ignored
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.103
+	title = "aleran_chain.103.name"
+	desc = "aleran_chain.103.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	immediate = {
+		immediate = { set_country_flag = identified_genocide }
+	}
+
+	option = {
+		name = "aleran_chain.103.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  enable_special_project = {
+		      name = "stop_genocide_bioweapon_late"
+		      location = owner.capital_scope
+		      owner = this
+		  }
+		  log = "Aleran Genocide: Enabled project for neutralization, with no ID"
+		}
+	}
+
+	option = {
+		name = "aleran_chain.103.click.b"
+		custom_tooltip = aleran_chain.103.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+		  set_country_flag = genocide_bioweapon_ignored
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.104
+	title = "aleran_chain.104.name"
+	desc = "aleran_chain.104.desc"
+
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	trigger = {
+		has_country_flag = genocide_bioweapon
+		has_country_flag = identified_genocide
+		NOT = { always = yes }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "aleran_chain.104.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.105
+	title = "aleran_chain.105.name"
+	desc = "aleran_chain.105.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_celebration
+
+	immediate = {
+		set_country_flag = genocide_bioweapon_ended
+		set_country_flag = genocide_bioweapon_stopped
+		remove_country_flag = genocide_bioweapon
+		every_owned_planet = { remove_modifier = bioweapon_death }
+		country_event = { id = aleran_chain.107 days = 120 random = 120 }
+		log = "Aleran Genocide: Queued search for culprit via project completion"
+	}
+
+	option = {
+		name = "aleran_chain.105.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.106
+	title = "aleran_chain.106.name"
+	desc = "aleran_chain.106.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	immediate = {
+		set_country_flag = genocide_bioweapon_ended
+		remove_country_flag = genocide_bioweapon
+		every_owned_planet = { remove_modifier = bioweapon_death }
+		add_modifier = {
+		  modifier = bioweapon_not_stopped
+		  days = 3600
+		}
+		if = {
+		  limit = {
+		      NOR = {
+		            is_researching_special_project = identify_genocide_bioweapon
+		            is_researching_special_project = stop_genocide_bioweapon
+		      }
+		  }
+		  set_country_flag = genocide_bioweapon_ignored
+		}
+		abort_special_project = {
+		  type = identify_genocide_bioweapon
+		  location = owner.capital_scope
+		}
+		abort_special_project = {
+		  type = stop_genocide_bioweapon
+		  location = owner.capital_scope
+		}
+		abort_special_project = {
+		  type = stop_genocide_bioweapon_late
+		  location = owner.capital_scope
+		}
+	}
+
+	option = {
+		name = "aleran_chain.106.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  country_event = { id = aleran_chain.107 days = 120 random = 120 }
+		  log = "Aleran Genocide: Queued search for culprit via burnout"
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.107
+	title = "aleran_chain.107.name"
+	desc = "aleran_chain.107.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	immediate = {
+		set_country_flag = genocide_culprit_found
+		every_owned_leader = {
+		  if = {
+		      limit = {
+		            owner = {
+		                    research_leader = {
+		                              area = society
+		                              is_same_value = prevprev
+		                    }
+		            }
+		      }
+		      save_event_target_as = murderer
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.107.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  event_target:murderer = {
+		      kill_leader = { show_notification = no }
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.107.click.b"
+		custom_tooltip = aleran_chain.107.b.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  hidden_effect = {
+		      if = {
+		            limit = {
+		                    any_country = {
+		                              OR = {
+		                                          is_country_type = fallen_empire
+		                                          is_country_type = awakened_empire
+		                              }
+		                              is_xenophobe = yes
+		                              has_communications = prev
+		                    }
+		            }
+		            random_list = {
+		                    10 = {
+		                              log = "Aleran Genocide: Queued reoffence"
+		                              country_event = { id = aleran_chain.108 days = 720 random = 360 }
+		                    }
+		                    10 = {
+		                              log = "Aleran Genocide: Queued no-event ending"
+		                              country_event = { id = aleran_chain.109 days = 360 random = 120 }
+		                    }
+		                    15 = {
+		                              log = "Aleran Genocide: Queued other leader"
+		                              country_event = { id = aleran_chain.110 days = 720 random = 360 }
+		                    }
+		                    25 = {
+		                              log = "Aleran Genocide: Queued FE"
+		                              country_event = { id = aleran_chain.111 days = 720 random = 360 }
+		                    }
+		                    40 = {
+		                              log = "Aleran Genocide: Queued mistake"
+		                              country_event = { id = aleran_chain.112 days = 30 random = 60 }
+		                    }
+		            }
+		      }
+		      else = {
+		            random_list = {
+		                    20 = {
+		                              log = "Aleran Genocide: Queued reoffence"
+		                              country_event = { id = aleran_chain.108 days = 720 random = 360 }
+		                    }
+		                    20 = {
+		                              log = "Aleran Genocide: Queued no-event ending"
+		                              country_event = { id = aleran_chain.109 days = 360 random = 120 }
+		                    }
+		                    20 = {
+		                              log = "Aleran Genocide: Queued other leader"
+		                              country_event = { id = aleran_chain.110 days = 720 random = 360 }
+		                    }
+		                    40 = {
+		                              log = "Aleran Genocide: Queued mistake"
+		                              country_event = { id = aleran_chain.112 days = 30 random = 60 }
+		                    }
+		            }
+		      }
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.107.click.c"
+		custom_tooltip = aleran_chain.107.c.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  hidden_effect = {
+		      set_country_flag = genocide_unpunished
+		      random_list = {
+		            50 = {
+		                    log = "Aleran Genocide: Queued forgiving reoffence"
+		                    country_event = { id = aleran_chain.108 days = 720 random = 360 }
+		            }
+		            50 = {
+		                    log = "Aleran Genocide: Queued forgiving no-event ending"
+		                    country_event = { id = aleran_chain.109 days = 360 random = 360 }
+		            }
+		      }
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.108
+	title = "aleran_chain.108.name"
+	desc = "aleran_chain.108.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_yellow_alert_01
+
+	immediate = {
+		every_owned_planet = {
+		  limit = { num_pops > 2 }
+		  every_owned_pop = {
+		      limit = {
+		            NOT = { is_same_species = owner }
+		      }
+		      random_list = {
+		            50 = { genocide_pop = yes }
+		            50 = {
+		            }
+		      }
+		  }
+		}
+		set_country_flag = genocide_bioweapon_ignored
+	}
+
+	option = {
+		name = "aleran_chain.108.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  event_target:murderer = {
+		      kill_leader = { show_notification = no }
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.109
+	title = "aleran_chain.109.name"
+	desc = "aleran_chain.109.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_default
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "aleran_chain.109.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.110
+	title = "aleran_chain.110.name"
+	desc = "aleran_chain.110.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_laboratory_sound
+
+	immediate = {
+		random_owned_leader = {
+		  limit = {
+		      NOR = {
+		            leader_class = ruler
+		            is_same_value = event_target:murderer
+		      }
+		  }
+		  save_event_target_as = realmurderer
+		  log = "Aleran Genocide: Selected random leader"
+		}
+	}
+
+	option = {
+		name = "aleran_chain.110.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  event_target:realmurderer = {
+		      kill_leader = { show_notification = no }
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.111
+	title = "aleran_chain.111.name"
+	desc = "aleran_chain.111.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_laboratory_sound
+
+	immediate = {
+		random_country = {
+		  limit = {
+		      OR = {
+		            is_country_type = fallen_empire
+		            is_country_type = awakened_empire
+		      }
+		      has_communications = prev
+		      is_xenophobe = yes
+		  }
+		  save_event_target_as = murdererFE
+		}
+	}
+
+	option = {
+		name = "aleran_chain.111.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  declare_war = {
+		      target = event_target:murdererFE
+		      name = "Genocide Prevention Initiative"
+		      attacker_war_goal = wg_dragon
+		  }
+		  add_modifier = {
+		      modifier = moralistic_fervor
+		      days = 3600
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.111.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  add_modifier = {
+		      modifier = refused_fight_fe_genocide
+		      days = 1800
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.112
+	title = "aleran_chain.112.name"
+	desc = "aleran_chain.112.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_microscopic_life
+	show_sound = event_laboratory_sound
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "aleran_chain.112.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				owner = {
+				  influence > 49
+				}
+		}
+		owner = {
+		  event_target:murderer = {
+		      kill_leader = { show_notification = no }
+		  }
+		  add_influence = -50
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.112.click.b"
+		custom_tooltip = aleran_chain.112.b.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  hidden_effect = {
+		      event_target:murderer = {
+		            kill_leader = { show_notification = no }
+		      }
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.112.click.c"
+		custom_tooltip = aleran_chain.112.c.tooltip
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  hidden_effect = {
+		      every_owned_pop = {
+		            limit = {
+		                    NOT = { is_same_species = owner }
+		            }
+		            add_modifier = {
+		                    modifier = unhappy_nogenocide_punish
+		                    days = 900
+		            }
+		      }
+		  }
+		  random_list = {
+		      90 = { event_target:murderer = { add_trait = leader_trait_maniacal } }
+		      10 = {
+		      }
+		  }
+		  random_list = {
+		      50 = { event_target:murderer = { add_trait = leader_trait_substance_abuser } }
+		      50 = {
+		      }
+		  }
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+	option = {
+		name = "aleran_chain.100.abort"
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+				trigger = { has_country_flag = genocide_reset }
+		}
+		owner = {
+		  remove_country_flag = genocide_reset
+		  end_event_chain = genocide_bioweapon_chain
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.120
+
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		remove_country_flag = genocide_bioweapon
+		remove_country_flag = genocide_bioweapon_ended
+		remove_country_flag = genocide_bioweapon_ignored
+		remove_country_flag = genocide_bioweapon_stopped
+		remove_country_flag = identified_genocide
+		remove_country_flag = genocide_culprit_found
+		remove_modifier = bioweapon_death
+		remove_modifier = bioweapon_not_stopped
+		end_event_chain = genocide_bioweapon_chain
+		set_country_flag = genocide_reset
+		abort_special_project = {
+		  type = identify_genocide_bioweapon
+		  location = owner.capital_scope
+		}
+		abort_special_project = {
+		  type = stop_genocide_bioweapon
+		  location = owner.capital_scope
+		}
+		abort_special_project = {
+		  type = stop_genocide_bioweapon_late
+		  location = owner.capital_scope
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.200
+	title = "aleran_chain.200.name"
+	desc = "aleran_chain.200.desc"
+
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	trigger = {
+		is_ai = no
+		has_country_flag = aleran
+		has_monthly_income = {
+		  resource = minerals
+		  value > 600
+		}
+		has_monthly_income = {
+		  resource = engineering_research
+		  value > 100
+		}
+		has_monthly_income = {
+		  resource = physics_research
+		  value > 100
+		}
+		NOT = { exists = event_target:solar_storm_planet }
+		NOR = {
+		  has_country_flag = solar_storm
+		  has_country_flag = solar_storm_ended
+		  has_country_flag = genocide_bioweapon
+		  has_country_flag = genocide_bioweapon_ended
+		}
+		any_planet_within_border = {
+		  exists = owner
+		  owner = {
+		      is_primitive = yes
+		  }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 12600
+	}
+
+	immediate = {
+		set_country_flag = solar_storm
+		save_global_event_target_as = alerans
+		begin_event_chain = {
+		  event_chain = solar_storm_chain
+		  target = owner
+		}
+		random_planet_within_border = {
+		  limit = {
+		      exists = owner
+		      owner = {
+		            is_primitive = yes
+		      }
+		  }
+		  owner = {
+		      save_global_event_target_as = solar_storm_primitives
+		  }
+		  save_global_event_target_as = solar_storm_planet
+		  solar_system = {
+		      random_system_planet = {
+		            limit = { is_primary_star = yes }
+		            save_global_event_target_as = solar_storm_star
+		      }
+		  }
+		  planet_event = { id = aleran_chain.204 days = 200 random = 50 }
+		  planet_event = { id = aleran_chain.204 days = 300 random = 50 }
+		  planet_event = { id = aleran_chain.204 days = 400 random = 150 }
+		  planet_event = { id = aleran_chain.204 days = 600 random = 150 }
+		  planet_event = { id = aleran_chain.204 days = 800 random = 150 }
+		  planet_event = { id = aleran_chain.205 days = 1000 random = 150 }
+		  planet_event = { id = aleran_chain.205 days = 1200 random = 200 }
+		  planet_event = { id = aleran_chain.205 days = 1500 random = 200 }
+		  planet_event = { id = aleran_chain.206 days = 1800 random = 300 }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.200.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  enable_special_project = {
+		      name = "investigate_solar_storm"
+		      location = event_target:solar_storm_planet
+		      owner = this
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.200.click.b"
+		custom_tooltip = aleran_chain.200.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+		  add_influence = 50
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.202
+	title = "aleran_chain.202.name"
+	desc = "aleran_chain.202.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	immediate = {
+		immediate = { set_country_flag = identified_solar_storm }
+	}
+
+	option = {
+		name = "aleran_chain.202.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  enable_special_project = {
+		      name = "build_solar_shield"
+		      location = event_target:solar_storm_planet
+		      owner = this
+		  }
+		  add_modifier = {
+		      modifier = building_shield
+		      days = -1
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.202.click.b"
+		custom_tooltip = aleran_chain.202.b.tooltip
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+		  add_influence = 40
+		  set_country_flag = solar_storm_ignored
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.203
+	title = "aleran_chain.203.name"
+	desc = "aleran_chain.203.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	immediate = {
+		immediate = { set_country_flag = solar_storm_shielded }
+	}
+
+	option = {
+		name = "aleran_chain.203.click"
+		ai_chance = {
+			factor = 150
+		}
+		owner = {
+		  remove_modifier = building_shield
+		}
+	}
+
+}
+
+planet_event = {
+	id = aleran_chain.204
+
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		create_ambient_object = {
+		  type = explosion_particle_object
+		  location = event_target:solar_storm_star
+		  use_3d_location = yes
+		  duration = 300
+		  scale = 120
+		}
+		event_target:alerans = {
+		  if = {
+		      limit = {
+		            has_country_flag = identified_solar_storm
+		            NOT = { has_country_flag = solar_storm_shielded }
+		            NOT = { has_country_flag = seen_preshock_1 }
+		      }
+		      country_event = { id = aleran_chain.213 }
+		  }
+		}
+		solar_system = {
+		  random_system_planet = {
+		      add_modifier = {
+		            modifier = early_storm
+		            days = 60
+		      }
+		      if = {
+		            limit = { is_planet_class = pc_toxic }
+		            random_list = {
+		                    40 = { change_pc = pc_barren }
+		                    60 = {
+		                    }
+		            }
+		      }
+		      else_if = {
+		            limit = { is_planet_class = pc_barren }
+		            random_list = {
+		                    25 = { change_pc = pc_molten }
+		                    75 = {
+		                    }
+		            }
+		      }
+		      else_if = {
+		            limit = { is_planet_class = pc_molten }
+		            random_list = {
+		                    10 = { change_pc = pc_shattered }
+		                    90 = {
+		                    }
+		            }
+		      }
+		      else_if = {
+		            limit = { is_planet_class = pc_barren_cold }
+		            random_list = {
+		                    50 = { change_pc = pc_barren }
+		                    50 = {
+		                    }
+		            }
+		      }
+		  }
+		}
+	}
+
+}
+
+planet_event = {
+	id = aleran_chain.205
+
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		create_ambient_object = {
+		  type = explosion_particle_object
+		  location = event_target:solar_storm_star
+		  use_3d_location = yes
+		  duration = 300
+		  scale = 120
+		}
+		create_ambient_object = {
+		  location = event_target:solar_storm_star
+		  type = habitat_cracker_object
+		  duration = 5
+		  use_3d_location = yes
+		  base_angle_towards = star
+		  entity_face_object = star
+		  entity_offset = {
+		      min = 0
+		      max = 0
+		  }
+		  entity_scale_to_size = yes
+		  scale = 1
+		}
+		event_target:alerans = {
+		  if = {
+		      limit = {
+		            has_country_flag = identified_solar_storm
+		            NOT = { has_country_flag = solar_storm_shielded }
+		            NOT = { has_country_flag = seen_preshock_1 }
+		      }
+		      country_event = { id = aleran_chain.214 }
+		  }
+		}
+		solar_system = {
+		  random_list = {
+		      15 = {
+		            random_system_planet = {
+		                    limit = { uninhabitable_regular_planet = yes }
+		                    save_event_target_as = damaged_planet
+		                    random_list = {
+		                              70 = { change_pc = pc_broken }
+		                              30 = { change_pc = pc_shattered }
+		                    }
+		            }
+		      }
+		      55 = {
+		            random_system_planet = {
+		                    limit = {
+		                              OR = {
+		                                          is_planet_class = pc_barren
+		                                          is_planet_class = pc_barren_cold
+		                                          is_planet_class = pc_frozen
+		                              }
+		                    }
+		                    save_event_target_as = damaged_planet
+		                    change_pc = pc_molten
+		            }
+		      }
+		      30 = {
+		            random_system_planet = {
+		                    limit = { is_planet_class = pc_gas_giant }
+		                    save_event_target_as = damaged_planet
+		                    random_list = {
+		                              40 = { change_pc = pc_toxic }
+		                              40 = { change_pc = pc_molten }
+		                              20 = { change_pc = pc_broken }
+		                    }
+		                    add_modifier = {
+		                              modifier = chthonian_planet
+		                              days = -1
+		                    }
+		            }
+		      }
+		  }
+		}
+	}
+
+}
+
+planet_event = {
+	id = aleran_chain.206
+
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		create_ambient_object = {
+		  type = explosion_particle_object
+		  location = event_target:solar_storm_star
+		  use_3d_location = yes
+		  duration = 300
+		  scale = 120
+		}
+		create_ambient_object = {
+		  location = event_target:solar_storm_star
+		  type = habitat_cracker_object
+		  duration = 5
+		  use_3d_location = yes
+		  base_angle_towards = star
+		  entity_face_object = star
+		  entity_offset = {
+		      min = 0
+		      max = 0
+		  }
+		  entity_scale_to_size = yes
+		  scale = 1
+		}
+		create_ambient_object = {
+		  type = nova_explosion_object
+		  location = event_target:solar_storm_star
+		  duration = 20
+		  use_3d_location = yes
+		  entity_offset = {
+		      min = 0
+		      max = 0
+		  }
+		  entity_offset_angle = {
+		      min = 0
+		      max = 0
+		  }
+		  entity_offset_height = {
+		      min = 0
+		      max = 0
+		  }
+		  entity_scale_to_size = no
+		  scale = 1
+		}
+		event_target:alerans = {
+		  set_country_flag = solar_storm_ended
+		  remove_country_flag = solar_storm
+		  remove_modifier = building_shield
+		}
+		solar_system = {
+		  every_fleet_in_system = { destroy_fleet = this }
+		  every_system_planet = {
+		      if = {
+		            limit = { is_planet_class = pc_toxic }
+		            random_list = {
+		                    70 = { change_pc = pc_barren }
+		                    30 = {
+		                    }
+		            }
+		      }
+		      else_if = {
+		            limit = { is_planet_class = pc_barren }
+		            random_list = {
+		                    70 = { change_pc = pc_molten }
+		                    30 = {
+		                    }
+		            }
+		      }
+		      else_if = {
+		            limit = { is_planet_class = pc_molten }
+		            random_list = {
+		                    50 = { change_pc = pc_shattered }
+		                    50 = {
+		                    }
+		            }
+		      }
+		      else_if = {
+		            limit = { is_planet_class = pc_barren_cold }
+		            random_list = {
+		                    80 = { change_pc = pc_barren }
+		                    20 = {
+		                    }
+		            }
+		      }
+		  }
+		}
+		if = {
+		  limit = {
+		      event_target:alerans = { has_country_flag = solar_storm_shielded }
+		  }
+		  planet_event = { id = aleran_chain.207 days = 1 }
+		}
+		else = {
+		  planet_event = { id = aleran_chain.208 days = 1 }
+		}
+	}
+
+}
+
+planet_event = {
+	id = aleran_chain.207
+
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		event_target:alerans = {
+		  country_event = { id = aleran_chain.209 days = 1 }
+		}
+		add_modifier = {
+		  modifier = shielded_storm
+		  days = 180
+		}
+		owner = {
+		  if = {
+		      limit = {
+		            has_country_flag = atomic_age
+		            has_country_flag = early_space_age
+		      }
+		      set_primitive_age = atomic_age
+		  }
+		}
+	}
+
+}
+
+planet_event = {
+	id = aleran_chain.208
+
+	hide_window = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		event_target:alerans = {
+		  country_event = { id = aleran_chain.210 days = 1 }
+		}
+		add_modifier = {
+		  modifier = unshielded_storm
+		  days = 7200
+		}
+		every_tile = {
+		  kill_pop = yes
+		  random_list = {
+		      10 = { remove_building = yes }
+		      35 = { set_ruined = yes }
+		      55 = {
+		      }
+		  }
+		}
+		destroy_colony = yes
+		if = {
+		  limit = { planet_size < 22 }
+		  set_planet_size = 22
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.209
+	title = "aleran_chain.209.name"
+	desc = "aleran_chain.209.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	immediate = {
+		random_owned_leader = {
+		  limit = { leader_class = scientist }
+		  save_global_event_target_as = solar_storm_gifter
+		}
+	}
+
+	option = {
+		name = "aleran_chain.209.click"
+		ai_chance = {
+			factor = 150
+		}
+		add_modifier = {
+		  modifier = analysing_shield
+		  days = 3600
+		}
+		add_tech_progress = {
+		  tech = tech_mega_engineering
+		  progress = 0.2
+		}
+		hidden_effect = {
+		  remove_country_flag = solar_storm_ignored
+		  country_event = { id = aleran_chain.211 }
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.210
+	title = "aleran_chain.210.name"
+	desc = "aleran_chain.210.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "aleran_chain.210.click"
+		ai_chance = {
+			factor = 150
+		}
+
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.211
+	title = "aleran_chain.211.name"
+	desc = "aleran_chain.211.desc"
+
+	is_triggered_only = yes
+
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:solar_storm_primitives
+		planet_background = event_target:solar_storm_primitives
+		graphical_culture = event_target:solar_storm_primitives
+		city_level = event_target:solar_storm_primitives
+		room = event_target:solar_storm_primitives.ruler
+	}
+
+	immediate = {
+		event_target:solar_storm_primitives = {
+		  country_event = { id = primitive.16 }
+		  clear_ethos = yes
+		  country_add_ethic = ethic_fanatic_xenophile
+		  country_add_ethic = ethic_materialist
+		  change_government = {
+		      authority = auth_oligarchic
+		      civics = random
+		  }
+		  set_country_flag = aleran_saved_from_storm
+		  add_opinion_modifier = {
+		      modifier = opinion_aleran_saved_from_storm
+		      who = event_target:alerans
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.211.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				ERROR
+		}
+		event_target:solar_storm_primitives = {
+		  set_subject_of = {
+		      who = prev
+		      subject_type = protectorate
+		  }
+		}
+	}
+
+	option = {
+		name = "aleran_chain.211.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				any_country = { is_fallen_empire_xenophobe = yes }
+		}
+		event_target:solar_storm_primitives = {
+		  set_subject_of = {
+		      who = prev
+		      subject_type = protectorate
+		  }
+		}
+		hidden_effect = {
+		  random_country = {
+		      limit = { is_fallen_empire_xenophobe = yes }
+		      save_global_event_target_as = solar_storm_culprit
+		  }
+		  country_event = { id = aleran_chain.212 days = 180 random = 180 }
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.212
+	title = "aleran_chain.212.name"
+	desc = "aleran_chain.212.desc"
+
+	is_triggered_only = yes
+
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:solar_storm_culprit
+		planet_background = event_target:solar_storm_culprit
+		graphical_culture = event_target:solar_storm_culprit
+		city_level = event_target:solar_storm_culprit
+		room = event_target:solar_storm_culprit.ruler
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = "aleran_chain.212.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		event_target:solar_storm_culprit = {
+		  add_opinion_modifier = {
+		      modifier = opinion_aleran_interfered_cleansing
+		      who = prev
+		  }
+		}
+		add_modifier = {
+		  modifier = refused_fight_fe_genocide
+		  days = 1800
+		}
+	}
+
+	option = {
+		name = "aleran_chain.212.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		event_target:solar_storm_culprit = {
+		  add_opinion_modifier = {
+		      modifier = opinion_aleran_interfered_cleansing
+		      who = prev
+		  }
+		}
+		declare_war = {
+		  target = event_target:solar_storm_culprit
+		  name = "Genocide Prevention Initiative"
+		  attacker_war_goal = wg_dragon
+		}
+		add_modifier = {
+		  modifier = moralistic_fervor
+		  days = 3600
+		}
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.213
+	title = "aleran_chain.213.name"
+	desc = "aleran_chain.213.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	immediate = {
+		immediate = { set_country_flag = seen_preshock_1 }
+	}
+
+	option = {
+		name = "aleran_chain.213.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				NOT = { has_country_flag = solar_storm_ignored }
+		}
+
+	}
+
+	option = {
+		name = "aleran_chain.213.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				trigger = { has_country_flag = solar_storm_ignored }
+		}
+
+	}
+
+}
+
+country_event = {
+	id = aleran_chain.214
+	title = "aleran_chain.214.name"
+	desc = "aleran_chain.214.desc"
+
+	is_triggered_only = yes
+
+	picture = GFX_evt_solar_flare
+	show_sound = event_solar_fusion
+
+	immediate = {
+		immediate = { set_country_flag = seen_preshock_2 }
+	}
+
+	option = {
+		name = "aleran_chain.214.click.a"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				NOT = { has_country_flag = solar_storm_ignored }
+		}
+
+	}
+
+	option = {
+		name = "aleran_chain.214.click.b"
+		ai_chance = {
+			factor = 150
+		}
+		trigger = {
+				trigger = { has_country_flag = solar_storm_ignored }
+		}
+
+	}
+
+}
+

@@ -1,0 +1,126 @@
+aleran_enlightenment_ancient = {
+	icon = "GFX_fleet_task_aleran_enlightenment"
+	small_icon = 3
+	
+	cost = {
+		energy = 15
+		physics_research = 15
+		engineering_research = 15
+		society_research = 30
+		influence = 2
+	}
+
+	gain = {
+		unity = 40
+	}
+
+	monthly_progress = 0.006
+	completion_event = dragon_misc.60
+
+	potential = {
+		has_valid_civic = civic_dragon_gov
+		FROM = {
+			exists = owner
+			owner = {
+				OR = { 
+					has_country_flag = stone_age
+					has_country_flag = bronze_age
+					has_country_flag = iron_age
+				}
+			}
+		}
+	}
+
+	valid = {
+		has_policy_flag = enlightenment_allowed
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+aleran_enlightenment = {
+	icon = "GFX_fleet_task_aleran_enlightenment"
+	small_icon = 3
+	
+	cost = {
+		energy = 10
+		physics_research = 8
+		engineering_research = 8
+		society_research = 25
+		influence = 2
+	}
+
+	gain = {
+		unity = 40
+	}
+
+	monthly_progress = 0.008
+	completion_event = dragon_misc.60
+
+	potential = {
+		has_valid_civic = civic_dragon_gov
+		FROM = {
+			exists = owner
+			owner = {
+				OR = { 
+					has_country_flag = late_medieval_age
+					has_country_flag = renaissance_age
+					has_country_flag = steam_age
+				}
+			}
+		}
+	}
+
+	valid = {
+		has_policy_flag = enlightenment_allowed
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+aleran_enlightenment_modern = {
+	icon = "GFX_fleet_task_aleran_enlightenment"
+	small_icon = 3
+	
+	cost = {
+		energy = 5
+		physics_research = 5
+		engineering_research = 5
+		society_research = 10
+		influence = 2
+	}
+
+	gain = {
+		unity = 40
+	}
+
+	monthly_progress = 0.0125
+	completion_event = dragon_misc.60
+
+	potential = {
+		has_valid_civic = civic_dragon_gov
+		FROM = {
+			exists = owner
+			owner = {
+				OR = {
+					has_country_flag = industrial_age
+					has_country_flag = machine_age
+					has_country_flag = atomic_age
+					has_country_flag = early_space_age
+				}
+			}
+		}
+	}
+
+	valid = {
+		has_policy_flag = enlightenment_allowed
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}

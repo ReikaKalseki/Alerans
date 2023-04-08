@@ -744,3 +744,60 @@ building_art_display = {
 		
 	}	
 }
+
+building_minerals_and_energy = {
+	base_buildtime = 270 #9 mo
+	planet_unique = no
+	
+	cost = {
+		minerals = 800
+	}
+	
+	prerequisites = {
+		"tech_power_plant_3"
+		"tech_mining_network_3"
+	}
+	
+	potential = {
+		planet = {
+			NOT = { is_planet_class = pc_habitat }	
+		}
+	}
+	
+	allow = {
+		AND = {
+			has_resource = {
+				type = energy
+				amount > 0
+			}	
+			has_resource = {
+				type = minerals
+				amount > 0
+			}				
+		}
+		custom_tooltip = {
+			text = "requires_building_capital_1_or_hab"
+			planet = {
+				OR = {
+					has_building = "building_hab_capital"
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+
+	destroy_if = {
+		always = no
+	}
+	
+	produced_resources = {
+		energy = 6
+		minerals = 8
+	}
+
+	ai_weight = {
+		factor = 500
+	}
+}

@@ -40,6 +40,13 @@ FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_STARRAY:0 "Preparing to destabilize
 MESSAGE_DESC_FOR_PLANET_KILLER_STUPOR:0 "was laced with drugs by"
 MESSAGE_DESC_FOR_PLANET_KILLER_STARRAY:0 "was destabilized by"
 
+mission_aleran_enlightenment:0 "Active Integration"
+mission_aleran_enlightenment_desc:2 "Immediate and dramatic sociopolitical and technological intervention to enlighten the native population and reshape their ideologies and social structures as necessary.\nFaster than traditional enlightenment, and will directly integrate them into the commonwealth, but §Rcan meet significant resistance§! with conflicting ideologies.\n\n"
+mission_aleran_enlightenment_ancient:1 "$mission_aleran_enlightenment$"
+mission_aleran_enlightenment_ancient_desc:1 "$mission_aleran_enlightenment_desc$"
+mission_aleran_enlightenment_modern:1 "$mission_aleran_enlightenment$"
+mission_aleran_enlightenment_modern_desc:1 "$mission_aleran_enlightenment_desc$"
+
 war_goal_wg_dragon:0 "Enlighten"
 war_goal_wg_dragon_desc:0 "War is waged to put an end to regimes built on ideologies that harm their citizens or the galactic community at large, or to put a definitive end to evils done against citizens, a civilization, a species, or reason itself."
 wg_enlighten_accept:0 "Policy changes are imposed in line with Aleran ideology\n\nUnreformable pops are killed\n\nUnethical buildings are demolished\n\n250 influence gained\n\n"
@@ -257,6 +264,9 @@ building_dragon_central_library_desc:0 "The central hub of the Aleran Commonweal
 building_art_display:0 "Art Display"
 building_art_display_desc:1 "A sculpture commissioned from a respected Aleran artist."
 
+building_minerals_and_energy:0 "Industrial Engine"
+building_minerals_and_energy_desc:0 "A factory designed to make use of combined mineral/energy deposits."
+
 
 #GOVERNMENT#
 civic_dragon_gov:0 "Ethical Dominance"
@@ -460,6 +470,21 @@ dragon_misc.51.click.b:0 "Strange but useless. We have better things to do."
 dragon_misc.53.name:0 "Gravitational Waves"
 dragon_misc.53.desc:0 "The behavior exhibited by [FromFromFrom.GetName]'s rings are indeed a result of the gravitational environment of the system. In fact, the two neutron stars are spiralling inwards towards each other, and will probably merge in the next few million years.\n\nIn the meantime, their motion generates gravitational waves which spread across the system. As those waves wash over [This.GetName], they perturb the orbits of the tiny bodies that form the rings, which, when combined with the slight changes in direction and strength that star experiences from the gravity directly, result in the wavelike motion we observed."
 dragon_misc.53.click:0 "Fascinating."
+
+dragon_misc.60.name:0 "Native Population Integrated"
+dragon_misc.60.desc:0 "Our interventions among the [From.From.From.Owner.GetName] have reached the final goal of integrating their citizens as full members of the [This.GetName]. Our now-redundant observation outpost has been dismantled, and [From.From.From.GetName] now serves as any other colony under our control.
+dragon_misc.60.a:0 "May our combined future be bright."
+
+dragon_misc.62.name:0 "[From.GetName] Terrorist Attack"
+dragon_misc.62.desc:0 "A group of individuals on [From.GetName] attacked one of our ground sites from which we are conducting the integration project. The facility has been completely destroyed, leaving no survivors. The project can continue, but progress has been set back considerably."
+dragon_misc.62.a:0 "Unfortunate, but resistance was expected."
+dragon_misc.62.b:0 "This act will not go unanswered."
+
+dragon_misc.63.name:0 "[From.GetName] Terrorist Attack"
+dragon_misc.63.desc:0 "Ideological opposition to our integration projects on [From.GetName] were able to smuggle an explosive device onto one of the transport shuttles returning to the observation post. The facility has been completely destroyed, leaving no survivors. Our integration efforts will need to start from scratch."
+dragon_misc.63.a:0 "And so they shall."
+dragon_misc.63.b:0 "Clearly more force will be necessary this time around."
+dragon_misc.63.c:0 "Maybe they are best left alone."
 
 aleran_ai.500.name:0 "Destructive Society Enlightened"
 aleran_ai.500.desc:0 "We have completed our forced enlightenment process. The [event_target:aleran_youre_next.GetName] have reacted with some concern, as they know that we can and probably should do the same to them."
@@ -775,6 +800,9 @@ aleran_duty_ignore_desc:0 "The fact we are have forsaken our duty to protect peo
 
 aleran_no_navy:0 "Naval Avoidance"
 aleran_no_navy_desc:0 "We will not waste time or resources on pointless warships."
+
+many_aleran_wars:0 "Surrounded by Enemies"
+many_aleran_wars_desc:0 "We are surrounded by hostile nations and places to which we must perform our duties. We need to be able to fight on many fronts at once."
 
 
 #OPINIONS#

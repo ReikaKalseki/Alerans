@@ -125,11 +125,14 @@ wg_dragon = {
 				from = { end_rivalry = prev }	
 				add_opinion_modifier = { modifier = opinion_we_liberated who = from }
 				from = { add_opinion_modifier = { modifier = opinion_liberated_us who = prev } }
-				every_system_within_border = {
-					limit = {
-						from = { has_claim = prev }
-					}
-					remove_claims = { who = from }
+				#every_system_within_border = {
+				#	limit = {
+				#		from = { has_claim = prev }
+				#	}
+				#	remove_claims = { who = from }
+				#}
+				every_system = {
+					remove_claims = { who = prev }
 				}
 			}
 		}
