@@ -80,6 +80,14 @@ opinion_aleran_saved_from_storm = {
 	}
 }
 
+opinion_aleran_shown_common_good = {
+	opinion = {
+		base = 100
+	}
+
+	accumulative = no
+}
+
 #######
 ##What others think of Alerans
 #######
@@ -93,6 +101,7 @@ opinion_insensitive = {
 			NOR = {
 				has_country_flag = aleran
 				has_country_flag = aleran_saved_from_storm
+				has_country_flag = aleran_invited
 			}
 		}
 	}
@@ -108,6 +117,10 @@ opinion_dragon_cold = {
 		}
 		this = {
 			has_ethic = "ethic_egalitarian"
+			NOR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
 			is_country_type = default
 			NOT = { has_country_flag = aleran_saved_from_storm }
 		}
@@ -270,6 +283,23 @@ opinion_dragon_violent = {
 	}
 }
 
+opinion_dragon_similar = {
+	trigger = {
+		FROM = {
+			has_country_flag = aleran
+		}
+		this = {
+			is_country_type = default
+			has_ethic = "ethic_materialist"
+			has_ethic = "ethic_egalitarian"
+			has_ethic = "ethic_militarist"
+		}
+	}
+	opinion = {
+		base = 10
+	}
+}
+
 opinion_dragon_rightpath = {
 	trigger = {
 		FROM = {
@@ -308,7 +338,6 @@ opinion_dragon_principled = {
 		}
 		this = {
 			has_ethic = "ethic_fanatic_materialist"
-			is_country_type = default
 			has_ethic = "ethic_authoritarian"
 		}
 	}

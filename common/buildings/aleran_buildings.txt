@@ -762,6 +762,7 @@ building_minerals_and_energy = {
 		planet = {
 			NOT = { is_planet_class = pc_habitat }	
 		}
+		always = no #disable
 	}
 	
 	allow = {

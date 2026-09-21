@@ -561,6 +561,8 @@ aleran_faction = {
 			owner = {
 				OR = {
 					has_country_flag = recently_enlightened_someone
+					has_country_flag = recent_aleran_primitive_enlighten
+					has_country_flag = recent_enlightenment_timed
 					any_war = {
 						using_war_goal = { type = wg_dragon owner = prev }
 					}
